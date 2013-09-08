@@ -420,7 +420,7 @@
                         <h1>ĐĂNG NHẬP</h1>
                     </div>
                     <div class="boxLeftMiddle">
-                        <form action="//authenticate" method="POST" name="form_login" id="form_login">                        <div class="loginBox">
+                        <form action="authenticate" method="POST" name="form_login" id="form_login">                        <div class="loginBox">
                             <table cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td class="txtLabelSearch">Mã thẻ:</td>
