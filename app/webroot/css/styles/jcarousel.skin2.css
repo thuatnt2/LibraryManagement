@@ -1,0 +1,135 @@
+.jcarouselStyle{
+}
+.jcarousel-skin-tango-2 .jcarousel-container {
+	/**width:220px;299*/
+	/*height:250px;*/
+	padding:1px 10px 0 10px;
+	z-index:30
+}
+
+.jcarousel-skin-tango-2 .jcarousel-direction-rtl {
+	direction: rtl;
+}
+
+.jcarousel-skin-tango-2 .jcarousel-container-horizontal {
+    /**width: 206px;*/
+	/*height:250px; theo chieu cao cua class >> .jcarousel-skin-tango-2 .jcarousel-container*/
+}
+.jcarousel-skin-tango-2 .jcarousel-clip {
+    overflow: hidden;
+}
+.jcarousel-skin-tango-2 .jcarousel-clip-horizontal {
+	/*width + height full content / hien thi toan bo vung chua (khi click ma slide hien thi ko day du o phan nay thi chinh sua width o day)*/
+    width: 210px;
+}
+
+.jcarousel-skin-tango-2 .jcarousel-item {
+	/*cao va rong vung chua du lieu*/
+	width: 208px;
+    /*height: 250px;*/
+	padding-bottom:0px;
+}
+
+.jcarousel-skin-tango-2 .jcarousel-item-horizontal {
+	margin-left: 0;
+    margin-right: 10px;
+}
+
+.jcarousel-skin-tango-2 .jcarousel-direction-rtl .jcarousel-item-horizontal {
+	margin-left: 10px;
+    margin-right: 0;
+}
+.jcarousel-skin-tango-2 .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin-tango-2 .jcarousel-next-horizontal {
+	/*btn right*/
+	/* 1 normal*/
+    position: absolute;
+    top: 205px;
+    right: 5px;
+    width: 15px;
+    height: 26px;
+    cursor: pointer;
+    background: url(../images/sprite.png) no-repeat -26px -181px;
+}
+
+.jcarousel-skin-tango-2 .jcarousel-direction-rtl .jcarousel-next-horizontal {
+	/*khong hieu*/
+}
+
+.jcarousel-skin-tango-2 .jcarousel-next-horizontal:hover,
+.jcarousel-skin-tango-2 .jcarousel-next-horizontal:focus {
+	/*2 focus*/
+    background-position: -26px -181px;
+}
+
+.jcarousel-skin-tango-2 .jcarousel-next-horizontal:active {
+	/*3 active*/
+    background-position: -26px -211px;
+}
+
+.jcarousel-skin-tango-2 .jcarousel-next-disabled-horizontal,
+.jcarousel-skin-tango-2 .jcarousel-next-disabled-horizontal:hover,
+.jcarousel-skin-tango-2 .jcarousel-next-disabled-horizontal:focus,
+.jcarousel-skin-tango-2 .jcarousel-next-disabled-horizontal:active {
+	/* 4 disable*/
+    cursor: default;
+    background-position: -26px -211px;
+}
+/*PRE*/
+.jcarousel-skin-tango-2 .jcarousel-prev-horizontal {
+	/*1 normal*/
+    position: absolute;
+    top: 205px;
+    left:15px;
+    width: 15px;
+    height: 26px;
+    cursor: pointer;
+    background: url(../images/sprite.png) no-repeat  0px -181px;
+}
+
+.jcarousel-skin-tango-2 .jcarousel-direction-rtl .jcarousel-prev-horizontal {
+	/*don't know*/
+}
+
+.jcarousel-skin-tango-2 .jcarousel-prev-horizontal:hover, 
+.jcarousel-skin-tango-2 .jcarousel-prev-horizontal:focus {
+	/*2 focus*/
+    background-position: 0px -181px;
+}
+
+.jcarousel-skin-tango-2 .jcarousel-prev-horizontal:active {
+	/*3 active*/
+    background-position:  0px -211px;
+}
+
+.jcarousel-skin-tango-2 .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin-tango-2 .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin-tango-2 .jcarousel-prev-disabled-horizontal:focus,
+.jcarousel-skin-tango-2 .jcarousel-prev-disabled-horizontal:active {
+	/*4 disable*/
+    cursor: default;
+    background-position:  0px -211px;
+}
+.styleImgJcarousel_2{
+	width:196px;
+	float:left;
+	height:243px;
+	overflow:hidden;
+	margin:0 0px 2px 8px;
+	
+	position:relative;
+}
+.styleImgJcarousel_2 div img{
+	width: 196px;
+	float:left;
+	margin-right:5px;
+	margin-top:3px
+}
+/********add new style*********/

@@ -1,0 +1,207 @@
+/* 
+    Document   : index2
+    Created on : Apr 15, 2013, 9:14:35 PM
+    Author     : TNT
+    Description:
+        Purpose of the stylesheet follows.
+*/
+root { 
+    display: block;
+}
+/* Father Menu*/
+#header #top_menu
+{
+    margin: 0px 1px 0 0;
+    padding: 0px 10px 0px 13px;
+    text-align: left;
+    float: left;
+}
+
+#top_menu ul {
+    float: left;
+}
+#top_menu ul li {
+    position: relative;
+    float:left;
+    list-style-type: none;
+
+}
+#top_menu ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 0.75em 32px;
+}
+#top_menu ul li a:hover{
+    background-color: #129727;
+}
+#top_menu ul li ul{
+    position: absolute;
+    display: none;
+}
+
+#top_menu ul li:hover ul{
+    display: block;
+    background-color: #367427;
+}
+#top_menu ul li ul li {
+    width: 100%;
+
+}
+#top_menu ul li ul li a {
+    width: 100%;
+    background-color: #367427;
+
+}
+
+#traffic-document {
+    margin: 5px 0px 15px 100px;
+    float:left;
+}
+#traffic-document  p{
+    float:left;
+    margin-left: 20px;
+}
+#traffic-document label {
+    color: red;
+
+}
+
+/* mượn trả tài liệu */
+.clear {
+    clear: both;
+}
+#form-top fieldset {
+    margin-top: 10px;
+    background: #fff url('../../img/bg_ip.png') repeat-x top center;
+}
+#form-top legend {
+    color: red;
+    font-size: 1.53em;
+    font-weight: bold;
+    margin: 0px 0px 5px 15px;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+#form-top img {
+    float: left;
+    margin-left: 30px;
+    width: 120px;
+    height: 130px;
+}
+#form-top p {
+    height: 35px;
+    float: right;
+    display: block;
+    margin-right: 15px;
+}
+#form-top label {
+    width: 120px;
+    margin: 0px 10px 0px 20px;
+    font-size: 1.3em;
+    font-weight: normal;
+    display: block;
+    float: left;
+    clear: left;
+}
+
+#form-top p input {
+    width: 250px;
+    height: 20px;
+    padding: 3px;
+}
+#button-return {
+    float: right;
+    clear: right;
+    margin: 70px 400px 10px 0px;
+}
+#button-return input {
+    width: 125px;
+    margin-left: 20px;
+}
+/*tao ma vach*/
+#form-barcode fieldset {
+    margin-top: 10px;
+    margin-bottom: 20px;
+   /* background: #fff url('../../img/bg_ip.png') repeat-x top center;*/
+
+}
+#form-barcode legend {
+    color: red;
+    font-size: 1.53em;
+    font-weight: bold;
+    margin: 0px 0px 30px 15px;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+#form-barcode p {
+    height: 35px;
+    display: block;
+    margin-left: 250px;
+}
+#form-barcode label {
+    width: 180px;
+    margin: 0px 10px 0px 20px;
+    font-size: 1.3em;
+    font-weight: normal;
+    display: block;
+    float: left;
+    clear: left;
+}
+#button-barcode input {
+    width: 125px;
+    margin: 10px 450px;
+}
+/*Tim kiem ban doc*/
+#search-reader {
+    float:left;
+    margin: 15px 0px 30px 300px;
+}
+#search-reader p {
+    font-weight: bold;
+    float:left;
+    margin-bottom: -30px;
+}
+#search-reader #search{
+    float:right;
+    margin-right: 150px;
+    width: 100px;
+    height: 30px;
+}
+/*Tim kiem tai liêu*/
+#search-document {
+    float:left;
+    margin: 15px 0px 30px 300px;
+}
+#search-document p {
+    font-weight: bold;
+    float:left;
+    margin-bottom: -30px;
+}
+#search-document #search{
+    float:right;
+    margin-right: 150px;
+    width: 100px;
+    height: 30px;
+}
+/*list-reader*/
+#list-reader {
+ float:left;
+ display:block;
+ margin-bottom: 10px;
+}
+#list-reader p {
+ float:left;
+ margin: 5px 10px;
+}
+#list-reader #input-info {
+    padding: 10px;
+}
+.dateTime {
+    width: 84px;
+}
+#form-top .borrowReturn {
+    background-color: #FFFAF0;
+}
+#form-top #locationDocument {
+    width: 674px;
+}
