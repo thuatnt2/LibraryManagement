@@ -136,7 +136,7 @@
 .styleImgJcarousel_1 div div{
 	position:absolute;
 	display:none;
-    background: url(../images/transparent_black_1.png) repeat;
+    /*background: url(../images/transparent_black_1.png) repeat;*/
 	top:3px;
 	color:#fff;
 	width:92px;
