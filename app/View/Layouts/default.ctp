@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="/css/index.css" />
         <?php echo $this->Html->charset(); ?>
         <title>
-            <?php echo $title_for_layout ?>
+        <?php echo $title_for_layout ?>
         </title>
         <?php
         echo $this->Html->meta('icon');
@@ -23,11 +23,6 @@
         ?>
     </head>
     <body>
-        <script type="text/javascript">
-            //<![CDATA[
-            //  Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'ctl00', ['tctl00$MainContent$uc1', 'MainContent_uc1', 'tctl00$MainContent$ctl01$pnl', 'MainContent_ctl01_pnl', 'tctl00$MainContent$ctl07$UpdatePanel1', 'MainContent_ctl07_UpdatePanel1'], [], [], 90, 'ctl00');
-            //]]>
-        </script>
 
         <div class="headBg">
             <div class="headWidth">
@@ -125,12 +120,6 @@
                                 </div>
                                 <div class="menu_smenu menu_nodisplay menu_menuItem4 menu_smenu_5">                
                                     <div class="menu_wsub">
-                                        <!--                                        <div class="menu_rows7">
-                                                                                    <a  href="#">Danh mục đề cương môn học</a>
-                                                                                    <a  href="#">Danh mục bài giảng</a>
-                                                                                    <a href="#">Danh mục tài liệu mới</a>
-                                                                                    <a href="#">Danh mục tài liệu điện tử</a>
-                                                                                </div>-->
                                     </div>
                                 </div>
                             </li>
@@ -143,10 +132,6 @@
                                 </div>
                                 <div class="menu_smenu menu_nodisplay menu_menuItem4 menu_smenu_5">                
                                     <div class="menu_wsub">
-                                        <!--                                        <div class="menu_rows8">
-                                                                                    <a href="#">Giới thiệu dịch vụ</a>
-                                                                                    <a href="#">Phí dịch vụ</a>
-                                                                                </div>-->
                                     </div>
                                 </div>
                             </li>
@@ -156,14 +141,7 @@
                                         </b></span></a>         
                                 <div style="clear: both">
                                 </div>
-                                <!--                                <div class="menu_smenu menu_nodisplay menu_menuItem4 menu_smenu_5">                
-                                                                    <div class="menu_wsub">
-                                                                        <div class="menu_rows9">
-                                                                            <a  href="#">Bộ phận Điện toán</a>
-                                                                            <a  href="#">Bộ phận Thư viện</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>-->
+
                             </li>
                         </ul>
                     </div>
@@ -174,7 +152,6 @@
         <div class="page_container">
             <?php echo $content_for_layout ?>
         </div>
-
         <div class="fotter">
 
             <div id="ucFooter_divContent" class="fotterWidth"><h1><a href="#" target="_blank">TRƯỜNG ĐẠI HỌC ABC</a></h1>

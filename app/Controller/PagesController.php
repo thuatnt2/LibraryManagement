@@ -34,7 +34,7 @@ class PagesController extends AppController {
 
     public $uses = array();
     var $layout = 'default'; // Set layout for all action
-
+    var $helpers = array("Pages"); // Thành phần Helper Common được gọi để dùng trong Views
     /**
      * Displays a view
      *
