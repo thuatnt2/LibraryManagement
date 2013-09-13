@@ -737,7 +737,7 @@
                             </div>
                             <div class="boxLeftMiddle">
                                 <div class="videoBoxRight" align="center">
-                                    <iframe width="217" height="140" src="http://www.youtube.com/embed/Mg7DjZG0Wy4" frameborder="0" allowfullscreen="true"></iframe>
+                                    <!--<iframe width="217" height="140" src="http://www.youtube.com/embed/Mg7DjZG0Wy4" frameborder="0" allowfullscreen="true"></iframe>-->
                                 </div>
                             </div>
                         </div>
