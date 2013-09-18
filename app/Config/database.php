@@ -66,10 +66,10 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'root',
-		'password' => 'Htlu@n2605',
+		'password' => '',
 		'database' => 'librarydb',
 		'prefix' => '',
-		//'encoding' => 'utf8',
+		'encoding' => 'utf8',
 	);
 
 //	public $test = array(

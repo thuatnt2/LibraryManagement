@@ -34,8 +34,16 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-    function beforeall() {
-        $this->log("beforeall!");
+    var $helpers = array('Form', 'Html', 'Session', 'Js', 'Usermgmt.UserAuth');
+    public $components = array('Session', 'RequestHandler', 'Usermgmt.UserAuth');
+    var $layout = 'admin';
+
+    function beforeFilter() {
+        $this->userAuth();
+    }
+
+    private function userAuth() {
+        $this->UserAuth->beforeFilter($this);
     }
 
 }

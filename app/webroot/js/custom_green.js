@@ -262,12 +262,7 @@ $(function(){
 		showAnim: 'slideDown'
 	});
 	
-	// Setup datepicker input dateCreate
-	$("#dateCreate").datepicker({
-		nextText: '&raquo;',
-		prevText: '&laquo;',
-		showAnim: 'slideDown'
-	});
+	
 	
 	// Setup minimize and maximize window
 	$('.onecolumn .header span').click(function(){
