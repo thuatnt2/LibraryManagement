@@ -54,7 +54,7 @@ class User extends UserMgmtAppModel {
 	 */
 	function LoginValidate() {
 		$validate1 = array(
-				'email'=> array(
+				'username'=> array(
 					'mustNotEmpty'=>array(
 						'rule' => 'notEmpty',
 						'message'=> 'Please enter email or username')
