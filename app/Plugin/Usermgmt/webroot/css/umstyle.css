@@ -23,7 +23,7 @@
 }
 .um_box_mid form div {
 	padding:0;
-	margin:0 ;
+        margin: 0;
 	width: auto ;
 	clear:none;
 }
@@ -89,7 +89,7 @@
 	height:10px;
 }
 .umstyle3 {
-	font-size:12px;
+	font-size:14px;
 }
 .umstyle4 {
 	font-size:12px;
@@ -107,7 +107,7 @@ input[type="submit"] {
 }
 #login .umstyle3 {
 	float:left;
-	width:150px;
+	width:170px;
 	padding-bottom:10px;
 }
 #login .umstyle4 {
@@ -117,7 +117,7 @@ input[type="submit"] {
 }
 #register .umstyle3 {
 	float:left;
-	width:150px;
+	width:170px;
 	padding-bottom:10px;
 }
 #register .umstyle4 {
@@ -137,7 +137,7 @@ input[type="submit"] {
 }
 #addgroup .umstyle3 {
 	float:left;
-	width:150px;
+	width:170px;
 	padding-bottom:10px;
 }
 #addgroup .umstyle4 {

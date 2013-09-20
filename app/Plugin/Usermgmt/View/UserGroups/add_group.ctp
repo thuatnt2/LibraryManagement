@@ -34,13 +34,13 @@
 				<?php echo $this->Form->create('UserGroup', array('action' => 'addGroup')); ?>
 				<div>
 					<div class="umstyle3"><?php echo __('Group Name');?><font color='red'>*</font></div>
-					<div class="umstyle4" ><?php echo $this->Form->input("name" ,array('label' => false,'div' => false,'class'=>"umstyle5" ))?></div>
+					<div class="umstyle4" ><?php echo $this->Form->input("name" ,array('label' => false,'div' => false,'class'=>"form-control" ))?></div>
 					<div class="umstyle7">for ex. Business User</div>
 					<div style="clear:both"></div>
 				</div>
 				<div>
 					<div class="umstyle3"><?php echo __('Alias Group Name');?><font color='red'>*</font></div>
-					<div class="umstyle4" ><?php echo $this->Form->input("alias_name" ,array('label' => false,'div' => false,'class'=>"umstyle5" ))?></div>
+					<div class="umstyle4" ><?php echo $this->Form->input("alias_name" ,array('label' => false,'div' => false,'class'=>"form-control" ))?></div>
 					<div class="umstyle7">for ex. Business_User (Must not contain space)</div>
 					<div style="clear:both"></div>
 				</div>
@@ -54,7 +54,7 @@
 				</div>
 				<div>
 					<div class="umstyle3"></div>
-					<div class="umstyle4"><?php echo $this->Form->Submit(__('Add Group'));?></div>
+					<div class="umstyle4"><?php echo $this->Form->Submit(__('Add Group'),array('class'=>'btn btn-primary'));?></div>
 					<div style="clear:both"></div>
 				</div>
 				<div>Note: If you add a new group then you should give permissions to this newly created Group.</div>

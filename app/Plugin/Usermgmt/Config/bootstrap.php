@@ -116,6 +116,13 @@ function UsermgmtInIt(&$controller) {
 	if(!defined("ADMIN_GROUP_ID")) {
 		define("ADMIN_GROUP_ID", 1);
 	}
+        
+        /*
+		set User group id here
+	*/
+	if(!defined("READER_GROUP_ID")) {
+		define("READER_GROUP_ID", 2);
+	}
 
 	/*
 		set Guest group id here

@@ -35,22 +35,22 @@
 					<?php echo $this->Form->create('User', array('action' => 'changePassword')); ?>
 					<div>
 						<div class="umstyle3"><?php echo __('Old Password');?></div>
-						<div class="umstyle4"><?php echo $this->Form->input("oldpassword" ,array("type"=>"password",'label' => false,'div' => false,'class'=>"umstyle5" ))?></div>
+						<div class="umstyle4"><?php echo $this->Form->input("oldpassword" ,array("type"=>"password",'label' => false,'div' => false,'class'=>"form-control" ))?></div>
 						<div style="clear:both"></div>
 					</div>
 					<div>
 						<div class="umstyle3"><?php echo __('New Password');?></div>
-						<div class="umstyle4"><?php echo $this->Form->input("password" ,array("type"=>"password",'label' => false,'div' => false,'class'=>"umstyle5" ))?></div>
+						<div class="umstyle4"><?php echo $this->Form->input("password" ,array("type"=>"password",'label' => false,'div' => false,'class'=>"form-control" ))?></div>
 						<div style="clear:both"></div>
 					</div>
 					<div>
 						<div class="umstyle3"><?php echo __('Confirm Password');?></div>
-						<div class="umstyle4"><?php echo $this->Form->input("cpassword" ,array("type"=>"password",'label' => false,'div' => false,'class'=>"umstyle5" ))?></div>
+						<div class="umstyle4"><?php echo $this->Form->input("cpassword" ,array("type"=>"password",'label' => false,'div' => false,'class'=>"form-control" ))?></div>
 						<div style="clear:both"></div>
 					</div>
 					<div>
 						<div class="umstyle3"></div>
-						<div class="umstyle4"><?php echo $this->Form->Submit(__('Change'));?></div>
+						<div class="umstyle4"><?php echo $this->Form->Submit(__('Change'),array('class'=>'btn btn-primary'));?></div>
 						<div style="clear:both"></div>
 					</div>
 					<?php echo $this->Form->end(); ?>

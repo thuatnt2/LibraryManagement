@@ -62,5 +62,5 @@
 	<div class="um_box_down"></div>
 </div>
 <script>
-document.getElementById("UserUserGroupId").focus();
+document.getElementBy/Id("UserUserGroupId").focus();
 </script>
