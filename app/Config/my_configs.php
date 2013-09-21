@@ -6,7 +6,7 @@ if($_SERVER['HTTP_HOST']=='localhost'){
     $config['base']['url'] = 'http://'.$_SERVER['HTTP_HOST'].'/'.$config['base']['sitename'].'/';   
 }  
 else{
-    $config['base']['sitename']='sdc/software'; // neu chay truc tiep tren domain thi de trong
+    $config['base']['sitename']=''; // neu chay truc tiep tren domain thi de trong
     $config['base']['url'] = 'http://'.$_SERVER['HTTP_HOST'].'/'.$config['base']['sitename'].'/';
     if(substr($config['base']['url'],strlen($config['base']['url'])-2,2)=='//')
        $config['base']['url'] = substr($config['base']['url'],0,-1); 
