@@ -1,6 +1,6 @@
 <script type="text/javascript">
     function openKCFinder_singleFile(div) {
-       //alert('click');return false;
+        //alert('click');return false;
         window.KCFinder = {
             callBack: function(url) {
                 window.KCFinder = null;
@@ -9,7 +9,7 @@
                 img.src = url;
                 img.onload = function() {
                     div.innerHTML = '<img id="img" src="' + url + '" />';
-                    base_url_str = url.replace(base_url + 'app/webroot/', '');
+                    base_url_str = url.replace(base_url + 'app/webroot', '');
                     $("#image_path").val(base_url_str);
                     var img = document.getElementById('img');
                     var o_w = img.offsetWidth;
@@ -55,13 +55,21 @@
             <div class="form-custom">
                 <?php echo $this->Form->create('Article'); ?>
                 <label><?php echo 'Tên bài viết'; ?><font color='red'>*</font></label>
-                <?php echo $this->Form->input("name", array('label' => false, 'div' => false, 'class' => "form-control")) ?>
+                <?php echo $this->Form->input("title", array('label' => false, 'div' => false, 'class' => "form-control")) ?>
 
                 <label><?php echo 'Danh mục'; ?><font color='red'>*</font></label>
                 <?php echo $this->Form->input("category_id", array('label' => false, 'div' => false, 'class' => "form-control custom-260", 'options' => $categories)) ?>
 
                 <label>Ảnh</label>
-                <?php echo $this->Html->tag('div', 'Click để chọn hình.', array('class' => 'img_news', 'onclick' => 'openKCFinder_singleFile(this)'));?>
+                <?php
+                if (!empty($this->request->data['Article']['thumbnail'])) {
+                    ?>
+                    <div class="img_news" onclick="openKCFinder_singleFile(this)"><img src="<?php echo $this->Html->webroot('/') . $this->request->data['Article']['thumbnail'] ?>"/></div>
+                    <?php
+                } else {
+                    echo $this->Html->tag('div', 'Click để chọn hình.', array('class' => 'img_news', 'onclick' => 'openKCFinder_singleFile(this)'));
+                }
+                ?>
                 <label><?php echo 'Tóm tắt'; ?><font color='red'>*</font></label>
                 <?php echo $this->Form->input("sumary", array('type' => 'textarea', 'selected' => 'selected', 'label' => false, 'div' => false)) ?>
                 <input name="data[Article][thumbnail]" type="hidden" id="image_path" value=""/>
@@ -69,7 +77,7 @@
 
                 <label><?php echo 'Nội dung'; ?><font color='red'>*</font></label>
                 <?php echo $this->Form->input("content", array('type' => 'textarea', 'label' => false, 'div' => false, 'id' => "full-text")) ?>
-                <?php echo $this->TvFck->create('full-text',array('toolbar'=>'extra'),'full-text');?>
+                <?php echo $this->TvFck->create('full-text', array('toolbar' => 'extra'), 'full-text'); ?>
                 <label></label>
                 <?php echo $this->Form->Submit('Nhập', array('class' => 'btn btn-primary')); ?>
 
@@ -81,4 +89,3 @@
     </div>
     <div class="um_box_down"></div>
 </div>
-

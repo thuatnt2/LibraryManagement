@@ -1,20 +1,3 @@
-<div class="readers form">
-    <?php echo $this->Form->create('Reader'); ?>
-    <fieldset>
-        <legend><?php echo __('Add Reader'); ?></legend>
-        <?php
-        echo $this->Form->input('dateCreated');
-        echo $this->Form->input('dateExpiry');
-        echo $this->Form->input('yearLearn');
-        echo $this->Form->input('isActive');
-        echo $this->Form->input('totalBorrow');
-        echo $this->Form->input('user_id');
-        echo $this->Form->input('department_id');
-        ?>
-    </fieldset>
-    <?php echo $this->Form->end(__('Submit')); ?>
-</div>
-
 <div class="umtop">
     <?php echo $this->Session->flash(); ?>
     <?php echo $this->element('reader_management'); ?>

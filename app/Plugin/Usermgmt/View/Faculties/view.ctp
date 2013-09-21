@@ -43,7 +43,7 @@
 	<?php foreach ($faculty['Department'] as $department): ?>
 		<tr>
 			<td><?php echo $department['id']; ?></td>
-			<td><?php echo $department['class_name']; ?></td>
+			<td><?php echo $department['department_name']; ?></td>
 			<td><?php echo $department['description']; ?></td>
 			<td><?php echo $department['faculty_id']; ?></td>
 			<td class="actions">

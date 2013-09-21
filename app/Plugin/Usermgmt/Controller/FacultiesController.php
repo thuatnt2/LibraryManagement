@@ -75,7 +75,6 @@ class FacultiesController extends AppController {
         if ($this->request->is('post') || $this->request->is('put')) {
             //debug($this->data); exit();
             $this->Faculty->id = $id;
-            $this->request->data['Faculty']['actived'] = 1;
             if ($this->Faculty->save($this->request->data)) {
                  $this->Session->setFlash('Lưu thành công','flash_success');
                 return $this->redirect(array('action' => 'index'));

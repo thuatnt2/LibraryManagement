@@ -24,6 +24,7 @@ class ArticlesController extends AppController {
      */
     public function index() {
         $this->Article->recursive = 0;
+        $this->paginate = array('order'=>'Article.created DESC');
         $this->set('articles', $this->Paginator->paginate());
     }
 
@@ -52,10 +53,10 @@ class ArticlesController extends AppController {
             $this->request->data['Article']['published'] = 1;
             $this->Article->create();
             if ($this->Article->save($this->request->data)) {
-                $this->Session->setFlash(__('The article has been saved.'));
+                $this->Session->setFlash('Lưu bài viết thành công','flash_success');
                 return $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('The article could not be saved. Please, try again.'));
+                $this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại','flash_error');
             }
         }
         $categories = $this->Article->Category->find('list');
@@ -75,11 +76,12 @@ class ArticlesController extends AppController {
             throw new NotFoundException(__('Invalid article'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
+            $this->Article->id = $id;
             if ($this->Article->save($this->request->data)) {
-                $this->Session->setFlash(__('The article has been saved.'));
+                $this->Session->setFlash('Lưu bài viết thành công','flash_success');
                 return $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('The article could not be saved. Please, try again.'));
+                $this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại','flash_error');
             }
         } else {
             $options = array('conditions' => array('Article.' . $this->Article->primaryKey => $id));
@@ -104,11 +106,17 @@ class ArticlesController extends AppController {
         }
         $this->request->onlyAllow('post', 'delete');
         if ($this->Article->delete()) {
-            $this->Session->setFlash(__('The article has been deleted.'));
+            $this->Session->setFlash('Xóa bài viết thành công','flash_success');
         } else {
-            $this->Session->setFlash(__('The article could not be deleted. Please, try again.'));
+            $this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại','flash_error');
         }
         return $this->redirect(array('action' => 'index'));
+    }
+    
+    public function pulished ($id, $status){
+        $this->Article->id = $id;
+        $this->Article->saveField('published', $status);
+        $this->redirect(array('action'=>'index'));
     }
 
 }

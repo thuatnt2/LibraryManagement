@@ -8,7 +8,7 @@
 		</dd>
 		<dt><?php echo __('Class Name'); ?></dt>
 		<dd>
-			<?php echo h($department['Department']['class_name']); ?>
+			<?php echo h($department['Department']['department_name']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Description'); ?></dt>

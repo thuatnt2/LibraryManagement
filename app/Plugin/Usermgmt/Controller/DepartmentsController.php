@@ -92,7 +92,6 @@ class DepartmentsController extends AppController {
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             $this->Department->id = $id;
-            $this->request->data['Department']['actived'] = 1;
             if ($this->Department->save($this->request->data)) {
                  $this->Session->setFlash('Lưu thành công','flash_success');
                 return $this->redirect(array('action' => 'index'));

@@ -13,7 +13,7 @@ class Department extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'class_name';
+	public $displayField = 'department_name';
 
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
