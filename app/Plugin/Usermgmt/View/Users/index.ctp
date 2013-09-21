@@ -53,7 +53,7 @@
                                 $sl++;
                                 echo "<tr>";
                                 echo "<td>" . $sl . "</td>";
-                                echo "<td>" . h($row['User']['first_name']) . " " . h($row['User']['last_name']) . "</td>";
+                                echo "<td>" . h($row['User']['fullname'])."</td>";
                                 echo "<td>" . h($row['User']['username']) . "</td>";
                                 echo "<td>" . h($row['User']['email']) . "</td>";
                                 echo "<td>" . h($row['UserGroup']['name']) . "</td>";
@@ -65,7 +65,7 @@
                                 }
                                 echo"</td>";
                                 echo "<td>";
-                                if ($row['User']['active'] == 1) {
+                                if ($row['User']['actived'] == 1) {
                                     echo "Active";
                                 } else {
                                     echo "Inactive";
@@ -79,7 +79,7 @@
                                 if ($row['User']['email_verified'] == 0) {
                                     echo "<span class='icon'><a href='" . $this->Html->url('/usermgmt/users/verifyEmail/' . $row['User']['id']) . "'><img src='" . SITE_URL . "usermgmt/img/email-verify.png' border='0' alt='Verify Email' title='Verify Email'></a></span>";
                                 }
-                                if ($row['User']['active'] == 0) {
+                                if ($row['User']['actived'] == 0) {
                                     echo "<span class='icon'><a href='" . $this->Html->url('/usermgmt/users/makeActiveInactive/' . $row['User']['id'] . '/1') . "'><img src='" . SITE_URL . "usermgmt/img/dis-approve.png' border='0' alt='Make Active' title='Make Active'></a></span>";
                                 } else {
                                     echo "<span class='icon'><a href='" . $this->Html->url('/usermgmt/users/makeActiveInactive/' . $row['User']['id'] . '/0') . "'><img src='" . SITE_URL . "usermgmt/img/approve.png' border='0' alt='Make Inactive' title='Make Inactive'></a></span>";
