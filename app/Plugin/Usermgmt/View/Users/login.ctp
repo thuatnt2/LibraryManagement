@@ -11,7 +11,7 @@
             <img src="images/login_logo.png" alt="logo"/>
             <?php echo $this->Form->create('User', array('action' => 'login', 'id' => 'form_login')); ?>
             <p>
-                <?php echo $this->Form->input("email", array('type' => 'text', 'label' => false, 'div' => false, 'style' => 'width:285px', 'placeholder' => __("Input username or email"))) ?>
+                <?php echo $this->Form->input("username", array('type' => 'text', 'label' => false, 'div' => false, 'style' => 'width:285px', 'placeholder' => __("Input username or email"))) ?>
             </p>
             <p>
                 <?php echo $this->Form->input("password", array("type" => "password", 'label' => false, 'div' => false, 'style' => 'width:285px', 'placeholder' => 'Input password')) ?>

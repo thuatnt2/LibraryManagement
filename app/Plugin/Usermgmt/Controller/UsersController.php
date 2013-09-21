@@ -106,7 +106,7 @@ class UsersController extends UserMgmtAppController {
         if ($this->request->isPost()) {
             $this->User->set($this->data);
             if ($this->User->LoginValidate()) {
-                $email = $this->data['User']['email'];
+                $email = $this->data['User']['username'];
                 $password = $this->data['User']['password'];
 
                 $user = $this->User->findByUsername($email);
@@ -117,9 +117,9 @@ class UsersController extends UserMgmtAppController {
                         return;
                     }
                 }
-                // check for inactive account
-                if ($user['User']['id'] != 1 and $user['User']['active'] == 0) {
-                    $this->Session->setFlash(__('Sorry your account is not active, please contact to Administrator'));
+                // check for inactived account
+                if ($user['User']['id'] != 1 and $user['User']['actived'] == 0) {
+                    $this->Session->setFlash(__('Sorry your account is not actived, please contact to Administrator'));
                     return;
                 }
                 // check for verified account
@@ -146,7 +146,13 @@ class UsersController extends UserMgmtAppController {
                     }
                     $OriginAfterLogin = $this->Session->read('Usermgmt.OriginAfterLogin');
                     $this->Session->delete('Usermgmt.OriginAfterLogin');
-                    $redirect = (!empty($OriginAfterLogin)) ? $OriginAfterLogin : LOGIN_REDIRECT_URL;
+                    if($user['UserGroup']['id'] == 2){
+                        $redirect = '/';
+                    }
+                    else{
+                        $redirect = LOGIN_REDIRECT_URL;
+                    }
+                    //$redirect = (!empty($OriginAfterLogin)) ? $OriginAfterLogin : LOGIN_REDIRECT_URL;
                     $this->redirect($redirect);
                 } else {
                     $this->Session->setFlash(__('Incorrect Email/Username or Password'));
@@ -194,7 +200,7 @@ class UsersController extends UserMgmtAppController {
                         $this->Session->setFlash(__('Please select correct register as'));
                         return;
                     }
-                    $this->request->data['User']['active'] = 1;
+                    $this->request->data['User']['actived'] = 1;
                     if (!EMAIL_VERIFICATION) {
                         $this->request->data['User']['email_verified'] = 1;
                     }
@@ -297,7 +303,7 @@ class UsersController extends UserMgmtAppController {
             $this->User->set($this->data);
             if ($this->User->RegisterValidate()) {
                 $this->request->data['User']['email_verified'] = 1;
-                $this->request->data['User']['active'] = 1;
+                $this->request->data['User']['actived'] = 1;
                 $salt = $this->UserAuth->makeSalt();
                 $this->request->data['User']['salt'] = $salt;
                 $this->request->data['User']['password'] = $this->UserAuth->makePassword($this->request->data['User']['password'], $salt);
@@ -377,16 +383,16 @@ class UsersController extends UserMgmtAppController {
      *
      * @access public
      * @param integer $userId user id of user
-     * @param integer $active active or inactive
+     * @param integer $actived actived or inactived
      * @return void
      */
-    public function makeActiveInactive($userId = null, $active = 0) {
+    public function makeActiveInactived($userId = null, $actived = 0) {
         if (!empty($userId)) {
             $user = array();
             $user['User']['id'] = $userId;
-            $user['User']['active'] = ($active) ? 1 : 0;
+            $user['User']['actived'] = ($actived) ? 1 : 0;
             $this->User->save($user, false);
-            if ($active) {
+            if ($actived) {
                 $this->Session->setFlash(__('User is successfully activated'));
             } else {
                 $this->Session->setFlash(__('User is successfully deactivated'));
@@ -477,7 +483,7 @@ class UsersController extends UserMgmtAppController {
                         return;
                     }
                 }
-                // check for inactive account
+                // check for inactived account
                 if ($user['User']['id'] != 1 and $user['User']['email_verified'] == 0) {
                     $this->Session->setFlash(__('Your registration has not been confirmed yet please verify your email before reset password'));
                     return;
@@ -564,9 +570,9 @@ class UsersController extends UserMgmtAppController {
         }
     }
     
-    public function active($id, $status){
+    public function actived($id, $status){
         $this->User->id = $id;
-        $this->User->saveField('actived', $status);
+        $this->User->saveField('activedd', $status);
         $this->redirect(array('controller'=>'readers','action'=>'index'));
     }
 

@@ -11,23 +11,26 @@
         </style>
         <div class="boxLeft">
             <div id="MainContent_ctl01_divLogIn">
+                <?php if(!$this->UserAuth->isLogged()):?>
                 <div class="boxLeftTop">
                     <h1>ĐĂNG NHẬP</h1>
                 </div>
                 <div class="boxLeftMiddle">
-                    <form action="/library-project-graduation/project-library/public//authenticate" method="POST" name="form_login" id="form_login">    
-                        <div class="loginBox">
+                    <?php echo $this->Form->create('User',  array( 'url'=>array('plugin'=>'usermgmt', 'controller' => 'users', 'action' => 'login')))?>
+                    <div class="loginBox">
                             <table cellpadding="0" cellspacing="0">
                                 <tbody><tr>
                                         <td class="txtLabelSearch">Mã thẻ:</td>
                                         <td>
-                                            <input type="text" name="userName" required="required" placeholder="Tên đăng nhập" id="username" class="textboxLogin" value="">    
+<!--                                            <input type="text" name="userName" required="required" placeholder="Tên đăng nhập" id="username" class="textboxLogin" value="">    -->
+                                            <?php echo $this->Form->input('username', array('required'=>'required','div'=>false,'label'=>false, 'placeholder'=>'Tên đăng nhập','id'=>'username','class'=>'textboxLogin'))?>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="txtLabelSearch">Mật khẩu:</td>
                                         <td>
-                                            <input type="password" name="password" required="required" id="password" class="textboxLogin" value="">                       
+<!--                                            <input type="password" name="password" required="required" id="password" class="textboxLogin" value="">                       -->
+                                            <?php echo $this->Form->input('password', array('type'=>'password','div'=>false,'label'=>false, 'required'=>'required','id'=>'password','class'=>'textboxLogin'))?>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -37,14 +40,15 @@
                             </span>
                             <a id="MainContent_ctl01_hplquenmatkhau" class="forgetPasswordLink">Quên mật khẩu?</a>
                         </div>
-                    </form>           
+                    <?php echo $this->Form->end();?>        
                 </div>
             </div>
             <div class="boxLeftBottom">
             </div>
+            
         </div>
         <!--</div>-->
-        <?php // else: ?>
+        <?php  else: ?>
         <div class="boxLeft">
             <div class="boxLeftTop">
                 <h1>HỒ SƠ CÁ NHÂN</h1>
@@ -74,7 +78,7 @@
             <div class="boxLeftBottom">
             </div>
         </div>
-        <?php // endif; ?>
+        <?php  endif; ?>
         <div class="boxLeft">
             <div class="boxLeftTop">
                 <h1>TRA CỨU</h1>

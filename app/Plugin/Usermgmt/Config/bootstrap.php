@@ -79,7 +79,7 @@ function UsermgmtInIt(&$controller) {
 		set login redirect url, it means when user gets logged in then site will redirect to this url.
 	*/
 	if(!defined("LOGIN_REDIRECT_URL")) {
-		define("LOGIN_REDIRECT_URL", '/');
+		define("LOGIN_REDIRECT_URL", '/drashboard');
 	}
 
 	/*
@@ -106,9 +106,9 @@ function UsermgmtInIt(&$controller) {
 	/*
 		set default group id here for registration
 	*/
-	if(!defined("DEFAULT_GROUP_ID")) {
-		define("DEFAULT_GROUP_ID", 2);
-	}
+//	if(!defined("DEFAULT_GROUP_ID")) {
+//		define("DEFAULT_GROUP_ID", 2);
+//	}
 
 	/*
 		set Admin group id here
