@@ -41,9 +41,9 @@
                                //echo "<td>" . date('d/m/Y', strtotime($row['Reader']['date_expiry'])) . "</td>";
                                 echo "<td>";
                                 if ($row['User']['actived'] == 1) {
-                                    echo "<span class='icon'><a href='" . $this->Html->url('/usermgmt/users/active/' . $row['User']['id'] . '/0') . "'><img src='" . SITE_URL . "usermgmt/img/approve.png' border='0'></a></span>";
+                                    echo "<span class='icon'><a href='" . $this->Html->url('/usermgmt/users/actived/' . $row['User']['id'] . '/0') . "'><img src='" . SITE_URL . "usermgmt/img/approve.png' border='0'></a></span>";
                                 } else {
-                                    echo "<span class='icon'><a href='" . $this->Html->url('/usermgmt/users/active/' . $row['User']['id'] . '/1') . "'><img src='" . SITE_URL . "usermgmt/img/dis-approve.png' border='0'></a></span>";
+                                    echo "<span class='icon'><a href='" . $this->Html->url('/usermgmt/users/actived/' . $row['User']['id'] . '/1') . "'><img src='" . SITE_URL . "usermgmt/img/dis-approve.png' border='0'></a></span>";
                                 }
                                 echo "</td>";
 

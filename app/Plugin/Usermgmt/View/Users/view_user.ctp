@@ -48,11 +48,11 @@
 							</tr>
 							<tr>
 								<td><strong><?php echo __('First Name');?></strong></td>
-								<td><?php echo h($user['User']['first_name'])?></td>
+								<td><?php echo h($user['User']['fullname'])?></td>
 							</tr>
 							<tr>
 								<td><strong><?php echo __('Last Name');?></strong></td>
-								<td><?php echo h($user['User']['last_name'])?></td>
+								<td><?php echo h($user['User']['fullname'])?></td>
 							</tr>
 							<tr>
 								<td><strong><?php echo __('Email');?></strong></td>
@@ -71,7 +71,7 @@
 							<tr>
 								<td><strong><?php echo __('Status');?></strong></td>
 								<td><?php
-										if ($user['User']['active']) {
+										if ($user['User']['actived']) {
 											echo 'Active';
 										} else {
 											echo 'Inactive';
