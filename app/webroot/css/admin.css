@@ -382,22 +382,22 @@ ul.content-box-tabs li a.current {
                 font-family: Verdana, Arial, Helvetica, sans-serif;
                 font-size: 10px;
                 }
-.pagination a {
+.pagination span {
                 margin: 0 5px 0 0;
-                padding: 3px 6px;
+                padding: 5px 8px;
                 }
 
-.pagination a.number {
+.pagination span.number {
 				border: 1px solid #ddd;
                 }
 
-.pagination a.current {
+.pagination span.current {
                 background: #469400 url('../images/bg-button-green.gif') top left repeat-x !important;
                 border-color: #459300 !important;
                 color: #fff !important;
                 }
 				
-.pagination a.current:hover {
+.pagination span.current:hover {
 				text-decoration: underline;
                 }
 
@@ -463,7 +463,7 @@ ul.shortcut-buttons-set li {
 
 form label {
                 display: block;
-                padding: 0 0 10px;
+                padding: 20px 0px 0px 0px;
                 font-weight: bold;
                 }
              

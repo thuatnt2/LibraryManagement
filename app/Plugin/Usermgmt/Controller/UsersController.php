@@ -563,5 +563,11 @@ class UsersController extends UserMgmtAppController {
             }
         }
     }
+    
+    public function active($id, $status){
+        $this->User->id = $id;
+        $this->User->saveField('actived', $status);
+        $this->redirect(array('controller'=>'readers','action'=>'index'));
+    }
 
 }

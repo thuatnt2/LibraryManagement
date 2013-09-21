@@ -19,6 +19,7 @@
             'vendor/bootstrap-theme.min',
             'admin',
             'admin_invalid',
+            'admin_custom',
             '/usermgmt/css/umstyle'
             
         ));
@@ -31,6 +32,9 @@
             'admin_simpla.jquery.configuration',
         ));
         ?>
+        <script type="text/javascript">
+           var base_url='<?php echo $this->Html->webroot('/');?>';
+        </script>
     </head>
 
     <body><div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
