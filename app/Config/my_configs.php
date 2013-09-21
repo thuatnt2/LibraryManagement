@@ -12,7 +12,7 @@ else{
        $config['base']['url'] = substr($config['base']['url'],0,-1); 
 }                           
 $config['base']['file'] = $config['base']['url'].'app/webroot/files/'; 
-$config['base']['upload'] = $config['base']['url'].'app/webroot/files/uploads/';
+$config['base']['upload'] = $config['base']['url'].'app/webroot/files/image-uploaded/';
 $config['base']['img'] = $config['base']['url'].'app/webroot/img/';
 $config['base']['images'] = $config['base']['url'].'app/webroot/images/';
 $config['admin']['rows_per_page'] = 20;

@@ -9,10 +9,8 @@
                 img.src = url;
                 img.onload = function() {
                     div.innerHTML = '<img id="img" src="' + url + '" />';
-                    base_url_str = url.replace(base_url + 'app/webroot/img/', '');
-                    base_url_str_thumb = base_url_str.replace('images/', 'thumbs_/images/');
-                    $("#image").val(base_url_str);
-                    $("#image_thumb").val(base_url_str_thumb);
+                    base_url_str = url.replace(base_url + 'app/webroot/', '');
+                    $("#image_path").val(base_url_str);
                     var img = document.getElementById('img');
                     var o_w = img.offsetWidth;
                     var o_h = img.offsetHeight;
@@ -35,7 +33,7 @@
                 }
             }
         };
-        window.open(base_url + 'app/webroot/js/ckeditor/kcfinder/browse.php?type=images&dir=images/images',
+        window.open(base_url + 'app/webroot/js/ckeditor/kcfinder/browse.php?type=images&dir=images',
                 'kcfinder_image', 'status=0, toolbar=0, location=0, menubar=0, ' +
                 'directories=0, resizable=1, scrollbars=0, width=800, height=600'
                 );
@@ -55,7 +53,7 @@
             </div>
             <div class="umhr"></div>
             <div class="form-custom">
-                <?php echo $this->Form->create('Category'); ?>
+                <?php echo $this->Form->create('Article'); ?>
                 <label><?php echo 'Tên bài viết'; ?><font color='red'>*</font></label>
                 <?php echo $this->Form->input("name", array('label' => false, 'div' => false, 'class' => "form-control")) ?>
 
@@ -66,12 +64,12 @@
                 <?php echo $this->Html->tag('div', 'Click để chọn hình.', array('class' => 'img_news', 'onclick' => 'openKCFinder_singleFile(this)'));?>
                 <label><?php echo 'Tóm tắt'; ?><font color='red'>*</font></label>
                 <?php echo $this->Form->input("sumary", array('type' => 'textarea', 'selected' => 'selected', 'label' => false, 'div' => false)) ?>
-
+                <input name="data[Article][thumbnail]" type="hidden" id="image_path" value=""/>
 
 
                 <label><?php echo 'Nội dung'; ?><font color='red'>*</font></label>
-                <?php echo $this->Form->input("content", array('type' => 'textarea', 'label' => false, 'div' => false, 'class' => "")) ?>
-
+                <?php echo $this->Form->input("content", array('type' => 'textarea', 'label' => false, 'div' => false, 'id' => "full-text")) ?>
+                <?php echo $this->TvFck->create('full-text',array('toolbar'=>'extra'),'full-text');?>
                 <label></label>
                 <?php echo $this->Form->Submit('Nhập', array('class' => 'btn btn-primary')); ?>
 

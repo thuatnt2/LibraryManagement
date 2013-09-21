@@ -34,7 +34,7 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-    var $helpers = array('Form', 'Html', 'Session', 'Js', 'Usermgmt.UserAuth');
+    var $helpers = array('Form', 'Html', 'Session', 'TvFck','Fck','Js', 'Usermgmt.UserAuth');
     public $components = array('Session', 'RequestHandler', 'Usermgmt.UserAuth');
     var $layout = 'admin';
 

@@ -16,8 +16,8 @@
 // you are using session configuration.
 // See http://kcfinder.sunhater.com/install for setting descriptions  
 include('../../../../Config/my_configs.php');
-    if($_SERVER['HTTP_HOST']=='localhost:81'){
-        $site='/triminh/';
+    if($_SERVER['HTTP_HOST']=='localhost'){
+        $site='/LibraryManagement/';
     }
     else{
         $site='/'.$config['base']['sitename'].'/';    
@@ -31,7 +31,7 @@ $_CONFIG = array(
 
     'theme' => "oxygen",
 
-    'uploadURL' => $site."app/webroot/img",
+    'uploadURL' => $site."app/webroot/files",
     //'uploadDir' => "D:/VIET HUNG/PHP/xampp/htdocs/cake/app/webroot/img",
     'uploadDir' =>"",
     
