@@ -6,7 +6,7 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 //Router::connect('/', array('controller' => 'pages', 'action' => 'index'));
-Router::connect('/aticles', array('controller' => 'libArticles', 'action' => 'index'));
+Router::connect('/aticles', array('controller' => 'articles', 'action' => 'index'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
