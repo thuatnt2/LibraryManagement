@@ -9,9 +9,9 @@
                 height: 150px;
             }
         </style>
+        <?php if(!$this->UserAuth->isLogged()):?>
         <div class="boxLeft">
             <div id="MainContent_ctl01_divLogIn">
-                <?php if(!$this->UserAuth->isLogged()):?>
                 <div class="boxLeftTop">
                     <h1>ĐĂNG NHẬP</h1>
                 </div>
@@ -22,14 +22,12 @@
                                 <tbody><tr>
                                         <td class="txtLabelSearch">Mã thẻ:</td>
                                         <td>
-<!--                                            <input type="text" name="userName" required="required" placeholder="Tên đăng nhập" id="username" class="textboxLogin" value="">    -->
                                             <?php echo $this->Form->input('username', array('required'=>'required','div'=>false,'label'=>false, 'placeholder'=>'Tên đăng nhập','id'=>'username','class'=>'textboxLogin'))?>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="txtLabelSearch">Mật khẩu:</td>
                                         <td>
-<!--                                            <input type="password" name="password" required="required" id="password" class="textboxLogin" value="">                       -->
                                             <?php echo $this->Form->input('password', array('type'=>'password','div'=>false,'label'=>false, 'required'=>'required','id'=>'password','class'=>'textboxLogin'))?>
                                         </td>
                                     </tr>
@@ -71,7 +69,7 @@
                         <a  href="#">Tài liệu ĐK mượn</a>
                     </li>
                     <li>
-                        <a  href="#">Thoát hồ sơ cá nhân</a>
+                        <a  href="<?php echo $this->Html->url('/logout')?>">Đăng xuất</a>
                     </li>
                 </ul>
             </div>
