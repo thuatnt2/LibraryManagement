@@ -21,7 +21,20 @@ class ReadersController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Reader->recursive = 0;
+		$this->Reader->recursive = 2;
+                //unbindModel
+                $this->Reader->User->unbindModel(array('belongsTo'=>array('UserGroup')));
+                $this->Reader->User->unbindModel(array('hasOne'=>array('Reader')));
+                $this->Reader->Department->unbindModel(array('hasMany'=>array('Reader')));
+                //set field;
+                $fields = array(
+                    'Reader.cardBarcode',
+                    
+                    
+                );
+                
+                $readers = $this->Reader->find('all');
+                debug($readers);exit();
 		$this->set('readers', $this->Paginator->paginate());
 	}
 

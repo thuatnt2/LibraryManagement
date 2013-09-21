@@ -33,7 +33,6 @@ Router::connect('/deleteUser/*', array('plugin' => 'usermgmt', 'controller' => '
 Router::connect('/viewUser/*', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'viewUser'));
 Router::connect('/userVerification/*', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'userVerification'));
 Router::connect('/allUsers', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'index'));
-Router::connect('/readers', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'reader'));
 Router::connect('/', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'dashboard'));
 Router::connect('/permissions', array('plugin' => 'usermgmt', 'controller' => 'user_group_permissions', 'action' => 'index'));
 Router::connect('/update_permission', array('plugin' => 'usermgmt', 'controller' => 'user_group_permissions', 'action' => 'update'));
@@ -45,4 +44,16 @@ Router::connect('/editGroup/*', array('plugin' => 'usermgmt', 'controller' => 'u
 Router::connect('/deleteGroup/*', array('plugin' => 'usermgmt', 'controller' => 'user_groups', 'action' => 'deleteGroup'));
 Router::connect('/emailVerification', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'emailVerification'));
 
-
+//Readers
+Router::connect('/readers', array('plugin' => 'usermgmt', 'controller' => 'readers', 'action' => 'index'));
+Router::connect('/addReader', array('plugin' => 'usermgmt', 'controller' => 'readers', 'action' => 'add'));
+//faculties
+Router::connect('/faculties', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'index'));
+Router::connect('/addFaculty', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'add'));
+Router::connect('/editFaculty/*', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'edit'));
+Router::connect('/deleteFaculty/*', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'delete'));
+//department
+Router::connect('/departments', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'index'));
+Router::connect('/addDepartment', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'add'));
+Router::connect('/editDepartment/*', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'edit'));
+Router::connect('/deleteDepartment/*', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'delete'));
