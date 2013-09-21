@@ -7,6 +7,7 @@
  */
 //Router::connect('/', array('controller' => 'pages', 'action' => 'index'));
 Router::connect('/aticles', array('controller' => 'libArticles', 'action' => 'index'));
+Router::connect('/index', array('controller' => 'index', 'action' => 'index'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
