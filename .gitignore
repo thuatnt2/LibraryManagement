@@ -1,6 +1,8 @@
 [Cc]onfig/core.php
 [Cc]onfig/database.php
 app/tmp/*
+app/webroot/files/images/*
+app/webroot/files/thumbs_/*
 app/tmp/cache/persistent/*
 app/[Cc]onfig/core.php
 app/[Cc]onfig/database.php

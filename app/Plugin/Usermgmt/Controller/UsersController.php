@@ -170,7 +170,7 @@ class UsersController extends UserMgmtAppController {
      */
     public function logout() {
         $this->UserAuth->logout();
-        $this->Session->setFlash(__('You are successfully signed out'));
+//        $this->Session->setFlash(__('You are successfully signed out'));
         $this->redirect(LOGOUT_REDIRECT_URL);
     }
 
