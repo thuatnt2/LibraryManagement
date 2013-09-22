@@ -1,68 +1,56 @@
-<div class="menus index">
-	<h2><?php echo __('Menus'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
-	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('alias'); ?></th>
-			<th><?php echo $this->Paginator->sort('title'); ?></th>
-			<th><?php echo $this->Paginator->sort('parent_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('link'); ?></th>
-			<th><?php echo $this->Paginator->sort('ordering'); ?></th>
-			<th><?php echo $this->Paginator->sort('actived'); ?></th>
-			<th><?php echo $this->Paginator->sort('published'); ?></th>
-			<th><?php echo $this->Paginator->sort('controller'); ?></th>
-			<th><?php echo $this->Paginator->sort('action'); ?></th>
-			<th><?php echo $this->Paginator->sort('ext'); ?></th>
-			<th><?php echo $this->Paginator->sort('module'); ?></th>
-			<th><?php echo $this->Paginator->sort('view'); ?></th>
-			<th><?php echo $this->Paginator->sort('position'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php foreach ($menus as $menu): ?>
-	<tr>
-		<td><?php echo h($menu['Menu']['id']); ?>&nbsp;</td>
-		<td><?php echo h($menu['Menu']['alias']); ?>&nbsp;</td>
-		<td><?php echo h($menu['Menu']['title']); ?>&nbsp;</td>
-		<td>
-			<?php echo $this->Html->link($menu['ParentMenu']['title'], array('controller' => 'menus', 'action' => 'view', $menu['ParentMenu']['id'])); ?>
-		</td>
-		<td><?php echo h($menu['Menu']['link']); ?>&nbsp;</td>
-		<td><?php echo h($menu['Menu']['ordering']); ?>&nbsp;</td>
-		<td><?php echo h($menu['Menu']['actived']); ?>&nbsp;</td>
-		<td><?php echo h($menu['Menu']['published']); ?>&nbsp;</td>
-		<td><?php echo h($menu['Menu']['controller']); ?>&nbsp;</td>
-		<td><?php echo h($menu['Menu']['action']); ?>&nbsp;</td>
-		<td><?php echo h($menu['Menu']['ext']); ?>&nbsp;</td>
-		<td><?php echo h($menu['Menu']['module']); ?>&nbsp;</td>
-		<td><?php echo h($menu['Menu']['view']); ?>&nbsp;</td>
-		<td><?php echo h($menu['Menu']['position']); ?>&nbsp;</td>
-		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $menu['Menu']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $menu['Menu']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $menu['Menu']['id']), null, __('Are you sure you want to delete # %s?', $menu['Menu']['id'])); ?>
-		</td>
-	</tr>
-<?php endforeach; ?>
-	</table>
-	<p>
-	<?php
-	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-	));
-	?>	</p>
-	<div class="paging">
-	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
-	</div>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Menu'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Menus'), array('controller' => 'menus', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Parent Menu'), array('controller' => 'menus', 'action' => 'add')); ?> </li>
-	</ul>
+<div class="umtop">
+    <?php //echo $this->element('nav_reader_management'); ?>
+    <?php echo $this->Session->flash(); ?>
+    <div class="um_box_up"></div>
+    <div class="um_box_mid">
+        <div class="um_box_mid_content">
+            <div class="um_box_mid_content_top">
+                <span class="umstyle1"><?php echo 'Danh sách menu'; ?></span>
+                <div style="clear:both"></div>
+            </div>
+            <div class="umhr"></div>
+            <div class="um_box_mid_content_mid" id="index">
+                <table cellspacing="0" cellpadding="0" width="100%" border="0" >
+                    <thead>
+                        <tr>
+                            <th>Thứ tự</th>
+                            <th>Tên Menu</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        if (!empty($menus)) {
+                           $stt = 1;
+                            foreach ($menus as $row) {
+                                echo "<tr>";
+                                echo '<td>'.($stt++).'</td>';
+                                echo "<td>" . h($row['Menu']['title']) . "</td>";
+                                echo "<td>";
+                                if ($row['Menu']['published'] == 1) {
+                                    echo "<span class='icon'><a href='" . $this->Html->url('/menus/published/' . $row['Menu']['id'] . '/0') . "'><img src='" . SITE_URL . "usermgmt/img/approve.png' border='0'></a></span>";
+                                } else {
+                                    echo "<span class='icon'><a href='" . $this->Html->url('/menus/published/' . $row['Menu']['id'] . '/1') . "'><img src='" . SITE_URL . "usermgmt/img/dis-approve.png' border='0'></a></span>";
+                                }
+                                echo "</td>";
+
+                                echo "<td>";
+                                echo "<span class='icon'><a href='" . $this->Html->url('/menus/edit/' . $row['Menu']['id']) . "'><img src='" . SITE_URL . "usermgmt/img/edit.png' border='0' alt='Edit' title='Edit'></a></span>";
+
+                                echo $this->Form->postLink($this->Html->image(SITE_URL . 'usermgmt/img/delete.png', array("alt" => __('Delete'), "title" => __('Delete'))), array('action' => 'delete', $row['Menu']['id']), array('escape' => false, 'confirm' => __('Are you sure you want to delete this faculty?')));
+
+                                echo "</td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan=6><br/><br/>Không có dữ liệu</td></tr>";
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="um_box_down"></div>
 </div>

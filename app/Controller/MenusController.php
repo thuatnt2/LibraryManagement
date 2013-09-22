@@ -49,12 +49,14 @@ class MenusController extends AppController {
      */
     public function add() {
         if ($this->request->is('post')) {
+            $this->request->data['Menu']['alias'] = $this->Common->vnit_change_title($this->request->data['Menu']['title']);
+            $this->request->data = $this->get_link_menus($this->request->data);
             $this->Menu->create();
             if ($this->Menu->save($this->request->data)) {
-                $this->Session->setFlash(__('The menu has been saved.'));
-                return $this->redirect(array('action' => 'index'));
+                $this->Session->setFlash('Lưu thành công menu', 'flash_success');
+                $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('The menu could not be saved. Please, try again.'));
+                $this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại', 'flash_error');
             }
         }
         $sub_title = 'Thêm mới menu';
@@ -74,16 +76,17 @@ class MenusController extends AppController {
             throw new NotFoundException(__('Invalid menu'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
+            $this->request->data['Menu']['alias'] = $this->Common->vnit_change_title($this->request->data['Menu']['title']);
+            $this->request->data = $this->get_link_menus($this->request->data);
             $this->Menu->id = $id;
             if ($this->Menu->save($this->request->data)) {
-                $this->Session->setFlash(__('The menu has been saved.'));
-                return $this->redirect(array('action' => 'index'));
+               $this->Session->setFlash('Lưu thành công menu', 'flash_success');
+                $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('The menu could not be saved. Please, try again.'));
+                $this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại', 'flash_error');
             }
         } else {
-            $options = array('conditions' => array('Menu.' . $this->Menu->primaryKey => $id));
-            $this->request->data = $this->Menu->find('first', $options);
+            $this->request->data = $this->Menu->read(null, $id);
         }
         $sub_title = 'Chỉnh sửa menu';
         $menus = $this->Menu->find('list');
@@ -104,9 +107,9 @@ class MenusController extends AppController {
         }
         $this->request->onlyAllow('post', 'delete');
         if ($this->Menu->delete()) {
-            $this->Session->setFlash(__('The menu has been deleted.'));
+            $this->Session->setFlash('Xóa thành công menu','flash_success');
         } else {
-            $this->Session->setFlash(__('The menu could not be deleted. Please, try again.'));
+            $this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại','flash_error');
         }
         return $this->redirect(array('action' => 'index'));
     }
@@ -117,7 +120,7 @@ class MenusController extends AppController {
         $this->paginate = array(
             'Article' => array(
                 'conditions' => array('Article.published' => 1),
-               // 'limit' => 10,
+                // 'limit' => 10,
                 'recursive' => 0,
                 'order' => 'Article.id DESC'
             )
@@ -143,6 +146,47 @@ class MenusController extends AppController {
 
     function select_link() {
         $this->layout = 'ajax';
+    }
+
+    function get_link_menus($menu) {
+        if ($menu['Menu']['controller'] == '' && $menu['Menu']['action'] == '') {
+            // Có link do người dùng nhập vào
+            //$my_link = '<a herf="/">'.$menu['Menu']['link'].'</a>';
+            $my_link = $menu['Menu']['link'] == '/' ? '#' : $menu['Menu']['link'];
+        } else {
+
+
+            if ($menu['Menu']['ext']) {
+                $my_link = Router::url(
+                                array(
+                            'controller' => $menu['Menu']['controller'],
+                            'action' => $menu['Menu']['action'],
+                            'id' => $menu['Menu']['ext'],
+                            'slug' => Inflector::slug($menu['Menu']['alias'])
+                                ), true
+                );
+            } else {
+                $my_link = Router::url(
+                                array(
+                            'controller' => $menu['Menu']['controller'],
+                            'action' => $menu['Menu']['action'],
+                            'slug' => Inflector::slug($menu['Menu']['alias'])
+                                ), true
+                );
+            }
+        }
+        //array_push($stack, "apple", "raspberry");
+        //array_push($menu['Menu'],$my_link);
+        //$arr_menu_link[] = $menu;
+        // debug($my_link);
+        $menu['Menu']['link'] = $my_link;
+        return $menu;
+    }
+    
+    public function published($id,$status){
+        $this->Menu->id = $id;
+        $this->Menu->saveField('published', $status);
+        $this->redirect(array('action'=>'index'));
     }
 
 }

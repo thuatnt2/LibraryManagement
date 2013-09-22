@@ -15,7 +15,7 @@
                     <?php echo $this->Form->create('Menu', array('class' => 'form-custom')); ?>
                     <div>
                         <div class="umstyle3">Tên Menu<font color='red'>*</font></div>
-                        <div class="umstyle4" ><?php echo $this->Form->input("name", array('label' => false, 'div' => false, 'class' => "form-control")) ?></div>
+                        <div class="umstyle4" ><?php echo $this->Form->input("title", array('label' => false, 'div' => false, 'class' => "form-control")) ?></div>
                         <div style="clear:both"></div>
                         <div class="umstyle3">Chọn menu cha<font color='red'>*</font></div>
                         <div class="umstyle4" ><?php echo $this->Form->input("parent_id", array('label' => false, 'div' => false, 'class' => "form-control", 'empty' => 'Là danh mục cha', 'options' => $menus)) ?></div>
@@ -50,7 +50,7 @@
 
                     <div>
                         <div class="umstyle3">Thứ tự hiển thị<font color='red'>*</font></div>
-                        <div class="umstyle4" ><?php echo $this->Form->input("order", array('label' => false, 'div' => false, 'class' => "form-control")) ?></div>
+                        <div class="umstyle4" ><?php echo $this->Form->input("ordering", array('label' => false, 'div' => false, 'class' => "form-control")) ?></div>
                         <div style="clear:both"></div>
                     </div>
 
