@@ -56,7 +56,7 @@
 }
 .um_box_mid_content_mid_left {
 	float:left;
-	width:600px;
+	width:700px;
 }
 .um_box_mid_content_mid_right {
 	float:left;
@@ -122,7 +122,7 @@ input[type="submit"] {
 }
 #register .umstyle4 {
 	float:left;
-	width:400px;
+	width:500px;
 	padding-bottom:10px;
 }
 #forgot .umstyle3 {

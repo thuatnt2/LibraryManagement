@@ -1,5 +1,7 @@
 <?php
+
 App::uses('AppModel', 'Model');
+
 /**
  * Menu Model
  *
@@ -8,50 +10,23 @@ App::uses('AppModel', 'Model');
  */
 class Menu extends AppModel {
 
-/**
- * Display field
- *
- * @var string
- */
-	public $displayField = 'title';
+    /**
+     * Display field
+     *
+     * @var string
+     */
+    public $displayField = 'title';
 
+    //The Associations below have been created with all possible keys, those that are not needed can be removed
 
-	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
-/**
- * belongsTo associations
- *
- * @var array
- */
-	public $belongsTo = array(
-		'ParentMenu' => array(
-			'className' => 'Menu',
-			'foreignKey' => 'parent_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
-
-/**
- * hasMany associations
- *
- * @var array
- */
-	public $hasMany = array(
-		'ChildMenu' => array(
-			'className' => 'Menu',
-			'foreignKey' => 'parent_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
-	);
-
+    /**
+     * belongsTo associations
+     *
+     * @var array
+     */
+    /**
+     * hasMany associations
+     *
+     * @var array
+     */
 }

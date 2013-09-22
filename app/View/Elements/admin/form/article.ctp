@@ -58,7 +58,7 @@
                 <?php echo $this->Form->input("title", array('label' => false, 'div' => false, 'class' => "form-control")) ?>
 
                 <label><?php echo 'Danh mục'; ?><font color='red'>*</font></label>
-                <?php echo $this->Form->input("category_id", array('label' => false, 'div' => false, 'class' => "form-control custom-260", 'options' => $categories)) ?>
+                <?php echo $this->Form->input("category_id", array('label' => false, 'div' => false, 'class' => "form-control custom-260", 'options' => $articles)) ?>
 
                 <label>Ảnh</label>
                 <?php

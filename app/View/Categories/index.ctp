@@ -22,8 +22,9 @@
                     </thead>
                     <tbody>
                         <?php
-                        if (!empty($categories)) {
-                            foreach ($categories as $row) {
+                        if (!empty($articles)) {
+                           
+                            foreach ($articles as $row) {
                                 echo "<tr>";
                                 echo "<td>" . h($row['Category']['name']) . "</td>";
                                 echo "<td>" . h($row['Category']['user_created']) . "</td>";

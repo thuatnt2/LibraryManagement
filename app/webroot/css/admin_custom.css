@@ -32,3 +32,92 @@ div .img_news {
 div .img_news img {
     width: 150px;
 }
+
+
+.h-pop {
+    background: url("../images/bg_head_pop.png") repeat-x scroll center bottom transparent;
+    height: 34px;
+    position: absolute;
+    width: 100%;
+}
+.h-pop .h-icon {
+    float: left;
+    width: 30px;
+}
+.h-pop h3 {
+    color: #FFF;
+    float: left;
+    font-family: Tahoma;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-shadow: 1px 1px  #000;
+    text-transform: uppercase;
+    text-align: center;
+    width: 95%;
+}
+.m-pop {
+    background: none repeat scroll 0 0 #F0F0F0;
+}
+.tab-title{
+    width: 100%;
+    position: relative;
+}
+div.tab-title div{
+    padding: 5px 0; 
+    text-align: center; 
+}
+.tab-title .t{
+    width: 100%;
+    float: left;
+    
+}
+.tab-title .t-1{
+    width: 33.4%;
+    float: left;
+    background: url("../images/h-box-white.jpg") repeat-x scroll left top #E8E8E8;
+}
+.tab-title .t-2{
+    width: 33.3%;
+    float: left;
+    background: url("../images/h-box-white.jpg") repeat-x scroll left top #E8E8E8;
+}
+.tab-title .t-3{
+    width: 33.3%;
+    float: left;
+    background: url("../images/h-box-white.jpg") repeat-x scroll left top #E8E8E8;
+}
+.fancybox-header {
+    color: green;
+    margin-top: 7px;
+    text-align: center;
+    border-bottom: 1px solid;
+    font-size: 18px;
+    font-weight: bold;
+}
+table.admindata{
+    margin: 20px;
+    min-width: 900px;
+}
+table.admindata th{
+    border-bottom: 1px solid #DDDDDD;
+    font-size: 15px;
+    font-weight: bold;
+}
+table.admindata tr{
+    background: white;
+    cursor: pointer;
+}
+
+
+table.admindata tr td{
+    padding: 6px 0px 6px 0px;
+    font-size: 14px;
+}
+table.admindata tr.fancybox-row-0{
+    background: #F3F3F3;
+}
+table.admindata tr:hover{
+    text-decoration: underline;
+}
+

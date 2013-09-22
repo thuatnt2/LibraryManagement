@@ -3,7 +3,7 @@
         <h1 id="sidebar-title"><a href="#">Simpla Admin</a></h1>
 
         <!-- Logo (221px wide) -->
-        <a href="#"><img id="logo" src="images/logo.png" alt="Simpla Admin logo" /></a>
+        <a href="#"><img id="logo" src="<?php echo $this->Html->webroot('/images/logo.png') ?>" alt="Simpla Admin logo" /></a>
 
         <!-- Sidebar Profile links -->
         <div id="profile-links">

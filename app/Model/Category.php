@@ -24,16 +24,7 @@ class Category extends AppModel {
  *
  * @var array
  */
-	public $belongsTo = array(
-		'ParentCategory' => array(
-			'className' => 'Category',
-			'foreignKey' => 'parent_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
-
+	
 /**
  * hasMany associations
  *
@@ -53,19 +44,7 @@ class Category extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'ChildCategory' => array(
-			'className' => 'Category',
-			'foreignKey' => 'parent_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
+		
 	);
 
 }

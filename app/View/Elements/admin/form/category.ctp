@@ -20,7 +20,7 @@
                     </div>
                     <div>
                         <div class="umstyle3"><?php echo 'Danh mục cha'; ?><font color='red'>*</font></div>
-                        <div class="umstyle4" ><?php echo $this->Form->input("parent_id", array('label' => false, 'div' => false, 'class' => "form-control", 'empty' => 'Là danh mục cha', 'options' => $categories)) ?></div>
+                        <div class="umstyle4" ><?php echo $this->Form->input("parent_id", array('label' => false, 'div' => false, 'class' => "form-control", 'empty' => 'Là danh mục cha', 'options' => $articles)) ?></div>
                         <div style="clear:both"></div>
                     </div>
                     <div>

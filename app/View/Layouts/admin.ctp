@@ -19,21 +19,22 @@
             'vendor/bootstrap-theme.min',
             'admin',
             'admin_invalid',
+            '/usermgmt/css/umstyle',
+            '/js/vendor/fancybox/jquery.fancybox',
             'admin_custom',
-            '/usermgmt/css/umstyle'
-            
         ));
         echo $this->Html->script(array(
             'vendor/jquery-1.9.1.min',
             'vendor/bootstrap.min',
             'vendor/holder',
-            'admin_facebox',
             'admin_simpla.jquery.configuration',
-            'admin_simpla.jquery.configuration',
+            'ckeditor/ckeditor',
+            'vendor/fancybox/jquery.fancybox',
+            'admin',
         ));
         ?>
         <script type="text/javascript">
-           var base_url='<?php echo $this->Html->webroot('/');?>';
+            var base_url = '<?php echo $this->Html->webroot('/'); ?>';
         </script>
     </head>
 
