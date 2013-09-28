@@ -17,16 +17,51 @@ class Menu extends AppModel {
      */
     public $displayField = 'title';
 
-    //The Associations below have been created with all possible keys, those that are not needed can be removed
+    public $validate = array(
+        'title' => array(
+            'rule' => 'string',
+            'required' => true,
+            'allowEmpty' => false,
+            'message' => 'Hãy nhập tên menu'
+        )
+    );
+    
+    public $columns = array(
+        'title' => 'Tiêu đề',
+        'created' => 'Ngày tạo',
+        
+    );
 
-    /**
-     * belongsTo associations
-     *
-     * @var array
-     */
+
+    public $belongsTo = array(
+        'ParentMenu' => array(
+            'className' => 'Menu',
+            'foreignKey' => 'parent_id',
+            'conditions' => '',
+            'fields' => '',
+            'order' => ''
+        )
+    );
+
     /**
      * hasMany associations
      *
      * @var array
      */
+    public $hasMany = array(
+        'ChildMenu' => array(
+            'className' => 'Menu',
+            'foreignKey' => 'parent_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        )
+    );
+
 }

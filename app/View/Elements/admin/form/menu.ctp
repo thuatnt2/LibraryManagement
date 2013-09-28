@@ -46,20 +46,6 @@
                         </div>
                         <div style="clear:both"></div>
                     </div>
-
-
-                    <div>
-                        <div class="umstyle3">Thứ tự hiển thị<font color='red'>*</font></div>
-                        <div class="umstyle4" ><?php echo $this->Form->input("ordering", array('label' => false, 'div' => false, 'class' => "form-control")) ?></div>
-                        <div style="clear:both"></div>
-                    </div>
-
-                    <div>
-                        <div class="umstyle3">Xuất bản<font color='red'>*</font></div>
-                        <div class="umstyle4" ><?php echo $this->Form->input("published", array('type' => 'checkbox', 'selected' => 'selected', 'label' => false, 'div' => false)) ?></div>
-                        <div style="clear:both"></div>
-                    </div>
-
                     <div>
                         <div class="umstyle3">Mô tả<font color='red'>*</font></div>
                         <div class="umstyle4" ><?php echo $this->Form->input("description", array('type' => 'textarea', 'label' => false, 'div' => false, 'class' => "")) ?></div>

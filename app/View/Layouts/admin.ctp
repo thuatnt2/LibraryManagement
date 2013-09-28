@@ -7,7 +7,7 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
-        <title>Simpla Admin</title>
+        <title><?php echo $title_for_layout ?></title>
 
         <!--                       CSS                       -->
 

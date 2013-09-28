@@ -20,18 +20,11 @@
                     </div>
                     <div>
                         <div class="umstyle3"><?php echo 'Danh mục cha'; ?><font color='red'>*</font></div>
-                        <div class="umstyle4" ><?php echo $this->Form->input("parent_id", array('label' => false, 'div' => false, 'class' => "form-control", 'empty' => 'Là danh mục cha', 'options' => $articles)) ?></div>
-                        <div style="clear:both"></div>
-                    </div>
-                    <div>
-                        <div class="umstyle3"><?php echo 'Thứ tự hiển thị'; ?><font color='red'>*</font></div>
-                        <div class="umstyle4" ><?php echo $this->Form->input("order", array('label' => false, 'div' => false, 'class' => "form-control")) ?></div>
-                        <div style="clear:both"></div>
-                    </div>
-
-                    <div>
-                        <div class="umstyle3"><?php echo 'Xuất bản'; ?><font color='red'>*</font></div>
-                        <div class="umstyle4" ><?php echo $this->Form->input("published", array('type' => 'checkbox', 'selected' => 'selected', 'label' => false, 'div' => false)) ?></div>
+                        <?php if (!empty($this->request->data['ParentCategory']['id'])): ?>
+                            <div class="umstyle4" ><?php echo $this->Form->input("parent_id", array('label' => false, 'div' => false, 'class' => "form-control", 'empty' => 'Là danh mục cha', 'options' => $parentCategories,'default'=>$parentCategories[$this->request->data['ParentCategory']['id']])) ?></div>
+                        <?php else : ?>
+                            <div class="umstyle4" ><?php echo $this->Form->input("parent_id", array('label' => false, 'div' => false, 'class' => "form-control", 'empty' => 'Là danh mục cha', 'options' => $parentCategories)) ?></div>
+                        <?php endif; ?>
                         <div style="clear:both"></div>
                     </div>
 

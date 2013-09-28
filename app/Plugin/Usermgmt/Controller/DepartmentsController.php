@@ -128,10 +128,10 @@ class DepartmentsController extends AppController {
         return $this->redirect(array('action' => 'index'));
     }
 
-    public function active($id, $status) {
-        $this->Department->id = $id;
-        $this->Department->saveField('actived', $status);
-        return $this->redirect(array('action' => 'index'));
-    }
+//    public function active($id, $status) {
+//        $this->Department->id = $id;
+//        $this->Department->saveField('actived', $status);
+//        return $this->redirect(array('action' => 'index'));
+//    }
 
 }

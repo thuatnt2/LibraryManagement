@@ -10,7 +10,7 @@
             </div>
             <div class="umhr"></div>
             <div class="um_box_mid_content_mid" id="index">
-                <table cellspacing="0" cellpadding="0" width="100%" border="0" >
+                <table class="index-table">
                     <thead>
                         <tr>
                             <th><?php echo 'Mã thẻ' ?></th>
@@ -25,25 +25,25 @@
                     <tbody>
                         <?php
                         if (!empty($readers)) {
+                            $page = $this->request->params['paging']['Reader']['page'];
                             foreach ($readers as $row) {
                                 echo "<tr>";
                                 echo "<td>" . h($row['Reader']['cardBarcode']) . "</td>";
                                 echo "<td>" . h($row['User']['fullname']) . "</td>";
                                 echo "<td>" . h($row['Department']['department_name']) . "</td>";
                                 echo "<td>" . date('d/m/Y', strtotime($row['Reader']['created'])) . "</td>";
-                                if(strtotime($row['Reader']['date_expiry'])<= time()){
-                                    echo "<td style=".'color:red'.">" . date('d/m/Y', strtotime($row['Reader']['date_expiry'])) ." (hết hạn)". "</td>";
-                                }
-                                else{
+                                if (strtotime($row['Reader']['date_expiry']) <= time()) {
+                                    echo "<td style=" . 'color:red' . ">" . date('d/m/Y', strtotime($row['Reader']['date_expiry'])) . " (hết hạn)" . "</td>";
+                                } else {
                                     //var_dump(strtotime(date('d/m/y',time())));
                                     echo "<td>" . date('d/m/Y', strtotime($row['Reader']['date_expiry'])) . "</td>";
                                 }
-                               //echo "<td>" . date('d/m/Y', strtotime($row['Reader']['date_expiry'])) . "</td>";
+                                //echo "<td>" . date('d/m/Y', strtotime($row['Reader']['date_expiry'])) . "</td>";
                                 echo "<td>";
-                                if ($row['User']['actived'] == 1) {
-                                    echo "<span class='icon'><a href='" . $this->Html->url('/usermgmt/users/actived/' . $row['User']['id'] . '/0') . "'><img src='" . SITE_URL . "usermgmt/img/approve.png' border='0'></a></span>";
+                                if ($row['User']['is_active'] == 1) {
+                                    echo "<span class='icon'><a href='" . $this->Html->url('/usermgmt/users/actived/' . $row['User']['id'] . '/0/' . $page) . "'><img src='" . SITE_URL . "usermgmt/img/approve.png' border='0'></a></span>";
                                 } else {
-                                    echo "<span class='icon'><a href='" . $this->Html->url('/usermgmt/users/actived/' . $row['User']['id'] . '/1') . "'><img src='" . SITE_URL . "usermgmt/img/dis-approve.png' border='0'></a></span>";
+                                    echo "<span class='icon'><a href='" . $this->Html->url('/usermgmt/users/actived/' . $row['User']['id'] . '/1/' . $page) . "'><img src='" . SITE_URL . "usermgmt/img/dis-approve.png' border='0'></a></span>";
                                 }
                                 echo "</td>";
 
@@ -61,19 +61,17 @@
                         ?>
                     </tbody>
                 </table>
+                <div class="pagination">
+                    <?php
+                    echo $this->Paginator->first('<<Trang đầu');
+                    echo $this->Paginator->prev('Trước');
+                    echo $this->Paginator->numbers(array('separator' => false, 'class' => 'number'));
+                    echo $this->Paginator->next('Tiếp');
+                    echo $this->Paginator->last('Trang cuối>>');
+                    ?>
+                </div>
             </div>
-            <div class="pagination">
-                <?php
-                echo $this->Paginator->first('<<Trang đầu',array('class'=>'paginator-link'));
-                echo $this->Paginator->prev('Trước');
-                echo $this->Paginator->numbers(array('separator' => false, 'class'=>'number'));
-                echo $this->Paginator->next('Tiếp');
-                echo $this->Paginator->last('Trang cuối>>');
-                ?>
 
-              
-
-            </div>
         </div>
     </div>
 </div>

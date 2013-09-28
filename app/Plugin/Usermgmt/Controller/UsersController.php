@@ -28,7 +28,7 @@ class UsersController extends UserMgmtAppController {
      *
      * @var array
      */
-    public $uses = array('Usermgmt.User', 'Usermgmt.UserGroup', 'Usermgmt.LoginToken','Usermgmt.Reader');
+    public $uses = array('Usermgmt.User', 'Usermgmt.UserGroup', 'Usermgmt.LoginToken', 'Usermgmt.Reader');
 
     /**
      * Called before the controller action.  You can use this method to configure and customize components
@@ -49,21 +49,20 @@ class UsersController extends UserMgmtAppController {
      */
     public function index() {
         $this->User->unbindModel(array('hasMany' => array('LoginToken')));
-        $users = $this->User->find('all', array('conditions'=>array('user.user_group_id != 2'), 'order' => 'User.id desc'));
+        $users = $this->User->find('all', array('conditions' => array('user.user_group_id != 2'), 'order' => 'User.id desc'));
         $this->set('users', $users);
     }
-    
-    
+
     /**
      * Used to display all reader
      */
-    
-    public function reader(){
+    public function reader() {
         $this->User->unbindModel(array('hasMany' => array('LoginToken')));
         $this->Reader->recursive = 1;
         $this->User->recursive = 1;
-        $readers = $this->Reader->find('all', array('conditions'=>array('user.user_group_id'=>2), 'order' => 'User.id desc'));
-        debug($readers);exit();
+        $readers = $this->Reader->find('all', array('conditions' => array('user.user_group_id' => 2), 'order' => 'User.id desc'));
+        debug($readers);
+        exit();
         $this->set('readers', $readers);
     }
 
@@ -118,7 +117,7 @@ class UsersController extends UserMgmtAppController {
                     }
                 }
                 // check for inactived account
-                if ($user['User']['id'] != 1 and $user['User']['actived'] == 0) {
+                if ($user['User']['id'] != 1 and $user['User']['is_active'] == 0) {
                     $this->Session->setFlash(__('Sorry your account is not actived, please contact to Administrator'));
                     return;
                 }
@@ -146,10 +145,9 @@ class UsersController extends UserMgmtAppController {
                     }
                     $OriginAfterLogin = $this->Session->read('Usermgmt.OriginAfterLogin');
                     $this->Session->delete('Usermgmt.OriginAfterLogin');
-                    if($user['UserGroup']['id'] == 2){
+                    if ($user['UserGroup']['id'] == 2) {
                         $redirect = '/';
-                    }
-                    else{
+                    } else {
                         $redirect = LOGIN_REDIRECT_URL;
                     }
                     //$redirect = (!empty($OriginAfterLogin)) ? $OriginAfterLogin : LOGIN_REDIRECT_URL;
@@ -569,11 +567,15 @@ class UsersController extends UserMgmtAppController {
             }
         }
     }
-    
-    public function actived($id, $status){
+
+    public function actived($id, $status, $page = 1) {
+        //debug($this->request);exit();
         $this->User->id = $id;
-        $this->User->saveField('activedd', $status);
-        $this->redirect(array('controller'=>'readers','action'=>'index'));
+        $this->User->saveField('is_active', $status);
+        if ($page == 1)
+            $this->redirect(array('controller' => 'readers', 'action' => 'index'));
+        else
+            $this->redirect(array('controller' => 'readers', 'action' => 'index', 'page' => $page));
     }
 
 }

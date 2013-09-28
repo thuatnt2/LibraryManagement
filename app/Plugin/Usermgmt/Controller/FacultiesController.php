@@ -109,10 +109,10 @@ class FacultiesController extends AppController {
         return $this->redirect(array('action' => 'index'));
     }
     
-    public function active($id, $status){
-        $this->Faculty->id = $id;
-        $this->Faculty->saveField('actived', $status);
-        return $this->redirect(array('action' => 'index'));
-    }
+//    public function active($id, $status){
+//        $this->Faculty->id = $id;
+//        $this->Faculty->saveField('actived', $status);
+//        return $this->redirect(array('action' => 'index'));
+//    }
 
 }

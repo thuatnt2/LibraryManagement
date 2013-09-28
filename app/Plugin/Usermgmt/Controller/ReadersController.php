@@ -37,10 +37,10 @@ class ReadersController extends AppController {
             //'Faculty.faculty_name',
             'Reader.created',
             'Reader.date_expiry',
-            'User.actived',
+            'User.is_active',
         );
         
-        $this->paginate = array('fields'=>$fields,'limit'=>20);
+        $this->paginate = array('fields'=>$fields,'limit'=>5);
         $readers = $this->Paginator->paginate();
         //debug($readers);exit();
         $this->set('readers', $readers);

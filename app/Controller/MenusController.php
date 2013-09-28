@@ -51,6 +51,7 @@ class MenusController extends AppController {
         if ($this->request->is('post')) {
             $this->request->data['Menu']['alias'] = $this->Common->vnit_change_title($this->request->data['Menu']['title']);
             $this->request->data = $this->get_link_menus($this->request->data);
+            $this->request->data['Menu']['is_active'] = 1;
             $this->Menu->create();
             if ($this->Menu->save($this->request->data)) {
                 $this->Session->setFlash('Lưu thành công menu', 'flash_success');
@@ -59,9 +60,10 @@ class MenusController extends AppController {
                 $this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại', 'flash_error');
             }
         }
-        $sub_title = 'Thêm mới menu';
+        $sub_title = 'Thêm menu';
+        $title_for_layout = 'Thêm menu';
         $menus = $this->Menu->find('list');
-        $this->set(compact('menus', 'sub_title'));
+        $this->set(compact('menus', 'sub_title', 'title_for_layout'));
     }
 
     /**
@@ -89,8 +91,9 @@ class MenusController extends AppController {
             $this->request->data = $this->Menu->read(null, $id);
         }
         $sub_title = 'Chỉnh sửa menu';
+        $title_for_layout = 'Chỉnh sửa menu';
         $menus = $this->Menu->find('list');
-        $this->set(compact('menus', 'sub_title'));
+        $this->set(compact('menus', 'sub_title', 'title_for_layout'));
     }
 
     /**
@@ -134,7 +137,7 @@ class MenusController extends AppController {
         $this->loadModel('Category');
         $this->paginate = array(
             'Category' => array(
-                'conditions' => array('Category.published' => 1),
+                'conditions' => array('Category.is_active' => 1),
                 //'limit' => 10,
                 'recursive' => 0,
                 'order' => 'Category.id DESC'
@@ -182,11 +185,4 @@ class MenusController extends AppController {
         $menu['Menu']['link'] = $my_link;
         return $menu;
     }
-    
-    public function published($id,$status){
-        $this->Menu->id = $id;
-        $this->Menu->saveField('published', $status);
-        $this->redirect(array('action'=>'index'));
-    }
-
 }

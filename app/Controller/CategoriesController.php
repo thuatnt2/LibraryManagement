@@ -24,7 +24,12 @@ class CategoriesController extends AppController {
      */
     public function index() {
         $this->Category->recursive = 0;
+        //$columns = $this->Category->columns;
+        //debug($this->Paginator->paginate());exit();
+        $this->paginate = array('limit' => 20);
+        $title_for_layout = 'Danh mục bài viết';
         $this->set('categories', $this->Paginator->paginate());
+        $this->set('title_for_layout', $title_for_layout);
     }
 
     /**
@@ -51,6 +56,8 @@ class CategoriesController extends AppController {
         if ($this->request->is('post')) {
             $user = $this->UserAuth->getUser();
             $this->request->data['Category']['user_created'] = $user['User']['fullname'] . ' (' . $user['UserGroup']['name'] . ')';
+            $this->request->data['Category']['alias'] = $this->Common->vnit_change_title($this->request->data['Category']['name']);
+            $this->request->data['Category']['is_active'] = 1;
             $this->Category->create();
             if ($this->Category->save($this->request->data)) {
                 $this->Session->setFlash('Lưu thành công','flash_success');
@@ -60,9 +67,10 @@ class CategoriesController extends AppController {
             }
         }
 
-        $categories = $this->Category->find('list');
-        $sub_title = 'Thêm danh mục bài viết';
-        $this->set(compact('categories', 'sub_title'));
+        $parentCategories = $this->Category->ParentCategory->find('list');
+        $sub_title = 'Thêm danh mục';
+        $title_for_layout = 'Thêm danh mục';
+        $this->set(compact('parentCategories', 'sub_title', 'title_for_layout'));
     }
 
     /**
@@ -78,8 +86,7 @@ class CategoriesController extends AppController {
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             $this->Category->id = $id;
-            $user = $this->UserAuth->getUser();
-            $this->request->data['Category']['user_created'] = $user['User']['fullname'] . ' (' . $user['UserGroup']['name'] . ')';
+            $this->request->data['Category']['alias'] = $this->Common->vnit_change_title($this->request->data['Category']['name']);
             if ($this->Category->save($this->request->data)) {
                 $this->Session->setFlash('Lưu thành công','flash_success');
                 return $this->redirect(array('action' => 'index'));
@@ -87,12 +94,12 @@ class CategoriesController extends AppController {
                 $this->Session->setFlash('Đã xảy ra lỗi, vui lòng thử lại','flash_error');
             }
         } else {
-            $options = array('conditions' => array('Category.' . $this->Category->primaryKey => $id));
-            $this->request->data = $this->Category->find('first', $options);
+            $this->request->data = $this->Category->read(null,$id);
         }
-        $categories = $this->Category->find('list');
-        $sub_title = 'Chính sửa danh mục bài viết';
-        $this->set(compact('categories', 'sub_title'));
+        $parentCategories = $this->Category->ParentCategory->find('list');
+        $sub_title = 'Chính sửa danh mục';
+        $title_for_layout = 'Chính sửa danh mục';
+        $this->set(compact('parentCategories', 'sub_title','title_for_layout'));
     }
 
     /**
@@ -114,12 +121,6 @@ class CategoriesController extends AppController {
             $this->Session->setFlash('Đã xảy ra lỗi, vui lòng thử lại','flash_error');
         }
         return $this->redirect(array('action' => 'index'));
-    }
-
-    public function published($id, $status) {
-        $this->Category->id = $id;
-        $this->Category->saveField('published', $status);
-        $this->redirect(array('action' => 'index'));
     }
 
 }
