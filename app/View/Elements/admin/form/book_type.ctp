@@ -12,22 +12,12 @@
             <div class="umhr"></div>
             <div class="um_box_mid_content_mid" id="register">
                 <div class="um_box_mid_content_mid_left">
-                    <?php echo $this->Form->create('Category'); ?>
+                    <?php echo $this->Form->create('BookType'); ?>
                     <div>
-                        <div class="umstyle3"><?php echo 'Tên danh mục'; ?><font color='red'>*</font></div>
+                        <div class="umstyle3"><?php echo 'Tên thể loại sách'; ?><font color='red'>*</font></div>
                         <div class="umstyle4" ><?php echo $this->Form->input("name", array('label' => false, 'div' => false, 'class' => "form-control")) ?></div>
                         <div style="clear:both"></div>
                     </div>
-                    <div>
-                        <div class="umstyle3"><?php echo 'Danh mục cha'; ?><font color='red'>*</font></div>
-                        <?php if (!empty($this->request->data['ParentCategory']['id'])): ?>
-                            <div class="umstyle4" ><?php echo $this->Form->input("parent_id", array('label' => false, 'div' => false, 'class' => "form-control", 'empty' => 'Là danh mục cha', 'options' => $parentCategories,'default'=>$parentCategories[$this->request->data['ParentCategory']['id']])) ?></div>
-                        <?php else : ?>
-                            <div class="umstyle4" ><?php echo $this->Form->input("parent_id", array('label' => false, 'div' => false, 'class' => "form-control", 'empty' => 'Là danh mục cha', 'options' => $parentCategories)) ?></div>
-                        <?php endif; ?>
-                        <div style="clear:both"></div>
-                    </div>
-
                     <div>
                         <div class="umstyle3"><?php echo 'Mô tả' ?></div>
                         <div class="umstyle4" ><?php echo $this->Form->input("description", array('type' => 'textarea', 'label' => false, 'div' => false, 'class' => "")) ?></div>
