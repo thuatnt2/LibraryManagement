@@ -103,6 +103,7 @@ class UsersController extends UserMgmtAppController {
     public function login() {
         $this->layout = 'login';
         if ($this->request->isPost()) {
+
             $this->User->set($this->data);
             if ($this->User->LoginValidate()) {
                 $email = $this->data['User']['username'];
@@ -113,11 +114,14 @@ class UsersController extends UserMgmtAppController {
                     $user = $this->User->findByEmail($email);
                     if (empty($user)) {
                         $this->Session->setFlash(__('Incorrect Email/Username or Password'));
+//                         $this->redirect('/');
                         return;
                     }
+                    $this->redirect(array('controller' => 'index', 'action' => 'index'));
                 }
                 // check for inactived account
                 if ($user['User']['id'] != 1 and $user['User']['is_active'] == 0) {
+
                     $this->Session->setFlash(__('Sorry your account is not actived, please contact to Administrator'));
                     return;
                 }
@@ -153,8 +157,8 @@ class UsersController extends UserMgmtAppController {
                     //$redirect = (!empty($OriginAfterLogin)) ? $OriginAfterLogin : LOGIN_REDIRECT_URL;
                     $this->redirect($redirect);
                 } else {
-                    $this->Session->setFlash(__('Incorrect Email/Username or Password'));
-                    return;
+                    $this->Session->setFlash(__('Sai mã thể hoặc mật khẩu'));
+                    $this->redirect('/');
                 }
             }
         }

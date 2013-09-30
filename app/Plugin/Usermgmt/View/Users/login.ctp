@@ -3,7 +3,7 @@
     <div id="login_top_window">
         <img src="images/blue/top_login_window.png" alt="top window"/>
     </div>
-    
+
     <!-- Begin content -->
     <div id="login_body_window">
         <div class="inner">

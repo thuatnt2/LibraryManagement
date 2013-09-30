@@ -38,7 +38,7 @@
                             </li> 
                             <li class="menu_mainmenu">
                                 <a id="ucMenu_rptMenu_hplMenu2_0" class="menu_menu_Link9" href="#">
-                                    <span><b>GIỚI THIỆU
+                                    <span><b>GIỚI THIỆUs
                                         </b></span></a>         
                                 <div style="clear: both">
                                 </div>

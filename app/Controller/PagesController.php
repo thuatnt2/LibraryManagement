@@ -45,7 +45,6 @@ class PagesController extends AppController {
      */
 
     public function index() {
-        $this->log("Process : Pages#index", 'debug');
         $this->set('title_for_layout', 'Library Management');
     }
 
