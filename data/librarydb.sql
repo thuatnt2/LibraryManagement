@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2013-09-21 22:39:07
+Date: 2013-09-30 16:49:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,16 +31,216 @@ CREATE TABLE `articles` (
   `order` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_lib_articles_lib_subCategoryArticle1_idx` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of articles
 -- ----------------------------
-INSERT INTO articles VALUES ('1', 'Đừng xé sách lịch sử nữa các bạn nhé!', '2013-06-05 00:00:00', '1', '/img/gallery/thumnail/1370458304.jpg', '(Dân trí) - Một đoạn video vừa được tung lên mạng, đưa hình ảnh hàng trăm học sinh của một trường THPT tại TPHCM xé đề cương môn lịch sử và hò reo sung sướng khi được thông báo năm nay môn học này không thi tốt nghiệp THPT.', '<div style=\"text-align: justify;\">\r\n	(D&acirc;n tr&iacute;) - Một đoạn video vừa được tung l&ecirc;n mạng, đưa h&igrave;nh ảnh h&agrave;ng trăm học sinh của một trường THPT tại TPHCM x&eacute; đề cương m&ocirc;n lịch sử v&agrave; h&ograve; reo sung sướng khi được th&ocirc;ng b&aacute;o năm nay m&ocirc;n học n&agrave;y kh&ocirc;ng thi tốt nghiệp THPT.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify; margin-left: 200px;\">\r\n	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img alt=\"\" src=\"http://localhost/library-project-graduation/project-library/public/img/gallery/images/2.jpg\" style=\"width: 338px; height: 247px;\" /></div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Xem đoạn video m&agrave; ruột thắt, m&agrave; buồn đến n&atilde;o l&ograve;ng. Đề cương m&ocirc;n lịch sử bị x&eacute; n&aacute;t, vứt th&agrave;nh một đống r&aacute;c trắng x&oacute;a s&acirc;n trường. C&oacute; thể c&aacute;c bạn trong một l&uacute;c bột ph&aacute;t, bắt chước nhau thực hiện một h&agrave;nh động thiếu suy nghĩ. Nhưng c&oacute; thể h&agrave;nh động đ&oacute; c&oacute; nguy&ecirc;n nh&acirc;n s&acirc;u xa, đ&oacute; l&agrave; ch&aacute;n gh&eacute;t m&ocirc;n lịch sử.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Đ&atilde; bao m&ugrave;a thi rồi, lịch sử vẫn l&agrave; m&ocirc;n thi nhiều điểm 0 v&agrave; nhiều điểm k&eacute;m nhất. Mặc d&ugrave; người đứng đầu ng&agrave;nh gi&aacute;o dục từng ph&aacute;t biểu điểm 0 m&ocirc;n lịch sử nhiều l&agrave; chuyện b&igrave;nh thường, nhưng thực ra l&agrave; rất kh&ocirc;ng b&igrave;nh thường.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Thử đi t&igrave;m nguy&ecirc;n nh&acirc;n v&igrave; sao học sinh ch&aacute;n gh&eacute;t m&ocirc;n lịch sử, chỉ khi t&igrave;m đ&uacute;ng nguy&ecirc;n nh&acirc;n mới c&oacute; thể trị liệu được. Lịch sử l&agrave; m&ocirc;n học hấp dẫn, th&uacute; vị, gi&agrave;u kiến thức, phong ph&uacute; cảm x&uacute;c, nhưng c&aacute;c em nuốt kh&ocirc;ng tr&ocirc;i.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	C&oacute; lẽ l&agrave; do ch&uacute;ng ta dạy lịch sử với ti&ecirc;u ch&iacute; định sẵn, ta lu&ocirc;n thắng, địch to&agrave;n thua. Ta vĩ đại c&ograve;n địch tầm thường. Trận n&agrave;o ta cũng thắng, địch chạy d&agrave;i, ta thu được nhiều chiến lợi phẩm, đếm rất nhiều x&aacute;c qu&acirc;n th&ugrave;&hellip;</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Kh&ocirc;ng! Lịch sử kh&ocirc;ng chỉ c&oacute; h&agrave;o h&ugrave;ng m&agrave; c&ograve;n bi tr&aacute;ng, kh&ocirc;ng chỉ c&oacute; thắng lợi m&agrave; c&ograve;n thất bại, kh&ocirc;ng chỉ c&oacute; hạnh ph&uacute;c m&agrave; mu&ocirc;n triệu đắng cay. Để c&oacute; chiến thắng qu&acirc;n Minh, d&acirc;n Đại Việt phải trả gi&aacute; nhiều năm l&agrave;m n&ocirc; lệ cho giặc phương Bắc: &ldquo;Nướng d&acirc;n đen tr&ecirc;n ngọn lửa hung t&agrave;n - V&ugrave;i con đỏ xuống dưới hầm tai vạ&rdquo; (B&igrave;nh Ng&ocirc; đại c&aacute;o). Để c&oacute; &nbsp;chiến thắng tr&ecirc;n s&ocirc;ng Bạch Đằng năm 1288, d&acirc;n Đại Việt phải &ldquo;Nh&igrave;n thấy sứ giặc đi lại ngh&ecirc;nh ngang ngo&agrave;i đường, mang uốn lưỡi c&uacute; diều m&agrave; sỉ mắng triều đ&igrave;nh, đem th&acirc;n d&ecirc; ch&oacute; m&agrave; bắt nạt tổ phụ - Hịch Tướng sĩ&rdquo;. Đại Việt c&oacute; nhiều v&otilde; tướng t&agrave;i danh, văn quan nức tiếng th&igrave; cũng c&oacute; những Trần &Iacute;ch Tắc &ocirc;m ch&acirc;n ngoại bang.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Thời n&agrave;o cũng thế, ngo&agrave;i chiến thắng, lịch sử ghi lại những sai lầm phải trả gi&aacute; bằng m&aacute;u xương, bằng sự đ&oacute;i ngh&egrave;o, bằng những bước đi l&ugrave;i trong lạc hậu của d&acirc;n tộc. Nếu đừng &nbsp;t&ocirc; hồng m&agrave; dạy lịch sử bằng tất cả sự trung thực th&igrave; học sinh sẽ rơi nước mắt bởi những trang sử huy ho&agrave;ng đồng thời cũng sẽ thấu hiểu những kh&oacute; khăn m&agrave; đất nước đ&atilde; trải qua tại những thời điểm nhất định.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Lịch sử sống động về c&aacute;c trận hải chiến Ho&agrave;ng Sa, Trường Sa, bi&ecirc;n giới ph&iacute;a Bắc, bi&ecirc;n giới T&acirc;y Nam, ai đ&atilde; chiếm biển, chiếm đảo của Việt Nam? V&igrave; sao ch&uacute;ng ta để mất biển, mất đảo? Những trang sử đ&oacute; kh&ocirc;ng thể kh&ocirc;ng n&oacute;ng bỏng tr&ecirc;n bục giảng.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	C&aacute;c bạn trẻ đừng coi thường lịch sử bởi nếu được biết một c&aacute;ch ch&acirc;n thực, chắc chắn c&aacute;c bạn sẽ kh&oacute;c v&igrave; niềm tự h&agrave;o cũng như sự cay đắng. C&aacute;c bạn sẽ hiểu được sự thật v&agrave; y&ecirc;u lịch sử đất nước với tất cả cảm x&uacute;c, sẽ &acirc;n hận v&igrave; từng ch&aacute;n gh&eacute;t m&ocirc;n lịch sử.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Đừng x&eacute; s&aacute;ch lịch sử nữa c&aacute;c bạn nh&eacute;.</div>\r\n', '1', null, null);
-INSERT INTO articles VALUES ('3', '10 bí quyết học tập hiệu quả', '2013-06-04 00:00:00', '1', '/img/gallery/thumnail/1370458497.jpg', 'Tại sao có người học kém? Tại sao có người học giỏi? Thực ra học kém hay giỏi không phải là bản chất, mà phần nhiều là do họ chưa biết đâu là những bí quyết cần thiết để học giỏi mà thôi.', '<div>\r\n	1. Chọn thời điểm v&agrave; kh&ocirc;ng gian y&ecirc;n tĩnh.</div>\r\n<div>\r\n	Bạn cần một kh&ocirc;ng gian y&ecirc;n tĩnh, tr&aacute;nh ồn &agrave;o như vậy bạn sẽ dễ d&agrave;ng tập trung hơn. N&ecirc;n ngồi gần cửa sổ, c&agrave;ng tiếp x&uacute;c với &aacute;nh s&aacute;ng tự nhi&ecirc;n v&agrave; luồng kh&ocirc;ng kh&iacute; lưu th&ocirc;ng đều trong ph&ograve;ng.</div>\r\n<div style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost/library-project-graduation/project-library/public/img/gallery/images/5.jpg\" style=\"width: 290px; height: 174px;\" /></div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	2. Học buổi s&aacute;ng l&agrave; tốt nhất. Kh&ocirc;ng thức đ&ecirc;m nhiều, nhất l&agrave; trước kỳ thi.</div>\r\n<div>\r\n	X&aacute;c định thời điểm học cũng rất quan trọng. Khả năng lao động tr&iacute; &oacute;c của con người tăng dần từ s&aacute;ng sớm tới gần trưa, sau đ&oacute; giảm dần - sau bữa ăn trưa n&ecirc;n c&oacute; ngủ trưa ch&uacute;t &iacute;t từ 20-30 ph&uacute;t cũng được. Hiệu suất học buổi trưa c&ograve;n cao hơn buổi s&aacute;ng, đặc biệt đối với những m&ocirc;n học kh&oacute;.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	Buổi chiều c&oacute; hơi giảm v&agrave;o giờ ăn tối. Sau đ&oacute;, dường như c&oacute; một chu kỳ mới v&agrave; khả năng tr&iacute; &oacute;c lại tăng dần cho tới khoảng 21 giờ, sau đ&oacute; lại giảm. Kh&ocirc;ng n&ecirc;n thức sau 22 giờ - v&igrave; đầu &oacute;c sau một ng&agrave;y l&agrave;m việc dường như đ&atilde; b&atilde;o h&ograve;a, kh&ocirc;ng c&ograve;n tiếp thu th&ecirc;m được nữa. L&uacute;c rời b&agrave;n học, c&aacute;c bạn c&oacute; thể lật qua, lướt mau những d&ograve;ng đầu của c&aacute;c b&agrave;i đ&atilde; &ocirc;n từ đầu để x&aacute;c định m&igrave;nh đ&atilde; học được tới đ&acirc;u. L&agrave;m như vậy cũng tựa như m&igrave;nh gởi tất cả v&agrave;o tiềm thức bộ nhớ trước khi đưa n&atilde;o v&agrave;o giấc ngủ.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	3. Ngủ kh&ocirc;ng đủ sẽ l&agrave;m n&atilde;o bộ hoạt động k&eacute;m hơn b&igrave;nh thường.</div>\r\n<div>\r\n	Trung b&igrave;nh ch&uacute;ng ta cần ngủ khoảng 8 tiếng một ng&agrave;y, nhiều nhất l&agrave; về đ&ecirc;m, để cho ấn tượng ng&agrave;y h&ocirc;m trước dịu nhạt, những ấn tượng ng&agrave;y mới chưa h&igrave;nh th&agrave;nh, s&aacute;ng sớm tỉnh dậy c&oacute; một bộ &oacute;c &quot;mới tinh&quot;, c&oacute; khả năng hoạt động tốt nhất. Vả lại, c&oacute; ngủ được say th&igrave; trong giấc ngủ v&agrave;o giai đoạn c&oacute; giấc mơ, cũng l&agrave; l&uacute;c m&agrave; c&aacute;c k&iacute;ch th&iacute;ch tố tăng trưởng được tiết ra gi&uacute;p ch&uacute;ng m&igrave;nh mau lớn th&ecirc;m nữa.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	4. Đặt ra mục ti&ecirc;u v&agrave; cố gắng hết sức ho&agrave;n th&agrave;nh mục ti&ecirc;u đ&oacute;.</div>\r\n<div>\r\n	- Theo quy luật 90/10, cứ 10 ph&uacute;t bạn bỏ ra để lập kế hoạch th&igrave; bạn sẽ tiết kiệm được 90% thời gian ho&agrave;n th&agrave;nh v&agrave; hiệu quả c&ocirc;ng việc. - Từ b&acirc;y giờ bạn h&atilde;y lấy một tờ giấy v&agrave; x&aacute;c định lại mục ti&ecirc;u luyện thi đại học của m&igrave;nh:</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	+ Bạn định thi đỗ trường n&agrave;o?</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	+ Số điểm dự kiến l&agrave; bao nhi&ecirc;u?</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	+ Bạn thực sự muốn chiến thắng?</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	- Sau đ&oacute; bạn h&atilde;y l&ecirc;n lịch cho từng c&ocirc;ng việc cụ thể để tiến tới mục ti&ecirc;u đ&oacute;. C&oacute; ai đ&oacute; đ&atilde; n&oacute;i rằng ch&uacute;ng ta kh&ocirc;ng bao giờ c&oacute; đủ thời gian để l&agrave;m tất cả mọi việc, nhưng lu&ocirc;n c&oacute; đủ để l&agrave;m những việc quan trọng nhất.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	Mỗi ng&agrave;y bạn đừng tham lam l&agrave;m hết tất cả mọi việc, &ocirc;n hết tất cả c&aacute;c m&ocirc;n m&agrave; h&atilde;y lập ra một bảng ưu ti&ecirc;n c&aacute;c m&ocirc;n v&agrave; kế hoạch &ocirc;n từng ng&agrave;y.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	Khi bạn thi đại học, đương nhi&ecirc;n c&aacute;c m&ocirc;n thi đại học vẫn l&agrave; ưu ti&ecirc;n h&agrave;ng đầu, nhưng bạn cũng đừng c&oacute; bỏ qu&aacute; nhiều thời gian v&agrave;o đ&oacute;. Khoa học đ&atilde; chứng minh rằng, nếu bạn học một m&ocirc;n li&ecirc;n tục qu&aacute; 45 ph&uacute;t th&igrave; khả năng nhớ sẽ giảm rất nhanh trong thời gian sau đ&oacute;.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	T&oacute;m lại bạn h&atilde;y l&ecirc;n một c&aacute;i lịch cụ thể cho h&agrave;ng ng&agrave;y, h&agrave;ng tuần, h&agrave;ng th&aacute;ng, v&agrave;i th&aacute;ng. Định ra việc g&igrave; l&agrave; quan trọng hơn th&igrave; l&agrave;m trước.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	5. Tập trung cao độ trong khoảng 1 tiếng rồi nghỉ giải lao, tr&aacute;nh ngồi l&igrave; 3-4 tiếng li&ecirc;n tục.</div>\r\n<div>\r\n	Thời gian học hiệu quả thường khoảng 45 ph&uacute;t sau đ&oacute; h&atilde;y nghỉ ngơi thư gi&atilde;n một ch&uacute;t. V&agrave; nếu bạn cảm thấy qu&ecirc;n kiến thức th&igrave; cũng đừng c&oacute; cố gắng qu&aacute; để nhớ lại n&oacute; l&agrave;m g&igrave; cả. Nguy&ecirc;n tắc của học hiệu quả l&agrave; phải để cho đầu &oacute;c thư gi&atilde;n, rồi tự kiến thức n&oacute; sẽ về. Nếu bạn muốn &ocirc;n lại b&agrave;i th&igrave; h&atilde;y &ocirc;n lại sau đ&oacute; 10 ph&uacute;t, rồi 1 ng&agrave;y, rồi 1 tuần, v&agrave; một th&aacute;ng.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	6. D&ugrave;ng phương ph&aacute;p ghi nhớ hiệu quả như sơ đồ Mind map</div>\r\n<div>\r\n	L&agrave;m sao để nhớ cả bảng hệ thống tuần ho&agrave;n? Nhớ tất cả c&aacute;c sự kiện lịch sử trong s&aacute;ch? Bạn h&atilde;y thực hiện theo c&aacute;ch sau:</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	- Ghi th&agrave;nh d&agrave;n b&agrave;i:</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	- Nhẩm trong &oacute;c:</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	- Ghi ra giấy: &nbsp;</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	Nhất l&agrave; những c&ocirc;ng thức, những định l&yacute;, định đề. Khi ghi, bạn chỉ t&oacute;m tắt phần quan trọng, sao cho khi mở trang giấy ra nhắc nhở lại bạn hệ thống b&agrave;i học bằng tr&iacute; nhớ m&agrave; kh&ocirc;ng cần mở s&aacute;ch.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	Tr&aacute;nh ghi rườm r&agrave;, dư thừa, vừa mất thời gan v&ocirc; &iacute;ch m&agrave; lại ph&iacute; sức. N&oacute;i chung l&agrave;m thế n&agrave;o để bạn c&oacute; thể tổng hợp c&aacute;c phương ph&aacute;p (nhẩm nhớ - ghi ch&eacute;p - v&agrave; lập d&agrave;n b&agrave;i) sao cho tạo được điều kiện để bạn đọc b&agrave;i mau thuộc đ&oacute; l&agrave; đ&iacute;ều quan trọng nhất.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	N&ecirc;n cố gắng tập trung v&agrave;o những kiến thức cơ bản. Khối kiến thức n&agrave;y thường tập trung ở một số mảng, v&iacute; dụ: kh&aacute;i niệm, giả thuyết, quy luật, l&yacute; luận...</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	Khi học, cần hiểu r&otilde; bản chất của vấn đề, &nbsp;phải x&aacute;c định c&aacute;c đặc điểm, c&aacute;ch thức vận dụng những kh&aacute;i niệm, quy luật, l&yacute; thuyết... trong việc giải quyết những vấn đề cụ thể. Từ đ&oacute;, y&ecirc;u cầu tiếp theo l&agrave; phải luyện tập để h&igrave;nh th&agrave;nh kỹ năng giải quyết vấn đề (đề thi cũng l&agrave; một dạng vấn đề cụ thể cần giải quyết).</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	C&oacute; hai dạng: vận dụng theo mẫu v&agrave; vận dụng một c&aacute;ch s&aacute;ng tạo, linh hoạt. Khi &ocirc;n, n&ecirc;n ch&uacute; &yacute; vận dụng theo cả hai tuyến:</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	- Theo chiều dọc: trong phạm vi c&ugrave;ng loại vấn đề, c&ugrave;ng chuy&ecirc;n m&ocirc;n, lĩnh vực...</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	- Theo chiều ngang: trong phạm vi những chương mục, m&ocirc;n học kh&aacute;c nhau nhưng c&oacute; li&ecirc;n quan đến nhau... Sau khi đ&atilde; học xong l&yacute; thuyết, n&ecirc;n tự đặt ra những c&acirc;u hỏi li&ecirc;n quan đến nội dung &ocirc;n thi để kiểm tra tr&igrave;nh độ của m&igrave;nh. Đ&oacute; cũng l&agrave; một c&aacute;ch để nhớ l&acirc;u v&agrave; tạo cơ sở để tăng dung lượng tr&iacute; nhớ l&agrave;m việc (working memory).</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	7. Tận dụng cả 2 b&aacute;n cầu n&atilde;o để đạt hiệu quả tối đa.</div>\r\n<div>\r\n	Tại sao c&oacute; người học k&eacute;m? Tại sao c&oacute; người học giỏi? Thực ra học k&eacute;m hay giỏi kh&ocirc;ng phải l&agrave; bản chất, m&agrave; phần nhiều l&agrave; do họ chưa biết c&aacute;ch điều khiển bộ n&atilde;o của m&igrave;nh m&agrave; th&ocirc;i. N&atilde;o bạn c&oacute; 2 b&aacute;n cầu, n&atilde;o tr&aacute;i chủ yếu cho tư duy logic, ng&ocirc;n ngữ c&ograve;n n&atilde;o phải l&agrave; cho tưởng tượng h&igrave;nh ảnh.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	Từ trước đến giờ người ta dạy c&aacute;c bạn l&agrave; đa số t&aacute;c động v&agrave;o n&atilde;o tr&aacute;i, tức l&agrave; giảng to&agrave;n chữ n&ecirc;n trong giờ học, n&atilde;o phải của bạn kh&ocirc;ng c&oacute; việc l&agrave;m, cứ tưởng tượng m&ocirc;ng lung dẫn đến kh&ocirc;ng tập trung g&igrave; cả. V&igrave; vậy, muốn học hiệu quả ch&uacute;ng ta phải t&igrave;m c&aacute;ch vận dụng cả 2 n&atilde;o của m&igrave;nh. Một phương ph&aacute;p đơn giản nhất gi&uacute;p học c&aacute;c m&ocirc;n học thuộc dễ hơn cả ch&iacute;nh l&agrave; tưởng tượng. Từ b&acirc;y giờ bạn h&atilde;y t&igrave;m c&aacute;ch tưởng tượng thật nhiều v&agrave;o.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	8. Hạn chế nghe nhạc trong khi học. Trừ nhạc Baroque.</div>\r\n<div>\r\n	Nếu c&oacute; thể, bạn h&atilde;y t&igrave;m loại nhạc Baroque để l&agrave;m nền khi học. Người ta n&oacute;i rằng loại nhạc n&agrave;y c&oacute; thể r&uacute;t ngắn thời gian học tiếng anh hiệu quả từ 3 năm xuống c&ograve;n 3 th&aacute;ng. Bạn c&oacute; nghe thử 1 bản nhạc Baroque dưới đ&acirc;y được tr&iacute;ch trong bản giao hưởng Bốn m&ugrave;a của Vivaldi.Tất nhi&ecirc;n nếu bạn l&agrave; một người &quot;nhạy cảm&quot; với &acirc;m thanh khi học thấy kh&ocirc;ng hiệu quả hoặc kh&ocirc;ng tập trung được th&igrave; tốt nhất kh&ocirc;ng n&ecirc;n nghe loại nhạc n&agrave;o hết.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	9. Kh&ocirc;ng học khi vừa ăn xong.</div>\r\n<div>\r\n	&quot;Căng da bụng, ch&ugrave;ng da mắt&quot;, điều n&agrave;y khỏi phải b&agrave;n c&atilde;i nữa nhỉ.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	10. Kết hợp giải lao vận động nhẹ nh&agrave;ng như đi dạo, đạp xe, chơi Wii&hellip;</div>\r\n<div>\r\n	Những ph&uacute;t giải lao n&agrave;y c&oacute; mục đ&iacute;ch l&agrave;m thư gi&atilde;n thần kinh, tr&iacute; &oacute;c. N&ecirc;n đi đi, lại lại, giải tr&iacute; bằng tr&ograve; chơi nhẹ nh&agrave;ng, vui vẻ, tr&aacute;nh vận động nhiều v&agrave; mạnh.</div>\r\n', '1', null, null);
-INSERT INTO articles VALUES ('4', 'Nên nói gì khi nói về dịch thuật', '2013-06-05 00:00:00', '1', '/img/gallery/thumnail/1371091949.jpg', 'TT - Nếu tính từ lỗi sai \"bố mất vì ung thư tử cung\" trong bản dịch Hạt cơ bản đến lỗi \"thuốc bôi chân của bác sĩ Scholl\" (Dr. Scholl foot powder) trong quyển Những thứ họ mang, độc giả hẳn sẽ rất hoang mang khi cầm trên tay bản dịch một danh tác mà không biết liệu nó có lỗi sai nào \"bất hủ\" kiểu như thế không.', '<p>\r\n	ssas</p>\r\n', '1', null, null);
-INSERT INTO articles VALUES ('5', 'Thông báo về Kế hoạch tổ chức cuộc thi viết chủ đề \"Quyển sách làm tôi thay đổi\" (29/5/13)', '2013-06-14 00:00:00', '1', '', 'Thông báo về Kế hoạch tổ chức cuộc thi viết chủ đề \"Quyển sách làm tôi thay đổi\" (29/5/13)\r\n', '<p>\r\n	TRƯỜNG TRUNG CẤP CẢNH S&Aacute;T GIAO TH&Ocirc;NG T52<br />\r\n	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PH&Ograve;NG ĐIỆN TO&Aacute;N &amp; TH&Ocirc;NG TIN TƯ LIỆU<br />\r\n	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ----o0o----</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p style=\"text-align: center;\">\r\n	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tp. Hồ Ch&iacute; Minh, ng&agrave;y 14 th&aacute;ng 05 năm 2013</p>\r\n<p style=\"text-align: center;\">\r\n	<strong>KẾ HOẠCH<br />\r\n	TỔ CHỨC CUỘC THI VIẾT<br />\r\n	CHỦ ĐỀ &ldquo;QUYỂN S&Aacute;CH L&Agrave;M T&Ocirc;I THAY ĐỔI &rdquo;</strong></p>\r\n<p style=\"text-align: justify;\">\r\n	<strong>I. Mục đ&iacute;ch v&agrave; Y&ecirc;u cầu</strong><br />\r\n	<strong>1. Mục đ&iacute;ch</strong><br />\r\n	- Cổ vũ văn h&oacute;a đọc, g&oacute;p phần ph&aacute;t triển văn h&oacute;a đọc trong học sinh - sinh vi&ecirc;n.<br />\r\n	- Tạo ra s&acirc;n chơi l&agrave;nh mạnh, k&iacute;ch th&iacute;ch nhu cầu đọc s&aacute;ch trong học sinh - sinh vi&ecirc;n.<br />\r\n	- N&acirc;ng cao nhận thức về tầm quan trọng của s&aacute;ch cho c&aacute;c bạn học sinh &ndash; sinh vi&ecirc;n.<br />\r\n	- G&oacute;p phần chia sẻ những cảm nhận, những b&agrave;i học r&uacute;t ra qua việc đọc s&aacute;ch.<br />\r\n	- Th&ocirc;ng qua c&aacute;c hoạt động của cuộc thi nhằm r&egrave;n luyện một số kỹ năng mềm cho cho sinh vi&ecirc;n: kỹ năng viết, kỹ năng tr&igrave;nh b&agrave;y&hellip;<br />\r\n	- Kết quả của cuộc thi sẽ l&agrave; th&agrave;nh t&iacute;ch ch&agrave;o mừng 16 năm ng&agrave;y th&agrave;nh lập trường v&agrave; 01 năm th&agrave;nh lập Thư viện điện tử.<br />\r\n	- B&ecirc;n cạnh đ&oacute;, th&ocirc;ng qua kết quả của cuộc thi, sẽ g&oacute;p phần t&igrave;m kiếm c&aacute;c nh&acirc;n lực chủ chốt cho C&acirc;u lạc bộ đọc s&aacute;ch trong học sinh - sinh vi&ecirc;n.<br />\r\n	2. Y&ecirc;u cầu<br />\r\n	- C&aacute;c Khoa v&agrave; Ph&ograve;ng CTHS-SV vận động sinh vi&ecirc;n tham gia để cuộc thi diễn ra s&ocirc;i nổi, hấp dẫn.<br />\r\n	- Th&ocirc;ng tin rộng r&atilde;i về cuộc thi đến tất cả sinh vi&ecirc;n của trường.<br />\r\n	- C&aacute;c c&aacute; nh&acirc;n tham gia cuộc thi phải tu&acirc;n thủ thể lệ cuộc thi v&agrave; c&aacute;c qui định do Ban tổ chức đề ra trong suốt qu&aacute; tr&igrave;nh tham gia cuộc thi.<br />\r\n	<strong>II. THỜI GIAN</strong><br />\r\n	- Thời gian dự kiến: Từ ng&agrave;y 08/07/2013 đến ng&agrave;y 31/08/2013.</p>\r\n<p style=\"text-align: justify;\">\r\n	<strong>III. Đối tượng dự thi</strong><br />\r\n	Tất cả học sinh &ndash; sinh vi&ecirc;n Trường đại học T&ocirc;n Đức Thắng.<br />\r\n	<strong>IV. Chủ đề - H&igrave;nh thức &ndash; Thể lệ</strong><br />\r\n	<strong>1. Chủ đề cuộc thi:</strong><br />\r\n	&ldquo;Quyển s&aacute;ch l&agrave;m t&ocirc;i thay đổi&rdquo;.<br />\r\n	<strong>2. H&igrave;nh thức thi:</strong><br />\r\n	Thi viết cảm nhận về s&aacute;ch.<br />\r\n	<strong>3. Thể lệ cuộc thi:</strong><br />\r\n	- B&agrave;i viết cần tr&igrave;nh b&agrave;y c&aacute;c nội dung: giới thiệu những th&ocirc;ng tin chung của s&aacute;ch (t&ecirc;n s&aacute;ch, t&aacute;c giả, nh&agrave; xuất bản, năm xuất bản), tr&igrave;nh b&agrave;y cảm nhận về quyển s&aacute;ch đ&atilde; l&agrave;m thay đổi nhận thức, h&agrave;nh vi, lối sống&hellip; v&agrave; mang lại những gi&aacute; trị t&iacute;ch cực cho cuộc đời bạn.<br />\r\n	- B&agrave;i viết phải phản &aacute;nh trung thực sự t&aacute;c động của s&aacute;ch đối với người đọc<br />\r\n	- Độ d&agrave;i của b&agrave;i viết tối thiểu 1.000 chữ<br />\r\n	- B&agrave;i viết dự thi chưa từng c&ocirc;ng bố tr&ecirc;n c&aacute;c phương tiện th&ocirc;ng tin đại ch&uacute;ng hoặc c&aacute;c loại ấn phẩm kh&aacute;c.<br />\r\n	- Khi kết quả cuộc thi chưa c&ocirc;ng bố, t&aacute;c giả c&oacute; b&agrave;i dự thi kh&ocirc;ng d&ugrave;ng b&agrave;i viết n&agrave;y để đồng thời gửi cho c&aacute;c cuộc thi hay c&ocirc;ng bố tr&ecirc;n phương tiện th&ocirc;ng tin đại ch&uacute;ng n&agrave;o kh&aacute;c trong suốt thời gian cuộc thi diễn ra.<br />\r\n	- B&agrave;i dự thi được viết bằng tiếng Việt, c&oacute; thể viết tay r&otilde; r&agrave;ng, sạch sẽ hoặc đ&aacute;nh m&aacute;y (font Times New Roman, cỡ chữ 12, m&atilde; Unicode) tr&ecirc;n 01 mặt giấy, khổ A4.<br />\r\n	- Mỗi t&aacute;c giả c&oacute; thể tham dự một hoặc nhiều b&agrave;i viết.<br />\r\n	- B&ecirc;n cạnh b&uacute;t danh (nếu c&oacute;), t&aacute;c giả cần ghi r&otilde; r&agrave;ng họ t&ecirc;n thật, m&atilde; số sinh vi&ecirc;n, Khoa/Trung t&acirc;m, số điện thoại, địa chỉ email&hellip; ở cuối b&agrave;i dự thi.<br />\r\n	- B&agrave;i viết đạt giải thuộc bản quyền của website Thư viện (lib.tdt.edu.vn)<br />\r\n	- B&agrave;i dự thi kh&ocirc;ng được giải, ban tổ chức kh&ocirc;ng trả lại bản thảo.<br />\r\n	- S&aacute;ch giới thiệu phải được xuất bản theo c&aacute;c quy định của ph&aacute;p luật Việt Nam<br />\r\n	<strong>V. Th&agrave;nh lập Ban Tổ chức &ndash; Ban Gi&aacute;m khảo</strong><br />\r\n	<strong>1. Ban Tổ chức</strong><br />\r\n	- B&ugrave;i Loan Th&ugrave;y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp; Trưởng ph&ograve;ng ĐT&amp;TTTL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ndash;&nbsp; Trưởng ban<br />\r\n	- Phạm Nhất Phương&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp; Ph&oacute; trưởng ph&ograve;ng CTHS-SV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ndash;&nbsp; Ph&oacute; trưởng ban<br />\r\n	- Trịnh Thanh Li&ecirc;m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp; Ph&oacute; Trưởng ph&ograve;ng ĐT&amp;TTTL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ndash;&nbsp; Th&agrave;nh vi&ecirc;n<br />\r\n	- Trịnh Phi Cường&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp; Trợ l&yacute; Trưởng ph&ograve;ng ĐT&amp;TTTL&nbsp;&nbsp;&nbsp;&nbsp; &ndash;&nbsp;&nbsp; Th&agrave;nh vi&ecirc;n<br />\r\n	- H&agrave; Thị Th&ugrave;y Trang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp; Tổ trưởng Tổ Thư viện điện tử&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ndash;&nbsp;&nbsp; Th&agrave;nh vi&ecirc;n<br />\r\n	- Trương Thị Ngọc Mai&nbsp;&nbsp; -&nbsp; Tổ trưởng Tổ Thư viện truyền thống &ndash;&nbsp; Th&agrave;nh vi&ecirc;n<br />\r\n	- Huỳnh Thiện Khi&ecirc;m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp; Chuy&ecirc;n vi&ecirc;n Thư viện&nbsp;&nbsp;&nbsp; &ndash;&nbsp;&nbsp;&nbsp; Th&agrave;nh vi&ecirc;n<br />\r\n	- T&ocirc; Sanya Minh Kha&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Chuy&ecirc;n vi&ecirc;n Thư viện&nbsp;&nbsp;&nbsp;&nbsp; &ndash;&nbsp;&nbsp;&nbsp; Th&agrave;nh vi&ecirc;n<br />\r\n	<strong>2. Ban Gi&aacute;m khảo</strong><br />\r\n	- L&ecirc; Thị Mai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp; Ph&oacute; trưởng khoa KHXH&amp;NV&nbsp;&nbsp;&nbsp;&nbsp; &ndash; Trưởng ban<br />\r\n	- B&ugrave;i Loan Th&ugrave;y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp; Trưởng ph&ograve;ng ĐT&amp;TTTL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ndash;&nbsp; Ph&oacute; trưởng ban<br />\r\n	- Phạm Nhất Phương&nbsp;&nbsp; -&nbsp; Ph&oacute; trưởng ph&ograve;ng CTHS-SV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ndash; Ph&oacute; trưởng ban<br />\r\n	<strong>VI. Cơ cấu giải thưởng</strong><br />\r\n	- 01 giải nhất: 500.000 đồng + giấy khen của Hiệu trưởng Trường đại học T&ocirc;n Đức Thắng + 04 quyển s&aacute;ch + 03 th&aacute;ng sử dụng miễn ph&iacute; m&aacute;y t&iacute;nh tại Thư viện điện tử của Trường<br />\r\n	- 02 giải nh&igrave;: 400.000 đồng + giấy khen của Hiệu trưởng Trường đại học T&ocirc;n Đức Thắng + 03 quyển s&aacute;ch + 03 th&aacute;ng sử dụng miễn ph&iacute; m&aacute;y t&iacute;nh tại Thư viện điện tử của Trường<br />\r\n	- 03 giải ba: 300.000 đồng + giấy khen của Hiệu trưởng Trường đại học T&ocirc;n Đức Thắng + 02 quyển s&aacute;ch + 02 th&aacute;ng sử dụng miễn ph&iacute; m&aacute;y t&iacute;nh tại Thư viện điện tử của Trường<br />\r\n	- 04 giải khuyến kh&iacute;ch: 200.000 đồng + giấy khen của Hiệu trưởng Trường đại học T&ocirc;n Đức Thắng + 01 quyển s&aacute;ch + 01 th&aacute;ng sử dụng miễn ph&iacute; m&aacute;y t&iacute;nh tại Thư viện điện tử của Trường</p>\r\n<p style=\"text-align: justify;\">\r\n	<strong>VII. Địa chỉ v&agrave; thời gian nhận b&agrave;i dự thi</strong><br />\r\n	- Địa chỉ: Thư viện Trường đại học T&ocirc;n Đức Thắng hoặc gửi về theo địa chỉ email: quyensachlamtoithaydoi@tdt.edu.vn<br />\r\n	- Thời gian nhận b&agrave;i dự thi: Từ ng&agrave;y 16/07/2013 đến hết ng&agrave;y 20/08/2013.</p>\r\n<p>\r\n	<br />\r\n	&nbsp;</p>\r\n', '2', null, null);
-INSERT INTO articles VALUES ('6', 'Thông báo về địa điểm sinh viên học nhóm, thảo luận nhóm từ ngày 15/3/2013', '2013-03-12 00:00:00', '1', '', 'Thông báo về địa điểm sinh viên học nhóm, thảo luận nhóm từ ngày 15/3/2013', '<p>\r\n	TRƯỜNG TRUNG CẤP CẢNH S&Aacute;T GIAO TH&Ocirc;NG T52</p>\r\n<p>\r\n	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PH&Ograve;NG ĐIỆN TO&Aacute;N &amp; TH&Ocirc;NG TIN TƯ LIỆU</p>\r\n<p style=\"text-align: center;\">\r\n	<strong>TH&Ocirc;NG B&Aacute;O</strong></p>\r\n<p style=\"text-align: justify;\">\r\n	<strong>Về địa điểm sinh vi&ecirc;n học nh&oacute;m, thảo luận nh&oacute;m</strong></p>\r\n<p style=\"text-align: justify;\">\r\n	Theo chỉ đạo của Ban Gi&aacute;m hiệu, kể từ ng&agrave;y 15/3/2013 c&aacute;c khu vực đọc tại chỗ thư viện tầng 8, 9 v&agrave; thư viện điện tử (tầng 10) l&agrave; những khu vực cần giữ g&igrave;n trật tự để tăng hiệu quả sử dụng s&aacute;ch b&aacute;o v&agrave; tra cứu t&igrave;m tin c&aacute; nh&acirc;n. V&igrave; vậy, tất cả c&aacute;c hoạt động: thảo luận nh&oacute;m, học nh&oacute;m tại thư viện chỉ phục vụ trong ph&ograve;ng Thảo luận nh&oacute;m (tầng 9). Ngo&agrave;i ra, sinh vi&ecirc;n c&oacute; thể thảo luận nh&oacute;m, học nh&oacute;m tại c&aacute;c b&agrave;n, ghế đ&aacute; được đặt ở sảnh c&aacute;c t&ograve;a nh&agrave;.</p>\r\n<p style=\"text-align: right;\">\r\n	PH&Ograve;NG ĐIỆN TO&Aacute;N &amp; TH&Ocirc;NG TIN TƯ LIỆU</p>\r\n', '2', null, null);
+INSERT INTO articles VALUES ('1', 'Đừng xé sách lịch sử nữa các bạn nhé!', '2013-06-05 00:00:00', '1', '/files/images/Penguins.jpg', '(Dân trí) - Một đoạn video vừa được tung lên mạng, đưa hình ảnh hàng trăm học sinh của một trường THPT tại TPHCM xé đề cương môn lịch sử và hò reo sung sướng khi được thông báo năm nay môn học này không thi tốt nghiệp THPT.', '<div style=\"text-align: justify;\">\r\n	(D&acirc;n tr&iacute;) - Một đoạn video vừa được tung l&ecirc;n mạng, đưa h&igrave;nh ảnh h&agrave;ng trăm học sinh của một trường THPT tại TPHCM x&eacute; đề cương m&ocirc;n lịch sử v&agrave; h&ograve; reo sung sướng khi được th&ocirc;ng b&aacute;o năm nay m&ocirc;n học n&agrave;y kh&ocirc;ng thi tốt nghiệp THPT.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify; margin-left: 200px;\">\r\n	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img alt=\"\" src=\"http://localhost/library-project-graduation/project-library/public/img/gallery/images/2.jpg\" style=\"width: 338px; height: 247px;\" /></div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Xem đoạn video m&agrave; ruột thắt, m&agrave; buồn đến n&atilde;o l&ograve;ng. Đề cương m&ocirc;n lịch sử bị x&eacute; n&aacute;t, vứt th&agrave;nh một đống r&aacute;c trắng x&oacute;a s&acirc;n trường. C&oacute; thể c&aacute;c bạn trong một l&uacute;c bột ph&aacute;t, bắt chước nhau thực hiện một h&agrave;nh động thiếu suy nghĩ. Nhưng c&oacute; thể h&agrave;nh động đ&oacute; c&oacute; nguy&ecirc;n nh&acirc;n s&acirc;u xa, đ&oacute; l&agrave; ch&aacute;n gh&eacute;t m&ocirc;n lịch sử.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Đ&atilde; bao m&ugrave;a thi rồi, lịch sử vẫn l&agrave; m&ocirc;n thi nhiều điểm 0 v&agrave; nhiều điểm k&eacute;m nhất. Mặc d&ugrave; người đứng đầu ng&agrave;nh gi&aacute;o dục từng ph&aacute;t biểu điểm 0 m&ocirc;n lịch sử nhiều l&agrave; chuyện b&igrave;nh thường, nhưng thực ra l&agrave; rất kh&ocirc;ng b&igrave;nh thường.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Thử đi t&igrave;m nguy&ecirc;n nh&acirc;n v&igrave; sao học sinh ch&aacute;n gh&eacute;t m&ocirc;n lịch sử, chỉ khi t&igrave;m đ&uacute;ng nguy&ecirc;n nh&acirc;n mới c&oacute; thể trị liệu được. Lịch sử l&agrave; m&ocirc;n học hấp dẫn, th&uacute; vị, gi&agrave;u kiến thức, phong ph&uacute; cảm x&uacute;c, nhưng c&aacute;c em nuốt kh&ocirc;ng tr&ocirc;i.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	C&oacute; lẽ l&agrave; do ch&uacute;ng ta dạy lịch sử với ti&ecirc;u ch&iacute; định sẵn, ta lu&ocirc;n thắng, địch to&agrave;n thua. Ta vĩ đại c&ograve;n địch tầm thường. Trận n&agrave;o ta cũng thắng, địch chạy d&agrave;i, ta thu được nhiều chiến lợi phẩm, đếm rất nhiều x&aacute;c qu&acirc;n th&ugrave;&hellip;</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Kh&ocirc;ng! Lịch sử kh&ocirc;ng chỉ c&oacute; h&agrave;o h&ugrave;ng m&agrave; c&ograve;n bi tr&aacute;ng, kh&ocirc;ng chỉ c&oacute; thắng lợi m&agrave; c&ograve;n thất bại, kh&ocirc;ng chỉ c&oacute; hạnh ph&uacute;c m&agrave; mu&ocirc;n triệu đắng cay. Để c&oacute; chiến thắng qu&acirc;n Minh, d&acirc;n Đại Việt phải trả gi&aacute; nhiều năm l&agrave;m n&ocirc; lệ cho giặc phương Bắc: &ldquo;Nướng d&acirc;n đen tr&ecirc;n ngọn lửa hung t&agrave;n - V&ugrave;i con đỏ xuống dưới hầm tai vạ&rdquo; (B&igrave;nh Ng&ocirc; đại c&aacute;o). Để c&oacute; &nbsp;chiến thắng tr&ecirc;n s&ocirc;ng Bạch Đằng năm 1288, d&acirc;n Đại Việt phải &ldquo;Nh&igrave;n thấy sứ giặc đi lại ngh&ecirc;nh ngang ngo&agrave;i đường, mang uốn lưỡi c&uacute; diều m&agrave; sỉ mắng triều đ&igrave;nh, đem th&acirc;n d&ecirc; ch&oacute; m&agrave; bắt nạt tổ phụ - Hịch Tướng sĩ&rdquo;. Đại Việt c&oacute; nhiều v&otilde; tướng t&agrave;i danh, văn quan nức tiếng th&igrave; cũng c&oacute; những Trần &Iacute;ch Tắc &ocirc;m ch&acirc;n ngoại bang.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Thời n&agrave;o cũng thế, ngo&agrave;i chiến thắng, lịch sử ghi lại những sai lầm phải trả gi&aacute; bằng m&aacute;u xương, bằng sự đ&oacute;i ngh&egrave;o, bằng những bước đi l&ugrave;i trong lạc hậu của d&acirc;n tộc. Nếu đừng &nbsp;t&ocirc; hồng m&agrave; dạy lịch sử bằng tất cả sự trung thực th&igrave; học sinh sẽ rơi nước mắt bởi những trang sử huy ho&agrave;ng đồng thời cũng sẽ thấu hiểu những kh&oacute; khăn m&agrave; đất nước đ&atilde; trải qua tại những thời điểm nhất định.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Lịch sử sống động về c&aacute;c trận hải chiến Ho&agrave;ng Sa, Trường Sa, bi&ecirc;n giới ph&iacute;a Bắc, bi&ecirc;n giới T&acirc;y Nam, ai đ&atilde; chiếm biển, chiếm đảo của Việt Nam? V&igrave; sao ch&uacute;ng ta để mất biển, mất đảo? Những trang sử đ&oacute; kh&ocirc;ng thể kh&ocirc;ng n&oacute;ng bỏng tr&ecirc;n bục giảng.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	C&aacute;c bạn trẻ đừng coi thường lịch sử bởi nếu được biết một c&aacute;ch ch&acirc;n thực, chắc chắn c&aacute;c bạn sẽ kh&oacute;c v&igrave; niềm tự h&agrave;o cũng như sự cay đắng. C&aacute;c bạn sẽ hiểu được sự thật v&agrave; y&ecirc;u lịch sử đất nước với tất cả cảm x&uacute;c, sẽ &acirc;n hận v&igrave; từng ch&aacute;n gh&eacute;t m&ocirc;n lịch sử.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Đừng x&eacute; s&aacute;ch lịch sử nữa c&aacute;c bạn nh&eacute;.</div>\r\n', '1', '2013-09-21 12:21:45', null);
+INSERT INTO articles VALUES ('3', '10 bí quyết học tập hiệu quả', '2013-06-04 00:00:00', '1', '/files/images/Penguins.jpg', 'Tại sao có người học kém? Tại sao có người học giỏi? Thực ra học kém hay giỏi không phải là bản chất, mà phần nhiều là do họ chưa biết đâu là những bí quyết cần thiết để học giỏi mà thôi.', '<div>\r\n	1. Chọn thời điểm v&agrave; kh&ocirc;ng gian y&ecirc;n tĩnh.</div>\r\n<div>\r\n	Bạn cần một kh&ocirc;ng gian y&ecirc;n tĩnh, tr&aacute;nh ồn &agrave;o như vậy bạn sẽ dễ d&agrave;ng tập trung hơn. N&ecirc;n ngồi gần cửa sổ, c&agrave;ng tiếp x&uacute;c với &aacute;nh s&aacute;ng tự nhi&ecirc;n v&agrave; luồng kh&ocirc;ng kh&iacute; lưu th&ocirc;ng đều trong ph&ograve;ng.</div>\r\n<div style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost/library-project-graduation/project-library/public/img/gallery/images/5.jpg\" style=\"width: 290px; height: 174px;\" /></div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	2. Học buổi s&aacute;ng l&agrave; tốt nhất. Kh&ocirc;ng thức đ&ecirc;m nhiều, nhất l&agrave; trước kỳ thi.</div>\r\n<div>\r\n	X&aacute;c định thời điểm học cũng rất quan trọng. Khả năng lao động tr&iacute; &oacute;c của con người tăng dần từ s&aacute;ng sớm tới gần trưa, sau đ&oacute; giảm dần - sau bữa ăn trưa n&ecirc;n c&oacute; ngủ trưa ch&uacute;t &iacute;t từ 20-30 ph&uacute;t cũng được. Hiệu suất học buổi trưa c&ograve;n cao hơn buổi s&aacute;ng, đặc biệt đối với những m&ocirc;n học kh&oacute;.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	Buổi chiều c&oacute; hơi giảm v&agrave;o giờ ăn tối. Sau đ&oacute;, dường như c&oacute; một chu kỳ mới v&agrave; khả năng tr&iacute; &oacute;c lại tăng dần cho tới khoảng 21 giờ, sau đ&oacute; lại giảm. Kh&ocirc;ng n&ecirc;n thức sau 22 giờ - v&igrave; đầu &oacute;c sau một ng&agrave;y l&agrave;m việc dường như đ&atilde; b&atilde;o h&ograve;a, kh&ocirc;ng c&ograve;n tiếp thu th&ecirc;m được nữa. L&uacute;c rời b&agrave;n học, c&aacute;c bạn c&oacute; thể lật qua, lướt mau những d&ograve;ng đầu của c&aacute;c b&agrave;i đ&atilde; &ocirc;n từ đầu để x&aacute;c định m&igrave;nh đ&atilde; học được tới đ&acirc;u. L&agrave;m như vậy cũng tựa như m&igrave;nh gởi tất cả v&agrave;o tiềm thức bộ nhớ trước khi đưa n&atilde;o v&agrave;o giấc ngủ.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	3. Ngủ kh&ocirc;ng đủ sẽ l&agrave;m n&atilde;o bộ hoạt động k&eacute;m hơn b&igrave;nh thường.</div>\r\n<div>\r\n	Trung b&igrave;nh ch&uacute;ng ta cần ngủ khoảng 8 tiếng một ng&agrave;y, nhiều nhất l&agrave; về đ&ecirc;m, để cho ấn tượng ng&agrave;y h&ocirc;m trước dịu nhạt, những ấn tượng ng&agrave;y mới chưa h&igrave;nh th&agrave;nh, s&aacute;ng sớm tỉnh dậy c&oacute; một bộ &oacute;c &quot;mới tinh&quot;, c&oacute; khả năng hoạt động tốt nhất. Vả lại, c&oacute; ngủ được say th&igrave; trong giấc ngủ v&agrave;o giai đoạn c&oacute; giấc mơ, cũng l&agrave; l&uacute;c m&agrave; c&aacute;c k&iacute;ch th&iacute;ch tố tăng trưởng được tiết ra gi&uacute;p ch&uacute;ng m&igrave;nh mau lớn th&ecirc;m nữa.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	4. Đặt ra mục ti&ecirc;u v&agrave; cố gắng hết sức ho&agrave;n th&agrave;nh mục ti&ecirc;u đ&oacute;.</div>\r\n<div>\r\n	- Theo quy luật 90/10, cứ 10 ph&uacute;t bạn bỏ ra để lập kế hoạch th&igrave; bạn sẽ tiết kiệm được 90% thời gian ho&agrave;n th&agrave;nh v&agrave; hiệu quả c&ocirc;ng việc. - Từ b&acirc;y giờ bạn h&atilde;y lấy một tờ giấy v&agrave; x&aacute;c định lại mục ti&ecirc;u luyện thi đại học của m&igrave;nh:</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	+ Bạn định thi đỗ trường n&agrave;o?</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	+ Số điểm dự kiến l&agrave; bao nhi&ecirc;u?</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	+ Bạn thực sự muốn chiến thắng?</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	- Sau đ&oacute; bạn h&atilde;y l&ecirc;n lịch cho từng c&ocirc;ng việc cụ thể để tiến tới mục ti&ecirc;u đ&oacute;. C&oacute; ai đ&oacute; đ&atilde; n&oacute;i rằng ch&uacute;ng ta kh&ocirc;ng bao giờ c&oacute; đủ thời gian để l&agrave;m tất cả mọi việc, nhưng lu&ocirc;n c&oacute; đủ để l&agrave;m những việc quan trọng nhất.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	Mỗi ng&agrave;y bạn đừng tham lam l&agrave;m hết tất cả mọi việc, &ocirc;n hết tất cả c&aacute;c m&ocirc;n m&agrave; h&atilde;y lập ra một bảng ưu ti&ecirc;n c&aacute;c m&ocirc;n v&agrave; kế hoạch &ocirc;n từng ng&agrave;y.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	Khi bạn thi đại học, đương nhi&ecirc;n c&aacute;c m&ocirc;n thi đại học vẫn l&agrave; ưu ti&ecirc;n h&agrave;ng đầu, nhưng bạn cũng đừng c&oacute; bỏ qu&aacute; nhiều thời gian v&agrave;o đ&oacute;. Khoa học đ&atilde; chứng minh rằng, nếu bạn học một m&ocirc;n li&ecirc;n tục qu&aacute; 45 ph&uacute;t th&igrave; khả năng nhớ sẽ giảm rất nhanh trong thời gian sau đ&oacute;.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	T&oacute;m lại bạn h&atilde;y l&ecirc;n một c&aacute;i lịch cụ thể cho h&agrave;ng ng&agrave;y, h&agrave;ng tuần, h&agrave;ng th&aacute;ng, v&agrave;i th&aacute;ng. Định ra việc g&igrave; l&agrave; quan trọng hơn th&igrave; l&agrave;m trước.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	5. Tập trung cao độ trong khoảng 1 tiếng rồi nghỉ giải lao, tr&aacute;nh ngồi l&igrave; 3-4 tiếng li&ecirc;n tục.</div>\r\n<div>\r\n	Thời gian học hiệu quả thường khoảng 45 ph&uacute;t sau đ&oacute; h&atilde;y nghỉ ngơi thư gi&atilde;n một ch&uacute;t. V&agrave; nếu bạn cảm thấy qu&ecirc;n kiến thức th&igrave; cũng đừng c&oacute; cố gắng qu&aacute; để nhớ lại n&oacute; l&agrave;m g&igrave; cả. Nguy&ecirc;n tắc của học hiệu quả l&agrave; phải để cho đầu &oacute;c thư gi&atilde;n, rồi tự kiến thức n&oacute; sẽ về. Nếu bạn muốn &ocirc;n lại b&agrave;i th&igrave; h&atilde;y &ocirc;n lại sau đ&oacute; 10 ph&uacute;t, rồi 1 ng&agrave;y, rồi 1 tuần, v&agrave; một th&aacute;ng.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	6. D&ugrave;ng phương ph&aacute;p ghi nhớ hiệu quả như sơ đồ Mind map</div>\r\n<div>\r\n	L&agrave;m sao để nhớ cả bảng hệ thống tuần ho&agrave;n? Nhớ tất cả c&aacute;c sự kiện lịch sử trong s&aacute;ch? Bạn h&atilde;y thực hiện theo c&aacute;ch sau:</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	- Ghi th&agrave;nh d&agrave;n b&agrave;i:</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	- Nhẩm trong &oacute;c:</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	- Ghi ra giấy: &nbsp;</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	Nhất l&agrave; những c&ocirc;ng thức, những định l&yacute;, định đề. Khi ghi, bạn chỉ t&oacute;m tắt phần quan trọng, sao cho khi mở trang giấy ra nhắc nhở lại bạn hệ thống b&agrave;i học bằng tr&iacute; nhớ m&agrave; kh&ocirc;ng cần mở s&aacute;ch.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	Tr&aacute;nh ghi rườm r&agrave;, dư thừa, vừa mất thời gan v&ocirc; &iacute;ch m&agrave; lại ph&iacute; sức. N&oacute;i chung l&agrave;m thế n&agrave;o để bạn c&oacute; thể tổng hợp c&aacute;c phương ph&aacute;p (nhẩm nhớ - ghi ch&eacute;p - v&agrave; lập d&agrave;n b&agrave;i) sao cho tạo được điều kiện để bạn đọc b&agrave;i mau thuộc đ&oacute; l&agrave; đ&iacute;ều quan trọng nhất.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	N&ecirc;n cố gắng tập trung v&agrave;o những kiến thức cơ bản. Khối kiến thức n&agrave;y thường tập trung ở một số mảng, v&iacute; dụ: kh&aacute;i niệm, giả thuyết, quy luật, l&yacute; luận...</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	Khi học, cần hiểu r&otilde; bản chất của vấn đề, &nbsp;phải x&aacute;c định c&aacute;c đặc điểm, c&aacute;ch thức vận dụng những kh&aacute;i niệm, quy luật, l&yacute; thuyết... trong việc giải quyết những vấn đề cụ thể. Từ đ&oacute;, y&ecirc;u cầu tiếp theo l&agrave; phải luyện tập để h&igrave;nh th&agrave;nh kỹ năng giải quyết vấn đề (đề thi cũng l&agrave; một dạng vấn đề cụ thể cần giải quyết).</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	C&oacute; hai dạng: vận dụng theo mẫu v&agrave; vận dụng một c&aacute;ch s&aacute;ng tạo, linh hoạt. Khi &ocirc;n, n&ecirc;n ch&uacute; &yacute; vận dụng theo cả hai tuyến:</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	- Theo chiều dọc: trong phạm vi c&ugrave;ng loại vấn đề, c&ugrave;ng chuy&ecirc;n m&ocirc;n, lĩnh vực...</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	- Theo chiều ngang: trong phạm vi những chương mục, m&ocirc;n học kh&aacute;c nhau nhưng c&oacute; li&ecirc;n quan đến nhau... Sau khi đ&atilde; học xong l&yacute; thuyết, n&ecirc;n tự đặt ra những c&acirc;u hỏi li&ecirc;n quan đến nội dung &ocirc;n thi để kiểm tra tr&igrave;nh độ của m&igrave;nh. Đ&oacute; cũng l&agrave; một c&aacute;ch để nhớ l&acirc;u v&agrave; tạo cơ sở để tăng dung lượng tr&iacute; nhớ l&agrave;m việc (working memory).</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	7. Tận dụng cả 2 b&aacute;n cầu n&atilde;o để đạt hiệu quả tối đa.</div>\r\n<div>\r\n	Tại sao c&oacute; người học k&eacute;m? Tại sao c&oacute; người học giỏi? Thực ra học k&eacute;m hay giỏi kh&ocirc;ng phải l&agrave; bản chất, m&agrave; phần nhiều l&agrave; do họ chưa biết c&aacute;ch điều khiển bộ n&atilde;o của m&igrave;nh m&agrave; th&ocirc;i. N&atilde;o bạn c&oacute; 2 b&aacute;n cầu, n&atilde;o tr&aacute;i chủ yếu cho tư duy logic, ng&ocirc;n ngữ c&ograve;n n&atilde;o phải l&agrave; cho tưởng tượng h&igrave;nh ảnh.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	Từ trước đến giờ người ta dạy c&aacute;c bạn l&agrave; đa số t&aacute;c động v&agrave;o n&atilde;o tr&aacute;i, tức l&agrave; giảng to&agrave;n chữ n&ecirc;n trong giờ học, n&atilde;o phải của bạn kh&ocirc;ng c&oacute; việc l&agrave;m, cứ tưởng tượng m&ocirc;ng lung dẫn đến kh&ocirc;ng tập trung g&igrave; cả. V&igrave; vậy, muốn học hiệu quả ch&uacute;ng ta phải t&igrave;m c&aacute;ch vận dụng cả 2 n&atilde;o của m&igrave;nh. Một phương ph&aacute;p đơn giản nhất gi&uacute;p học c&aacute;c m&ocirc;n học thuộc dễ hơn cả ch&iacute;nh l&agrave; tưởng tượng. Từ b&acirc;y giờ bạn h&atilde;y t&igrave;m c&aacute;ch tưởng tượng thật nhiều v&agrave;o.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	8. Hạn chế nghe nhạc trong khi học. Trừ nhạc Baroque.</div>\r\n<div>\r\n	Nếu c&oacute; thể, bạn h&atilde;y t&igrave;m loại nhạc Baroque để l&agrave;m nền khi học. Người ta n&oacute;i rằng loại nhạc n&agrave;y c&oacute; thể r&uacute;t ngắn thời gian học tiếng anh hiệu quả từ 3 năm xuống c&ograve;n 3 th&aacute;ng. Bạn c&oacute; nghe thử 1 bản nhạc Baroque dưới đ&acirc;y được tr&iacute;ch trong bản giao hưởng Bốn m&ugrave;a của Vivaldi.Tất nhi&ecirc;n nếu bạn l&agrave; một người &quot;nhạy cảm&quot; với &acirc;m thanh khi học thấy kh&ocirc;ng hiệu quả hoặc kh&ocirc;ng tập trung được th&igrave; tốt nhất kh&ocirc;ng n&ecirc;n nghe loại nhạc n&agrave;o hết.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	9. Kh&ocirc;ng học khi vừa ăn xong.</div>\r\n<div>\r\n	&quot;Căng da bụng, ch&ugrave;ng da mắt&quot;, điều n&agrave;y khỏi phải b&agrave;n c&atilde;i nữa nhỉ.</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	10. Kết hợp giải lao vận động nhẹ nh&agrave;ng như đi dạo, đạp xe, chơi Wii&hellip;</div>\r\n<div>\r\n	Những ph&uacute;t giải lao n&agrave;y c&oacute; mục đ&iacute;ch l&agrave;m thư gi&atilde;n thần kinh, tr&iacute; &oacute;c. N&ecirc;n đi đi, lại lại, giải tr&iacute; bằng tr&ograve; chơi nhẹ nh&agrave;ng, vui vẻ, tr&aacute;nh vận động nhiều v&agrave; mạnh.</div>\r\n', '1', '2013-09-21 12:30:46', null);
+INSERT INTO articles VALUES ('4', 'Nên nói gì khi nói về dịch thuật', '2013-06-05 00:00:00', '1', '/files/images/Chrysanthemum.jpg', 'TT - Nếu tính từ lỗi sai \"bố mất vì ung thư tử cung\" trong bản dịch Hạt cơ bản đến lỗi \"thuốc bôi chân của bác sĩ Scholl\" (Dr. Scholl foot powder) trong quyển Những thứ họ mang, độc giả hẳn sẽ rất hoang mang khi cầm trên tay bản dịch một danh tác mà không biết liệu nó có lỗi sai nào \"bất hủ\" kiểu như thế không.', '<p>\r\n	ssas</p>\r\n', '1', '2013-09-21 12:22:06', null);
+INSERT INTO articles VALUES ('5', 'Thông báo về Kế hoạch tổ chức cuộc thi viết chủ đề \"Quyển sách làm tôi thay đổi\" (29/5/13)', '2013-06-14 00:00:00', '1', '/files/images/Penguins(1).jpg', 'Thông báo về Kế hoạch tổ chức cuộc thi viết chủ đề \"Quyển sách làm tôi thay đổi\" (29/5/13)\r\n', '<p>\r\n	TRƯỜNG TRUNG CẤP CẢNH S&Aacute;T GIAO TH&Ocirc;NG T52<br />\r\n	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PH&Ograve;NG ĐIỆN TO&Aacute;N &amp; TH&Ocirc;NG TIN TƯ LIỆU<br />\r\n	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ----o0o----</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p style=\"text-align: center;\">\r\n	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tp. Hồ Ch&iacute; Minh, ng&agrave;y 14 th&aacute;ng 05 năm 2013</p>\r\n<p style=\"text-align: center;\">\r\n	<strong>KẾ HOẠCH<br />\r\n	TỔ CHỨC CUỘC THI VIẾT<br />\r\n	CHỦ ĐỀ &ldquo;QUYỂN S&Aacute;CH L&Agrave;M T&Ocirc;I THAY ĐỔI &rdquo;</strong></p>\r\n<p style=\"text-align: justify;\">\r\n	<strong>I. Mục đ&iacute;ch v&agrave; Y&ecirc;u cầu</strong><br />\r\n	<strong>1. Mục đ&iacute;ch</strong><br />\r\n	- Cổ vũ văn h&oacute;a đọc, g&oacute;p phần ph&aacute;t triển văn h&oacute;a đọc trong học sinh - sinh vi&ecirc;n.<br />\r\n	- Tạo ra s&acirc;n chơi l&agrave;nh mạnh, k&iacute;ch th&iacute;ch nhu cầu đọc s&aacute;ch trong học sinh - sinh vi&ecirc;n.<br />\r\n	- N&acirc;ng cao nhận thức về tầm quan trọng của s&aacute;ch cho c&aacute;c bạn học sinh &ndash; sinh vi&ecirc;n.<br />\r\n	- G&oacute;p phần chia sẻ những cảm nhận, những b&agrave;i học r&uacute;t ra qua việc đọc s&aacute;ch.<br />\r\n	- Th&ocirc;ng qua c&aacute;c hoạt động của cuộc thi nhằm r&egrave;n luyện một số kỹ năng mềm cho cho sinh vi&ecirc;n: kỹ năng viết, kỹ năng tr&igrave;nh b&agrave;y&hellip;<br />\r\n	- Kết quả của cuộc thi sẽ l&agrave; th&agrave;nh t&iacute;ch ch&agrave;o mừng 16 năm ng&agrave;y th&agrave;nh lập trường v&agrave; 01 năm th&agrave;nh lập Thư viện điện tử.<br />\r\n	- B&ecirc;n cạnh đ&oacute;, th&ocirc;ng qua kết quả của cuộc thi, sẽ g&oacute;p phần t&igrave;m kiếm c&aacute;c nh&acirc;n lực chủ chốt cho C&acirc;u lạc bộ đọc s&aacute;ch trong học sinh - sinh vi&ecirc;n.<br />\r\n	2. Y&ecirc;u cầu<br />\r\n	- C&aacute;c Khoa v&agrave; Ph&ograve;ng CTHS-SV vận động sinh vi&ecirc;n tham gia để cuộc thi diễn ra s&ocirc;i nổi, hấp dẫn.<br />\r\n	- Th&ocirc;ng tin rộng r&atilde;i về cuộc thi đến tất cả sinh vi&ecirc;n của trường.<br />\r\n	- C&aacute;c c&aacute; nh&acirc;n tham gia cuộc thi phải tu&acirc;n thủ thể lệ cuộc thi v&agrave; c&aacute;c qui định do Ban tổ chức đề ra trong suốt qu&aacute; tr&igrave;nh tham gia cuộc thi.<br />\r\n	<strong>II. THỜI GIAN</strong><br />\r\n	- Thời gian dự kiến: Từ ng&agrave;y 08/07/2013 đến ng&agrave;y 31/08/2013.</p>\r\n<p style=\"text-align: justify;\">\r\n	<strong>III. Đối tượng dự thi</strong><br />\r\n	Tất cả học sinh &ndash; sinh vi&ecirc;n Trường đại học T&ocirc;n Đức Thắng.<br />\r\n	<strong>IV. Chủ đề - H&igrave;nh thức &ndash; Thể lệ</strong><br />\r\n	<strong>1. Chủ đề cuộc thi:</strong><br />\r\n	&ldquo;Quyển s&aacute;ch l&agrave;m t&ocirc;i thay đổi&rdquo;.<br />\r\n	<strong>2. H&igrave;nh thức thi:</strong><br />\r\n	Thi viết cảm nhận về s&aacute;ch.<br />\r\n	<strong>3. Thể lệ cuộc thi:</strong><br />\r\n	- B&agrave;i viết cần tr&igrave;nh b&agrave;y c&aacute;c nội dung: giới thiệu những th&ocirc;ng tin chung của s&aacute;ch (t&ecirc;n s&aacute;ch, t&aacute;c giả, nh&agrave; xuất bản, năm xuất bản), tr&igrave;nh b&agrave;y cảm nhận về quyển s&aacute;ch đ&atilde; l&agrave;m thay đổi nhận thức, h&agrave;nh vi, lối sống&hellip; v&agrave; mang lại những gi&aacute; trị t&iacute;ch cực cho cuộc đời bạn.<br />\r\n	- B&agrave;i viết phải phản &aacute;nh trung thực sự t&aacute;c động của s&aacute;ch đối với người đọc<br />\r\n	- Độ d&agrave;i của b&agrave;i viết tối thiểu 1.000 chữ<br />\r\n	- B&agrave;i viết dự thi chưa từng c&ocirc;ng bố tr&ecirc;n c&aacute;c phương tiện th&ocirc;ng tin đại ch&uacute;ng hoặc c&aacute;c loại ấn phẩm kh&aacute;c.<br />\r\n	- Khi kết quả cuộc thi chưa c&ocirc;ng bố, t&aacute;c giả c&oacute; b&agrave;i dự thi kh&ocirc;ng d&ugrave;ng b&agrave;i viết n&agrave;y để đồng thời gửi cho c&aacute;c cuộc thi hay c&ocirc;ng bố tr&ecirc;n phương tiện th&ocirc;ng tin đại ch&uacute;ng n&agrave;o kh&aacute;c trong suốt thời gian cuộc thi diễn ra.<br />\r\n	- B&agrave;i dự thi được viết bằng tiếng Việt, c&oacute; thể viết tay r&otilde; r&agrave;ng, sạch sẽ hoặc đ&aacute;nh m&aacute;y (font Times New Roman, cỡ chữ 12, m&atilde; Unicode) tr&ecirc;n 01 mặt giấy, khổ A4.<br />\r\n	- Mỗi t&aacute;c giả c&oacute; thể tham dự một hoặc nhiều b&agrave;i viết.<br />\r\n	- B&ecirc;n cạnh b&uacute;t danh (nếu c&oacute;), t&aacute;c giả cần ghi r&otilde; r&agrave;ng họ t&ecirc;n thật, m&atilde; số sinh vi&ecirc;n, Khoa/Trung t&acirc;m, số điện thoại, địa chỉ email&hellip; ở cuối b&agrave;i dự thi.<br />\r\n	- B&agrave;i viết đạt giải thuộc bản quyền của website Thư viện (lib.tdt.edu.vn)<br />\r\n	- B&agrave;i dự thi kh&ocirc;ng được giải, ban tổ chức kh&ocirc;ng trả lại bản thảo.<br />\r\n	- S&aacute;ch giới thiệu phải được xuất bản theo c&aacute;c quy định của ph&aacute;p luật Việt Nam<br />\r\n	<strong>V. Th&agrave;nh lập Ban Tổ chức &ndash; Ban Gi&aacute;m khảo</strong><br />\r\n	<strong>1. Ban Tổ chức</strong><br />\r\n	- B&ugrave;i Loan Th&ugrave;y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp; Trưởng ph&ograve;ng ĐT&amp;TTTL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ndash;&nbsp; Trưởng ban<br />\r\n	- Phạm Nhất Phương&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp; Ph&oacute; trưởng ph&ograve;ng CTHS-SV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ndash;&nbsp; Ph&oacute; trưởng ban<br />\r\n	- Trịnh Thanh Li&ecirc;m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp; Ph&oacute; Trưởng ph&ograve;ng ĐT&amp;TTTL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ndash;&nbsp; Th&agrave;nh vi&ecirc;n<br />\r\n	- Trịnh Phi Cường&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp; Trợ l&yacute; Trưởng ph&ograve;ng ĐT&amp;TTTL&nbsp;&nbsp;&nbsp;&nbsp; &ndash;&nbsp;&nbsp; Th&agrave;nh vi&ecirc;n<br />\r\n	- H&agrave; Thị Th&ugrave;y Trang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp; Tổ trưởng Tổ Thư viện điện tử&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ndash;&nbsp;&nbsp; Th&agrave;nh vi&ecirc;n<br />\r\n	- Trương Thị Ngọc Mai&nbsp;&nbsp; -&nbsp; Tổ trưởng Tổ Thư viện truyền thống &ndash;&nbsp; Th&agrave;nh vi&ecirc;n<br />\r\n	- Huỳnh Thiện Khi&ecirc;m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp; Chuy&ecirc;n vi&ecirc;n Thư viện&nbsp;&nbsp;&nbsp; &ndash;&nbsp;&nbsp;&nbsp; Th&agrave;nh vi&ecirc;n<br />\r\n	- T&ocirc; Sanya Minh Kha&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Chuy&ecirc;n vi&ecirc;n Thư viện&nbsp;&nbsp;&nbsp;&nbsp; &ndash;&nbsp;&nbsp;&nbsp; Th&agrave;nh vi&ecirc;n<br />\r\n	<strong>2. Ban Gi&aacute;m khảo</strong><br />\r\n	- L&ecirc; Thị Mai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp; Ph&oacute; trưởng khoa KHXH&amp;NV&nbsp;&nbsp;&nbsp;&nbsp; &ndash; Trưởng ban<br />\r\n	- B&ugrave;i Loan Th&ugrave;y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp; Trưởng ph&ograve;ng ĐT&amp;TTTL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ndash;&nbsp; Ph&oacute; trưởng ban<br />\r\n	- Phạm Nhất Phương&nbsp;&nbsp; -&nbsp; Ph&oacute; trưởng ph&ograve;ng CTHS-SV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ndash; Ph&oacute; trưởng ban<br />\r\n	<strong>VI. Cơ cấu giải thưởng</strong><br />\r\n	- 01 giải nhất: 500.000 đồng + giấy khen của Hiệu trưởng Trường đại học T&ocirc;n Đức Thắng + 04 quyển s&aacute;ch + 03 th&aacute;ng sử dụng miễn ph&iacute; m&aacute;y t&iacute;nh tại Thư viện điện tử của Trường<br />\r\n	- 02 giải nh&igrave;: 400.000 đồng + giấy khen của Hiệu trưởng Trường đại học T&ocirc;n Đức Thắng + 03 quyển s&aacute;ch + 03 th&aacute;ng sử dụng miễn ph&iacute; m&aacute;y t&iacute;nh tại Thư viện điện tử của Trường<br />\r\n	- 03 giải ba: 300.000 đồng + giấy khen của Hiệu trưởng Trường đại học T&ocirc;n Đức Thắng + 02 quyển s&aacute;ch + 02 th&aacute;ng sử dụng miễn ph&iacute; m&aacute;y t&iacute;nh tại Thư viện điện tử của Trường<br />\r\n	- 04 giải khuyến kh&iacute;ch: 200.000 đồng + giấy khen của Hiệu trưởng Trường đại học T&ocirc;n Đức Thắng + 01 quyển s&aacute;ch + 01 th&aacute;ng sử dụng miễn ph&iacute; m&aacute;y t&iacute;nh tại Thư viện điện tử của Trường</p>\r\n<p style=\"text-align: justify;\">\r\n	<strong>VII. Địa chỉ v&agrave; thời gian nhận b&agrave;i dự thi</strong><br />\r\n	- Địa chỉ: Thư viện Trường đại học T&ocirc;n Đức Thắng hoặc gửi về theo địa chỉ email: quyensachlamtoithaydoi@tdt.edu.vn<br />\r\n	- Thời gian nhận b&agrave;i dự thi: Từ ng&agrave;y 16/07/2013 đến hết ng&agrave;y 20/08/2013.</p>\r\n<p>\r\n	<br />\r\n	&nbsp;</p>\r\n', '2', '2013-09-21 12:25:39', null);
+INSERT INTO articles VALUES ('7', 'Đừng xé sách lịch sử nữa các bạn nhé!', '2013-09-21 12:14:09', '1', 'files/images/Penguins(1).jpg', '(Dân trí) - Một đoạn video vừa được tung lên mạng, đưa hình ảnh hàng trăm học sinh của một trường THPT tại TPHCM xé đề cương môn lịch sử và hò reo sung sướng khi được thông báo năm nay môn học này không thi tốt nghiệp THPT.', '<div style=\"text-align: justify;\">\r\n	(D&acirc;n tr&iacute;) - Một đoạn video vừa được tung l&ecirc;n mạng, đưa h&igrave;nh ảnh h&agrave;ng trăm học sinh của một trường THPT tại TPHCM x&eacute; đề cương m&ocirc;n lịch sử v&agrave; h&ograve; reo sung sướng khi được th&ocirc;ng b&aacute;o năm nay m&ocirc;n học n&agrave;y kh&ocirc;ng thi tốt nghiệp THPT.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify; margin-left: 200px;\">\r\n	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img alt=\"\" src=\"http://localhost/library-project-graduation/project-library/public/img/gallery/images/2.jpg\" style=\"width: 338px; height: 247px;\" /></div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Xem đoạn video m&agrave; ruột thắt, m&agrave; buồn đến n&atilde;o l&ograve;ng. Đề cương m&ocirc;n lịch sử bị x&eacute; n&aacute;t, vứt th&agrave;nh một đống r&aacute;c trắng x&oacute;a s&acirc;n trường. C&oacute; thể c&aacute;c bạn trong một l&uacute;c bột ph&aacute;t, bắt chước nhau thực hiện một h&agrave;nh động thiếu suy nghĩ. Nhưng c&oacute; thể h&agrave;nh động đ&oacute; c&oacute; nguy&ecirc;n nh&acirc;n s&acirc;u xa, đ&oacute; l&agrave; ch&aacute;n gh&eacute;t m&ocirc;n lịch sử.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Đ&atilde; bao m&ugrave;a thi rồi, lịch sử vẫn l&agrave; m&ocirc;n thi nhiều điểm 0 v&agrave; nhiều điểm k&eacute;m nhất. Mặc d&ugrave; người đứng đầu ng&agrave;nh gi&aacute;o dục từng ph&aacute;t biểu điểm 0 m&ocirc;n lịch sử nhiều l&agrave; chuyện b&igrave;nh thường, nhưng thực ra l&agrave; rất kh&ocirc;ng b&igrave;nh thường.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Thử đi t&igrave;m nguy&ecirc;n nh&acirc;n v&igrave; sao học sinh ch&aacute;n gh&eacute;t m&ocirc;n lịch sử, chỉ khi t&igrave;m đ&uacute;ng nguy&ecirc;n nh&acirc;n mới c&oacute; thể trị liệu được. Lịch sử l&agrave; m&ocirc;n học hấp dẫn, th&uacute; vị, gi&agrave;u kiến thức, phong ph&uacute; cảm x&uacute;c, nhưng c&aacute;c em nuốt kh&ocirc;ng tr&ocirc;i.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	C&oacute; lẽ l&agrave; do ch&uacute;ng ta dạy lịch sử với ti&ecirc;u ch&iacute; định sẵn, ta lu&ocirc;n thắng, địch to&agrave;n thua. Ta vĩ đại c&ograve;n địch tầm thường. Trận n&agrave;o ta cũng thắng, địch chạy d&agrave;i, ta thu được nhiều chiến lợi phẩm, đếm rất nhiều x&aacute;c qu&acirc;n th&ugrave;&hellip;</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Kh&ocirc;ng! Lịch sử kh&ocirc;ng chỉ c&oacute; h&agrave;o h&ugrave;ng m&agrave; c&ograve;n bi tr&aacute;ng, kh&ocirc;ng chỉ c&oacute; thắng lợi m&agrave; c&ograve;n thất bại, kh&ocirc;ng chỉ c&oacute; hạnh ph&uacute;c m&agrave; mu&ocirc;n triệu đắng cay. Để c&oacute; chiến thắng qu&acirc;n Minh, d&acirc;n Đại Việt phải trả gi&aacute; nhiều năm l&agrave;m n&ocirc; lệ cho giặc phương Bắc: &ldquo;Nướng d&acirc;n đen tr&ecirc;n ngọn lửa hung t&agrave;n - V&ugrave;i con đỏ xuống dưới hầm tai vạ&rdquo; (B&igrave;nh Ng&ocirc; đại c&aacute;o). Để c&oacute; &nbsp;chiến thắng tr&ecirc;n s&ocirc;ng Bạch Đằng năm 1288, d&acirc;n Đại Việt phải &ldquo;Nh&igrave;n thấy sứ giặc đi lại ngh&ecirc;nh ngang ngo&agrave;i đường, mang uốn lưỡi c&uacute; diều m&agrave; sỉ mắng triều đ&igrave;nh, đem th&acirc;n d&ecirc; ch&oacute; m&agrave; bắt nạt tổ phụ - Hịch Tướng sĩ&rdquo;. Đại Việt c&oacute; nhiều v&otilde; tướng t&agrave;i danh, văn quan nức tiếng th&igrave; cũng c&oacute; những Trần &Iacute;ch Tắc &ocirc;m ch&acirc;n ngoại bang.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Thời n&agrave;o cũng thế, ngo&agrave;i chiến thắng, lịch sử ghi lại những sai lầm phải trả gi&aacute; bằng m&aacute;u xương, bằng sự đ&oacute;i ngh&egrave;o, bằng những bước đi l&ugrave;i trong lạc hậu của d&acirc;n tộc. Nếu đừng &nbsp;t&ocirc; hồng m&agrave; dạy lịch sử bằng tất cả sự trung thực th&igrave; học sinh sẽ rơi nước mắt bởi những trang sử huy ho&agrave;ng đồng thời cũng sẽ thấu hiểu những kh&oacute; khăn m&agrave; đất nước đ&atilde; trải qua tại những thời điểm nhất định.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Lịch sử sống động về c&aacute;c trận hải chiến Ho&agrave;ng Sa, Trường Sa, bi&ecirc;n giới ph&iacute;a Bắc, bi&ecirc;n giới T&acirc;y Nam, ai đ&atilde; chiếm biển, chiếm đảo của Việt Nam? V&igrave; sao ch&uacute;ng ta để mất biển, mất đảo? Những trang sử đ&oacute; kh&ocirc;ng thể kh&ocirc;ng n&oacute;ng bỏng tr&ecirc;n bục giảng.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	C&aacute;c bạn trẻ đừng coi thường lịch sử bởi nếu được biết một c&aacute;ch ch&acirc;n thực, chắc chắn c&aacute;c bạn sẽ kh&oacute;c v&igrave; niềm tự h&agrave;o cũng như sự cay đắng. C&aacute;c bạn sẽ hiểu được sự thật v&agrave; y&ecirc;u lịch sử đất nước với tất cả cảm x&uacute;c, sẽ &acirc;n hận v&igrave; từng ch&aacute;n gh&eacute;t m&ocirc;n lịch sử.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Đừng x&eacute; s&aacute;ch lịch sử nữa c&aacute;c bạn nh&eacute;.</div>\r\n', '1', '2013-09-21 12:25:42', null);
+INSERT INTO articles VALUES ('8', 'Đừng xé sách lịch sử nữa các bạn nhé!', '2013-09-21 12:14:57', '1', '/files/images/Jellyfish.jpg', '(Dân trí) - Một đoạn video vừa được tung lên mạng, đưa hình ảnh hàng trăm học sinh của một trường THPT tại TPHCM xé đề cương môn lịch sử và hò reo sung sướng khi được thông báo năm nay môn học này không thi tốt nghiệp THPT.', '<div style=\"text-align: justify;\">\r\n	(D&acirc;n tr&iacute;) - Một đoạn video vừa được tung l&ecirc;n mạng, đưa h&igrave;nh ảnh h&agrave;ng trăm học sinh của một trường THPT tại TPHCM x&eacute; đề cương m&ocirc;n lịch sử v&agrave; h&ograve; reo sung sướng khi được th&ocirc;ng b&aacute;o năm nay m&ocirc;n học n&agrave;y kh&ocirc;ng thi tốt nghiệp THPT.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify; margin-left: 200px;\">\r\n	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img alt=\"\" src=\"http://localhost/library-project-graduation/project-library/public/img/gallery/images/2.jpg\" style=\"width: 338px; height: 247px;\" /></div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Xem đoạn video m&agrave; ruột thắt, m&agrave; buồn đến n&atilde;o l&ograve;ng. Đề cương m&ocirc;n lịch sử bị x&eacute; n&aacute;t, vứt th&agrave;nh một đống r&aacute;c trắng x&oacute;a s&acirc;n trường. C&oacute; thể c&aacute;c bạn trong một l&uacute;c bột ph&aacute;t, bắt chước nhau thực hiện một h&agrave;nh động thiếu suy nghĩ. Nhưng c&oacute; thể h&agrave;nh động đ&oacute; c&oacute; nguy&ecirc;n nh&acirc;n s&acirc;u xa, đ&oacute; l&agrave; ch&aacute;n gh&eacute;t m&ocirc;n lịch sử.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Đ&atilde; bao m&ugrave;a thi rồi, lịch sử vẫn l&agrave; m&ocirc;n thi nhiều điểm 0 v&agrave; nhiều điểm k&eacute;m nhất. Mặc d&ugrave; người đứng đầu ng&agrave;nh gi&aacute;o dục từng ph&aacute;t biểu điểm 0 m&ocirc;n lịch sử nhiều l&agrave; chuyện b&igrave;nh thường, nhưng thực ra l&agrave; rất kh&ocirc;ng b&igrave;nh thường.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Thử đi t&igrave;m nguy&ecirc;n nh&acirc;n v&igrave; sao học sinh ch&aacute;n gh&eacute;t m&ocirc;n lịch sử, chỉ khi t&igrave;m đ&uacute;ng nguy&ecirc;n nh&acirc;n mới c&oacute; thể trị liệu được. Lịch sử l&agrave; m&ocirc;n học hấp dẫn, th&uacute; vị, gi&agrave;u kiến thức, phong ph&uacute; cảm x&uacute;c, nhưng c&aacute;c em nuốt kh&ocirc;ng tr&ocirc;i.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	C&oacute; lẽ l&agrave; do ch&uacute;ng ta dạy lịch sử với ti&ecirc;u ch&iacute; định sẵn, ta lu&ocirc;n thắng, địch to&agrave;n thua. Ta vĩ đại c&ograve;n địch tầm thường. Trận n&agrave;o ta cũng thắng, địch chạy d&agrave;i, ta thu được nhiều chiến lợi phẩm, đếm rất nhiều x&aacute;c qu&acirc;n th&ugrave;&hellip;</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Kh&ocirc;ng! Lịch sử kh&ocirc;ng chỉ c&oacute; h&agrave;o h&ugrave;ng m&agrave; c&ograve;n bi tr&aacute;ng, kh&ocirc;ng chỉ c&oacute; thắng lợi m&agrave; c&ograve;n thất bại, kh&ocirc;ng chỉ c&oacute; hạnh ph&uacute;c m&agrave; mu&ocirc;n triệu đắng cay. Để c&oacute; chiến thắng qu&acirc;n Minh, d&acirc;n Đại Việt phải trả gi&aacute; nhiều năm l&agrave;m n&ocirc; lệ cho giặc phương Bắc: &ldquo;Nướng d&acirc;n đen tr&ecirc;n ngọn lửa hung t&agrave;n - V&ugrave;i con đỏ xuống dưới hầm tai vạ&rdquo; (B&igrave;nh Ng&ocirc; đại c&aacute;o). Để c&oacute; &nbsp;chiến thắng tr&ecirc;n s&ocirc;ng Bạch Đằng năm 1288, d&acirc;n Đại Việt phải &ldquo;Nh&igrave;n thấy sứ giặc đi lại ngh&ecirc;nh ngang ngo&agrave;i đường, mang uốn lưỡi c&uacute; diều m&agrave; sỉ mắng triều đ&igrave;nh, đem th&acirc;n d&ecirc; ch&oacute; m&agrave; bắt nạt tổ phụ - Hịch Tướng sĩ&rdquo;. Đại Việt c&oacute; nhiều v&otilde; tướng t&agrave;i danh, văn quan nức tiếng th&igrave; cũng c&oacute; những Trần &Iacute;ch Tắc &ocirc;m ch&acirc;n ngoại bang.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Thời n&agrave;o cũng thế, ngo&agrave;i chiến thắng, lịch sử ghi lại những sai lầm phải trả gi&aacute; bằng m&aacute;u xương, bằng sự đ&oacute;i ngh&egrave;o, bằng những bước đi l&ugrave;i trong lạc hậu của d&acirc;n tộc. Nếu đừng &nbsp;t&ocirc; hồng m&agrave; dạy lịch sử bằng tất cả sự trung thực th&igrave; học sinh sẽ rơi nước mắt bởi những trang sử huy ho&agrave;ng đồng thời cũng sẽ thấu hiểu những kh&oacute; khăn m&agrave; đất nước đ&atilde; trải qua tại những thời điểm nhất định.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Lịch sử sống động về c&aacute;c trận hải chiến Ho&agrave;ng Sa, Trường Sa, bi&ecirc;n giới ph&iacute;a Bắc, bi&ecirc;n giới T&acirc;y Nam, ai đ&atilde; chiếm biển, chiếm đảo của Việt Nam? V&igrave; sao ch&uacute;ng ta để mất biển, mất đảo? Những trang sử đ&oacute; kh&ocirc;ng thể kh&ocirc;ng n&oacute;ng bỏng tr&ecirc;n bục giảng.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	C&aacute;c bạn trẻ đừng coi thường lịch sử bởi nếu được biết một c&aacute;ch ch&acirc;n thực, chắc chắn c&aacute;c bạn sẽ kh&oacute;c v&igrave; niềm tự h&agrave;o cũng như sự cay đắng. C&aacute;c bạn sẽ hiểu được sự thật v&agrave; y&ecirc;u lịch sử đất nước với tất cả cảm x&uacute;c, sẽ &acirc;n hận v&igrave; từng ch&aacute;n gh&eacute;t m&ocirc;n lịch sử.</div>\r\n<div style=\"text-align: justify;\">\r\n	&nbsp;</div>\r\n<div style=\"text-align: justify;\">\r\n	Đừng x&eacute; s&aacute;ch lịch sử nữa c&aacute;c bạn nh&eacute;.</div>\r\n', '1', '2013-09-21 12:46:00', null);
+
+-- ----------------------------
+-- Table structure for `authors`
+-- ----------------------------
+DROP TABLE IF EXISTS `authors`;
+CREATE TABLE `authors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `description` tinytext,
+  `created` date DEFAULT NULL,
+  `modified` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of authors
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `books`
+-- ----------------------------
+DROP TABLE IF EXISTS `books`;
+CREATE TABLE `books` (
+  `id` int(11) NOT NULL,
+  `title` varchar(45) NOT NULL COMMENT 'Tên cuốn sách',
+  `number_of_pages` int(11) NOT NULL COMMENT 'Tổng số trang',
+  `publisher` varchar(45) NOT NULL COMMENT 'Nhà xuất bản',
+  `year_of_publish` date NOT NULL COMMENT 'Năm xuất bản',
+  `total` int(11) NOT NULL,
+  `price` varchar(20) NOT NULL COMMENT 'Giá sách',
+  `created` date NOT NULL COMMENT 'Ngày tạo biên mục cho cuốn sách',
+  `paper_size` varchar(15) NOT NULL COMMENT 'Khổ giấy',
+  `user_created` varchar(45) NOT NULL COMMENT 'Người biên mục',
+  `location` varchar(45) NOT NULL COMMENT 'Vị trí cuốn sách',
+  `description` mediumtext NOT NULL COMMENT 'Mô tả nội dung cơ bản của cuốn sách',
+  `used_as` tinyint(4) NOT NULL COMMENT '0 - chỉ đọc tại chỗ\n1- Có thể mượn về',
+  `book_language_id` int(11) NOT NULL COMMENT 'Ngôn ngữ của tài liệu',
+  `book_type_id` int(11) NOT NULL COMMENT 'Loại tài liệu (sách,tài liệu,giáo trình,truyện,tiểu thuyết,sách tham khảo)',
+  `book_category_id` int(11) NOT NULL COMMENT 'The loai sach: tu nhien, Xa hoi, Tin hoc',
+  `teacher_only` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_lib_BookStores_lib_BookLanguages1_idx` (`book_language_id`),
+  KEY `fk_lib_BookStores_lib_BookType1_idx` (`book_type_id`),
+  KEY `fk_lib_BookStores_lib_BookCategories1_idx` (`book_category_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Lưu thông tin của một tập các cuốn sách cùng tên';
+
+-- ----------------------------
+-- Records of books
+-- ----------------------------
+INSERT INTO books VALUES ('125', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('126', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('127', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('128', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('129', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('130', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('131', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('132', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('133', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('134', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('135', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('136', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('137', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('138', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('139', 'Phân tích thiêt kế web', '250', 'NXB Tuổi Trẽ', '2010-05-17', '5', '25.0000', '2013-05-14', '18 x 6', 'user01', 'Tham Khảo', 'fsfhkfhweudfdslkfjslfjslfsn', '0', '1', '2', '3', null);
+INSERT INTO books VALUES ('140', 'Làm chủ windows 2000 server', '676', 'NXB Thanh Niên', '2001-05-01', '10', '89.000', '2013-05-15', '15,5 x15,5', 'user01', 'Sách tham khảo', 'fsmfnslfshweueowns', '0', '1', '2', '3', null);
+INSERT INTO books VALUES ('141', 'Đêm Đầu tiên', '545', 'NXB Nhã Nam', '2011-10-04', '10', '105.000', '2013-05-16', '14 x 20,5 cm', 'user01', 'Truyện đọc', 'sffdsdsf', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('142', 'Phút Đầu Tiên', '545', 'NXB Nhã Nam', '2011-10-04', '10', '105.000', '2013-05-16', '14 x 20,5 cm', 'user01', 'Truyện đọc', 'sffdsdsf', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('12345', 'Lập trinh c++', '100', 'NXB Giáo Dục', '2010-05-08', '10', '25.0000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'hhghghgfh', '0', '2', '1', '1', null);
+INSERT INTO books VALUES ('12346', 'Phân tích và thiết kế hệ thống thông tin', '200', 'NXB Giáo Dục', '2005-05-17', '15', '30.000', '2013-05-29', '14 x 20,5 cm', 'user01', 'Tham Khảo', 'Trình bày các phương pháp phân tích thiết kế có cấu trúc dọc theo các giai đoạn của chu trình phát triển', '1', '1', '1', '1', null);
+INSERT INTO books VALUES ('12347', 'Giáo trình cấp thoát nước bên trong công trìn', '203', 'Nxb Hà Nội', '2006-06-14', '10', '27500', '2013-06-01', '24cm', 'user01', 'Tài liệu tham khảo', 'Kiến thức cơ bản về hệ thống cấp thoát nước, nguyên lý hoạt động, cấu tạo, quy trình thiết kế và các', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('12348', 'dfs', '2000', 'sdfs', '2013-06-03', '10', '150000', '2013-06-09', '14 x 20,5 cm', 'user01', 'sách tham khảo', 'dfggfg', '0', '1', '1', '1', null);
+INSERT INTO books VALUES ('12349', 'Giáo trình chính trị', '247', 'NXB Giáo Dục', '2005-06-13', '4', '23000', '2013-06-16', '24cm', 'user01', 'Giáo trình', 'Nêu chủ nghĩa duy vật khoa học và hoạt động thực tiễn của con người. Quan điểm, đường lối chủ trương chính sách của Đảng Cộng sản Việt Nam', '0', '1', '1', '2', null);
+INSERT INTO books VALUES ('12350', 'Giáo trình hệ thống mạng máy tính CCNA semest', '443', 'Lao động xã hộ', '2004-06-13', '4', '86000', '2013-06-16', '24cm', 'user01', 'Giáo trình', 'Tái bản lần thứ 1, cập nhật version 3.0.', '1', '1', '1', '1', null);
+
+-- ----------------------------
+-- Table structure for `book_authors`
+-- ----------------------------
+DROP TABLE IF EXISTS `book_authors`;
+CREATE TABLE `book_authors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `author_id` int(11) NOT NULL,
+  `book_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_lib_BookAuthor_lib_BookStores1_idx` (`book_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of book_authors
+-- ----------------------------
+INSERT INTO book_authors VALUES ('1', '0', '129');
+INSERT INTO book_authors VALUES ('2', '0', '130');
+INSERT INTO book_authors VALUES ('3', '0', '131');
+INSERT INTO book_authors VALUES ('4', '0', '131');
+INSERT INTO book_authors VALUES ('5', '0', '132');
+INSERT INTO book_authors VALUES ('6', '0', '132');
+INSERT INTO book_authors VALUES ('7', '0', '133');
+INSERT INTO book_authors VALUES ('8', '0', '133');
+INSERT INTO book_authors VALUES ('9', '0', '134');
+INSERT INTO book_authors VALUES ('10', '0', '134');
+INSERT INTO book_authors VALUES ('11', '0', '135');
+INSERT INTO book_authors VALUES ('12', '0', '135');
+INSERT INTO book_authors VALUES ('13', '0', '136');
+INSERT INTO book_authors VALUES ('14', '0', '136');
+INSERT INTO book_authors VALUES ('15', '0', '137');
+INSERT INTO book_authors VALUES ('16', '0', '137');
+INSERT INTO book_authors VALUES ('17', '0', '138');
+INSERT INTO book_authors VALUES ('18', '0', '138');
+INSERT INTO book_authors VALUES ('19', '0', '139');
+INSERT INTO book_authors VALUES ('20', '0', '139');
+INSERT INTO book_authors VALUES ('21', '0', '12345');
+INSERT INTO book_authors VALUES ('22', '0', '12345');
+INSERT INTO book_authors VALUES ('23', '0', '140');
+INSERT INTO book_authors VALUES ('24', '0', '140');
+INSERT INTO book_authors VALUES ('25', '0', '140');
+INSERT INTO book_authors VALUES ('26', '0', '141');
+INSERT INTO book_authors VALUES ('27', '0', '142');
+INSERT INTO book_authors VALUES ('28', '0', '12346');
+INSERT INTO book_authors VALUES ('29', '0', '12347');
+INSERT INTO book_authors VALUES ('30', '0', '12348');
+INSERT INTO book_authors VALUES ('31', '0', '12349');
+INSERT INTO book_authors VALUES ('32', '0', '12350');
+
+-- ----------------------------
+-- Table structure for `book_categories`
+-- ----------------------------
+DROP TABLE IF EXISTS `book_categories`;
+CREATE TABLE `book_categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `description` tinytext,
+  `created` date DEFAULT NULL,
+  `modified` date DEFAULT NULL,
+  `user_created` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='The loai sach: tu nhien, Xa hoi, Tin hoc';
+
+-- ----------------------------
+-- Records of book_categories
+-- ----------------------------
+INSERT INTO book_categories VALUES ('1', 'Tin học', null, null, null, null);
+INSERT INTO book_categories VALUES ('2', 'Triết học', '', null, '2013-09-28', null);
+INSERT INTO book_categories VALUES ('3', 'Tôn giáo', null, null, null, null);
+INSERT INTO book_categories VALUES ('4', 'Khoa học - Xã hội', null, null, null, null);
+INSERT INTO book_categories VALUES ('5', 'Ngôn ngữ', null, null, null, null);
+INSERT INTO book_categories VALUES ('6', 'KHTN và toán học', null, null, null, null);
+INSERT INTO book_categories VALUES ('7', 'Công nghệ', null, null, null, null);
+INSERT INTO book_categories VALUES ('8', 'Nghệ Thuật', null, null, null, null);
+INSERT INTO book_categories VALUES ('9', 'Văn học', null, null, null, null);
+INSERT INTO book_categories VALUES ('10', 'Lịch sử', null, null, null, null);
+
+-- ----------------------------
+-- Table structure for `book_languages`
+-- ----------------------------
+DROP TABLE IF EXISTS `book_languages`;
+CREATE TABLE `book_languages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `description` tinytext,
+  `created` date DEFAULT NULL,
+  `modified` date DEFAULT NULL,
+  `user_created` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of book_languages
+-- ----------------------------
+INSERT INTO book_languages VALUES ('1', 'Vietnamese', null, null, null, null);
+INSERT INTO book_languages VALUES ('2', 'English', '', null, '2013-09-28', null);
+INSERT INTO book_languages VALUES ('3', 'French', null, null, null, null);
+INSERT INTO book_languages VALUES ('4', 'China', '', null, '2013-09-28', null);
+INSERT INTO book_languages VALUES ('5', 'Japan', null, null, null, null);
+INSERT INTO book_languages VALUES ('6', 'Korea', null, null, null, null);
+
+-- ----------------------------
+-- Table structure for `book_types`
+-- ----------------------------
+DROP TABLE IF EXISTS `book_types`;
+CREATE TABLE `book_types` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `description` tinytext,
+  `created` date DEFAULT NULL,
+  `modified` date DEFAULT NULL,
+  `user_created` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='Sach tham khao, sach giao trinh,...';
+
+-- ----------------------------
+-- Records of book_types
+-- ----------------------------
+INSERT INTO book_types VALUES ('1', 'Giáo trình', null, null, null, null);
+INSERT INTO book_types VALUES ('2', 'Sách Tham khảo', null, null, null, null);
+INSERT INTO book_types VALUES ('3', 'Đề tài khoa học', null, null, null, null);
+INSERT INTO book_types VALUES ('4', 'Luận án', null, null, null, null);
+INSERT INTO book_types VALUES ('5', 'Báo, Tạp chí', null, null, null, null);
+INSERT INTO book_types VALUES ('6', 'Tiểu thuyết', null, null, null, null);
+INSERT INTO book_types VALUES ('7', 'Sách trinh thám', '', '2013-09-28', '2013-09-28', null);
+INSERT INTO book_types VALUES ('8', 'Luận văn', 'Luận văn', '2013-09-28', '2013-09-28', ' (Admin)');
 
 -- ----------------------------
 -- Table structure for `categories`
@@ -51,27 +251,22 @@ CREATE TABLE `categories` (
   `parent_id` int(11) DEFAULT '0',
   `name` varchar(255) CHARACTER SET utf8 NOT NULL,
   `alias` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `published` tinyint(1) NOT NULL DEFAULT '1',
-  `ordering` int(11) DEFAULT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `description` tinytext CHARACTER SET utf8,
   `user_created` varchar(200) DEFAULT NULL,
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of categories
 -- ----------------------------
-INSERT INTO categories VALUES ('1', null, 'Trang chủ', '', '1', '0', 'mô tả\r\n', ' (Admin)', null, '2013-09-21');
-INSERT INTO categories VALUES ('2', null, 'Giới thiệu', '', '1', '0', '', ' (Admin)', null, '2013-09-21');
-INSERT INTO categories VALUES ('3', null, 'Tin tức', '', '1', '0', '', ' (Admin)', null, '2013-09-21');
-INSERT INTO categories VALUES ('4', null, 'Hình ảnh hoạt động', '', '1', '0', null, null, null, null);
-INSERT INTO categories VALUES ('5', null, 'Hướng dẫn sử dụng', '', '1', '0', null, null, null, null);
-INSERT INTO categories VALUES ('6', null, 'Tìm kiếm', '', '1', '0', null, null, null, null);
-INSERT INTO categories VALUES ('7', null, 'Sản Phẩm', '', '1', '0', null, null, null, null);
-INSERT INTO categories VALUES ('8', null, 'Dịch vụ', '', '1', '0', null, null, null, null);
-INSERT INTO categories VALUES ('9', null, 'Liên hệ', '', '1', '0', null, null, null, '2013-09-21');
+INSERT INTO categories VALUES ('1', null, 'Trang chủ', 'trang-chu', '1', 'mô tả\r\n', ' (Admin)', null, '2013-09-26');
+INSERT INTO categories VALUES ('2', '5', 'Giới thiệu', 'gioi-thieu', '1', '', ' (Admin)', null, '2013-09-26');
+INSERT INTO categories VALUES ('3', null, 'Tin tức', '', '1', '', ' (Admin)', null, '2013-09-24');
+INSERT INTO categories VALUES ('4', null, 'Hình ảnh hoạt động', '', '1', null, null, null, '2013-09-24');
+INSERT INTO categories VALUES ('5', null, 'Hướng dẫn sử dụng', '', '1', null, null, null, '2013-09-26');
 
 -- ----------------------------
 -- Table structure for `departments`
@@ -92,7 +287,7 @@ CREATE TABLE `departments` (
 -- ----------------------------
 -- Records of departments
 -- ----------------------------
-INSERT INTO departments VALUES ('1', '08T2', '08t2', '1', '2013-09-20 23:07:44', '2013-09-21 02:51:01', '1');
+INSERT INTO departments VALUES ('1', '08T2', '08t2', '1', '2013-09-20 23:07:44', '2013-09-22 11:15:17', '1');
 INSERT INTO departments VALUES ('2', '08T1', '08T1', '1', '2013-09-20 23:08:27', '2013-09-20 23:09:47', '1');
 INSERT INTO departments VALUES ('3', '08T3', 'lớp 08T3', '1', '2013-09-20 23:21:43', '2013-09-20 23:22:59', '1');
 INSERT INTO departments VALUES ('4', '08T4', 'lớp 08T4', '1', '2013-09-20 23:23:20', '2013-09-20 23:23:20', '1');
@@ -114,11 +309,11 @@ CREATE TABLE `faculties` (
 -- ----------------------------
 -- Records of faculties
 -- ----------------------------
-INSERT INTO faculties VALUES ('1', 'Công nghệ thông tin', 'Khoa công nghệ thông tin', null, '2013-09-20 22:48:00', '1');
+INSERT INTO faculties VALUES ('1', 'Công nghệ thông tin', 'Khoa công nghệ thông tin', null, '2013-09-22 11:48:16', '1');
 INSERT INTO faculties VALUES ('2', 'Điện tử viễn thông', 'Khoa điện tử viễn thông', null, '2013-09-21 03:11:17', '1');
 INSERT INTO faculties VALUES ('3', 'Xây dựng dân dụng', 'Khoa xây dựn dân dụng', null, '2013-09-21 02:23:43', '1');
 INSERT INTO faculties VALUES ('4', 'Xây dựng cầu đường', 'Khoa xây dựng cầu đường', null, '2013-09-21 02:23:54', '1');
-INSERT INTO faculties VALUES ('7', 'Môi trường', 'Khoa môi trường', '2013-09-20 22:20:13', '2013-09-21 03:11:22', '1');
+INSERT INTO faculties VALUES ('7', 'Môi trường', 'Khoa môi trường', '2013-09-20 22:20:13', '2013-09-22 11:48:31', '1');
 INSERT INTO faculties VALUES ('8', 'Tin học xây dựng', 'Khoa tin học xây dựng', '2013-09-20 22:22:02', '2013-09-20 22:23:14', '1');
 INSERT INTO faculties VALUES ('9', 'Cơ điện tử', 'khoa cơ điện tử', '2013-09-20 22:23:11', '2013-09-21 03:11:29', '1');
 
@@ -143,177 +338,6 @@ CREATE TABLE `i18n` (
 -- ----------------------------
 -- Records of i18n
 -- ----------------------------
-
--- ----------------------------
--- Table structure for `lib_bookauthors`
--- ----------------------------
-DROP TABLE IF EXISTS `lib_bookauthors`;
-CREATE TABLE `lib_bookauthors` (
-  `bookAuthorID` int(11) NOT NULL AUTO_INCREMENT,
-  `author` varchar(45) NOT NULL,
-  `bookBarcode` int(11) NOT NULL,
-  PRIMARY KEY (`bookAuthorID`),
-  KEY `fk_lib_BookAuthor_lib_BookStores1_idx` (`bookBarcode`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of lib_bookauthors
--- ----------------------------
-INSERT INTO lib_bookauthors VALUES ('1', 'Nguyễn Trường Thuật', '129');
-INSERT INTO lib_bookauthors VALUES ('2', 'Nguyễn Văn A', '130');
-INSERT INTO lib_bookauthors VALUES ('3', 'Nguyễn Văn C', '131');
-INSERT INTO lib_bookauthors VALUES ('4', 'Trần Văn D', '131');
-INSERT INTO lib_bookauthors VALUES ('5', 'Nguyễn Văn E', '132');
-INSERT INTO lib_bookauthors VALUES ('6', 'Trần Văn F', '132');
-INSERT INTO lib_bookauthors VALUES ('7', 'Nguyễn Văn E', '133');
-INSERT INTO lib_bookauthors VALUES ('8', 'Trần Văn F', '133');
-INSERT INTO lib_bookauthors VALUES ('9', 'Nguyễn Văn E', '134');
-INSERT INTO lib_bookauthors VALUES ('10', 'Trần Văn F', '134');
-INSERT INTO lib_bookauthors VALUES ('11', 'Nguyễn Văn E', '135');
-INSERT INTO lib_bookauthors VALUES ('12', 'Trần Văn F', '135');
-INSERT INTO lib_bookauthors VALUES ('13', 'Nguyễn Văn E', '136');
-INSERT INTO lib_bookauthors VALUES ('14', 'Trần Văn F', '136');
-INSERT INTO lib_bookauthors VALUES ('15', 'Nguyễn Văn E', '137');
-INSERT INTO lib_bookauthors VALUES ('16', 'Trần Văn F', '137');
-INSERT INTO lib_bookauthors VALUES ('17', 'Nguyễn Văn E', '138');
-INSERT INTO lib_bookauthors VALUES ('18', 'Trần Văn F', '138');
-INSERT INTO lib_bookauthors VALUES ('19', 'Nguyễn Văn X', '139');
-INSERT INTO lib_bookauthors VALUES ('20', 'Trần Văn Y', '139');
-INSERT INTO lib_bookauthors VALUES ('21', 'Nguyễn Văn E', '12345');
-INSERT INTO lib_bookauthors VALUES ('22', 'Trần Văn F', '12345');
-INSERT INTO lib_bookauthors VALUES ('23', 'Phạm Hoàng Dũng', '140');
-INSERT INTO lib_bookauthors VALUES ('24', 'Hoàng Đức Hải', '140');
-INSERT INTO lib_bookauthors VALUES ('25', 'Nguyễn Văn X', '140');
-INSERT INTO lib_bookauthors VALUES ('26', 'Marc Levy', '141');
-INSERT INTO lib_bookauthors VALUES ('27', 'Marc Levy', '142');
-INSERT INTO lib_bookauthors VALUES ('28', 'Nguyễn Văn Ba', '12346');
-INSERT INTO lib_bookauthors VALUES ('29', 'Hoàng Đình Thu', '12347');
-INSERT INTO lib_bookauthors VALUES ('30', 'dsfs', '12348');
-INSERT INTO lib_bookauthors VALUES ('31', 'Lê Thế Lạng', '12349');
-INSERT INTO lib_bookauthors VALUES ('32', 'Nguyễn Hồng Sơn', '12350');
-
--- ----------------------------
--- Table structure for `lib_bookcategories`
--- ----------------------------
-DROP TABLE IF EXISTS `lib_bookcategories`;
-CREATE TABLE `lib_bookcategories` (
-  `bookCategoryID` int(11) NOT NULL AUTO_INCREMENT,
-  `bookCategoryName` varchar(45) NOT NULL,
-  `comment` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`bookCategoryID`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='The loai sach: tu nhien, Xa hoi, Tin hoc';
-
--- ----------------------------
--- Records of lib_bookcategories
--- ----------------------------
-INSERT INTO lib_bookcategories VALUES ('1', 'Tin học', null);
-INSERT INTO lib_bookcategories VALUES ('2', 'Triết học', null);
-INSERT INTO lib_bookcategories VALUES ('3', 'Tôn giáo', null);
-INSERT INTO lib_bookcategories VALUES ('4', 'Khoa học - Xã hội', null);
-INSERT INTO lib_bookcategories VALUES ('5', 'Ngôn ngữ', null);
-INSERT INTO lib_bookcategories VALUES ('6', 'KHTN và toán học', null);
-INSERT INTO lib_bookcategories VALUES ('7', 'Công nghệ', null);
-INSERT INTO lib_bookcategories VALUES ('8', 'Nghệ Thuật', null);
-INSERT INTO lib_bookcategories VALUES ('9', 'Văn học', null);
-INSERT INTO lib_bookcategories VALUES ('10', 'Lịch sử', null);
-
--- ----------------------------
--- Table structure for `lib_booklanguages`
--- ----------------------------
-DROP TABLE IF EXISTS `lib_booklanguages`;
-CREATE TABLE `lib_booklanguages` (
-  `languageID` int(11) NOT NULL AUTO_INCREMENT,
-  `languageName` varchar(45) NOT NULL,
-  `comment` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`languageID`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of lib_booklanguages
--- ----------------------------
-INSERT INTO lib_booklanguages VALUES ('1', 'Vietnamese', null);
-INSERT INTO lib_booklanguages VALUES ('2', 'English', null);
-INSERT INTO lib_booklanguages VALUES ('3', 'French', null);
-INSERT INTO lib_booklanguages VALUES ('4', 'China', null);
-INSERT INTO lib_booklanguages VALUES ('5', 'Japan', null);
-INSERT INTO lib_booklanguages VALUES ('6', 'Korea', null);
-INSERT INTO lib_booklanguages VALUES ('7', 'Thailan', null);
-
--- ----------------------------
--- Table structure for `lib_bookstores`
--- ----------------------------
-DROP TABLE IF EXISTS `lib_bookstores`;
-CREATE TABLE `lib_bookstores` (
-  `bookBarcode` int(11) NOT NULL,
-  `title` varchar(45) NOT NULL COMMENT 'Tên cuốn sách',
-  `numberOfPages` int(11) NOT NULL COMMENT 'Tổng số trang',
-  `publisher` varchar(45) NOT NULL COMMENT 'Nhà xuất bản',
-  `yearOfPublish` date NOT NULL COMMENT 'Năm xuất bản',
-  `totalNumber` int(11) NOT NULL,
-  `price` varchar(20) NOT NULL COMMENT 'Giá sách',
-  `createdTime` date NOT NULL COMMENT 'Ngày tạo biên mục cho cuốn sách',
-  `paperSize` varchar(15) NOT NULL COMMENT 'Khổ giấy',
-  `personCreated` varchar(45) NOT NULL COMMENT 'Người biên mục',
-  `location` varchar(45) NOT NULL COMMENT 'Vị trí cuốn sách',
-  `bookDescription` mediumtext NOT NULL COMMENT 'Mô tả nội dung cơ bản của cuốn sách',
-  `usedAs` tinyint(4) NOT NULL COMMENT '0 - chỉ đọc tại chỗ\n1- Có thể mượn về',
-  `languageID` int(11) NOT NULL COMMENT 'Ngôn ngữ của tài liệu',
-  `bookTypeID` int(11) NOT NULL COMMENT 'Loại tài liệu (sách,tài liệu,giáo trình,truyện,tiểu thuyết,sách tham khảo)',
-  `bookCategoryID` int(11) NOT NULL COMMENT 'The loai sach: tu nhien, Xa hoi, Tin hoc',
-  PRIMARY KEY (`bookBarcode`),
-  KEY `fk_lib_BookStores_lib_BookLanguages1_idx` (`languageID`),
-  KEY `fk_lib_BookStores_lib_BookType1_idx` (`bookTypeID`),
-  KEY `fk_lib_BookStores_lib_BookCategories1_idx` (`bookCategoryID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Lưu thông tin của một tập các cuốn sách cùng tên';
-
--- ----------------------------
--- Records of lib_bookstores
--- ----------------------------
-INSERT INTO lib_bookstores VALUES ('125', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('126', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('127', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('128', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('129', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('130', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('131', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('132', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('133', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('134', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('135', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('136', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('137', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('138', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('139', 'Phân tích thiêt kế web', '250', 'NXB Tuổi Trẽ', '2010-05-17', '5', '25.0000', '2013-05-14', '18 x 6', 'user01', 'Tham Khảo', 'fsfhkfhweudfdslkfjslfjslfsn', '0', '1', '2', '3');
-INSERT INTO lib_bookstores VALUES ('140', 'Làm chủ windows 2000 server', '676', 'NXB Thanh Niên', '2001-05-01', '10', '89.000', '2013-05-15', '15,5 x15,5', 'user01', 'Sách tham khảo', 'fsmfnslfshweueowns', '0', '1', '2', '3');
-INSERT INTO lib_bookstores VALUES ('141', 'Đêm Đầu tiên', '545', 'NXB Nhã Nam', '2011-10-04', '10', '105.000', '2013-05-16', '14 x 20,5 cm', 'user01', 'Truyện đọc', 'sffdsdsf', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('142', 'Phút Đầu Tiên', '545', 'NXB Nhã Nam', '2011-10-04', '10', '105.000', '2013-05-16', '14 x 20,5 cm', 'user01', 'Truyện đọc', 'sffdsdsf', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('12345', 'Lập trinh c++', '100', 'NXB Giáo Dục', '2010-05-08', '10', '25.0000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'hhghghgfh', '0', '2', '1', '1');
-INSERT INTO lib_bookstores VALUES ('12346', 'Phân tích và thiết kế hệ thống thông tin', '200', 'NXB Giáo Dục', '2005-05-17', '15', '30.000', '2013-05-29', '14 x 20,5 cm', 'user01', 'Tham Khảo', 'Trình bày các phương pháp phân tích thiết kế có cấu trúc dọc theo các giai đoạn của chu trình phát triển', '1', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('12347', 'Giáo trình cấp thoát nước bên trong công trìn', '203', 'Nxb Hà Nội', '2006-06-14', '10', '27500', '2013-06-01', '24cm', 'user01', 'Tài liệu tham khảo', 'Kiến thức cơ bản về hệ thống cấp thoát nước, nguyên lý hoạt động, cấu tạo, quy trình thiết kế và các', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('12348', 'dfs', '2000', 'sdfs', '2013-06-03', '10', '150000', '2013-06-09', '14 x 20,5 cm', 'user01', 'sách tham khảo', 'dfggfg', '0', '1', '1', '1');
-INSERT INTO lib_bookstores VALUES ('12349', 'Giáo trình chính trị', '247', 'NXB Giáo Dục', '2005-06-13', '4', '23000', '2013-06-16', '24cm', 'user01', 'Giáo trình', 'Nêu chủ nghĩa duy vật khoa học và hoạt động thực tiễn của con người. Quan điểm, đường lối chủ trương chính sách của Đảng Cộng sản Việt Nam', '0', '1', '1', '2');
-INSERT INTO lib_bookstores VALUES ('12350', 'Giáo trình hệ thống mạng máy tính CCNA semest', '443', 'Lao động xã hộ', '2004-06-13', '4', '86000', '2013-06-16', '24cm', 'user01', 'Giáo trình', 'Tái bản lần thứ 1, cập nhật version 3.0.', '1', '1', '1', '1');
-
--- ----------------------------
--- Table structure for `lib_booktypes`
--- ----------------------------
-DROP TABLE IF EXISTS `lib_booktypes`;
-CREATE TABLE `lib_booktypes` (
-  `bookTypeID` int(11) NOT NULL AUTO_INCREMENT,
-  `bookTypeName` varchar(30) NOT NULL,
-  `comment` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`bookTypeID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='Sach tham khao, sach giao trinh,...';
-
--- ----------------------------
--- Records of lib_booktypes
--- ----------------------------
-INSERT INTO lib_booktypes VALUES ('1', 'Giáo trình', null);
-INSERT INTO lib_booktypes VALUES ('2', 'Sách Tham khảo', null);
-INSERT INTO lib_booktypes VALUES ('3', 'Đề tài khoa học', null);
-INSERT INTO lib_booktypes VALUES ('4', 'Luận án', null);
-INSERT INTO lib_booktypes VALUES ('5', 'Báo, Tạp chí', null);
-INSERT INTO lib_booktypes VALUES ('6', 'Tiểu thuyết', null);
 
 -- ----------------------------
 -- Table structure for `lib_categoryarticle`
@@ -518,7 +542,7 @@ CREATE TABLE `login_tokens` (
   `created` datetime NOT NULL,
   `expires` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of login_tokens
@@ -535,6 +559,8 @@ INSERT INTO login_tokens VALUES ('9', '1', '82419fb887398e2f32535ca49fc06d2e', '
 INSERT INTO login_tokens VALUES ('10', '1', '3449d65fdac4b0c9184d89f8587d7fb8', '2 weeks', '0', '2013-09-18 02:29:41', '2013-10-02 02:29:41');
 INSERT INTO login_tokens VALUES ('11', '1', 'f0b863ce88a44f0d0cd5d5ebf30147dd', '2 weeks', '0', '2013-09-18 02:30:27', '2013-10-02 02:30:27');
 INSERT INTO login_tokens VALUES ('12', '1', '123058a0b8bd8cb07603a604069f9d15', '2 weeks', '0', '2013-09-18 05:36:43', '2013-10-02 05:36:43');
+INSERT INTO login_tokens VALUES ('13', '1', '41006f4420b552cb2e15a6bc37d35729', '2 weeks', '1', '2013-09-24 02:17:46', '2013-10-08 02:17:46');
+INSERT INTO login_tokens VALUES ('14', '1', '2f07d84ae38c062ecb302c251fe20eb1', '2 weeks', '0', '2013-09-24 02:57:01', '2013-10-08 02:57:01');
 
 -- ----------------------------
 -- Table structure for `menus`
@@ -543,40 +569,27 @@ DROP TABLE IF EXISTS `menus`;
 CREATE TABLE `menus` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `alias` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `parent_id` int(11) DEFAULT NULL,
   `link` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `ordering` int(11) NOT NULL,
-  `actived` tinyint(1) NOT NULL DEFAULT '1',
-  `published` tinyint(1) NOT NULL DEFAULT '1',
+  `published` tinyint(1) DEFAULT '1',
   `controller` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `action` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `ext` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `module` tinyint(1) DEFAULT '0',
   `view` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `position` enum('right','left','top') CHARACTER SET utf8 DEFAULT NULL,
+  `user_created` varchar(100) DEFAULT NULL,
+  `created` date DEFAULT NULL,
+  `is_active` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of menus
 -- ----------------------------
-INSERT INTO menus VALUES ('49', 'trang-chu', 'Trang chủ', null, 'http://localhost/triminh/bai-viet/32-trang_chu', '1', '0', '1', 'posts', 'view', '32', '0', 'Website TUYỂN DỤNG MIỀN TRUNG', 'top');
-INSERT INTO menus VALUES ('50', 'gioi-thieu', 'Giới thiệu', null, 'http://localhost/triminh/danh-muc/16-gioi_thieu', '1', '1', '1', 'posts', 'blog', '16', '0', 'Giới thiệu', 'top');
-INSERT INTO menus VALUES ('51', 'gioi-thieu-chung', 'Giới thiệu chung', '50', 'http://localhost/triminh/bai-viet/46-gioi_thieu_chung', '1', '1', '1', 'posts', 'view', '46', '0', 'Giới thiệu chung', 'top');
-INSERT INTO menus VALUES ('52', 'tam-nhin-su-menh', 'Tầm nhìn - sứ mệnh', '50', 'http://localhost/triminh/bai-viet/47-tam_nhin_su_menh', '1', '1', '1', 'posts', 'view', '47', '0', 'Tầm nhìn - Sứ mệnh', 'top');
-INSERT INTO menus VALUES ('53', 'co-cau-to-chuc', 'Cơ cấu tổ chức', '50', 'http://localhost/triminh/bai-viet/48-co_cau_to_chuc', '1', '1', '1', 'posts', 'view', '48', '0', 'Cơ cấu tổ chức', 'top');
-INSERT INTO menus VALUES ('54', 'chuc-nang', 'Chức năng', '50', 'http://localhost/triminh/bai-viet/49-chuc_nang', '1', '1', '1', 'posts', 'view', '49', '0', 'Chức năng', 'top');
-INSERT INTO menus VALUES ('55', 'lien-ket-hop-tac', 'Liên kết hợp tác', '50', 'http://localhost/triminh/bai-viet/50-lien_ket_hop_tac', '1', '1', '1', 'posts', 'view', '50', '0', 'Liên kết - Hợp tác', 'top');
-INSERT INTO menus VALUES ('56', 'cac-khoa-hoc', 'Các khóa học', null, 'http://localhost/triminh/courses/list_course', '2', '1', '1', 'courses', 'list_course', '0', '1', 'Danh sách khóa học', 'top');
-INSERT INTO menus VALUES ('57', 'xem-diem', 'Xem điểm', null, 'http://localhost/triminh/classRooms/showMark', '3', '1', '1', 'classRooms', 'showMark', '0', '1', 'Xem điểm', 'top');
-INSERT INTO menus VALUES ('58', 'dang-ki-hoc', 'Đăng kí học', null, 'http://localhost/triminh/users/apply', '4', '1', '1', 'users', 'apply', '0', '1', 'Đăng kí học', 'top');
-INSERT INTO menus VALUES ('59', 'gop-y', 'Góp ý', null, '/triminh/gop-y', '5', '1', '1', '', '', '0', '1', '/triminh/gop-y', 'top');
-INSERT INTO menus VALUES ('64', 'thong-tin-van-ban', 'Thông tin văn bản', null, '', '4', '1', '1', '', '', '', '0', '', 'left');
-INSERT INTO menus VALUES ('61', 'gioi-thieu', 'Giới thiệu', null, 'http://localhost:81/triminh/danh-muc/16-gioi_thieu', '1', '1', '1', 'posts', 'blog', '16', '0', 'Giới thiệu', 'left');
-INSERT INTO menus VALUES ('62', 'cac-khoa-hoc', 'Các khóa học', null, 'http://localhost:81/triminh/danh-muc/22-cac_khoa_hoc', '2', '1', '1', 'posts', 'blog', '22', '0', 'Các khóa học', 'left');
-INSERT INTO menus VALUES ('63', 'chuong-trinh', 'Chương trình', null, '', '3', '1', '1', '', '', '', '0', '', 'left');
-INSERT INTO menus VALUES ('65', 'thong-bao', 'Thông báo', null, '', '5', '1', '1', '', '', '', '0', '', 'left');
+INSERT INTO menus VALUES ('2', 'trang-chu', 'Trang chủ', null, 'http://localhost/LibraryManagement/articles/view/id:7/slug:trang_chu', '3', '1', 'articles', 'view', '7', '0', 'Đừng xé sách lịch sử nữa các bạn nhé!', null, null, null, '1');
 
 -- ----------------------------
 -- Table structure for `readers`
@@ -621,7 +634,7 @@ CREATE TABLE `users` (
   `email` varchar(100) CHARACTER SET latin1 NOT NULL,
   `fullname` varchar(100) DEFAULT NULL,
   `email_verified` int(1) DEFAULT '0',
-  `actived` int(1) NOT NULL DEFAULT '0',
+  `is_active` int(1) NOT NULL DEFAULT '0',
   `ip_address` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
@@ -641,16 +654,16 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO users VALUES ('1', '1', 'admin', '365caef7fccbdb1ee711f084be9317a7', '1e6d99570a4d37cc29b18c4a6b06e6ed', 'admin@admin.com', '', '1', '1', '', '2013-09-16 13:11:33', '2013-09-20 22:03:38', null, null, null, null, null, null, null);
+INSERT INTO users VALUES ('1', '1', 'admin', '365caef7fccbdb1ee711f084be9317a7', '1e6d99570a4d37cc29b18c4a6b06e6ed', 'admin@admin.com', '', '1', '1', '', '2013-09-16 13:11:33', '2013-09-24 02:40:50', null, null, null, null, null, null, null);
 INSERT INTO users VALUES ('2', '2', 'vienlemai', '6eb88ce0c322a3e9cc0832938153fa5b', '607a7d89920dfd96624f3a97366f9dc1', 'lemaibk08@gmail.com', 'Mai Vien', '1', '1', null, '2013-09-17 06:26:43', '2013-09-17 06:26:43', null, null, null, null, null, null, null);
-INSERT INTO users VALUES ('3', '2', '331.08.0001', '3bb500954e1a9c9e5dcddb864bf5d518', 'cbabfcadae7b5f9d5ffd15641a988790', 'vienlm@ilucians.com', 'lemai', '1', '1', null, '2013-09-19 00:57:54', '2013-09-19 00:59:12', null, null, null, null, null, null, null);
-INSERT INTO users VALUES ('4', '2', '331.08.0002', '123456', 'cbabfcadae7b5f9d5ffd15641a988790', 'vienlm@ilucians.com', 'mai vien', '1', '1', null, null, null, null, null, null, null, null, null, null);
-INSERT INTO users VALUES ('5', null, '331.08.0003', '123456', null, 'vienlm@ilucians.com', null, '0', '1', null, null, '2013-09-21 04:15:27', null, null, null, null, null, null, null);
+INSERT INTO users VALUES ('3', '2', '331.08.0001', '3bb500954e1a9c9e5dcddb864bf5d518', 'cbabfcadae7b5f9d5ffd15641a988790', 'vienlm@ilucians.com', 'lemai', '1', '1', null, '2013-09-19 00:57:54', '2013-09-24 02:39:10', null, null, null, null, null, null, null);
+INSERT INTO users VALUES ('4', '2', '331.08.0002', '123456', 'cbabfcadae7b5f9d5ffd15641a988790', 'vienlm@ilucians.com', 'mai vien', '1', '0', null, null, '2013-09-24 02:40:29', null, null, null, null, null, null, null);
+INSERT INTO users VALUES ('5', null, '331.08.0003', '123456', null, 'vienlm@ilucians.com', null, '0', '0', null, null, '2013-09-24 02:40:27', null, null, null, null, null, null, null);
 INSERT INTO users VALUES ('6', null, '331.08.0004', '123456', null, 'vienlm@ilucians.com', null, '0', '1', null, null, '2013-09-21 04:15:29', null, null, null, null, null, null, null);
 INSERT INTO users VALUES ('7', null, '331.08.0005', '123456', null, 'vienlm@ilucians.com', null, '0', '1', null, null, '2013-09-21 04:15:31', null, null, null, null, null, null, null);
-INSERT INTO users VALUES ('8', null, '331.09.0001', '123456', null, 'vienlm@ilucians.com', null, '0', '1', null, null, '2013-09-21 04:15:33', null, null, null, null, null, null, null);
-INSERT INTO users VALUES ('9', null, '331.12.0001', '123456', null, 'vienlm@ilucians.com', null, '0', '0', null, null, '2013-09-21 05:06:01', null, null, null, null, null, null, null);
-INSERT INTO users VALUES ('10', null, '331.12.0002', '123456', null, 'vienlm@ilucians.com', null, '0', '0', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO users VALUES ('8', null, '331.09.0001', '123456', null, 'vienlm@ilucians.com', null, '0', '1', null, null, '2013-09-22 06:27:02', null, null, null, null, null, null, null);
+INSERT INTO users VALUES ('9', null, '331.12.0001', '123456', null, 'vienlm@ilucians.com', null, '0', '1', null, null, '2013-09-24 02:40:38', null, null, null, null, null, null, null);
+INSERT INTO users VALUES ('10', null, '331.12.0002', '123456', null, 'vienlm@ilucians.com', null, '0', '1', null, null, '2013-09-24 02:40:39', null, null, null, null, null, null, null);
 INSERT INTO users VALUES ('11', null, '331.12.0003', '123456', null, 'vienlm@ilucians.com', null, '0', '0', null, null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
@@ -666,15 +679,15 @@ CREATE TABLE `user_groups` (
   `modified` datetime DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_groups
 -- ----------------------------
-INSERT INTO user_groups VALUES ('0', 'Thủ thư', 'thu_thu', '0', '2013-09-20 01:57:59', '2013-09-20 01:57:59', null);
 INSERT INTO user_groups VALUES ('1', 'Admin', 'Admin', '0', '2013-09-16 13:11:33', '2013-09-16 13:11:33', null);
 INSERT INTO user_groups VALUES ('2', 'Reader', 'Reader', '1', '2013-09-16 13:11:33', '2013-09-19 01:10:32', null);
 INSERT INTO user_groups VALUES ('3', 'Guest', 'Guest', '0', null, null, null);
+INSERT INTO user_groups VALUES ('4', 'Thủ thư', 'thu_thu', '0', '2013-09-20 01:57:59', '2013-09-20 01:57:59', null);
 
 -- ----------------------------
 -- Table structure for `user_group_permissions`
@@ -687,7 +700,7 @@ CREATE TABLE `user_group_permissions` (
   `action` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `allowed` tinyint(1) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of user_group_permissions
@@ -784,3 +797,19 @@ INSERT INTO user_group_permissions VALUES ('89', '2', 'LibArticles', 'edit', '0'
 INSERT INTO user_group_permissions VALUES ('90', '3', 'LibArticles', 'edit', '0');
 INSERT INTO user_group_permissions VALUES ('91', '7', 'UserGroupPermissions', 'index', '0');
 INSERT INTO user_group_permissions VALUES ('92', '7', 'UserGroups', 'index', '0');
+INSERT INTO user_group_permissions VALUES ('93', '1', 'Departments', 'delete', '1');
+INSERT INTO user_group_permissions VALUES ('94', '2', 'Departments', 'delete', '0');
+INSERT INTO user_group_permissions VALUES ('95', '3', 'Departments', 'delete', '0');
+INSERT INTO user_group_permissions VALUES ('96', '4', 'Departments', 'delete', '0');
+INSERT INTO user_group_permissions VALUES ('97', '1', 'Categories', 'delete', '1');
+INSERT INTO user_group_permissions VALUES ('98', '2', 'Categories', 'delete', '0');
+INSERT INTO user_group_permissions VALUES ('99', '3', 'Categories', 'delete', '0');
+INSERT INTO user_group_permissions VALUES ('100', '4', 'Categories', 'delete', '0');
+INSERT INTO user_group_permissions VALUES ('101', '1', 'Menus', 'index', '0');
+INSERT INTO user_group_permissions VALUES ('102', '2', 'Menus', 'index', '0');
+INSERT INTO user_group_permissions VALUES ('103', '3', 'Menus', 'index', '0');
+INSERT INTO user_group_permissions VALUES ('104', '4', 'Menus', 'index', '0');
+INSERT INTO user_group_permissions VALUES ('105', '1', 'Categories', 'index', '1');
+INSERT INTO user_group_permissions VALUES ('106', '2', 'Categories', 'index', '0');
+INSERT INTO user_group_permissions VALUES ('107', '3', 'Categories', 'index', '0');
+INSERT INTO user_group_permissions VALUES ('108', '4', 'Categories', 'index', '0');
