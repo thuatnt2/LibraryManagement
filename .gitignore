@@ -5,6 +5,8 @@ app/tmp/cache/persistent/*
 app/[Cc]onfig/core.php
 app/[Cc]onfig/database.php
 !empty
+nbproject
+/nbproject
 /nbproject/private/
 /app/tmp/cache/persistent/
 app/tmp/cache/models/
