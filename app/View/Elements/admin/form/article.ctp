@@ -56,10 +56,10 @@
                 <?php echo $this->Form->create('Article'); ?>
                 <label><?php echo 'Tên bài viết'; ?><font color='red'>*</font></label>
                 <?php echo $this->Form->input("title", array('label' => false, 'div' => false, 'class' => "form-control")) ?>
-
-                <label><?php echo 'Danh mục'; ?><font color='red'>*</font></label>
-                <?php echo $this->Form->input("category_id", array('label' => false, 'div' => false, 'class' => "form-control custom-260", 'options' => $articles)) ?>
-
+                <?php if (false) { ?>
+                    <label><?php echo 'Danh mục'; ?><font color='red'>*</font></label>
+                    <?php echo $this->Form->input("category_id", array('label' => false, 'div' => false, 'class' => "form-control custom-260", 'options' => $articles)) ?>
+                <?php } ?>
                 <label>Ảnh</label>
                 <?php
                 if (!empty($this->request->data['Article']['thumbnail'])) {

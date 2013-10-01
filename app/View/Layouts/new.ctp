@@ -36,7 +36,7 @@
             <!-- End Navigation -->
             <div class="cl">&nbsp;</div>
             <!-- Login-details -->
-            <div id="login-details">
+            <div id="login-details" style="height: 0px;">
 
                 <?php if ($this->UserAuth->isLogged()): ?>
                     <p>Welcome, <a href="#" id="user"><?php echo $this->Session->read('UserAuth.User.username'); ?></a></p>
