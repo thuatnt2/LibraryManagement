@@ -18,7 +18,7 @@
         echo $this->fetch('script');
         ?>
     </head>
-    <body>
+    <body style="padding: 10px 0 10px 0;">
         <!-- Header -->
         <div id="header" class="shell">
             <div id="logo"><h1><a href="#">BestSeller</a></h1></div>
