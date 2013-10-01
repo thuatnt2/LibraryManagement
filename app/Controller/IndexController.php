@@ -15,9 +15,11 @@ class IndexController extends AppController {
      *
      * @return void
      */
-    var $layout = 'Frontend/frontend';
+//    var $layout = 'Frontend/frontend';
+    var $layout = 'new';
+
     public function index() {
-       
+        
     }
 
 }

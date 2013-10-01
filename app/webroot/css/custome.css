@@ -1,0 +1,9 @@
+.textboxLogin {
+    height: 15px !important;
+    width: 100px;
+    font-size: 12px !important;
+    text-align: center;
+}
+.btn {
+    border-radius: 0px !important;
+}

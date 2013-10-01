@@ -66,7 +66,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'root',
-		'password' => 'Htlu@n2605',
+		'password' => '123456',
 		'database' => 'librarydb',
 		'prefix' => '',
 		'encoding' => 'utf8',
