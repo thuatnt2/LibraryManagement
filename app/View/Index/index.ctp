@@ -1,4 +1,15 @@
 <div id="content">
+    <div id="best-sellers">
+        <h3>News</h3>
+        
+        <h4><?php echo $article['Article']['title'] ;?></h4>
+        <div>
+         <?php echo $this->Text->truncate($article['Article']['content'],800) ;?>   
+        </div>
+        <button class="btn btn-small btn-success" style="float: right">More</button>
+        
+    </div>
+    <div class="cl">&nbsp;</div>
     <div class="products">
         <h3>Hots</h3>
         <ul>
@@ -52,11 +63,7 @@
             </li>
         </ul>
     </div>
-    <div class="cl">&nbsp;</div>
-    <div id="best-sellers">
-        <h3>News</h3>
 
-    </div>
 </div>
 <div class="cl">&nbsp;</div>
 <div id="footer" class="shell">

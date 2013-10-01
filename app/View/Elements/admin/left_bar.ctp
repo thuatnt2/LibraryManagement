@@ -6,7 +6,7 @@
         <div id="profile-links">
             Hello, <a href="#" title="Edit your profile"><?php echo $this->Session->read('UserAuth.User.username'); ?></a>, you have <a href="#messages" rel="modal" title="3 Messages">3 Messages</a><br />
             <br />
-            <a href="#" title="View the Site">View the Site</a> | <a href="<?php echo $this->Html->url('/logout') ?>" title="Sign Out">Log Out</a>
+            <a href="/" title="View the Site">View the Site</a> | <a href="<?php echo $this->Html->url('/logout') ?>" title="Sign Out">Log Out</a>
         </div>        
 
         <ul id="main-nav">  <!-- Accordion Menu -->
@@ -22,7 +22,7 @@
                     Articles
                 </a>
                 <ul>
-                    <li><a href="#">Write a new Article</a></li>
+                    <li><a href="/articles/add">Write a new Article</a></li>
                     <li><a class="current" href="/articles">Manage Articles</a></li> <!-- Add class "current" to sub menu items also -->
                     <li><a href="#">Manage Comments</a></li>
                     <li><a href="#">Manage Categories</a></li>
