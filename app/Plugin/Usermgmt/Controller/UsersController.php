@@ -114,7 +114,7 @@ class UsersController extends UserMgmtAppController {
                     $user = $this->User->findByEmail($email);
                     if (empty($user)) {
                         $this->Session->setFlash(__('Incorrect Email/Username or Password'));
-//                         $this->redirect('/');
+                         $this->redirect('/');
                         return;
                     }
                     $this->redirect(array('controller' => 'index', 'action' => 'index'));

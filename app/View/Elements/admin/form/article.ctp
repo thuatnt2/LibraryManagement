@@ -56,7 +56,7 @@
                 <?php echo $this->Form->create('Article'); ?>
                 <label><?php echo 'Tên bài viết'; ?><font color='red'>*</font></label>
                 <?php echo $this->Form->input("title", array('label' => false, 'div' => false, 'class' => "form-control")) ?>
-                <?php if (false) { ?>
+                <?php if (false) {  ?>
                     <label><?php echo 'Danh mục'; ?><font color='red'>*</font></label>
                     <?php echo $this->Form->input("category_id", array('label' => false, 'div' => false, 'class' => "form-control custom-260", 'options' => $articles)) ?>
                 <?php } ?>
@@ -71,7 +71,7 @@
                 }
                 ?>
                 <label><?php echo 'Tóm tắt'; ?><font color='red'>*</font></label>
-                <?php echo $this->Form->input("sumary", array('type' => 'textarea', 'selected' => 'selected', 'label' => false, 'div' => false)) ?>
+                <?php echo $this->Form->input("sumary", array('type' => 'textarea', 'selected' => 'selected', 'label' => false, 'div' => false , 'rows' => '2')) ?>
                 <input name="data[Article][thumbnail]" type="hidden" id="image_path" value=""/>
 
 

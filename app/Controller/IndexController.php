@@ -17,10 +17,12 @@ class IndexController extends AppController {
      */
 //    var $layout = 'Frontend/frontend';
     var $layout = 'new';
+    var $uses = array('Article');
 
     public function index() {
+        $article = $this->Article->read(null, 5);
+        $this->set('article', $article);
     }
-
 }
 
 ?>

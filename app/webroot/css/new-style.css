@@ -96,17 +96,8 @@ textarea { overflow: auto; }
 .product .author { font-size: 11px; line-height: 14px; color: #3d3d3d; font-family: 'Georgia', Arial, serif; padding: 0 0 9px 1px; display: block; }
 .product .description { font-size: 11px; line-height: 16px; color: #878787; }
 
-#best-sellers { padding-top: 18px; width: 100%; position: relative; }
+#best-sellers { width: 100%; position: relative; }
 #best-sellers h3 { color: #404040; margin-bottom: 0; }
-#best-sellers .jcarousel-container { width: 560px; height: 210px; padding: 0 26px 0 53px; margin-top: 31px; }
-#best-sellers .jcarousel-clip { width: 560px; height: 210px; overflow: hidden; }
-#best-sellers .jcarousel-item { width: 125px; height: 210px; text-align: center; float: left; display: inline; margin-right: 15px; }
-#best-sellers .jcarousel-prev,
-#best-sellers .jcarousel-next { width: 20px; height: 33px; background: url(/images/best-sellers-directions.png) no-repeat; position: absolute; top: 57px; cursor: pointer; }
-#best-sellers .jcarousel-prev { background-position: 0 0; left: 2px; }
-#best-sellers .jcarousel-prev:hover { background-position: 0 bottom; }
-#best-sellers .jcarousel-next { background-position: right 0; right: 2px; }
-#best-sellers .jcarousel-next:hover { background-position: right bottom; }
 #best-sellers a { position: relative; display: block; height: 100%; width: 102px; }
 #best-sellers a:hover { text-decoration: none; opacity: 0.7;}
 #best-sellers a img { width: 102px; height: 156px; display: block; padding-bottom: 10px; }
