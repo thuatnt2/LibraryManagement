@@ -11,7 +11,7 @@
     </div>
     <div class="cl">&nbsp;</div>
     <div class="products">
-        <h3>Hots</h3>
+        <h3>Interesting books</h3>
         <ul>
             <li>
                 <div class="product">

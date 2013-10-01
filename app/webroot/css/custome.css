@@ -16,3 +16,7 @@
 .categories h4 {
     color:  #0182b5;
 }
+#sidebar {
+    border-right: 1px solid #C9C9C9;
+    padding-right: 10px;
+}
