@@ -39,7 +39,7 @@
             <div id="login-details">
 
                 <?php if ($this->UserAuth->isLogged()): ?>
-                    <p>Welcome, <a href="#" id="user">Guest</a></p>
+                    <p>Welcome, <a href="#" id="user"><?php echo $this->Session->read('UserAuth.User.username'); ?></a></p>
                     &nbsp|&nbsp
                     <a  href="<?php echo $this->Html->url('/logout') ?>">(Logout)</a>
                 <?php else: ?>
@@ -61,8 +61,34 @@
             </div>
             <!-- End Login-details -->
         </div>
-        <?php echo $this->Session->flash(); ?>
+        <div class="shell">
+            <?php echo $this->Session->flash(); ?>
+        </div>
         <!-- End Header -->
-        <?php echo $this->fetch('content'); ?>
+        <div id="main" class="shell">
+            <div id="sidebar">
+                <ul class="categories">
+                    <li>
+                        <h4>Categories</h4>
+                        <ul>
+                            <li><a href="#">Lorem ipsum dolor</a></li>
+                            <li><a href="#">Morbi eget</a></li>
+                            <li><a href="#">Nulla egestas</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Authors</h4>
+                        <ul>
+                            <li><a href="#">Lorem ipsum dolor</a></li>
+                            <li><a href="#">Morbi eget</a></li>
+                            <li><a href="#">Nulla egestas</a></li>
+                            <li><a href="#">Curabitur venenatis</a></li>
+                            <li><a href="#">Ut dictum purus</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <?php echo $this->fetch('content'); ?>
+        </div>
     </body>
 </html>

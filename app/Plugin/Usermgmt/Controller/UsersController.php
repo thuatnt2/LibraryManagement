@@ -157,7 +157,7 @@ class UsersController extends UserMgmtAppController {
                     //$redirect = (!empty($OriginAfterLogin)) ? $OriginAfterLogin : LOGIN_REDIRECT_URL;
                     $this->redirect($redirect);
                 } else {
-                    $this->Session->setFlash(__('Sai mã thể hoặc mật khẩu'));
+                    $this->Session->setFlash(__('Sai mã thẻ hoặc mật khẩu'));
                     $this->redirect('/');
                 }
             }

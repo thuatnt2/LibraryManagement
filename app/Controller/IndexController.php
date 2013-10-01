@@ -19,7 +19,6 @@ class IndexController extends AppController {
     var $layout = 'new';
 
     public function index() {
-        
     }
 
 }

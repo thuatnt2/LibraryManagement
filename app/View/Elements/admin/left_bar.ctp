@@ -2,14 +2,11 @@
 
         <h1 id="sidebar-title"><a href="#">Simpla Admin</a></h1>
 
-        <!-- Logo (221px wide) -->
-        <a href="#"><img id="logo" src="<?php echo $this->Html->webroot('/images/logo.png') ?>" alt="Simpla Admin logo" /></a>
-
         <!-- Sidebar Profile links -->
         <div id="profile-links">
-            Hello, <a href="#" title="Edit your profile">John Doe</a>, you have <a href="#messages" rel="modal" title="3 Messages">3 Messages</a><br />
+            Hello, <a href="#" title="Edit your profile"><?php echo $this->Session->read('UserAuth.User.username'); ?></a>, you have <a href="#messages" rel="modal" title="3 Messages">3 Messages</a><br />
             <br />
-            <a href="#" title="View the Site">View the Site</a> | <a href="#" title="Sign Out">Sign Out</a>
+            <a href="#" title="View the Site">View the Site</a> | <a href="<?php echo $this->Html->url('/logout') ?>" title="Sign Out">Log Out</a>
         </div>        
 
         <ul id="main-nav">  <!-- Accordion Menu -->
@@ -21,12 +18,12 @@
             </li>
 
             <li> 
-                <a href="#" class="nav-top-item current"> <!-- Add the class "current" to current menu item -->
+                <a href="/articles" class="nav-top-item current"> <!-- Add the class "current" to current menu item -->
                     Articles
                 </a>
                 <ul>
                     <li><a href="#">Write a new Article</a></li>
-                    <li><a class="current" href="#">Manage Articles</a></li> <!-- Add class "current" to sub menu items also -->
+                    <li><a class="current" href="/articles">Manage Articles</a></li> <!-- Add class "current" to sub menu items also -->
                     <li><a href="#">Manage Comments</a></li>
                     <li><a href="#">Manage Categories</a></li>
                 </ul>

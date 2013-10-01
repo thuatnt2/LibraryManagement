@@ -5,7 +5,7 @@
     <div class="um_box_mid">
         <div class="um_box_mid_content">
             <div class="um_box_mid_content_top">
-                <span class="umstyle1"><?php echo 'Danh sách bạn đọc'; ?></span>
+                <span class="umstyle1"><?php echo 'Danh sách bài viết'; ?></span>
                 <div style="clear:both"></div>
             </div>
             <div class="umhr"></div>
