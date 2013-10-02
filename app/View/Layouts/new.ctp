@@ -62,7 +62,8 @@
             <!-- End Login-details -->
         </div>
         <div class="shell">
-            <?php echo $this->element('flash_success') ?>
+            <?php 
+			echo $this->Session->flash();?>
         </div>
         <!-- End Header -->
         <div id="main" class="shell">

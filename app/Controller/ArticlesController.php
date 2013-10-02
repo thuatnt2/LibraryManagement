@@ -16,6 +16,7 @@ class ArticlesController extends AppController {
      * @var array
      */
     public $components = array('Paginator');
+	
 
     /**
      * index method

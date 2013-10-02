@@ -23,6 +23,7 @@ class IndexController extends AppController {
         $article = $this->Article->read(null, 5);
         $this->set('article', $article);
         $book_types = $this->BookType->find('all');
+		$this->Session->setFlash('Thêm thành công', 'flash_success');
         $this->set('book_types',$book_types);
     }
     
