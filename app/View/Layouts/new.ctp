@@ -11,7 +11,7 @@
         echo $this->Html->css(array(
             'new-style', 'custome', 'bootstrap'));
         echo $this->Html->script(array(
-            'jquery-1.9.1.min'
+            'jquery-1.9.1.min','vendor/bootstrap.min'
         ));
         echo $this->fetch('meta');
         echo $this->fetch('css');
@@ -62,9 +62,7 @@
             <!-- End Login-details -->
         </div>
         <div class="shell">
-
-            <?php echo $this->element('frontend/flash') ?>
-
+            <?php echo $this->element('flash_success') ?>
         </div>
         <!-- End Header -->
         <div id="main" class="shell">

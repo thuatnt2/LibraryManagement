@@ -26,8 +26,8 @@ class IndexController extends AppController {
         $this->set('book_types',$book_types);
     }
     
-//    public function _logger(Object $msg){
-//        $this->log($msg,'debug');
+//    public function _logger(Object $obj){
+//        $this->log($obj,'debug');
 //    }
 }
 
