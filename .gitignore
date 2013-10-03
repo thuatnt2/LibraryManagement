@@ -14,3 +14,4 @@ nbproject
 /app/tmp/cache/persistent/
 app/tmp/cache/models/
 /app/Config/my_configs.php
+/app/Config/database.php
