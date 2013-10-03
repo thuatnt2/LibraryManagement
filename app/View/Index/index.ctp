@@ -1,6 +1,6 @@
 <div id="content">
     <div id="best-sellers">
-        <h3>News</h3>
+        <h3>Tin tức</h3>
         
         <h4><?php echo $article['Article']['title'] ;?></h4>
         <div>
@@ -66,8 +66,4 @@
 
 </div>
 <div class="cl">&nbsp;</div>
-<div id="footer" class="shell">
 
-    <div class="copy">
-        <p>Copyright © <a href="#">example.com</a>. Design by me</a></p>
-    </div>

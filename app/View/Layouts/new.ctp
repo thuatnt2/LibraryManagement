@@ -62,7 +62,9 @@
             <!-- End Login-details -->
         </div>
         <div class="shell">
-            <?php echo $this->Session->flash(); ?>
+
+            <?php echo $this->element('frontend/flash') ?>
+
         </div>
         <!-- End Header -->
         <div id="main" class="shell">
@@ -71,9 +73,9 @@
                     <li>
                         <h4>Categories</h4>
                         <ul>
-                            <li><a href="#">Lorem ipsum dolor</a></li>
-                            <li><a href="#">Morbi eget</a></li>
-                            <li><a href="#">Nulla egestas</a></li>
+                            <?php foreach ($book_types as $type) { ?>
+                            <li><a href="#"><?php echo $type['BookType']['name']?></a></li>
+                            <?php } ?>
                         </ul>
                     </li>
                     <li>
@@ -110,6 +112,9 @@
 
             </div>
             <?php echo $this->fetch('content'); ?>
+            <?php
+            echo $this->element('frontend/footer')
+            ?>
         </div>
     </body>
 </html>

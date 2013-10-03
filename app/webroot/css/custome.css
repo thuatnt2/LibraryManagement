@@ -12,6 +12,8 @@
     background-color: #f2dede;
     border-color: #eed3d7;
     color: #b94a48;
+    padding: 7px;
+    border-radius: 4px;
 }
 .categories h4 {
     color:  #0182b5;
@@ -19,4 +21,7 @@
 #sidebar {
     border-right: 1px solid #C9C9C9;
     padding-right: 10px;
+}
+.notification .close{
+    margin: 5px;
 }
