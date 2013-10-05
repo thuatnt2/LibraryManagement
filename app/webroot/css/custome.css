@@ -19,7 +19,7 @@
     color:  #0182b5;
 }
 #sidebar {
-    border-right: 1px solid #C9C9C9;
+    /*border-right: 1px solid #C9C9C9;*/
     padding-right: 10px;
 }
 .notification .close{
@@ -31,9 +31,52 @@ h1,h2,h3,h4 {
 .read-more-link {
     float: right;
     margin-right: 15px;
-}
-#news .title, .prefer_books .title {
+} .prefer_books .title {
     color: #0182b5;
-    border-bottom: solid 4px #eaeaea;
+    /*border-bottom: solid 4px #eaeaea;*/
     padding: 0 0 8px 1px;
+}
+#logo { 
+    background: url(/images/banner.png);
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.tab-name {
+    border-radius: 3px;
+    display:  inline-block;
+    width: 100%;
+    max-width: 250px;
+    background: url(/images/tab-background.jpg) repeat-x;
+}
+.tab-name .tab-ender{
+    float: right;
+}
+.tab-name h4 {
+    color: #fff;
+    display: inline-block;
+    padding: 3px 15px 0 5px;
+    margin: 0;
+    font-size: 95%;
+}
+.tab-name h4 :hover {
+    color: #6291DF;
+    /*    display: inline-block;
+        padding: 3px 15px 0 15px;
+        margin: 0;*/
+}
+.tab-content {
+    /*background: url(/images/tab-content-bg.jpg) repeat-x;*/
+    padding: 10px;
+    border: 1px solid #C9C9C9;
+    border-radius: 2px;
+}
+.tab-name .tab-icon {
+    padding-left: 10px;
+}
+.devider {
+    border-top: 1px solid #D8D8D8;
+    padding: 10px 0 10px 0;
+}
+.article {
+    border-bottom: 2px solid #C9C9C9;
 }

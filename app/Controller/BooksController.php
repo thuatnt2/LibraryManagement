@@ -195,8 +195,5 @@ class BooksController extends AppController {
         return $this->redirect(array('action' => 'index'));
     }
 
-    public function frontEndView() {
-        
-    }
 
 }

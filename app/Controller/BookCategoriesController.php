@@ -51,7 +51,7 @@ class BookCategoriesController extends AppController {
      */
     public function add() {
         if ($this->request->is('post')) {
-			$this->request->data['BookCategory']['is_active'] = 1;
+            $this->request->data['BookCategory']['is_active'] = 1;
             $user = $this->UserAuth->getUser();
             $this->request->data['BookCategory']['user_created'] = $user['User']['fullname'] . ' (' . $user['UserGroup']['name'] . ')';
             $this->BookCategory->create();
@@ -115,6 +115,23 @@ class BookCategoriesController extends AppController {
             $this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại', 'flash_error');
         }
         return $this->redirect(array('action' => 'index'));
+    }
+
+    public function getBookCategories() {
+        return $book_categories = $this->BookCategory->find('list');
+    }
+
+    public function userIndex() {
+        $this->layout = 'new';
+        $title_for_layout = 'aaaa';
+        $this->set(compact('title_for_layout'));
+    }
+
+    public function userView() {
+        $this->layout = 'new';
+        $bookCategory = $this->BookCategory->find('first', array('conditions' => array(
+                'BookCategory.id' => $this->request->params['id'])));
+        $this->set('bookCategory', $bookCategory);
     }
 
 }

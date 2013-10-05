@@ -115,9 +115,4 @@ class BookTypesController extends AppController {
         return $this->redirect(array('action' => 'index'));
     }
 
-    public function getBookType() {
-        $book_types = $this->BookType->find('list');
-        return $book_types;
-    }
-
 }

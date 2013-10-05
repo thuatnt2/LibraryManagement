@@ -4,15 +4,15 @@
             <h4>Danh mục</h4>
             <ul>
                 <?php
-                $book_types = $this->requestAction('bookTypes/getBookType');
+                $book_types = $this->requestAction('bookCategories/getBookCategories');
                 foreach ($book_types as $k => $v) {
                     ?>
-                    <li><a href="<?php echo $k ?>"><?php echo $v ?></a></li>
+                    <li><a href="/danhmuc/<?php echo $k ?>"><?php echo $v ?></a></li>
                 <?php } ?>
             </ul>
         </li>
         <li>
-            <h4>Authors</h4>
+            <h4>Thể loại</h4>
             <ul>
                 <li><a href="#">Lorem ipsum dolor</a></li>
                 <li><a href="#">Morbi eget</a></li>
@@ -24,7 +24,7 @@
     </ul>
     <ul class="categories">
         <li>
-            <h4>Statistics</h4>
+            <h4>Thống kê</h4>
             <ul>
                 <li><a href="#">Lorem ipsum dolor</a></li>
                 <li><a href="#">Morbi eget</a></li>
@@ -32,7 +32,7 @@
             </ul>
         </li>
         <li>
-            <h4>Support</h4>
+            <h4>Liên hệ</h4>
             <ul>
                 <li><a href="#">Lorem ipsum dolor</a></li>
                 <li><a href="#">Morbi eget</a></li>

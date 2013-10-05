@@ -73,7 +73,11 @@ class UserAuthComponent extends Component {
             'pages/display',
             'users/accessDenied',
             'users/emailVerification',
-            'index/index'
+            'index/index',
+            'articles/userIndex',
+            'articles/userView',
+            'BookCategories/userIndex',
+            'BookCategories/userView',
         );
         $access = str_replace(' ', '', ucwords(str_replace('_', ' ', $controller))) . '/' . $action;
         $allControllers = $this->ControllerList->getControllerWithMethods();
