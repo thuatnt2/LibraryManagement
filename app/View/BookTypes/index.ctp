@@ -19,6 +19,7 @@
                 );
                 
                 $options = array(
+					'link_to_view' => 'name',
                 );
                 
                 echo $this->Table->render($bookTypes, $columns, $options);

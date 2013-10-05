@@ -12,58 +12,66 @@
         <!--                       CSS                       -->
 
         <!-- Reset Stylesheet -->
-        <?php
-        echo $this->Html->css(array(
-            'admin_reset',
-            'vendor/bootstrap',
-            'vendor/bootstrap-theme.min',
-            'admin',
-            'admin_invalid',
-            '/usermgmt/css/umstyle',
-            '/js/vendor/fancybox/jquery.fancybox',
-            'admin_custom',
-        ));
-        echo $this->Html->script(array(
-            'vendor/jquery-1.9.1.min',
-            'vendor/bootstrap.min',
-            'vendor/holder',
-            'admin_simpla.jquery.configuration',
-            'ckeditor/ckeditor',
-            'vendor/fancybox/jquery.fancybox',
-            'admin',
-        ));
-        ?>
-        <script type="text/javascript">
-            var base_url = '<?php echo $this->Html->webroot('/'); ?>';
-        </script>
+		<?php
+		echo $this->Html->css(array(
+			'admin_reset',
+			'vendor/bootstrap',
+			'vendor/bootstrap-theme.min',
+			'admin',
+			'admin_invalid',
+			'/usermgmt/css/umstyle',
+			'/js/vendor/fancybox/jquery.fancybox',
+			'/js/vendor/jquery-ui/jquery.ui.all',
+			'admin_custom',
+		));
+
+		?>
     </head>
 
     <body><div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
 
-            <?php
-            echo $this->element('admin/left_bar');
-            ?>
+			<?php
+			echo $this->element('admin/left_bar');
+
+			?>
 
             <div id="main-content"> <!-- Main Content Section with everything -->
 
 
 
-                <?php
-                echo $this->element('admin/header')
-                ?>
+				<?php
+				echo $this->element('admin/header')
+
+				?>
 
                 <!--content for layout-->
-                <?php echo $this->fetch('content'); ?>
+				<?php echo $this->fetch('content'); ?>
 
-                <?php
-                echo $this->element('admin/footer');
-                ?>
+				<?php
+				echo $this->element('admin/footer');
+
+				?>
 
             </div> <!-- End #main-content -->
 
         </div>
-        <?php
-        ?>
+		<script type="text/javascript">
+			var base_url = '<?php echo $this->Html->webroot('/'); ?>';
+        </script> 
+		<?php
+		echo $this->Html->script(array(
+			'vendor/jquery-1.9.1.min',
+			'vendor/bootstrap.min',
+			'vendor/holder',
+			'admin_simpla.jquery.configuration',
+			'ckeditor/ckeditor',
+			'vendor/fancybox/jquery.fancybox',
+			'admin',
+		));
+		echo $this->fetch('scriptBottom');
+
+		?>
     </body>
+
 
 </html>

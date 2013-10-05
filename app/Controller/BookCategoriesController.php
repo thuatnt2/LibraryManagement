@@ -51,6 +51,7 @@ class BookCategoriesController extends AppController {
      */
     public function add() {
         if ($this->request->is('post')) {
+			$this->request->data['BookCategory']['is_active'] = 1;
             $user = $this->UserAuth->getUser();
             $this->request->data['BookCategory']['user_created'] = $user['User']['fullname'] . ' (' . $user['UserGroup']['name'] . ')';
             $this->BookCategory->create();

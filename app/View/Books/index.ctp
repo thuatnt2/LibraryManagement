@@ -16,10 +16,13 @@
                     'Book.id' => 'Mã sách',
                     'Book.title' => 'Tên sách',
                     'Book.publisher' => 'Nhà xuất bản',
+                    'Book.authors' => 'Tác giả',
+                    'BookLanguage.name' => 'Ngôn ngữ',
                     'Book.created' => 'Ngày tạo',
                 );
                 
                 $options = array(
+					'link_to_view' => 'title',
                 );
                 
                 echo $this->Table->render($books, $columns, $options);
