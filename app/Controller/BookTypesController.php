@@ -59,10 +59,10 @@ class BookTypesController extends AppController {
                 $this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại', 'flash_error');
             }
         }
-        
+
         $title_for_layout = 'Thêm thể loại sách';
         $sub_title = 'Thêm thể loại sách';
-        $this->set(compact('title_for_layout','sub_title'));
+        $this->set(compact('title_for_layout', 'sub_title'));
     }
 
     /**
@@ -88,10 +88,10 @@ class BookTypesController extends AppController {
             $options = array('conditions' => array('BookType.' . $this->BookType->primaryKey => $id));
             $this->request->data = $this->BookType->find('first', $options);
         }
-        
+
         $title_for_layout = 'Thêm thể loại sách';
         $sub_title = 'Thêm thể loại sách';
-        $this->set(compact('title_for_layout','sub_title'));
+        $this->set(compact('title_for_layout', 'sub_title'));
     }
 
     /**
@@ -110,8 +110,14 @@ class BookTypesController extends AppController {
         if ($this->BookType->delete()) {
             $this->Session->setFlash('Xóa thành công', 'flash_success');
         } else {
-            $this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại' ,'flash_error');
+            $this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại', 'flash_error');
         }
         return $this->redirect(array('action' => 'index'));
     }
+
+    public function getBookType() {
+        $book_types = $this->BookType->find('list');
+        return $book_types;
+    }
+
 }

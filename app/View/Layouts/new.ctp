@@ -21,7 +21,7 @@
     <body style="padding: 10px 0 10px 0;">
         <!-- Header -->
         <div id="header" class="shell">
-            <div id="logo"><h1><a href="#">BestSeller</a></h1></div>
+            <div id="logo"><h1><a href="#">He</a></h1></div>
             <!-- Navigation -->
             <div id="navigation">
                 <ul>
@@ -67,49 +67,8 @@
         </div>
         <!-- End Header -->
         <div id="main" class="shell">
-            <div id="sidebar">
-                <ul class="categories">
-                    <li>
-                        <h4>Categories</h4>
-                        <ul>
-                            <?php foreach ($book_types as $type) { ?>
-                            <li><a href="#"><?php echo $type['BookType']['name']?></a></li>
-                            <?php } ?>
-                        </ul>
-                    </li>
-                    <li>
-                        <h4>Authors</h4>
-                        <ul>
-                            <li><a href="#">Lorem ipsum dolor</a></li>
-                            <li><a href="#">Morbi eget</a></li>
-                            <li><a href="#">Nulla egestas</a></li>
-                            <li><a href="#">Curabitur venenatis</a></li>
-                            <li><a href="#">Ut dictum purus</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="categories">
-                    <li>
-                        <h4>Statistics</h4>
-                        <ul>
-                            <li><a href="#">Lorem ipsum dolor</a></li>
-                            <li><a href="#">Morbi eget</a></li>
-                            <li><a href="#">Nulla egestas</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h4>Support</h4>
-                        <ul>
-                            <li><a href="#">Lorem ipsum dolor</a></li>
-                            <li><a href="#">Morbi eget</a></li>
-                            <li><a href="#">Nulla egestas</a></li>
-                            <li><a href="#">Curabitur venenatis</a></li>
-                            <li><a href="#">Ut dictum purus</a></li>
-                        </ul>
-                    </li>
-                </ul>
-
-            </div>
+            <!--sidbar-->
+            <?php echo $this->element('frontend/sidebar')?>
             <?php echo $this->fetch('content'); ?>
             <?php
             echo $this->element('frontend/footer')

@@ -1,17 +1,16 @@
 <div id="content">
-    <div id="best-sellers">
-        <h3>Tin tức</h3>
-        
-        <h4><?php echo $article['Article']['title'] ;?></h4>
+    <div id="news">
+        <h4  class="title">Tin tức</h4>
+
+        <h4><?php echo $article['Article']['title']; ?></h4>
         <div>
-         <?php echo $this->Text->truncate($article['Article']['content'],800) ;?>   
+            <?php echo $this->Text->truncate($article['Article']['content'], 800); ?>   
+            <a class="read-more-link">>> Đọc thêm</a>
         </div>
-        <button class="btn btn-small btn-success" style="float: right">More</button>
-        
     </div>
     <div class="cl">&nbsp;</div>
-    <div class="products">
-        <h3>Interesting books</h3>
+    <div class="prefer_books">
+        <h4  class="title">Giới thiệu sách hay</h4>
         <ul>
             <li>
                 <div class="product">

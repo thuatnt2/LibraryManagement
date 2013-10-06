@@ -8,6 +8,8 @@
 Router::connect('/', array('controller' => 'index', 'action' => 'index'));
 Router::connect('/aticles', array('controller' => 'libArticles', 'action' => 'index'));
 Router::connect('/index', array('controller' => 'index', 'action' => 'index'));
+//front end router
+Router::connect('/xem-sach', array('controller' => 'books', 'action' => 'frontEndView'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
