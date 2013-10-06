@@ -85,5 +85,6 @@ h1,h2,h3,h4 {
     text-decoration:none;
 }
 #navigation ul li a:hover {
-     border-bottom: 3px solid #C9C9C9;
+    color: #0088cc;
+    border-bottom: 3px solid #0088cc;
 }

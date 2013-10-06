@@ -10,13 +10,14 @@
         <h4><?php echo $article['Article']['title']; ?></h4>
         <div>
             <?php echo $this->Text->truncate($article['Article']['content'], 800); ?>   
-
             <?php
             echo $this->Html->link(
-                    '>> Đọc thêm', 
-                    '/tintuc/'.$article['Article']['id'],
-                    array('class' => 'read-more-link')
-            );
+                    '>> Đọc thêm', array(
+                'controller' => 'articles',
+                'action' => 'userView',
+                'id' => 5,
+                'slug' => Inflector::slug($article['Article']['title'])
+            ));
             ?>
         </div>   
     </div>

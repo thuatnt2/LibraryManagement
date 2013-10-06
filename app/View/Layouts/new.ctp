@@ -49,7 +49,7 @@
             <div id="navigation">
                 <ul>
                     <li><a href="/">Trang chủ</a></li>
-                    <li><a href="/tintuc">Tin tức</a></li>
+                    <li><a href="/tin-tuc">Tin tức</a></li>
                     <li><a href="#">Tìm kiếm</a></li>
                     <li><a href="#">Hoạt động</a></li>
                     <li><a href="#">Giới thiệu</a></li>

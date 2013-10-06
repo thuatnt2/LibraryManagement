@@ -12,9 +12,11 @@ Router::connect('/index', array('controller' => 'index', 'action' => 'index'));
 /*
  * Routing for articles
  */
-Router::connect('/tintuc', array('controller' => 'articles', 'action' => 'userIndex'));
+Router::connect('/tin-tuc', array('controller' => 'articles', 'action' => 'userIndex'));
 Router::connect(
-        '/tintuc/:id', array('controller' => 'articles', 'action' => 'userView'), array('id' => '[0-9]+')
+        '/tin-tuc/:id-:slug', 
+        array('controller' => 'articles', 'action' => 'userView'), 
+        array('pass' => array('id', 'slug'),'id' => '[0-9]+')
 );
 /*
  * Routing for book categories
