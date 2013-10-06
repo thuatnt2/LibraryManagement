@@ -14,7 +14,7 @@
                 <div class="um_box_mid_content_mid_left">
                     <?php echo $this->Form->create('Faculty'); ?>
                     <div>
-                        <div class="umstyle3"><?php echo __('faculty_name'); ?><font color='red'>*</font></div>
+                        <div class="umstyle3"><?php echo __('name'); ?><font color='red'>*</font></div>
                         <div class="umstyle4" ><?php echo $this->Form->input("faculty_name", array('label' => false, 'div' => false, 'class' => "form-control")) ?></div>
                         <div style="clear:both"></div>
                     </div>

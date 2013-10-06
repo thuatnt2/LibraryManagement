@@ -15,7 +15,7 @@
                     <?php echo $this->Form->create('Department'); ?>
                     <div>
                         <div class="umstyle3"><?php echo __('class name'); ?><font color='red'>*</font></div>
-                        <div class="umstyle4" ><?php echo $this->Form->input("department_name", array('label' => false, 'div' => false, 'class' => "form-control")) ?></div>
+                        <div class="umstyle4" ><?php echo $this->Form->input("name", array('label' => false, 'div' => false, 'class' => "form-control")) ?></div>
                         <div style="clear:both"></div>
                     </div>
                     <div>

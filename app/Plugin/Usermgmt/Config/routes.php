@@ -46,7 +46,8 @@ Router::connect('/emailVerification', array('plugin' => 'usermgmt', 'controller'
 
 //Readers
 Router::connect('/readers', array('plugin' => 'usermgmt', 'controller' => 'readers', 'action' => 'index'));
-Router::connect('/addReader', array('plugin' => 'usermgmt', 'controller' => 'readers', 'action' => 'add'));
+Router::connect('/addReader', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'addReader'));
+Router::connect('/deleteReader', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'deleteReader'));
 //faculties
 Router::connect('/faculties', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'index'));
 Router::connect('/addFaculty', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'add'));
@@ -57,3 +58,4 @@ Router::connect('/departments', array('plugin' => 'usermgmt', 'controller' => 'd
 Router::connect('/addDepartment', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'add'));
 Router::connect('/editDepartment/*', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'edit'));
 Router::connect('/deleteDepartment/*', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'delete'));
+Router::connect('/loadDepartment', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'loadDepartment'));

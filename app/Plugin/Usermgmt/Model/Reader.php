@@ -13,7 +13,11 @@ class Reader extends AppModel {
  *
  * @var string
  */
-	public $primaryKey = 'cardBarcode';
+	public $primaryKey = 'id';
+	
+//	var $validate = array(
+//		'username' => 'checkUsername',
+//	);
 
 /**
  * Display field
@@ -21,6 +25,15 @@ class Reader extends AppModel {
  * @var string
  */
 	public $displayField = 'cardBarcode';
+	
+	
+	
+//	public  function checkUsername($data){
+//		
+//		$reader = $this->User->find('all');
+//		debug($reader);
+//		debug($data);exit();
+//	}
 
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -46,4 +59,29 @@ class Reader extends AppModel {
 			'order' => ''
 		)
 	);
+	
+	
+	public function validateReader() {
+		exit('validate reader');
+		$validate1 = array(
+			'is_teacher' => array(
+				'mustNotEmpty' => array(
+					'rule' => 'notEmpty',
+					'message' => 'Bạn chưa chọn chức vụ cho bạn đọc',
+					'last' => true)
+			),
+			'faculty_id' => array(
+				'mustNotEmpty' => array(
+					'rule' => 'notEmpty',
+					'message' => 'Bạn chưa chọn khoa')
+			),
+			'department_id' => array(
+				'mustNotEmpty' => array(
+					'rule' => 'notEmpty',
+					'message' => 'Bạn chưa chọn lớp')
+			),
+		);
+		$this->validate = $validate1;
+		return $this->validates();
+	}
 }

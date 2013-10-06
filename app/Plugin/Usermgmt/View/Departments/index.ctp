@@ -31,8 +31,8 @@
                         if (!empty($departments)) {
                             foreach ($departments as $row) {
                                 echo "<tr>";
-                                echo "<td>" . h($row['Department']['department_name']) . "</td>";
-                                echo "<td>" . h($row['Faculty']['faculty_name']) . "</td>";
+                                echo "<td>" . h($row['Department']['name']) . "</td>";
+                                echo "<td>" . h($row['Faculty']['name']) . "</td>";
                                 echo "<td>" . date('d-M-Y', strtotime($row['Department']['created'])) . "</td>";
                                 echo "<td>";
                                 if ($row['Department']['actived'] == 1) {

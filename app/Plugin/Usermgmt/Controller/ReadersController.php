@@ -30,17 +30,19 @@ class ReadersController extends AppController {
         $this->Reader->Department->unbindModel(array('hasMany' => array('Reader')));
         //set field;
         $fields = array(
-            'Reader.cardBarcode',
+            'Reader.id',
             'User.fullname',
             'User.id',
-            'Department.department_name',
+            'User.username',
+            'Department.name',
             //'Faculty.faculty_name',
             'Reader.created',
             'Reader.date_expiry',
             'User.is_active',
         );
-        
-        $this->paginate = array('fields'=>$fields,'limit'=>5);
+		
+		$conditions = array('User.is_deleted' => null);        
+        $this->paginate = array('fields'=>$fields,'limit'=>5, 'conditions' => $conditions);
         $readers = $this->Paginator->paginate();
         //debug($readers);exit();
         $this->set('readers', $readers);
@@ -77,8 +79,11 @@ class ReadersController extends AppController {
             }
         }
         $users = $this->Reader->User->find('list');
-        $departments = $this->Reader->Department->find('list');
-        $this->set(compact('users', 'departments'));
+		$this->loadModel('Faculty');
+		$faculties = $this->Faculty->find('list');
+		//$departments = $this->Reader->Department->find('list');		
+		$reader_type = $this->Reader->reader_type;
+        $this->set(compact('users', 'reader_type','faculties'));
     }
 
     /**

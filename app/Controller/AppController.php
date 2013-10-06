@@ -34,26 +34,41 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-    var $helpers = array('Form', 'Html', 'Session', 'TvFck', 'Fck', 'Js', 'Usermgmt.UserAuth', 'Table', 'Autocomplete');
-    public $components = array('Session', 'RequestHandler', 'Usermgmt.UserAuth', 'Common');
-    var $layout = 'admin';
+	var $helpers = array('Form', 'Html', 'Session', 'TvFck', 'Fck', 'Js', 'Usermgmt.UserAuth', 'Table', 'Autocomplete');
+	public $components = array('Session', 'RequestHandler', 'Usermgmt.UserAuth', 'Common');
+	var $layout = 'admin';
 
-    function beforeFilter() {
-        $this->userAuth();
-    }
+	function beforeFilter() {
+		$this->userAuth();
 
-    private function userAuth() {
-        $this->UserAuth->beforeFilter($this);
-    }
+		if (!$this->Session->check('CiculationPolicy')) {
+			$this->loadModel('CiculationPolicy');
+			$fields = array('id', 'name', 'amount', 'unit_of');
+			$policies = $this->CiculationPolicy->find('all', array('fields' => $fields));
+			$ss_policies = array();
+			foreach ($policies as $policy) {
+				$ss_policies[$policy['CiculationPolicy']['id']] = array(
+					'name' => $policy['CiculationPolicy']['name'],
+					'amount' => $policy['CiculationPolicy']['amount'],
+					'unit_of' => $policy['CiculationPolicy']['unit_of'],
+				);
+			}
+			$this->Session->write('CiculationPolicy', $ss_policies);
+		}
+	}
 
-    public function active($controller, $model, $id, $status, $page = 1) {
-        $this->loadModel($model);
-        $this->$model->id = $id;
-        $this->$model->saveField('is_active', $status);
-        if ($page == 1)
-            $this->redirect(array('controller' => $controller, 'action' => 'index'));
-        else
-            $this->redirect(array('controller' => $controller, 'action' => 'index','page'=>$page));
-    }
+	private function userAuth() {
+		$this->UserAuth->beforeFilter($this);
+	}
+
+	public function active($controller, $model, $id, $status, $page = 1) {
+		$this->loadModel($model);
+		$this->$model->id = $id;
+		$this->$model->saveField('is_active', $status);
+		if ($page == 1)
+			$this->redirect(array('controller' => $controller, 'action' => 'index'));
+		else
+			$this->redirect(array('controller' => $controller, 'action' => 'index', 'page' => $page));
+	}
 
 }
