@@ -80,3 +80,10 @@ h1,h2,h3,h4 {
 .article {
     border-bottom: 2px solid #C9C9C9;
 }
+#navigation ul li a {
+    padding-bottom: 1px;
+    text-decoration:none;
+}
+#navigation ul li a:hover {
+     border-bottom: 3px solid #C9C9C9;
+}

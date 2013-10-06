@@ -131,6 +131,7 @@ class BookCategoriesController extends AppController {
         $this->layout = 'new';
         $bookCategory = $this->BookCategory->find('first', array('conditions' => array(
                 'BookCategory.id' => $this->request->params['id'])));
+        $this->log($bookCategory,'debug');
         $this->set('bookCategory', $bookCategory);
     }
 

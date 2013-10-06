@@ -105,7 +105,10 @@ textarea { overflow: auto; }
 .prefer_books ul li { float: left; display: inline; width: 150px; height: 343px; margin: 0 15px 14px 0; }
 .prefer_books ul li a.info { display: block; padding: 7px; width: 136px; height: 329px; }
 .prefer_books ul li a.info:hover { background: url(/images/product-hover.png) no-repeat 0 0; text-decoration: none; }
-.prefer_books ul li a.info .holder { padding: 14px 9px; border: solid 1px #dcdcdc; display: block; }
+.prefer_books ul li a.info .holder {
+    padding: 14px 9px; 
+    /*border: solid 1px #dcdcdc;*/
+    display: block; }
 .prefer_books .product { width: 134px; position: relative; }
 
 .product .buy-btn { position: absolute; bottom: 8px; left: 7px; background: url(/images/buy-btn.png) repeat-x 0 0; width: 126px; height: 31px; color: #fff; font-size: 12px; line-height: 31px; text-transform: uppercase; font-weight: bold; z-index: 10; padding-left: 10px; white-space: nowrap;}

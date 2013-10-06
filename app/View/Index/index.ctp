@@ -1,5 +1,5 @@
 
-<div id="news">
+<div id="news" class="tab-div">
     <div class="tab-name">
         <img class="tab-icon" src="/images/news-icon.png"></img>
         <a  href="javascript:void(0);"><h4>Tin tức</h4></a>
