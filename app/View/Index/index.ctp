@@ -1,17 +1,38 @@
-<div id="content">
-    <div id="best-sellers">
-        <h3>Tin tức</h3>
-        
-        <h4><?php echo $article['Article']['title'] ;?></h4>
-        <div>
-         <?php echo $this->Text->truncate($article['Article']['content'],800) ;?>   
-        </div>
-        <button class="btn btn-small btn-success" style="float: right">More</button>
-        
+
+<div id="news">
+    <div class="tab-name">
+        <img class="tab-icon" src="/images/news-icon.png"></img>
+        <a  href="javascript:void(0);"><h4>Tin tức</h4></a>
+        <img class="tab-ender" src="/images/tab-background-right.jpg"></img>
     </div>
-    <div class="cl">&nbsp;</div>
-    <div class="products">
-        <h3>Interesting books</h3>
+
+    <div class="tab-content">
+        <h4><?php echo $article['Article']['title']; ?></h4>
+        <div>
+            <?php echo $this->Text->truncate($article['Article']['content'], 800); ?>   
+
+            <?php
+            echo $this->Html->link(
+                    '>> Đọc thêm', 
+                    '/tintuc/'.$article['Article']['id'],
+                    array('class' => 'read-more-link')
+            );
+            ?>
+        </div>   
+    </div>
+
+
+</div>
+
+<div class="cl">&nbsp;</div>
+
+<div class="prefer_books">
+    <div class="tab-name">
+        <img class="tab-icon" src="/images/prefer-book-icon.png"></img>
+        <a href="javascript:void(0);"><h4>Giới thiệu sách</h4></a>
+        <img class="tab-ender" src="/images/tab-background-right.jpg"></img>
+    </div>
+    <div class="tab-content">
         <ul>
             <li>
                 <div class="product">
@@ -63,7 +84,6 @@
             </li>
         </ul>
     </div>
-
 </div>
-<div class="cl">&nbsp;</div>
+
 

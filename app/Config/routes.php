@@ -8,6 +8,21 @@
 Router::connect('/', array('controller' => 'index', 'action' => 'index'));
 Router::connect('/aticles', array('controller' => 'libArticles', 'action' => 'index'));
 Router::connect('/index', array('controller' => 'index', 'action' => 'index'));
+//front end router
+/*
+ * Routing for articles
+ */
+Router::connect('/tintuc', array('controller' => 'articles', 'action' => 'userIndex'));
+Router::connect(
+        '/tintuc/:id', array('controller' => 'articles', 'action' => 'userView'), array('id' => '[0-9]+')
+);
+/*
+ * Routing for book categories
+ */
+Router::connect('/danhmuc', array('controller' => 'BookCategories', 'action' => 'userIndex'));
+Router::connect(
+        '/danhmuc/:id', array('controller' => 'BookCategories', 'action' => 'userView'), array('id' => '[0-9]+')
+);
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */

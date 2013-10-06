@@ -60,10 +60,10 @@ class CategoriesController extends AppController {
             $this->request->data['Category']['is_active'] = 1;
             $this->Category->create();
             if ($this->Category->save($this->request->data)) {
-                $this->Session->setFlash('Lưu thành công','flash_success');
+                $this->Session->setFlash('Lưu thành công', 'flash_success');
                 return $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash('Đã xảy ra lỗi, vui lòng thử lại','flash_error');
+                $this->Session->setFlash('Đã xảy ra lỗi, vui lòng thử lại', 'flash_error');
             }
         }
 
@@ -88,18 +88,18 @@ class CategoriesController extends AppController {
             $this->Category->id = $id;
             $this->request->data['Category']['alias'] = $this->Common->vnit_change_title($this->request->data['Category']['name']);
             if ($this->Category->save($this->request->data)) {
-                $this->Session->setFlash('Lưu thành công','flash_success');
+                $this->Session->setFlash('Lưu thành công', 'flash_success');
                 return $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash('Đã xảy ra lỗi, vui lòng thử lại','flash_error');
+                $this->Session->setFlash('Đã xảy ra lỗi, vui lòng thử lại', 'flash_error');
             }
         } else {
-            $this->request->data = $this->Category->read(null,$id);
+            $this->request->data = $this->Category->read(null, $id);
         }
         $parentCategories = $this->Category->ParentCategory->find('list');
         $sub_title = 'Chính sửa danh mục';
         $title_for_layout = 'Chính sửa danh mục';
-        $this->set(compact('parentCategories', 'sub_title','title_for_layout'));
+        $this->set(compact('parentCategories', 'sub_title', 'title_for_layout'));
     }
 
     /**
@@ -116,11 +116,13 @@ class CategoriesController extends AppController {
         }
         $this->request->onlyAllow('post', 'delete');
         if ($this->Category->delete()) {
-            $this->Session->setFlash('Xóa thành công','flash_success');
+            $this->Session->setFlash('Xóa thành công', 'flash_success');
         } else {
-            $this->Session->setFlash('Đã xảy ra lỗi, vui lòng thử lại','flash_error');
+            $this->Session->setFlash('Đã xảy ra lỗi, vui lòng thử lại', 'flash_error');
         }
         return $this->redirect(array('action' => 'index'));
     }
+
+
 
 }

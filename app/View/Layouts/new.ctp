@@ -11,7 +11,7 @@
         echo $this->Html->css(array(
             'new-style', 'custome', 'bootstrap'));
         echo $this->Html->script(array(
-            'jquery-1.9.1.min','vendor/bootstrap.min'
+            'jquery-1.9.1.min', 'vendor/bootstrap.min'
         ));
         echo $this->fetch('meta');
         echo $this->fetch('css');
@@ -21,21 +21,6 @@
     <body style="padding: 10px 0 10px 0;">
         <!-- Header -->
         <div id="header" class="shell">
-            <div id="logo"><h1><a href="#">BestSeller</a></h1></div>
-            <!-- Navigation -->
-            <div id="navigation">
-                <ul>
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Search</a></li>
-                    <li><a href="#">Introduction</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contacts</a></li>
-                </ul>
-            </div>
-            <!-- End Navigation -->
-            <div class="cl">&nbsp;</div>
-            <!-- Login-details -->
             <div id="login-details" style="height: 0px;">
 
                 <?php if ($this->UserAuth->isLogged()): ?>
@@ -59,58 +44,36 @@
                 <?php endif; ?>    
 
             </div>
+            <div id="logo"><h1><a href="#">He</a></h1></div>
+            <!-- Navigation -->
+            <div id="navigation">
+                <ul>
+                    <li><a href="/">Trang chủ</a></li>
+                    <li><a href="/tintuc">Tin tức</a></li>
+                    <li><a href="#">Tìm kiếm</a></li>
+                    <li><a href="#">Hoạt động</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </div>
+            <!-- End Navigation -->
+            <div class="cl">&nbsp;</div>
+            <!-- Login-details -->
+
             <!-- End Login-details -->
         </div>
         <div class="shell">
-            <?php 
-			echo $this->Session->flash();?>
+            <?php echo $this->Session->flash(); ?>
         </div>
         <!-- End Header -->
         <div id="main" class="shell">
-            <div id="sidebar">
-                <ul class="categories">
-                    <li>
-                        <h4>Categories</h4>
-                        <ul>
-                            <?php foreach ($book_types as $type) { ?>
-                            <li><a href="#"><?php echo $type['BookType']['name']?></a></li>
-                            <?php } ?>
-                        </ul>
-                    </li>
-                    <li>
-                        <h4>Authors</h4>
-                        <ul>
-                            <li><a href="#">Lorem ipsum dolor</a></li>
-                            <li><a href="#">Morbi eget</a></li>
-                            <li><a href="#">Nulla egestas</a></li>
-                            <li><a href="#">Curabitur venenatis</a></li>
-                            <li><a href="#">Ut dictum purus</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="categories">
-                    <li>
-                        <h4>Statistics</h4>
-                        <ul>
-                            <li><a href="#">Lorem ipsum dolor</a></li>
-                            <li><a href="#">Morbi eget</a></li>
-                            <li><a href="#">Nulla egestas</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h4>Support</h4>
-                        <ul>
-                            <li><a href="#">Lorem ipsum dolor</a></li>
-                            <li><a href="#">Morbi eget</a></li>
-                            <li><a href="#">Nulla egestas</a></li>
-                            <li><a href="#">Curabitur venenatis</a></li>
-                            <li><a href="#">Ut dictum purus</a></li>
-                        </ul>
-                    </li>
-                </ul>
-
+            <div class="devider"></div> 
+            <!--sidbar-->
+            <?php echo $this->element('frontend/sidebar') ?>
+            <div id="content">
+                <?php echo $this->fetch('content'); ?>
             </div>
-            <?php echo $this->fetch('content'); ?>
+            <div class="cl">&nbsp;</div>
             <?php
             echo $this->element('frontend/footer')
             ?>
