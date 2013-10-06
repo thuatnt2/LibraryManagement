@@ -120,4 +120,9 @@ table.admindata tr.fancybox-row-0{
 table.admindata tr:hover{
     text-decoration: underline;
 }
-
+.error-message{
+	color: red;
+	margin-left: 10px !important;
+	margin-top: 5px !important;
+	font-size: 15px;
+}

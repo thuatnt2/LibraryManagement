@@ -116,19 +116,34 @@ function UsermgmtInIt(&$controller) {
 	if(!defined("ADMIN_GROUP_ID")) {
 		define("ADMIN_GROUP_ID", 1);
 	}
+	
+	/*
+		set LIBRIAN group id here
+	*/
+	if(!defined("LIBRIAN_GROUP_ID")) {
+		define("LIBRIAN_GROUP_ID", 2);
+	}
+	
+	/*
+		set Editor group id here
+	*/
+	if(!defined("EDITOR_GROUP_ID")) {
+		define("EDITOR_GROUP_ID", 3);
+	}
+	
         
         /*
-		set User group id here
+		set Reader group id here
 	*/
 	if(!defined("READER_GROUP_ID")) {
-		define("READER_GROUP_ID", 2);
+		define("READER_GROUP_ID", 4);
 	}
 
 	/*
 		set Guest group id here
 	*/
 	if(!defined("GUEST_GROUP_ID")) {
-		define("GUEST_GROUP_ID", 3);
+		define("GUEST_GROUP_ID", 5);
 	}
 	/*
 		set true if you want captcha support on register form

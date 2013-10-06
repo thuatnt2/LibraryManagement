@@ -37,7 +37,7 @@ class DepartmentsController extends AppController {
         else{
             $departments = $this->Paginator->paginate();
         }
-        $faculties = $this->Department->Faculty->find('list',array('conditions'=>array('Faculty.actived'=>1)));
+        $faculties = $this->Department->Faculty->find('list',array('conditions'=>array('Faculty.is_active'=>1)));
         $this->set('departments', $departments);
         $this->set(compact('faculties'));
     }
@@ -65,7 +65,7 @@ class DepartmentsController extends AppController {
     public function add() {
         if ($this->request->is('post')) {
             //debug($this->data); exit();
-            $this->request->data['Department']['actived'] = 1;
+            $this->request->data['Department']['is_active'] = 1;
             $this->Department->create();
             if ($this->Department->save($this->request->data)) {
                  $this->Session->setFlash('Lưu thành công','flash_success');
@@ -74,7 +74,7 @@ class DepartmentsController extends AppController {
                 $this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại','flash_error');
             }
         }
-        $faculties = $this->Department->Faculty->find('list', array('conditions'=>array('Faculty.actived' => 1)));
+        $faculties = $this->Department->Faculty->find('list', array('conditions'=>array('Faculty.is_active' => 1)));
         $sub_title = __('Add Department');
         $this->set(compact('faculties', 'sub_title'));
     }
@@ -102,7 +102,7 @@ class DepartmentsController extends AppController {
             $options = array('conditions' => array('Department.' . $this->Department->primaryKey => $id));
             $this->request->data = $this->Department->find('first', $options);
         }
-        $faculties = $this->Department->Faculty->find('list', array('conditions'=>array('Faculty.actived' => 1)));
+        $faculties = $this->Department->Faculty->find('list', array('conditions'=>array('Faculty.is_active' => 1)));
         $sub_title = __('Edit Department');
         $this->set(compact('faculties', 'sub_title'));
     }
@@ -127,6 +127,17 @@ class DepartmentsController extends AppController {
         }
         return $this->redirect(array('action' => 'index'));
     }
+	
+	public function loadDepartment(){
+		$this->layout = null;
+		if($this->request->is('POST')){
+			$faculty_id = $this->request->data['faculty_id'];
+			$this->Department->unbindModel(array('hasMany'=>array('Reader')));
+			$departments = $this->Department->find('all', array('fields'=>array('id','name'),'conditions'=>array('Department.faculty_id'=> $faculty_id)));
+			exit(json_encode($departments));
+			
+		}
+	}
 
 //    public function active($id, $status) {
 //        $this->Department->id = $id;
