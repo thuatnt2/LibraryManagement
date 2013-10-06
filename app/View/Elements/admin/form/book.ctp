@@ -6,7 +6,7 @@
     <div class="um_box_mid">
         <div class="um_box_mid_content">
             <div class="um_box_mid_content_top">
-                <span class="umstyle1"><?php //echo __($sub_title);    ?></span>
+                <span class="umstyle1"><?php echo __($sub_title);    ?></span>
                 <div style="clear:both"></div>
             </div>
             <div class="umhr"></div>
