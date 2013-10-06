@@ -23,6 +23,13 @@ class BooksController extends AppController {
      * @return void
      */
     public function index() {
+        if (!empty($this->request->query)) {
+            $key_search = $this->request->query['key_search'];
+            $conds = array('Book.title LIKE' => '%' . $key_search . '%');
+            $this->paginate = array('conditions' => $conds, 'limit' => 2);
+            $this->Book->recursive = 0;
+            $this->set('books', $this->Paginator->paginate());
+        }
         $this->Book->recursive = 0;
         $this->set('books', $this->Paginator->paginate());
     }
@@ -95,9 +102,9 @@ class BooksController extends AppController {
         $borrow_type = $this->Book->borrow_type;
         $borrow_status = $this->Book->borrow_status;
         $teacher_only = $this->Book->teacher_only;
+        $sub_title = 'Biên mục tài liệu';
 
-
-        $this->set(compact('bookLanguages', 'bookTypes', 'bookCategories', 'authors', 'publishers', 'borrow_type', 'borrow_status', 'teacher_only'));
+        $this->set(compact('bookLanguages', 'bookTypes', 'bookCategories', 'authors', 'publishers', 'borrow_type', 'borrow_status', 'teacher_only', 'sub_title'));
     }
 
     public function saveAuthor($authors = array(), $str_author = '') {
@@ -171,7 +178,7 @@ class BooksController extends AppController {
         $borrow_type = $this->Book->borrow_type;
         $borrow_status = $this->Book->borrow_status;
         $teacher_only = $this->Book->teacher_only;
-        $this->set(compact('bookLanguages', 'bookTypes', 'bookCategories', 'borrow_type', 'borrow_status', 'teacher_only'));
+        $this->set(compact('bookLanguages', 'bookTypes', 'bookCategories', 'borrow_type', 'authors', 'publishers', 'borrow_status', 'teacher_only'));
     }
 
     /**
@@ -194,6 +201,4 @@ class BooksController extends AppController {
         }
         return $this->redirect(array('action' => 'index'));
     }
-
-
 }
