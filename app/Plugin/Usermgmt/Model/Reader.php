@@ -60,7 +60,7 @@ class Reader extends AppModel {
 		)
 	);
 	
-	
+
 	public function validateReader() {
 		exit('validate reader');
 		$validate1 = array(

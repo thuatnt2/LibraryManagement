@@ -634,6 +634,7 @@ class UsersController extends UserMgmtAppController {
 				$this->request->data['Reader']['date_expiry'] = date('Y-m-d', $date_expiry);			
 				
 				$this->User->create();
+				debug($this->request->data);
 				if($this->User->saveAssociated($this->request->data)){
 					$this->Session->setFlash('Đăng kí thành công 1 bạn đọc', 'flash_success');
 					$this->redirect('/readers');

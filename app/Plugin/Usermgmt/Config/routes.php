@@ -48,6 +48,7 @@ Router::connect('/emailVerification', array('plugin' => 'usermgmt', 'controller'
 Router::connect('/readers', array('plugin' => 'usermgmt', 'controller' => 'readers', 'action' => 'index'));
 Router::connect('/addReader', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'addReader'));
 Router::connect('/deleteReader', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'deleteReader'));
+
 //faculties
 Router::connect('/faculties', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'index'));
 Router::connect('/addFaculty', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'add'));
