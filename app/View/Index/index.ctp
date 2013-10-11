@@ -21,8 +21,6 @@
             ?>
         </div>   
     </div>
-
-
 </div>
 
 <div class="cl">&nbsp;</div>

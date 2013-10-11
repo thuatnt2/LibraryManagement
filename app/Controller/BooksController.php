@@ -94,7 +94,6 @@ class BooksController extends AppController {
                 $this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại', 'flash_error');
             }
         }
-
         $bookLanguages = $this->Book->BookLanguage->find('list');
         $bookTypes = $this->Book->BookType->find('list');
         $bookCategories = $this->Book->BookCategory->find('list');
@@ -102,7 +101,6 @@ class BooksController extends AppController {
         $borrow_status = $this->Book->borrow_status;
         $teacher_only = $this->Book->teacher_only;
         $sub_title = 'Biên mục tài liệu';
-
         $this->set(compact('bookLanguages', 'bookTypes', 'bookCategories', 'authors', 'publishers', 'borrow_type', 'borrow_status', 'teacher_only', 'sub_title'));
     }
 
@@ -200,4 +198,5 @@ class BooksController extends AppController {
         }
         return $this->redirect(array('action' => 'index'));
     }
+
 }
