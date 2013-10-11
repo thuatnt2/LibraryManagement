@@ -12,7 +12,12 @@ a:hover { text-decoration: underline; }
 a img { border: 0; }
 
 h2 { font-family: 'Georgia', Arial, serif; font-style: italic; font-size: 65px; line-height: 70px; color: #fff; }
-h3 { font-family: 'Georgia', Arial, serif; font-style: italic; font-size: 22px; line-height: 24px; color: #0182b5; }
+h3 { 
+    font-family: 'Georgia', Arial, serif; 
+    /*font-style: italic;*/ 
+    font-size: 22px; 
+    line-height: 24px; 
+    color: #0182b5; }
 h4 { 
     font-family: 'Georgia', Arial, serif; 
     /*font-style: italic;*/ 

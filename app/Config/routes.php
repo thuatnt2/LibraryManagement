@@ -19,12 +19,12 @@ Router::connect(
 /*
  * Routing for book categories
  */
-Router::connect('/danh-muc', array('controller' => 'BookCategories', 'action' => 'userIndex'));
+Router::connect('/danh-muc', array('controller' => 'bookCategories', 'action' => 'userIndex'));
 Router::connect(
-        '/danh-muc/:id', array('controller' => 'BookCategories', 'action' => 'userView'), array('id' => '[0-9]+')
+        '/danh-muc/:id-:slug', array('controller' => 'bookCategories', 'action' => 'userView'), array('pass' => array('id', 'slug'),'id' => '[0-9]+')
 );
 Router::connect(
-        '/tai-lieu/:id', array('controller' => 'Book', 'action' => 'userView'), array('id' => '[0-9]+')
+        '/tai-lieu/:id', array('controller' => 'books', 'action' => 'userView'), array('pass' => array('id'),'id' => '[0-9]+')
 );
 
 

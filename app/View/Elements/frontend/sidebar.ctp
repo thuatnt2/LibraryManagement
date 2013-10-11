@@ -8,8 +8,15 @@
                 foreach ($book_categories as $k => $v) {
                     ?>
                     <li>
-                        <a href="/danh-muc/<?php echo $k ?>"><?php echo $v ?></a>
-                        <?php // echo $this->Html->link($v, array('controller' => 'categories', 'action' => 'userView')) ?>
+                        <?php
+                        echo $this->Html->link(
+                                $v, array(
+                            'controller' => 'bookCategories',
+                            'action' => 'userView',
+                            'id' => $k,
+                            'slug' => $this->Common->vnit_change_string(Inflector::slug($v))
+                        ));
+                        ?>
                     </li>
                 <?php } ?>
             </ul>

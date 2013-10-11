@@ -88,3 +88,11 @@ h1,h2,h3,h4 {
     color: #0088cc;
     border-bottom: 3px solid #0088cc;
 }
+.book-details .book-left {
+    margin-left: 15px;
+    float: left;
+    width: 30%;
+}
+.book-details .book-right {
+    width: 70%;
+}

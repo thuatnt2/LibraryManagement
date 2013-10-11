@@ -16,7 +16,7 @@
                 'controller' => 'articles',
                 'action' => 'userView',
                 'id' => 5,
-                'slug' => Inflector::slug($article['Article']['title'])
+                'slug' => $this->Common->vnit_change_string(Inflector::slug($article['Article']['title']))
             ));
             ?>
         </div>   
@@ -61,7 +61,7 @@
                 <div class="product">
                     <a href="#" class="info">
                         <span class="holder">
-                            <?php echo $this->Html->image('/images/image04.jpg')?>
+                            <?php echo $this->Html->image('/images/image04.jpg') ?>
                             <span class="book-name">Book Name</span>
                             <span class="author">by John Smith</span>
                             <span class="description">Maecenas vehicula ante eu enim pharetra<br />scelerisque dignissim <br />sollicitudin nisi</span>
