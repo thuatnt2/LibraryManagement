@@ -7,20 +7,23 @@
                 $book_categories = $this->requestAction('bookCategories/getBookCategories');
                 foreach ($book_categories as $k => $v) {
                     ?>
-                    <li><a href="/danhmuc/<?php echo $k ?>"><?php echo $v ?></a></li>
+                    <li>
+                        <a href="/danh-muc/<?php echo $k ?>"><?php echo $v ?></a>
+                        <?php // echo $this->Html->link($v, array('controller' => 'categories', 'action' => 'userView')) ?>
+                    </li>
                 <?php } ?>
             </ul>
         </li>
         <li>
             <h4>Thể loại</h4>
             <ul>
-                 <?php
+                <?php
                 $book_types = $this->requestAction('bookTypes/getBookTypes');
                 foreach ($book_types as $k => $v) {
                     ?>
                     <li><a href="/danhmuc/<?php echo $k ?>"><?php echo $v ?></a></li>
                 <?php } ?>
-   
+
             </ul>
         </li>
     </ul>

@@ -58,7 +58,6 @@ class BooksController extends AppController {
         $sub_title = 'Thêm sách';
         $this->set(compact('book', 'sub_title'));
     }
-
     /**
      * add method
      *
@@ -197,6 +196,9 @@ class BooksController extends AppController {
             $this->Session->setFlash(__('The book could not be deleted. Please, try again.'));
         }
         return $this->redirect(array('action' => 'index'));
+    }
+    public function userView(){
+        
     }
 
 }

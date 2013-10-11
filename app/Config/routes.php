@@ -14,17 +14,21 @@ Router::connect('/index', array('controller' => 'index', 'action' => 'index'));
  */
 Router::connect('/tin-tuc', array('controller' => 'articles', 'action' => 'userIndex'));
 Router::connect(
-        '/tin-tuc/:id-:slug', 
-        array('controller' => 'articles', 'action' => 'userView'), 
-        array('pass' => array('id', 'slug'),'id' => '[0-9]+')
+        '/tin-tuc/:id-:slug', array('controller' => 'articles', 'action' => 'userView'), array('pass' => array('id', 'slug'), 'id' => '[0-9]+')
 );
 /*
  * Routing for book categories
  */
-Router::connect('/danhmuc', array('controller' => 'BookCategories', 'action' => 'userIndex'));
+Router::connect('/danh-muc', array('controller' => 'BookCategories', 'action' => 'userIndex'));
 Router::connect(
-        '/danhmuc/:id', array('controller' => 'BookCategories', 'action' => 'userView'), array('id' => '[0-9]+')
+        '/danh-muc/:id', array('controller' => 'BookCategories', 'action' => 'userView'), array('id' => '[0-9]+')
 );
+Router::connect(
+        '/tai-lieu/:id', array('controller' => 'Book', 'action' => 'userView'), array('id' => '[0-9]+')
+);
+
+
+
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
@@ -34,7 +38,6 @@ Router::connect(
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.
  */
-
 /**
  * Router for Ciculation
  */
