@@ -61,7 +61,7 @@
                 <div class="product">
                     <a href="#" class="info">
                         <span class="holder">
-                            <img src="/images/image03.jpg" alt="" />
+                            <?php echo $this->Html->image('/images/image04.jpg')?>
                             <span class="book-name">Book Name</span>
                             <span class="author">by John Smith</span>
                             <span class="description">Maecenas vehicula ante eu enim pharetra<br />scelerisque dignissim <br />sollicitudin nisi</span>

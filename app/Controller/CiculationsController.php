@@ -117,10 +117,13 @@ class CiculationsController extends AppController {
 			$this->loadModel('Usermgmt.Reader');
 			$conditions = array('User.username' => $reader_code);
 			$fields = array('Reader.*', 'User.username', 'User.fullname');
+			//$conditions = array('')
 			$reader = $this->Reader->find('all', array('conditions' => $conditions, 'fields' => $fields));
-			
 			if (!empty($reader)) {
-				debug($reader); exit();
+				$conditions = array('');
+				$books = $this->Ciculation->find('all');
+				debug($reader);
+				exit();
 			} else {
 				echo 'Mã số bạn đọc không hợp lệ';
 				exit();
