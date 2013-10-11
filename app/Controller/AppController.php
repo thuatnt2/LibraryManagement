@@ -71,4 +71,10 @@ class AppController extends Controller {
 			$this->redirect(array('controller' => $controller, 'action' => 'index', 'page' => $page));
 	}
 
+	public function getLog($model) {
+		$log = $this->$model->getDataSource()->getLog(false, false);
+		debug($log);
+		exit();
+	}
+
 }
