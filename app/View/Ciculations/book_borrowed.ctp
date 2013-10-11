@@ -1,0 +1,19 @@
+<div class="umtop">
+	<?php echo $this->element('nav_reader_management'); ?>
+	<?php echo $this->Session->flash(); ?>
+    <div class="um_box_up"></div>
+    <div class="um_box_mid">
+        <div class="um_box_mid_content">
+            <div class="um_box_mid_content_top">
+                <span class="umstyle1"><?php echo 'Danh sách bạn đọc'; ?></span>
+                <div style="clear:both"></div>
+            </div>
+            <div class="umhr"></div>
+            <div class="um_box_mid_content_mid" id="index">
+                
+                
+            </div>
+
+        </div>
+    </div>
+</div>

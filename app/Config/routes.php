@@ -34,6 +34,11 @@ Router::connect(
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.
  */
+
+/**
+ * Router for Ciculation
+ */
+Router::connect('/bookBorrowed', array('controller' => 'ciculations', 'action' => 'bookBorrowed'));
 CakePlugin::routes();
 
 /**

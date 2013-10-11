@@ -34,6 +34,7 @@ class TableHelper extends AppHelper {
 		'tt_actions' => 'Hành động',
 		'tt_sort' => 'Sắp xếp',
 		'link_to_view' => false,
+		'align_left' => false,
 	);
 	private $_colums = array();
 
@@ -89,7 +90,13 @@ class TableHelper extends AppHelper {
 			$output.= '<tr>';
 			$output.= '<td>' . ++$index . '</td>';
 			foreach ($this->_colums as $column) {
-				$output.= '<td>';
+				//check if current column has to align left
+				if ($this->_options['align_left'] == $column['column']) {
+					$output.= '<td style="text-align: left">';
+				} else {
+					$output.= '<td>';
+				}
+				
 				if ($column['column'] == 'is_active') {
 					if ($data[$column['Model']]['is_active'] == 1) {
 						//url for active : app/active/controller/model/id/status/page :(it's a litle long but helpful

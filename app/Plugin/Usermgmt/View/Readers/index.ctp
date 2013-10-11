@@ -51,7 +51,7 @@
 								echo "<span class='icon'><a href='" . $this->Html->url('/editReader/' . $row['User']['id']) . "'><img src='" . SITE_URL . "usermgmt/img/edit.png' border='0' alt='Edit' title='Edit'></a></span>";
 
 								echo $this->Form->postLink(
-										$this->Html->image('/images/delete.png'), array('controller'=> 'users', 'action'=> 'deleteReader',$row['User']['id']), array( 'title'=>'Xóa bạn đọc', 'escape' => false), 'Bạn có chắc chắn muốn xóa bạn đọc này ?'
+										$this->Html->image('/images/delete.png'), array('controller' => 'users', 'action' => 'deleteReader', $row['User']['id']), array('title' => 'Xóa bạn đọc', 'escape' => false), 'Bạn có chắc chắn muốn xóa bạn đọc này ?'
 								);
 
 								echo "</td>";
@@ -65,14 +65,14 @@
                     </tbody>
                 </table>
                 <div class="pagination">
-<?php
-echo $this->Paginator->first('<<Trang đầu');
-echo $this->Paginator->prev('Trước');
-echo $this->Paginator->numbers(array('separator' => false, 'class' => 'number'));
-echo $this->Paginator->next('Tiếp');
-echo $this->Paginator->last('Trang cuối>>');
+					<?php
+					echo $this->Paginator->first('<<Trang đầu');
+					echo $this->Paginator->prev('Trước');
+					echo $this->Paginator->numbers(array('separator' => false, 'class' => 'number'));
+					echo $this->Paginator->next('Tiếp');
+					echo $this->Paginator->last('Trang cuối>>');
 
-?>
+					?>
                 </div>
             </div>
 
