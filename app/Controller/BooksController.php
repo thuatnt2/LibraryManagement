@@ -86,13 +86,12 @@ class BooksController extends AppController {
             }
             $this->saveAuthor($authors, $this->request->data['Book']['authors']);
             $this->savePublisher($publishers, $this->request->data['Book']['publisher']);
-            exit();
             $this->Book->create();
             if ($this->Book->save($this->request->data)) {
-                $this->Session->setFlash(__('The book has been saved.'));
+                $this->Session->setFlash('Đã lưu thành công', 'flash_success');
                 return $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('The book could not be saved. Please, try again.'));
+                $this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại', 'flash_error');
             }
         }
 
