@@ -26,7 +26,7 @@ Router::connect(
 Router::connect(
         '/tai-lieu/:id', array('controller' => 'books', 'action' => 'userView'), array('pass' => array('id'),'id' => '[0-9]+')
 );
-
+Router::connect('/tim-kiem', array('controller' => 'bookSearch', 'action' => 'userIndex'));
 
 
 /**
