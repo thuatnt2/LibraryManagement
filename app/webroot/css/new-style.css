@@ -97,10 +97,13 @@ textarea { overflow: auto; }
 
 #sidebar .categories { list-style: none; }
 #sidebar .categories ul { padding: 8px 0 29px; list-style: none; line-height: 24px; font-size: 12px; color: #929292; }
-#sidebar .categories ul li { border-bottom: solid 1px #d8d8d8; background: url(/images/list-image.png) no-repeat 0 center; padding-left: 18px; }
+#sidebar .categories ul li { 
+    /*border-bottom: solid 1px #d8d8d8;*/
+    background: url(/images/list-image.png) no-repeat 0 center; 
+    padding-left: 18px; }
 #sidebar .categories ul li a { color: #929292; }
 
-#content { float: right; display: inline; width: 680px; padding-bottom: 65px;}
+#content { float: right; display: inline; width: 715px; padding-bottom: 65px;}
 #content h3 {
     padding: 0 0 7px 3px;
     /*border-bottom: solid 4px #eaeaea;*/

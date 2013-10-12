@@ -19,7 +19,7 @@
     color:  #0182b5;
 }
 #sidebar {
-    /*border-right: 1px solid #C9C9C9;*/
+    border: 1px solid #C9C9C9;
     padding-right: 10px;
 }
 .notification .close{
@@ -95,4 +95,33 @@ h1,h2,h3,h4 {
 }
 .book-details .book-right {
     width: 70%;
+}
+.book-short-view {
+    overflow: hidden;
+    padding: 10px;
+    border-bottom: solid 1px #d8d8d8;
+}
+.book-short-view .book-short-view-left {
+    float: left;
+    width: 20%;
+    display: inline-block;
+}
+.book-short-view .book-short-view-right {
+    width: 80%;
+    display: inline-block;
+}
+.clear-both {
+    clear: both;
+}
+.book-short-view-right h4 {
+    padding: 0;
+}
+.book-short-view-right a:hover {
+    text-decoration: none;
+}
+#sidebar ul {
+    margin: 0 0 10px 10px;
+}
+.other-books {
+    margin-top: 25px;
 }

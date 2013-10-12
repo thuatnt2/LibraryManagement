@@ -44,13 +44,10 @@
             </ul>
         </li>
         <li>
-            <h4>Liên hệ</h4>
+            <h4>Liên kết</h4>
             <ul>
                 <li><a href="#">Lorem ipsum dolor</a></li>
                 <li><a href="#">Morbi eget</a></li>
-                <li><a href="#">Nulla egestas</a></li>
-                <li><a href="#">Curabitur venenatis</a></li>
-                <li><a href="#">Ut dictum purus</a></li>
             </ul>
         </li>
     </ul>
