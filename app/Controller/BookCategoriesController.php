@@ -28,7 +28,6 @@ class BookCategoriesController extends AppController {
         $this->set('bookCategories', $this->Paginator->paginate());
         $this->set('title_for_layout', $title_for_layout);
     }
-
     /**
      * view method
      *
@@ -43,7 +42,6 @@ class BookCategoriesController extends AppController {
         $options = array('conditions' => array('BookCategory.' . $this->BookCategory->primaryKey => $id));
         $this->set('bookCategory', $this->BookCategory->find('first', $options));
     }
-
     /**
      * add method
      *

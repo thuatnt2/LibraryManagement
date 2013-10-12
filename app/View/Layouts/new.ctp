@@ -50,7 +50,7 @@
                 <ul>
                     <li><a href="/">Trang chủ</a></li>
                     <li><a href="/tin-tuc">Tin tức</a></li>
-                    <li><a href="#">Tìm kiếm</a></li>
+                    <li><a href="/tim-kiem">Tìm kiếm</a></li>
                     <li><a href="#">Hoạt động</a></li>
                     <li><a href="#">Giới thiệu</a></li>
                     <li><a href="#">Contacts</a></li>

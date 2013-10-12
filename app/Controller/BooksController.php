@@ -203,4 +203,14 @@ class BooksController extends AppController {
 		return $this->redirect(array('action' => 'index'));
 	}
 
+    public function userView($id = null) {
+        $this->layout = 'new';
+        $this->log($id, 'debug');
+        if ($this->Book->exists($id)) {
+            $book = $this->Book->find('first', array('conditions' => array('Book.id' => $id)));
+            $this->log($book, 'debug');
+            $this->set(compact('book'));
+        }
+    }
+
 }

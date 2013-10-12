@@ -22,13 +22,13 @@
 	width: auto !important;
 }
 .um_box_mid form div {
-	padding:0;
-        margin: 0;
+/*	padding:0;
+        margin: 0;*/
 	width: auto ;
 	clear:none;
 }
 .umtop {
-	padding:20px;
+	padding:20px 5px 20px 15px;
 }
 .um_box_up {
 	-webkit-border-top-left-radius: 5px;
@@ -61,6 +61,7 @@
 .um_box_mid_content_mid_right {
 	float:left;
 	width:300px;
+        margin-left: 100px;
 }
 .um_box_down {
 	-webkit-border-bottom-right-radius: 5px;
@@ -87,6 +88,7 @@
 .umhr {
 	border-bottom:#2485b2 solid 1px;
 	height:10px;
+        width: 1065px;
 }
 .umstyle3 {
 	font-size:14px;
@@ -119,11 +121,15 @@ input[type="submit"] {
 	float:left;
 	width:170px;
 	padding-bottom:10px;
+        text-align: left;
 }
 #register .umstyle4 {
 	float:left;
-	width:500px;
+	width:314px;
 	padding-bottom:10px;
+}
+.umstyle4 select{
+    padding: 5px;
 }
 #forgot .umstyle3 {
 	float:left;
