@@ -15,7 +15,7 @@
 					<?php echo $this->Form->create('Book'); ?>
                     <div>
                         <div class="umstyle3"><?php echo 'Tên đầu sách'; ?><font color='red'>*</font></div>
-                        <div class="umstyle4" ><?php echo $this->Form->input("name", array('label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+                        <div class="umstyle4" ><?php echo $this->Form->input("title", array('label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
                         <div style="clear:both"></div>
                     </div>
                     <div class="ui-widget">
@@ -45,37 +45,37 @@
                         <div style="clear:both"></div>
                     </div>
 					<div>
-                        <div class="umstyle3"><?php echo 'Năm xuất bản'; ?><font color='red'>*</font></div>
+                        <div class="umstyle3"><?php echo 'Năm xuất bản'; ?></div>
                         <div class="umstyle4" ><?php echo $this->Form->input("year_of_publish", array('type' => 'number', 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
                         <div style="clear:both"></div>
                     </div>
 					<div>
-                        <div class="umstyle3"><?php echo 'Số trang'; ?><font color='red'>*</font></div>
+                        <div class="umstyle3"><?php echo 'Số trang'; ?></div>
                         <div class="umstyle4" ><?php echo $this->Form->input("number_of_pages", array('type' => 'number', 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
                         <div style="clear:both"></div>
                     </div>
 					<div>
-                        <div class="umstyle3"><?php echo 'Kích thước'; ?><font color='red'>*</font></div>
+                        <div class="umstyle3"><?php echo 'Kích thước'; ?></div>
                         <div class="umstyle4" ><?php echo $this->Form->input("page_size", array('type' => 'number', 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
                         <div style="clear:both"></div>
                     </div>
 					<div>
-                        <div class="umstyle3"><?php echo 'Giá'; ?><font color='red'>*</font></div>
+                        <div class="umstyle3"><?php echo 'Giá'; ?></div>
                         <div class="umstyle4" ><?php echo $this->Form->input("price", array('type' => 'number', 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
                         <div style="clear:both"></div>
                     </div>
 					<div>
-                        <div class="umstyle3"><?php echo 'Vị trí đặt sách'; ?><font color='red'>*</font></div>
+                        <div class="umstyle3"><?php echo 'Vị trí đặt sách'; ?></div>
                         <div class="umstyle4" ><?php echo $this->Form->input("location", array('type' => 'number', 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
                         <div style="clear:both"></div>
                     </div>
 					<div>
-                        <div class="umstyle3"><?php echo 'Hình thức sử dụng'; ?><font color='red'>*</font></div>
+                        <div class="umstyle3"><?php echo 'Hình thức sử dụng'; ?></div>
                         <div class="umstyle4" ><?php echo $this->Form->input("location", array('type' => 'select', 'options'=>$borrow_type, 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
                         <div style="clear:both"></div>
                     </div>
 					<div>
-                        <div class="umstyle3"><?php echo 'Phạm vi mượn'; ?><font color='red'>*</font></div>
+                        <div class="umstyle3"><?php echo 'Phạm vi mượn'; ?></div>
                         <div class="umstyle4" ><?php echo $this->Form->input("location", array('type' => 'select', 'options'=>$teacher_only, 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
                         <div style="clear:both"></div>
                     </div>
