@@ -672,7 +672,15 @@ body#login {
     width: auto;
     margin-top: 20px;
 }
-
+/*******Ciculation******/
+#ciculation-img img {
+    float: left;
+    width: 140px;
+    height: 170px;
+}
+/*.form-control[disabled] {
+     background-color: #ffffcc;
+}*/
 /********************************      jQuery plugins styles      ********************************/
 
 /*************** Facebox ***************/

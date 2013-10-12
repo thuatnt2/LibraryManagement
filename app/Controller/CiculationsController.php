@@ -23,8 +23,8 @@ class CiculationsController extends AppController {
 	 * @return void
 	 */
 	public function index() {
-		$this->Ciculation->recursive = 0;
-		$this->set('ciculations', $this->Paginator->paginate());
+//		$this->Ciculation->recursive = 0;
+//		$this->set('ciculations', $this->Paginator->paginate());
 	}
 
 	/**
@@ -48,18 +48,20 @@ class CiculationsController extends AppController {
 	 * @return void
 	 */
 	public function add() {
-		if ($this->request->is('post')) {
-			$this->Ciculation->create();
-			if ($this->Ciculation->save($this->request->data)) {
-				$this->Session->setFlash(__('The ciculation has been saved.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The ciculation could not be saved. Please, try again.'));
-			}
-		}
-		$bookSerials = $this->Ciculation->BookSerial->find('list');
-		$borrows = $this->Ciculation->Borrow->find('list');
-		$this->set(compact('bookSerials', 'borrows'));
+//		if ($this->request->is('post')) {
+//			$this->Ciculation->create();
+//			if ($this->Ciculation->save($this->request->data)) {
+//				$this->Session->setFlash(__('The ciculation has been saved.'));
+//				return $this->redirect(array('action' => 'index'));
+//			} else {
+//				$this->Session->setFlash(__('The ciculation could not be saved. Please, try again.'));
+//			}
+//		}
+//		$bookSerials = $this->Ciculation->BookSerial->find('list');
+//		$borrows = $this->Ciculation->Borrow->find('list');
+//		$this->set(compact('bookSerials', 'borrows'));
+            $sub_title = 'Quản lý lưu thông';
+             $this->set(compact('sub_title'));
 	}
 
 	/**
