@@ -113,4 +113,5 @@ echo $this->Html->script('vendor/jquery-ui/jquery.ui.autocomplete', array('block
 echo $this->Autocomplete->multiple($authors, 'BookAuthors');
 echo $this->Autocomplete->single($publishers, 'BookPublisher');
 
+
 ?>

@@ -148,3 +148,19 @@ table.admindata tr:hover{
 	width: 650px;
 	margin-bottom: 20px;
 }
+
+/***Hearder*/
+#header-control{
+	margin-left: 30px;
+	margin-top: 10px;
+}
+#header-control .header-left{
+	float: left;
+	width: 65%
+}
+
+#header-control .header-right{
+	float: right;
+	width: 30%;
+}
+
