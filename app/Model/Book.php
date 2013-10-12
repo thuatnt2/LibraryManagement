@@ -43,27 +43,27 @@ class Book extends AppModel {
 		2 => 'Chỉ dành cho giáo viên',
 	);
 	public $belongsTo = array(
-        'BookLanguage' => array(
-            'className' => 'BookLanguage',
-            'foreignKey' => 'book_language_id',
-            'conditions' => '',
-            'fields' => '',
-            'order' => ''
-        ),
-        'BookType' => array(
-            'className' => 'BookType',
-            'foreignKey' => 'book_type_id',
-            'conditions' => '',
-            'fields' => '',
-            'order' => ''
-        ),
-        'BookCategory' => array(
-            'className' => 'BookCategory',
-            'foreignKey' => 'book_category_id',
-            'conditions' => '',
-            'fields' => '',
-            'order' => ''
-        )
+            'BookLanguage' => array(
+                'className' => 'BookLanguage',
+                'foreignKey' => 'book_language_id',
+                'conditions' => '',
+                'fields' => '',
+                'order' => ''
+            ),
+            'BookType' => array(
+                'className' => 'BookType',
+                'foreignKey' => 'book_type_id',
+                'conditions' => '',
+                'fields' => '',
+                'order' => ''
+            ),
+            'BookCategory' => array(
+                'className' => 'BookCategory',
+                'foreignKey' => 'book_category_id',
+                'conditions' => '',
+                'fields' => '',
+                'order' => ''
+            )
     );
 
     /**

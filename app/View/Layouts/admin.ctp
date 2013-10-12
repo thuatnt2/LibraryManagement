@@ -40,7 +40,7 @@
 
 
 				<?php
-				echo $this->element('admin/header')
+//                                    echo $this->element('admin/header')
 
 				?>
 
