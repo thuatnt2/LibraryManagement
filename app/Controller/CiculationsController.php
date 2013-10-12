@@ -114,25 +114,22 @@ class CiculationsController extends AppController {
 
 	//display all books that user has been borrowed
 	public function bookBorrowed() {
+		$reader = null;
+		$books = null;		
 		if (!empty($this->request->query)) {
 			$reader_code = $this->request->query['readerCode'];
 			$this->loadModel('Usermgmt.Reader');
 			$conditions = array('User.username' => $reader_code);
 			$fields = array('Reader.*', 'User.username', 'User.fullname');
 			//$conditions = array('')
-			$reader = $this->Reader->find('all', array('conditions' => $conditions, 'fields' => $fields));
+			$reader = $this->Reader->find('first', array('conditions' => $conditions, 'fields' => $fields));
 			if (!empty($reader)) {
-				$conditions = array('');
-				$books = $this->Ciculation->find('all');
-				debug($reader);
-				exit();
-			} else {
-				echo 'Mã số bạn đọc không hợp lệ';
-				exit();
-			}
-		} else {
-			exit('Khong tim thay ban doc');
+				$conditions = array('Ciculation.reader' => $reader['User']['username']);
+				$books = $this->Ciculation->find('all', array('conditions' => $conditions));
+			} 
 		}
+		$this->set(compact('reader', 'books'));
+		
 	}
 
 }

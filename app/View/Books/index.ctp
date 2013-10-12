@@ -29,7 +29,7 @@
 
             <?php
             $columns = array(
-                'Book.id' => 'Mã sách',
+                'Book.barcode' => 'Mã sách',
                 'Book.title' => 'Tên sách',
                 'Book.publisher' => 'Nhà xuất bản',
                 'Book.authors' => 'Tác giả',

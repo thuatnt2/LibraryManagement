@@ -70,7 +70,7 @@ div.tab-title div{
 .tab-title .t{
     width: 100%;
     float: left;
-    
+
 }
 .tab-title .t-1{
     width: 33.4%;
@@ -126,3 +126,41 @@ table.admindata tr:hover{
 	margin-top: 5px !important;
 	font-size: 15px;
 }
+
+
+/****Ciculation****/
+
+.right{
+	float: right;
+}
+.left{
+	float: left;
+}
+.reader-info {
+}
+
+.reader-info img{
+	width: 100px;
+	height: 100px;
+}
+
+.reader-info input{
+	width: 650px;
+	margin-bottom: 20px;
+}
+
+/***Hearder*/
+#header-control{
+	margin-left: 30px;
+	margin-top: 10px;
+}
+#header-control .header-left{
+	float: left;
+	width: 65%
+}
+
+#header-control .header-right{
+	float: right;
+	width: 30%;
+}
+

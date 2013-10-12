@@ -234,7 +234,7 @@ a.remove-link:hover {
 /************ Layout ************/
 
 #main-content {
-    margin: 0 0px 0 220px;
+    margin: 0 0px 0 238px;
     padding: 0px 0 0 0;
 }
 
@@ -573,7 +573,7 @@ form input[type="radio"] {
 }
 
 .error {
-    background: #ffcece url('../images/icons/cross_circle.png');
+    /*background: #ffcece url('../images/icons/cross_circle.png');*/
     border-color: #df8f8f;
     color: #665252;
 }

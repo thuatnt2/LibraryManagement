@@ -15,7 +15,7 @@
 					<?php echo $this->Form->create('BookSerial'); ?>
                     <div>
                         <div class="umstyle3"><?php echo 'Mã sách'; ?><font color='red'>*</font></div>
-                        <div class="umstyle4" ><?php echo $this->Form->input("id", array('type'=>'text', 'label' => false, 'div' => false, 'class' => "form-control")) ?></div>
+                        <div class="umstyle4" ><?php echo $this->Form->input('barcode', array('type'=>'text', 'label' => false, 'div' => false, 'required'=>false, 'class' => 'form-control', 'autocomplete'=> 'off')) ?></div>
                         <div style="clear:both"></div>
                     </div>
                     <div>
@@ -64,7 +64,7 @@
                             foreach ($book['BookSerial'] as $row) {
                                 echo "<tr>";
                                 echo "<td>" .$stt++. "</td>";
-                                echo "<td>" . $row['id'] . "</td>";
+                                echo "<td>" . $row['barcode'] . "</td>";
                                 echo "<td>" .$row['status'] . "</td>";
                                 echo "</tr>";
                             }
