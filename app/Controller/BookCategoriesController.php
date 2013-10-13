@@ -28,6 +28,7 @@ class BookCategoriesController extends AppController {
         $this->set('bookCategories', $this->Paginator->paginate());
         $this->set('title_for_layout', $title_for_layout);
     }
+
     /**
      * view method
      *
@@ -42,6 +43,7 @@ class BookCategoriesController extends AppController {
         $options = array('conditions' => array('BookCategory.' . $this->BookCategory->primaryKey => $id));
         $this->set('bookCategory', $this->BookCategory->find('first', $options));
     }
+
     /**
      * add method
      *
@@ -126,10 +128,15 @@ class BookCategoriesController extends AppController {
     }
 
     public function userView() {
+//        $this->BookCategory->recursive = 0;
+//        $title_for_layout = 'Danh mục sách';
+//        $this->set('bookCategories', $this->Paginator->paginate());
+//        $this->set('title_for_layout', $title_for_layout);
+
         $this->layout = 'new';
         $bookCategory = $this->BookCategory->find('first', array('conditions' => array(
                 'BookCategory.id' => $this->request->params['id'])));
-        $this->log($bookCategory,'debug');
+        $this->log($bookCategory, 'debug');
         $this->set('bookCategory', $bookCategory);
     }
 
