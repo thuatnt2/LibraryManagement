@@ -41,7 +41,7 @@
 					</div>
 					<div>
 						<div class="umstyle3"><?php echo 'Ngôn ngữ sách'; ?><font color='red'>*</font></div>
-						<div class="umstyle4" ><?php echo $this->Form->input("book_language_id", array('label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+						<div class="umstyle4" ><?php echo $this->Form->input("language", array('type'=>'text', 'id'=>'BookLanguage', 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
 						<div style="clear:both"></div>
 					</div>
 					<div>
@@ -102,7 +102,6 @@
 	</div>
 </div>
 <!--<div class="um_box_down"></div>-->
-</div>
 <?php
 //debug($publishers);
 echo $this->Html->script('vendor/jquery-ui/jquery.ui.core', array('block' => 'scriptBottom'));
@@ -112,6 +111,7 @@ echo $this->Html->script('vendor/jquery-ui/jquery.ui.position.js', array('block'
 echo $this->Html->script('vendor/jquery-ui/jquery.ui.autocomplete', array('block' => 'scriptBottom'));
 echo $this->Autocomplete->multiple($authors, 'BookAuthors');
 echo $this->Autocomplete->single($publishers, 'BookPublisher');
+echo $this->Autocomplete->single($languages, 'BookLanguage');
 
 
 ?>

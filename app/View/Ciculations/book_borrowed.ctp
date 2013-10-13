@@ -78,10 +78,6 @@
 					</form>
 
 				</div>
-				<!--Reader infor -->	
-
-
-
 
             </div>
         </div>

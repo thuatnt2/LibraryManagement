@@ -137,7 +137,6 @@ class CiculationsController extends AppController {
 	public function getCiculation() {
 		$this->layout = null;
 		$reader = null;
-		$books = null;
 		if ($this->request->is('POST')) {
 			$reader_code = $this->request->data['readerCode'];
 			$this->loadModel('Usermgmt.Reader');
@@ -148,10 +147,9 @@ class CiculationsController extends AppController {
 			if (!empty($reader)) {
 				$this->loadModel('Usermgmt.User');
 				$reader_type = $this->User->reader_type;
-				//$this->set(compact('reader', 'books','reader_type'));
 				$reader['Reader']['is_teacher'] = $reader_type[$reader['Reader']['is_teacher']];
 				$reader['Reader']['status'] = $reader['Reader']['is_locked'] == 0 ? 'Được phép lưu thông' : 'Đang bị khóa';
-
+				$reader['User']['resident_address'] = empty($reader['User']['resident_address']) ? 'Chưa xác định' : $reader['User']['resident_address'];
 			}
 		}
 		$this->autoRender = false;

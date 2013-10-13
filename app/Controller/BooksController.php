@@ -71,6 +71,7 @@ class BooksController extends AppController {
 		$this->loadModel('Publisher');
 		$authorsList = $this->Author->find('list');
 		$publisherList = $this->Publisher->find('list');
+		$bookLanguagesList = $this->Book->BookLanguage->find('list');
 
 		$publishers = array();
 		foreach ($publisherList as $k => $v) {
@@ -80,6 +81,11 @@ class BooksController extends AppController {
 		foreach ($authorsList as $k => $v) {
 			$authors[] = $v;
 		}
+		$languages = array();
+		foreach ($bookLanguagesList as $k => $v){
+			$languages[] = $v;
+		}
+		
 		if ($this->request->is('post')) {
 
 			//remove the last comma , 
@@ -98,14 +104,14 @@ class BooksController extends AppController {
 				$this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại', 'flash_error');
 			}
 		}
-		$bookLanguages = $this->Book->BookLanguage->find('list');
+		
 		$bookTypes = $this->Book->BookType->find('list');
 		$bookCategories = $this->Book->BookCategory->find('list');
 		$borrow_type = $this->Book->borrow_type;
 		$borrow_status = $this->Book->borrow_status;
 		$teacher_only = $this->Book->teacher_only;
 		$sub_title = 'Biên mục tài liệu';
-		$this->set(compact('bookLanguages', 'bookTypes', 'bookCategories', 'authors', 'publishers', 'borrow_type', 'borrow_status', 'teacher_only', 'sub_title'));
+		$this->set(compact('languages', 'bookTypes', 'bookCategories', 'authors', 'publishers', 'borrow_type', 'borrow_status', 'teacher_only', 'sub_title'));
 	}
 
 	public function saveAuthor($authors = array(), $str_author = '') {
@@ -132,6 +138,21 @@ class BooksController extends AppController {
 			$data = array();
 			foreach ($diff as $v) {
 				$data['Publisher']['name'] = $v;
+				$this->Author->create();
+				$this->Author->save($data);
+			}
+		}
+	}
+	
+	public function saveLanguage($language = array(), $str_language = '') {
+		$language_input = explode(',', $str_language);
+		$language_input = array_map('trim', $language_input);
+		$diff = array_diff($language_input, $language);
+		if (!empty($diff)) {
+			$this->loadModel('BookLanguage');
+			$data = array();
+			foreach ($diff as $v) {
+				$data['Language']['name'] = $v;
 				$this->Author->create();
 				$this->Author->save($data);
 			}
