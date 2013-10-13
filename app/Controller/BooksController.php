@@ -203,7 +203,8 @@ class BooksController extends AppController {
         $borrow_type = $this->Book->borrow_type;
         $borrow_status = $this->Book->borrow_status;
         $teacher_only = $this->Book->teacher_only;
-        $this->set(compact('bookLanguages', 'bookTypes', 'bookCategories', 'borrow_type', 'authors', 'publishers', 'borrow_status', 'teacher_only'));
+        $sub_title = 'Thay đổi thông tin sách';
+        $this->set(compact('sub_title','bookLanguages', 'bookTypes', 'bookCategories', 'borrow_type', 'authors', 'publishers', 'borrow_status', 'teacher_only'));
     }
 
     /**
