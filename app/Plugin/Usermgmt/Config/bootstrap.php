@@ -120,8 +120,8 @@ function UsermgmtInIt(&$controller) {
 	/*
 		set LIBRIAN group id here
 	*/
-	if(!defined("LIBRIAN_GROUP_ID")) {
-		define("LIBRIAN_GROUP_ID", 2);
+	if(!defined("LIBRARIAN_GROUP_ID")) {
+		define("LIBRARIAN_GROUP_ID", 2);
 	}
 	
 	/*

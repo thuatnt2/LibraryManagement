@@ -42,8 +42,7 @@ class AdminController extends AppController {
 	public function dashboard(){
 		$title_for_layout = 'Hệ thống quản lí thư viện';
 		$user = $this->UserAuth->getUser();
-		debug($user); exit();
-		$this->set(compact('title_for_layout'));
+		$this->set(compact('title_for_layout','user'));
 		
 	}
 
