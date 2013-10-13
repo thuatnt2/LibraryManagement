@@ -46,7 +46,7 @@
 					</div>
 					<div>
 						<div class="umstyle3"><?php echo 'Năm xuất bản'; ?><font color='red'>*</font></div>
-						<div class="umstyle4" ><?php echo $this->Form->input("year_of_publish", array('type' => 'number', 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+						<div class="umstyle4" ><?php echo $this->Form->input("year_of_publish", array('type' => 'text', 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
 						<div style="clear:both"></div>
 					</div>
 					<div>

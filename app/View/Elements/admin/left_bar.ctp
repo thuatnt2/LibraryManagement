@@ -1,15 +1,11 @@
 <div id="sidebar">
     <div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
-        <h1 id="sidebar-title"><a href="#">Simpla Admin</a></h1>
-
-        <!-- Logo (221px wide) -->
-        <a href="#"><img id="logo" src="resources/images/logo.png" alt="Simpla Admin logo" /></a>
-
+        
         <!-- Sidebar Profile links -->
         <div id="profile-links">
             Hello, <a href="#" title="Edit your profile">John Doe</a>, you have <a href="#messages" rel="modal" title="3 Messages">3 Messages</a><br />
             <br />
-            <a href="#" title="View the Site">View the Site</a> | <a href="#" title="Sign Out">Sign Out</a>
+            <a href="/" >Trang chủ</a> | <a href="#" title="Sign Out">Đăng xuất</a>
         </div>        
 
         <ul id="main-nav">  <!-- Accordion Menu -->
@@ -54,11 +50,12 @@
             </li>
             <li>
                 <a href="#" class="nav-top-item">
-                    Biên mục tài liệu
+                    Quản lý tài liệu
                 </a>
                 <ul>
                     <li><a href="#">Danh sách tài liệu</a></li>
-                    <li><a href="#">Biên mục tài liệu</a></li>
+                    
+                    <li><?php echo $this->Html->link('Biên mục tài liệu',array('controller' => 'books', 'action' => 'add')) ?></li>
                 </ul>
             </li>
 
