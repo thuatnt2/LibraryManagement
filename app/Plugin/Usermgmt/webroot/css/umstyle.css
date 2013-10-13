@@ -28,7 +28,7 @@
 	clear:none;
 }
 .umtop {
-	padding:20px 5px 20px 15px;
+	padding:20px 5px 20px 0px;
 }
 .um_box_up {
 	-webkit-border-top-left-radius: 5px;
@@ -61,7 +61,7 @@
 .um_box_mid_content_mid_right {
 	float:right;
 	width:300px;
-        margin-left: 100px;
+        margin-left: 98px;
 }
 .um_box_down {
 	-webkit-border-bottom-right-radius: 5px;

@@ -36,31 +36,8 @@
 			?>
 
             <div id="main-content"> <!-- Main Content Section with everything -->
-				<div id="header-control">
-					<div class="content-box header-left"><!-- Start Content Box -->
-						<p>
-							<button class="btn btn-large">Mượn trả sách</button>
-							<button class="btn btn-large">Đăng kí bạn đọc</button>
-							<button class="btn btn-large">Biên mục sách</button>
-						</p>
-					</div>
-					<div class="content-box header-right"><!-- Start Content Box -->
-
-						<div class="content-box-content">
-							<h4>Xin chào : <a href="#">Lê Mai Viện</a></h4>
-							<p>Chức vụ : Thủ thư</p>
-							<a href="#">Thông tin cá nhân</a>
-							<a href="#">Đổi mật khẩu</a>
-							<a href="">Đăng xuất</a>
-
-						</div> <!-- End .content-box-content -->
-
-					</div> <!-- End .content-box -->
-					<div class="clear"></div>
-				</div>
-
 				<?php
-//                                    echo $this->element('admin/header')
+                                    echo $this->element('admin/header')
 
 				?>
 

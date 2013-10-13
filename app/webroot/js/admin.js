@@ -22,9 +22,6 @@ function close_box() {
 }
 
 $(document).ready(function() {
-
-
-
     $('.addmenu').click(function() {
 
         $.fancybox({
@@ -44,5 +41,8 @@ $(document).ready(function() {
                     // 'href':'http://fancyapps.com/fancybox/',
         });
     });
-
+    $('.nav-top-item').on('click', function (event) {
+        $('.current').removeClass('current');
+        $(this).addClass('current');
+    })
 });
