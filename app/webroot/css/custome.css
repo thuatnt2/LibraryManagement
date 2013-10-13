@@ -39,7 +39,7 @@ h1,h2,h3,h4 {
 }
 #logo { 
     /*background: url(/images/banner.png);*/
-     background: url(/images/banner2.jpg);
+    background: url(/images/banner2.jpg);
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -62,12 +62,14 @@ h1,h2,h3,h4 {
     /*border-bottom: 1px solid #E24A63;*/
 }
 .book-details .book-left {
+    margin-top: 15px;
     margin-left: 15px;
     float: left;
     width: 30%;
 }
-.book-details .book-right {
-    width: 70%;
+.book-details .book-right img{
+    margin-top: 15px;
+    /*width: 20%;*/
 }
 .book-short-view {
     overflow: hidden;
@@ -88,6 +90,9 @@ h1,h2,h3,h4 {
 }
 .book-short-view-right h4 {
     padding: 0;
+}
+.book-short-view-right a {
+    color: #477D92;
 }
 .book-short-view-right a:hover {
     text-decoration: none;
@@ -111,6 +116,7 @@ h1,h2,h3,h4 {
 }*/
 
 .title-content {
+    color: #477D92;
     margin: 0;
 }
 .content-header {
@@ -130,5 +136,15 @@ h1,h2,h3,h4 {
 #flashMessage {
     text-align: center;
     background-color: #FFAD6F;
-border-radius: 2px;
+    border-radius: 2px;
+}
+#content {
+    border-top: 1px solid #C9C9C9;
+    padding: 10px 0 0 12px;
+}
+.book-details .book-left ul {
+    margin-left: 0px;
+}
+.read-more-btn {
+    float:right;
 }

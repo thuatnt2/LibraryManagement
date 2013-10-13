@@ -9,6 +9,7 @@
 App::uses('AppController', 'Controller');
 
 class IndexController extends AppController {
+
     /**
      * index method
      *
@@ -16,12 +17,15 @@ class IndexController extends AppController {
      */
 //    var $layout = 'Frontend/frontend';
     var $layout = 'new';
-    var $uses = array('Article', 'BookCategory');
+    var $uses = array('Article', 'BookCategory', 'Book');
 
     public function index() {
         $article = $this->Article->read(null, 5);
-        $this->set('article', $article);
+
+        $books = $this->Book->find('all', array('limit' => 4));
+        $this->set(compact('article', 'books'));
     }
+
 }
 
 ?>

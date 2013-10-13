@@ -16,16 +16,16 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo __('Faculty') ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><?php echo $this->Html->link(__("Add Faculty", true), "/addFaculty") ?></li>
-                        <li><?php echo $this->Html->link(__("All Faculties", true), "/faculties") ?></li>
+                        <li><?php echo $this->Html->link(__("Thêm khoa", true), "/addFaculty") ?></li>
+                        <li><?php echo $this->Html->link(__("Danh sách khoa", true), "/faculties") ?></li>
                     </ul>
                 </li>
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo __('Department') ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><?php echo $this->Html->link(__("Add Department", true), "/addDepartment") ?></li>
-                        <li><?php echo $this->Html->link(__("All Departments", true), "/departments") ?></li>
+                        <li><?php echo $this->Html->link(__("Thêm lớp", true), "/addDepartment") ?></li>
+                        <li><?php echo $this->Html->link(__("Danh sách lớp", true), "/departments") ?></li>
                     </ul>
                 </li>
 
