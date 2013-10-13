@@ -35,8 +35,8 @@
                     Quản lý bạn đọc
                 </a>
                 <ul>
-                    <li><a href="#">Create a new Page</a></li>
-                    <li><a href="#">Manage Pages</a></li>
+                    <li><a href="#">Danh sách bạn đọc</a></li>
+                    <li><a href="#">Đăng ký bạn đọc mới</a></li>
                 </ul>
             </li>
 
@@ -45,33 +45,29 @@
                     Quản lý lưu thông
                 </a>
                 <ul>
-                    <li><a href="#">Upload Images</a></li>
-                    <li><a href="#">Manage Galleries</a></li>
-                    <li><a href="#">Manage Albums</a></li>
-                    <li><a href="#">Gallery Settings</a></li>
+                    <li><a href="#">Tài liệu đang mượn</a></li>
+                    <li><a href="#">Tài liệu mượn quá hạn</a></li>
+                    <li><a href="#">Mượn trả tài liệu</a></li>
+                    <li><a href="#">Lịch sử lưu thông</a></li>
+                    <li><a href="#">Tài liệu đăng ký mượn online</a></li>
                 </ul>
             </li>
-
             <li>
                 <a href="#" class="nav-top-item">
                     Biên mục tài liệu
                 </a>
                 <ul>
-                    <li><a href="#">Calendar Overview</a></li>
-                    <li><a href="#">Add a new Event</a></li>
-                    <li><a href="#">Calendar Settings</a></li>
+                    <li><a href="#">Danh sách tài liệu</a></li>
+                    <li><a href="#">Biên mục tài liệu</a></li>
                 </ul>
             </li>
 
             <li>
                 <a href="#" class="nav-top-item">
-                    Settings
+                    Cấu hình
                 </a>
                 <ul>
-                    <li><a href="#">General</a></li>
-                    <li><a href="#">Design</a></li>
-                    <li><a href="#">Your Profile</a></li>
-                    <li><a href="#">Users and Permissions</a></li>
+                    <li><a href="#">Chính sách lưu thông</a></li>
                 </ul>
             </li>      
 
