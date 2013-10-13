@@ -235,7 +235,7 @@ class BooksController extends AppController {
         if ($this->Book->exists($id)) {
             $book = $this->Book->find('first', array('conditions' => array('Book.id' => $id)));
             $other_books = $this->Book->find('all', array(
-            'limit' => 5,
+            'limit' => 4,
             'conditions' => array('Book.book_category_id' => $book['Book']['book_category_id'],"Book.id <> ".$book['Book']['id'] ),
             ));
 

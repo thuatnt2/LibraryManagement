@@ -62,11 +62,13 @@ h1,h2,h3,h4 {
     /*border-bottom: 1px solid #E24A63;*/
 }
 .book-details .book-left {
+    margin-top: 15px;
     margin-left: 15px;
     float: left;
     width: 30%;
 }
-.book-details .book-right {
+.book-details .book-right img{
+    margin-top: 15px;
     /*width: 20%;*/
 }
 .book-short-view {
@@ -88,6 +90,9 @@ h1,h2,h3,h4 {
 }
 .book-short-view-right h4 {
     padding: 0;
+}
+.book-short-view-right a {
+    color: #477D92;
 }
 .book-short-view-right a:hover {
     text-decoration: none;
@@ -111,7 +116,7 @@ h1,h2,h3,h4 {
 }*/
 
 .title-content {
-    color: #0182b5;
+    color: #477D92;
     margin: 0;
 }
 .content-header {

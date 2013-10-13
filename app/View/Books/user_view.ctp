@@ -34,9 +34,8 @@
 <div class="actions">
     <button class="btn btn-small btn-success"> Đăng ký mượn sách này</button>
 </div>
-<div class="other-books">
+<div class="other-books prefer_books">
     <h4>Tài liệu cùng danh mục</h4>
-    
           <ul>
             <?php foreach ($other_books as $book) { ?>
                 <li>

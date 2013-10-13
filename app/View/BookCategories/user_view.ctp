@@ -1,5 +1,12 @@
-<h4 class="content-title"><?php echo $bookCategory['BookCategory']['name'] ?></h4>
-<i>(Số lượng: <?php echo count($bookCategory['Book']) ?>)</i>
+<div>
+    <h3 class="content-title"><?php echo $bookCategory['BookCategory']['name'] ?></h3>
+    <i>(Số lượng: <?php echo count($bookCategory['Book']) ?>)</i>
+    <form>
+        <input type ='text' />
+    </form> 
+</div>
+
+
 <div class="tab-div">
     <div class="tab-content">
         <div class="books-in-category">
@@ -14,7 +21,7 @@
                             </a>
                         </div>
                         <div class="book-short-view-right">
-                             <a href="/tai-lieu/<?php echo $book['id'] ?>" class="info"><h4><?php echo $book['title'] ?></h4></a>
+                            <a href="/tai-lieu/<?php echo $book['id'] ?>" class="info"><h4><?php echo $book['title'] ?></h4></a>
                             <label> <strong>Tác giả:</strong> <?php echo $book['authors'] ?></label>
                             <label> <strong>Nhà xuất bản:</strong> <?php echo $book['publisher'] ?></label>
                             <span class="description"></span>

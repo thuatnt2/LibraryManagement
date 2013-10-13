@@ -1,5 +1,5 @@
 <div id="news">
-    <h4 class="content-title">Tin tức</h4>
+    <h3 class="content-title">Tin tức</h3>
     <div class="content">
         <p><strong><?php echo $article['Article']['title']; ?></strong></p>
         <div>
