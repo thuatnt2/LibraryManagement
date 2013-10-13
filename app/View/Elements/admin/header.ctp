@@ -6,24 +6,34 @@
 
 <ul class="shortcut-buttons-set">
 
-    <li><a class="shortcut-button new-article" href="#"><span class="png_bg">
+<!--    <li><a class="shortcut-button new-article" href="#"><span class="png_bg">
                 Write an Article
-            </span></a></li>
+            </span></a></li>-->
 
-    <li><a class="shortcut-button new-page" href="#"><span class="png_bg">
-                Create a New Page
+    <li><a class="shortcut-button cataloging-book" href="#"><span class="png_bg">
+                Biên mục tài liệu
             </span></a></li>
 
     <li><a class="shortcut-button upload-image" href="#"><span class="png_bg">
-                Upload an Image
+                Mượn trả tài liệu
             </span></a></li>
 
     <li><a class="shortcut-button add-event" href="#"><span class="png_bg">
-                Add an Event
+                Mượn tài liệu online
             </span></a></li>
 
     <li><a class="shortcut-button manage-comments" href="#messages" rel="modal"><span class="png_bg">
-                Open Modal
+                Đăng ký bạn đọc
+            </span></a></li>
+            
+    <li><a class="shortcut-button statistics" href="#messages" rel="modal"><span class="png_bg">
+                Thống kê    
+            </span></a></li>
+    <li><a class="shortcut-button manage-comments" href="#messages" rel="modal"><span class="png_bg">
+                Quản lý người dùng
+            </span></a></li>
+    <li><a class="shortcut-button new-page" href="#messages" rel="modal"><span class="png_bg">
+                Đăng bài viết
             </span></a></li>
 
 </ul>

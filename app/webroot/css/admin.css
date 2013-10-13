@@ -37,7 +37,7 @@ h6            { font-size: 12px; padding: 0 0 5px 0; }
 
 
 a              { color: #57a000; text-decoration: none; }
-a:hover     { color: #000; }
+a:hover     { color: #000; text-decoration:none}
 a:active     { color: #777; }
 a:focus     { outline: 1px; }
 
@@ -426,8 +426,8 @@ ul.content-box-tabs li a.current {
     border: 1px solid #ccc;
     background: #f7f7f7 url('../images/shortcut-button-bg.gif') top left no-repeat;
     display: block;
-    width: 120px;
-    margin: 0 0 20px 0;
+    min-width: 140px;
+    margin: 0 0 0 0;
 }
 
 .shortcut-button span {
@@ -435,17 +435,24 @@ ul.content-box-tabs li a.current {
     background-repeat: no-repeat;
     border: 1px solid #fff;
     display:block;
-    padding: 78px 10px 15px 10px;
+    min-height: 65px;
+    /*padding: 78px 10px 15px 10px;*/
     text-align: center;
     color: #555;
     font-size: 13px;
+    font-weight: bold;
     line-height: 1.3em;
 }
 
 .new-article span {
     background-image: url('../images/icons/pencil_48.png');
 }
-
+.statistics span {
+    background-image: url('../images/icons/posts.png');
+}
+.cataloging-book span {
+    background-image: url('../images/icons/catalogin-book.png');
+}
 .new-page span {
     background-image: url('../images/icons/paper_content_pencil_48.png');
 }

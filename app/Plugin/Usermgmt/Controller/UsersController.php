@@ -113,7 +113,7 @@ class UsersController extends UserMgmtAppController {
 				if (empty($user)) {
 					$user = $this->User->findByEmail($email);
 					if (empty($user)) {
-						$this->Session->setFlash(__('Incorrect Email/Username or Password'));
+						$this->Session->setFlash(__('Sai tài khoản hoặc mật khẩu'));
 						$this->redirect('/');
 						return;
 					}

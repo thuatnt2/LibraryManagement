@@ -69,13 +69,6 @@ $('.addmenu').click(function() {
 //});
 //for add ciculation
 $("#reader-code").on("change", (function() {
-//	clearTimeout(wto);
-//	wto = setTimeout(function() {
-//		// do st
-//		// uff when user has been idle for 1 second
-//	}, 1000);
-
-
 	var readerCode = $("#reader-code").val();
 	jQuery.ajax({
 		url: "getCiculation",
@@ -151,6 +144,14 @@ $("#book-code").change(function() {
 				else if (book.Ciculation.reader == readerCode) {
 					$("#btn-book-return").removeClass("disabled");
 				}
+			$("#book-code").val(book.BookSerial.barcode);
+			$("#book-name").val(book.Book.title);
+			$("#book-authors").val(book.Book.authors);
+			$("#book-status").val(book.Book.status);
+			$("#book-date-return").val(book.Ciculation.date_return);
+			$("#book-reader").val(book.Ciculation.reader);
+			if(book.Ciculation.reader == readerCode){
+				$("#btn-book-return").removeClass("disabled");
 			}
 			else {
 				alert("Không tìm thấy tài liệu có mã " + $("#book-code").val() + " . Vui lòng thử lại");
