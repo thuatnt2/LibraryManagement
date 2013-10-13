@@ -84,14 +84,35 @@ $("#reader-code").on("change", (function() {
 		dataType: 'json',
 		success: function(result) {
 			console.log(result);
-			if (result.length > 0) {
+			if (result.length !== 0) {
 				var output = $('#reader-data-template').parseTemplate(result);
 				$("#reader-data").html(output);
 			}
 			else{
-				
-			}
-
+//                            var confirmModal =   '<div id="modelDialogDocumentEvidenceSection" style="display:none" class="">' +    
+//                                    '<div class="modal-header">' +
+//                                    '<a class="close" data-dismiss="modal" >&times;</a>' +
+////                                    '<div id="contentPopupEvidenceToSection-'+id.split('-')[1]+'" class="nonDisplayElement" > </div>'+
+////                                    '<div id="viewPopupEvidenceToSection-'+id.split('-')[1]+'" class="" >' +
+//                                    '<h3>' + 'Notice' +'</h3>' +
+//                                    '<div class="modal-body" style="padding: 10px 0px">' +
+//                                    '<p style="margin-bottom: 20px" id="contentPopupEvidence">' + 'Hello Confirm' + '</p>' +
+//                                    '</div>' +
+//                                    '<div class="modal-footer">' +
+//                                    '<a href="#" class="btn" data-dismiss="modal">' + 
+//                                    'Ok' + 
+//                                    '</a>' +
+//                                    '</div>'+
+//                                    '</div>' +
+//                                    '</div>';
+//                        }
+//                        $('body').append(confirmModal);
+//                        $('#modelDialogDocumentEvidenceSection').dialog({
+//                            modal: true
+//                        })
+                      //  confirmModal.modal('show');
+                            alert('Không tìm thấy bạn đọc này');
+                        }
 		},
 		error: function() {
 			alert("fail :(");
