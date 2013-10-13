@@ -42,6 +42,9 @@ Router::connect('/tim-kiem', array('controller' => 'bookSearch', 'action' => 'us
  * Router for Ciculation
  */
 Router::connect('/bookBorrowed', array('controller' => 'ciculations', 'action' => 'bookBorrowed'));
+Router::connect('/getCiculation', array('controller' => 'ciculations', 'action' => 'getCiculation'));
+Router::connect('/booksCiculation', array('controller' => 'ciculations', 'action' => 'booksCiculation'));
+Router::connect('/getBook', array('controller' => 'bookSerials', 'action' => 'getBook'));
 CakePlugin::routes();
 
 /**

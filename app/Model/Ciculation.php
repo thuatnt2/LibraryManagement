@@ -98,12 +98,5 @@ class Ciculation extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
-		'User' => array(
-			'className' => 'Usermgmt.User',
-			'foreignKey' => 'reader',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
 	);
 }

@@ -1,6 +1,8 @@
 <!-- Page Head -->
-<h2>Welcome <?php echo $this->Session->read('UserAuth.User.username'); ?></h2>
-<!--<p id="page-intro">What would you like to do?</p>
+<!--<h2>Welcome-->
+ <?php // echo $this->Session->read('UserAuth.User.username'); ?>
+<!--</h2>-->
+<!--<p id="page-intro">What would you like to do?</p>-->
 
 <ul class="shortcut-buttons-set">
 
@@ -24,7 +26,7 @@
                 Open Modal
             </span></a></li>
 
-</ul> End .shortcut-buttons-set -->
+</ul>
 
 <div class="clear"></div> <!-- End .clear -->
 <noscript> <!-- Show a notification if the user has disabled javascript -->
