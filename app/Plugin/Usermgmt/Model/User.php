@@ -426,7 +426,7 @@ Thanks,\n" .
 	 */
 	public function getNameById($userId) {
 		$res = $this->findById($userId);
-		$name = (!empty($res)) ? ($res['User']['first_name'] . ' ' . $res['User']['last_name']) : '';
+		$name = (!empty($res)) ? ($res['User']['fullname']) : '';
 		return $name;
 	}
 

@@ -445,28 +445,28 @@ ul.content-box-tabs li a.current {
 }
 
 .new-article span {
-    background-image: url('../images/icons/pencil_48.png');
+    background-image: url('../images/icons/new-article.png');
 }
 .statistics span {
     background-image: url('../images/icons/posts.png');
 }
-.cataloging-book span {
-    background-image: url('../images/icons/catalogin-book.png');
+.cataloging-document span {
+    background-image: url('../images/icons/cataloging-document.png');
 }
-.new-page span {
-    background-image: url('../images/icons/paper_content_pencil_48.png');
+.borrow-document span {
+    background-image: url('../images/icons/borrow-document.png');
 }
 
 .upload-image span {
     background-image: url('../images/icons/image_add_48.png');
 }
 
-.add-event span {
-    background-image: url('../images/icons/clock_48.png');
+.add-reader span {
+    background-image: url('../images/icons/add-reader.png');
 }
 
-.manage-comments span {
-    background-image: url('../images/icons/comment_48.png');
+.manage-user span {
+    background-image: url('../images/icons/manage-user.png');
 } 
 
 .shortcut-button:hover {

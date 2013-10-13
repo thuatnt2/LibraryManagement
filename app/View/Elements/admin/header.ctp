@@ -10,11 +10,11 @@
                 Write an Article
             </span></a></li>-->
 
-    <li><a class="shortcut-button cataloging-book" href="#"><span class="png_bg">
+    <li><a class="shortcut-button cataloging-document" href="#"><span class="png_bg">
                 Biên mục tài liệu
             </span></a></li>
 
-    <li><a class="shortcut-button upload-image" href="#"><span class="png_bg">
+    <li><a class="shortcut-button borrow-document" href="#"><span class="png_bg">
                 Mượn trả tài liệu
             </span></a></li>
 
@@ -22,17 +22,17 @@
                 Mượn tài liệu online
             </span></a></li>
 
-    <li><a class="shortcut-button manage-comments" href="#messages" rel="modal"><span class="png_bg">
+    <li><a class="shortcut-button add-reader" href="#messages" rel="modal"><span class="png_bg">
                 Đăng ký bạn đọc
             </span></a></li>
             
     <li><a class="shortcut-button statistics" href="#messages" rel="modal"><span class="png_bg">
                 Thống kê    
             </span></a></li>
-    <li><a class="shortcut-button manage-comments" href="#messages" rel="modal"><span class="png_bg">
+    <li><a class="shortcut-button manage-user" href="#messages" rel="modal"><span class="png_bg">
                 Quản lý người dùng
             </span></a></li>
-    <li><a class="shortcut-button new-page" href="#messages" rel="modal"><span class="png_bg">
+    <li><a class="shortcut-button new-article" href="#messages" rel="modal"><span class="png_bg">
                 Đăng bài viết
             </span></a></li>
 
