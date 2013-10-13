@@ -66,7 +66,6 @@
         </div>
         <!-- End Header -->
         <div id="main" class="shell">
-            <div class="devider"></div> 
             <!--sidbar-->
             <?php echo $this->element('frontend/sidebar') ?>
             <div id="content">

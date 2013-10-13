@@ -16,7 +16,8 @@
     border-radius: 4px;
 }*/
 .categories h4 {
-    color:  #0182b5;
+    color:  #882132;;
+    /*color:  #E18728;*/
 }
 #sidebar {
     border: 1px solid #C9C9C9;
@@ -37,7 +38,8 @@ h1,h2,h3,h4 {
     padding: 0 0 8px 1px;
 }
 #logo { 
-    background: url(/images/banner.png);
+    /*background: url(/images/banner.png);*/
+     background: url(/images/banner2.jpg);
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -83,10 +85,12 @@ h1,h2,h3,h4 {
 #navigation ul li a {
     padding-bottom: 1px;
     text-decoration:none;
+    color: #882132;
+    font-weight: bold;
 }
 #navigation ul li a:hover {
-    color: #0088cc;
-    border-bottom: 3px solid #0088cc;
+    color: #DF082C;
+    /*border-bottom: 1px solid #E24A63;*/
 }
 .book-details .book-left {
     margin-left: 15px;
@@ -125,3 +129,14 @@ h1,h2,h3,h4 {
 .other-books {
     margin-top: 25px;
 }
+
+#navigation {
+    float: left;
+    /*height: 30px;*/
+    /*color: #fff;*/
+    /*background-color: #3d9abf;*/
+}/*
+#navigation ul {
+    padding-top: 5px;
+    padding-right: 5px;
+}*/

@@ -39,7 +39,11 @@ textarea { overflow: auto; }
 
 #header { padding-top: 30px; }
 
-#logo { height: 115px; margin-left: 20px;  position: relative; }
+#logo {
+    height: 140px; 
+    /*margin-left: 20px;*/  
+    position: relative; 
+}
 #logo span { position: absolute; bottom: -17px; right: -1px; font-size: 11px; line-height: 20px; }
 #logo span a { color: #44acd5; }
 #logo h1 a { display: block; height: 41px;  font-size: 0; line-height: 0; }
@@ -54,8 +58,6 @@ textarea { overflow: auto; }
 #login-details .cart img { display: block; }
 
 #navigation { 
-    float: right;
-    display: inline; 
     font-family: 'Georgia', Arial, serif; 
     font-size: 14px; 
     line-height: 20px; 
@@ -87,7 +89,7 @@ textarea { overflow: auto; }
 #slider .read-more-btn { display: block; width: 110px; height: 48px; line-height: 48px; background: url(/images/slider-btn.png); padding: 0 10px 0 59px; color: #fff; font-size: 18px; font-family: 'Georgia', Arial, serif; font-style: italic; font-weight: bold; margin-left: 3px; }
 #slider .read-more-btn:hover { color: #0f173a; text-decoration: none; }
 
-#main { padding-top: 10px; padding-bottom: 41px; z-index: 1; }
+#main { padding-top: 10px; padding-bottom: 15px; z-index: 1; }
 
 #sidebar { float: left; display: inline;  }
 #sidebar h4 { 
@@ -143,7 +145,16 @@ textarea { overflow: auto; }
 
 #footer .cnt { background: #44acd5 url(/images/footer-bg.png) repeat-x 0 0; padding: 21px 44px 0 36px; width: 837px; overflow: hidden;}
 #footer h4 { font-size: 16px; line-height: 18px; color: #fff; border-bottom: solid 4px #57b4d9; margin-bottom: 3px; padding-bottom: 6px; }
-#footer .copy {height: 25px; color: #fff; background: #3d9abf; font-size: 12px; line-height: 16px; padding: 7px 34px 8px; position: relative; width: 880px; margin: 20px 0 2px -36px; }
+#footer .copy {
+    height: 25px; 
+    color: #fff; 
+    background: #77303C;
+    font-size: 12px;
+    padding: 7px 34px 8px; 
+    position: relative; 
+    width: 920px; 
+    margin: 20px 0 2px -36px; 
+}
 #footer .copy a { color: #fff; }
 #footer .col { float: left; display: inline; }
 .about { width: 393px; font-size: 12px; line-height: 18px; }
