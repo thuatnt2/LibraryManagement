@@ -109,7 +109,7 @@ function loadBookTable() {
 
 		},
 		error: function() {
-			alert("fail :(");
+			alert("Lỗi hệ thống, xin lỗi vì sự bất tiện này");
 		}
 	});
 }
@@ -144,25 +144,24 @@ $("#book-code").change(function() {
 				else if (book.Ciculation.reader == readerCode) {
 					$("#btn-book-return").removeClass("disabled");
 				}
-			$("#book-code").val(book.BookSerial.barcode);
-			$("#book-name").val(book.Book.title);
-			$("#book-authors").val(book.Book.authors);
-			$("#book-status").val(book.Book.status);
-			$("#book-date-return").val(book.Ciculation.date_return);
-			$("#book-reader").val(book.Ciculation.reader);
-			if(book.Ciculation.reader == readerCode){
-				$("#btn-book-return").removeClass("disabled");
-			}
-			else {
+				$("#book-code").val(book.BookSerial.barcode);
+				$("#book-name").val(book.Book.title);
+				$("#book-authors").val(book.Book.authors);
+				$("#book-status").val(book.Book.status);
+				$("#book-date-return").val(book.Ciculation.date_return);
+				$("#book-reader").val(book.Ciculation.reader);
+				if (book.Ciculation.reader == readerCode) {
+					$("#btn-book-return").removeClass("disabled");
+				}
+
+			} else {
 				alert("Không tìm thấy tài liệu có mã " + $("#book-code").val() + " . Vui lòng thử lại");
 				clearBook();
 				return false;
 			}
-
-
 		},
 		error: function() {
-			alert("fail :(");
+			alert("Lỗi hệ thống, xin lỗi vì sự bất tiện này");
 		}
 	});
 });
@@ -185,7 +184,7 @@ $("#btn-book-borrow").click(function() {
 			},
 			error: function() {
 				clearBook();
-				alert("fail :(");
+				alert("Lỗi hệ thống, xin lỗi vì sự bất tiện này");
 			}
 		});
 	}
@@ -207,7 +206,7 @@ $("#btn-book-return").click(function() {
 			},
 			error: function() {
 				clearBook();
-				alert("fail :(");
+				alert("Lỗi hệ thống, xin lỗi vì sự bất tiện này");
 			}
 		});
 	}
@@ -242,7 +241,7 @@ function renewBook(book_serial_id) {
 			},
 			error: function() {
 				clearBook();
-				alert("fail :(");
+				alert("Lỗi hệ thống, xin lỗi vì sự bất tiện này");
 			}
 		});
 	}

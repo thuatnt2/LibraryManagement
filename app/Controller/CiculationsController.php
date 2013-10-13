@@ -145,7 +145,7 @@ class CiculationsController extends AppController {
 			//$conditions = array('')
 			$reader = $this->Reader->find('first', array('conditions' => $conditions, 'fields' => $fields));
 			if (!empty($reader)) {
-				$this->loadModel('Usermgmt.User');
+				$this->Session->write('currentReader', $reader);
 				$reader_type = $this->User->reader_type;
 				$reader['Reader']['is_teacher'] = $reader_type[$reader['Reader']['is_teacher']];
 				$reader['Reader']['status'] = $reader['Reader']['is_locked'] == 0 ? 'Được phép lưu thông' : 'Đang bị khóa';
@@ -161,7 +161,22 @@ class CiculationsController extends AppController {
 			$reader_code = $this->request->data['readerCode'];
 			$conditions = array('Ciculation.reader' => $reader_code);
 			$this->Ciculation->recursive = 2;
+			$duration_extend = $this->Session->read('CiculationPolicy.SLGH.amount');
 			$books = $this->Ciculation->find('all', array('conditions' => $conditions));
+			for ($i = 0; $i < count($books); $i++) {
+				if ($books[$i]['Ciculation']['extensions'] >= $duration_extend)
+					$books[$i]['extension_allow'] = false;
+				else
+					$books[$i]['extension_allow'] = true;
+
+				$now = time(); // or your date as well
+				$date_return = strtotime($books[$i]['Ciculation']['date_return']);
+				$datediff = $now - $date_return;
+				$datediff = floor($datediff / (60 * 60 * 24));
+				if ($datediff > 0) {
+					$books[$i]['is_late'] = $datediff;
+				}
+			}
 			$this->set('books', $books);
 		}
 	}
@@ -174,27 +189,37 @@ class CiculationsController extends AppController {
 			$reader_code = $this->request->data['readerCode'];
 			$book_code = $this->request->data['bookCode'];
 			$this->loadModel('BookSerial');
-			$book_serial = $this->BookSerial->findByBarcode($book_code, array('fields' => 'BookSerial.id'));
-			$data = array();
-			$data['Ciculation']['reader'] = $reader_code;
-			$data['Ciculation']['book_serial_id'] = $book_serial['BookSerial']['id'];
-			$data['Ciculation']['extensions'] = 0;
-			$duration_ciculation = $this->Session->read('CiculationPolicy.TGMS.amount');
-			$date_return = strtotime('+' . $duration_ciculation . ' day', strtotime(date('d-M-y')));
-			$data['Ciculation']['date_return'] = date('Y-m-d', $date_return);
-			$user = $this->UserAuth->getUser();
-			//$data['Ciculation']['librarian_name'] = $user['User']['fullname'];
-			//debug($data); exit();
-			$this->Ciculation->create();
-			if ($this->Ciculation->save($data)) {
-				$result['status'] = 1;
-				$resutl['message'] = 'Bạn đọc mượn sách thành công';
-				$this->loadModel('BookSerial');
-				$this->BookSerial->id = $book_serial['BookSerial']['id'];
-				$this->BookSerial->saveField('status', 0);
-			} else {
+			$this->BookSerial->recursive = 2;
+			$field = array('BookSerial.id', 'Book.teacher_only', 'Book.borrow_type');
+			$book_serial = $this->BookSerial->find('first', array('fields' => $field, 'conditions' => array('BookSerial.barcode' => $book_code)));
+			$current_reader = $this->Session->read('currentReader');
+			if ($book_serial['Book']['teacher_only'] == 0 && $current_reader['User']['is_teacher'] == 0) {
 				$result['status'] = 0;
-				$resutl['message'] = 'Đã có lỗi xảy ra trong quá trình mượn sách. Vui lòng thử lại';
+				$resutl['message'] = 'Sách này chỉ dành cho Giảng Viên';
+			} else if ($book_serial['Book']['borrow_type'] == 0) {
+				$result['status'] = 0;
+				$resutl['message'] = 'Sách này chỉ đọc tại chỗ';
+			} else {
+
+				$data = array();
+				$data['Ciculation']['reader'] = $reader_code;
+				$data['Ciculation']['book_serial_id'] = $book_serial['BookSerial']['id'];
+				$data['Ciculation']['extensions'] = 0;
+				$duration_ciculation = $this->Session->read('CiculationPolicy.TGMS.amount');
+				$date_return = strtotime('+' . $duration_ciculation . ' day', strtotime(date('d-M-y')));
+				$data['Ciculation']['date_return'] = date('Y-m-d', $date_return);
+				$user = $this->UserAuth->getUser();
+				$this->Ciculation->create();
+				if ($this->Ciculation->save($data)) {
+					$result['status'] = 1;
+					$resutl['message'] = 'Bạn đọc mượn sách thành công';
+					$this->loadModel('BookSerial');
+					$this->BookSerial->id = $book_serial['BookSerial']['id'];
+					$this->BookSerial->saveField('status', 0);
+				} else {
+					$result['status'] = 0;
+					$resutl['message'] = 'Đã có lỗi xảy ra trong quá trình mượn sách. Vui lòng thử lại';
+				}
 			}
 
 			exit(json_encode($resutl));
