@@ -115,5 +115,15 @@ class BookSerialsController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+	
+	public function getBook(){
+		$this->layout = null;
+		if($this->request->is('POST')){
+			$book_code = $this->request->data['bookCode'];
+			$book_serial = $this->BookSerial->findByBarcode($book_code);
+			exit(json_encode($book_serial));
+		}
+		$this->autoRender = false;
+	}
 
 }

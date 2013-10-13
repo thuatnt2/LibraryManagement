@@ -93,36 +93,52 @@
                     <div class="left" style="float: left; margin-left: 198px">
                         <div>
                             <div class="umstyle3" style="width: 100px"><?php echo 'Mã tài liệu:'; ?></div>
-							<div class="umstyle4" ><?php echo $this->Form->input("name", array('label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+							<div class="umstyle4" >
+								<input type="text" value="" class="form-control" id="book-code"/>
+							</div>
 							<div style="clear:both"></div>
 						</div>
                         <div>
-                            <div class="umstyle3" style="width: 100px"><?php echo 'Loại tài liệu:'; ?></div>
-							<div class="umstyle4" ><?php echo $this->Form->input("book_type", array('label' => false, 'div' => false, 'class' => 'form-control', 'disabled' => 'disabled')) ?></div>
+                            <div class="umstyle3" style="width: 100px"><?php echo 'Tên tài liệu'; ?></div>
+							<div class="umstyle4" >
+								<input type="text" value="" class="form-control" id="book-name" disabled="disabled"/>
+							</div>
 							<div style="clear:both"></div>
 						</div>
                         <div>
-                            <div class="umstyle3" style="width: 100px"><?php echo 'Vị trí:'; ?></div>
-							<div class="umstyle4" ><?php echo $this->Form->input("location", array('label' => false, 'div' => false, 'class' => 'form-control', 'disabled' => 'disabled')) ?></div>
+                            <div class="umstyle3" style="width: 100px"><?php echo 'Tác giả: '; ?></div>
+							<div class="umstyle4" >
+								<input type="text" value="" class="form-control" id="book-authors" disabled="disabled"/>
+							</div>
 							<div style="clear:both"></div>
 						</div>
 					</div>
 					<div class="right" align="right"  style="float: right">
 						<div>
 							<div class="umstyle3" style="width: 100px"><?php echo 'Tình trạng:'; ?></div>
-							<div class="umstyle4" ><?php echo $this->Form->input("status", array('label' => false, 'div' => false, 'class' => 'form-control', 'disabled' => 'disabled')) ?></div>
+							<div class="umstyle4" >
+								<input type="text" value="" class="form-control" id="book-status" disabled="disabled"/>
+							</div>
 							<div style="clear:both"></div>
 						</div>
 						<div>
 							<div class="umstyle3" style="width: 100px"><?php echo 'Hạn trả:'; ?></div>
-							<div class="umstyle4" ><?php echo $this->Form->input("date_return", array('label' => false, 'div' => false, 'class' => 'form-control', 'disabled' => 'disabled')) ?></div>
+							<div class="umstyle4" >
+								<input type="" value="" class="form-control" id="book-date-return" disabled="disabled"/>
+							</div>
 							<div style="clear:both"></div>
 						</div>
 						<div>
-                            <div class="umstyle3" style="width: 100px"><?php echo 'Mô tả:'; ?></div>
-							<div class="umstyle4" ><?php echo $this->Form->input("description", array('label' => false, 'div' => false, 'class' => 'form-control', 'disabled' => 'disabled')) ?></div>
+                            <div class="umstyle3" style="width: 100px"><?php echo 'Người mượn :'; ?></div>
+							<div class="umstyle4" >
+								<input type="text" value="" class="form-control" id="book-reader" disabled="disabled" />
+							</div>
 							<div style="clear:both"></div>
 						</div>
+					</div>
+					<div class="button-container" style="text-align: center">
+						<a href="#" class="btn btn-primary disabled" id="btn-book-borrow">Mượn sách</a>
+						<a href="#" class="btn btn-primary disabled" id="btn-book-return">Trả sách</a>
 					</div>
                 </form>
             </div>
@@ -150,15 +166,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>Ma sach</td>
-								<td>Ten sach</td>
-								<td>Nha xuat ban</td>
-								<td>tac gia</td>
-								<td>Ngon ngu</td>
-								<td>Ngay muon</td>
-								<td>hanh dong</td>
-							</tr>
+							
 						</tbody>
 					</table>
 				</div>

@@ -22,35 +22,6 @@ function close_box() {
 }
 
 $(document).ready(function() {
-<<<<<<< HEAD
-    $('.addmenu').click(function() {
-
-        $.fancybox({
-            'padding': 0,
-            'titleShow': false,
-            'autoScale': false,
-            'width': 900,
-            'height': 520,
-            'transitionIn': 'elastic',
-            'transitionOut': 'elastic',
-            'hideOnOverlayClick': false,
-            'hideOnContentClick': false,
-            'overlayShow': true,
-            'opacity': false,
-            'type': 'ajax',
-            'href': base_url + 'menus/' + $('#menu-type').val()
-                    // 'href':'http://fancyapps.com/fancybox/',
-        });
-    });
-    $('.nav-top-item').on('click', function (event) {
-        $('.current').removeClass('current');
-        $(this).addClass('current');
-    })
-});
-=======
-
-
-
 	$('.addmenu').click(function() {
 
 		$.fancybox({
@@ -70,8 +41,32 @@ $(document).ready(function() {
 					// 'href':'http://fancyapps.com/fancybox/',
 		});
 	});
-
+	$('.nav-top-item').on('click', function(event) {
+		$('.current').removeClass('current');
+		$(this).addClass('current');
+	})
 });
+$('.addmenu').click(function() {
+
+	$.fancybox({
+		'padding': 0,
+		'titleShow': false,
+		'autoScale': false,
+		'width': 900,
+		'height': 520,
+		'transitionIn': 'elastic',
+		'transitionOut': 'elastic',
+		'hideOnOverlayClick': false,
+		'hideOnContentClick': false,
+		'overlayShow': true,
+		'opacity': false,
+		'type': 'ajax',
+		'href': base_url + 'menus/' + $('#menu-type').val()
+				// 'href':'http://fancyapps.com/fancybox/',
+	});
+});
+
+//});
 //for add ciculation
 $("#reader-code").on("change", (function() {
 //	clearTimeout(wto);
@@ -93,8 +88,8 @@ $("#reader-code").on("change", (function() {
 				var output = $('#reader-data-template').parseTemplate(result);
 				$("#reader-data").html(output);
 			}
-			else{
-				
+			else {
+
 			}
 
 		},
@@ -116,7 +111,38 @@ $("#reader-code").on("change", (function() {
 			alert("fail :(");
 		}
 	});
-
-
 }));
->>>>>>> be35137f76ad7a0119e02c62a3c80e1bea1a1430
+
+$("#book-code").change(function() {
+	var bookCode = $("#book-code").val();
+	var readerCode = $("#reader-code").val();
+	jQuery.ajax({
+		url: "getBook",
+		type: "POST",
+		data: {"bookCode": bookCode},
+		dataType: 'json',
+		success: function(book) {
+			console.log(book);
+			$("#book-code").val(book.BookSerial.barcode);
+			$("#book-name").val(book.Book.title);
+			$("#book-authors").val(book.Book.authors);
+			$("#book-status").val(book.Book.status);
+			$("#book-date-return").val(book.Ciculation.date_return);
+			$("#book-reader").val(book.Ciculation.reader);
+			console.log(readerCode);
+			console.log(book.Ciculation.reader);
+			if(book.Ciculation.reader == readerCode){
+				$("#btn-book-return").removeClass("disabled");
+			}
+			if(book.Book.status == 0){
+				$("#btn-book-borrow").removeClass("disabled");
+			}
+
+		},
+		error: function() {
+			alert("fail :(");
+		}
+	});
+});
+
+
