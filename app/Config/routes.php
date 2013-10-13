@@ -5,6 +5,9 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
+//admin router
+Router::connect('/dashboard', array('controller' => 'admin', 'action' => 'dashboard'));
+
 Router::connect('/', array('controller' => 'index', 'action' => 'index'));
 Router::connect('/aticles', array('controller' => 'libArticles', 'action' => 'index'));
 Router::connect('/index', array('controller' => 'index', 'action' => 'index'));
@@ -45,6 +48,9 @@ Router::connect('/bookBorrowed', array('controller' => 'ciculations', 'action' =
 Router::connect('/getCiculation', array('controller' => 'ciculations', 'action' => 'getCiculation'));
 Router::connect('/booksCiculation', array('controller' => 'ciculations', 'action' => 'booksCiculation'));
 Router::connect('/getBook', array('controller' => 'bookSerials', 'action' => 'getBook'));
+Router::connect('/borrowBook', array('controller' => 'ciculations', 'action' => 'borrowBook'));
+Router::connect('/returnBook', array('controller' => 'ciculations', 'action' => 'returnBook'));
+Router::connect('/renewBook', array('controller' => 'ciculations', 'action' => 'renewBook'));
 CakePlugin::routes();
 
 /**

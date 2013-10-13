@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2013-10-05 20:09:30
+Date: 2013-10-13 21:32:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -52,7 +52,7 @@ CREATE TABLE `authors` (
   `created` date DEFAULT NULL,
   `modified` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of authors
@@ -64,6 +64,7 @@ INSERT INTO authors VALUES ('4', 'Lê Văn Lan', '2013-10-04', '2013-10-04');
 INSERT INTO authors VALUES ('5', 'Hồ Chí Minh', '2013-10-04', '2013-10-04');
 INSERT INTO authors VALUES ('6', 'Võ Nguyên Giáp', '2013-10-04', '2013-10-04');
 INSERT INTO authors VALUES ('7', 'Phan Chu Trinh', '2013-10-05', '2013-10-05');
+INSERT INTO authors VALUES ('8', 'Huy Đức', '2013-10-13', '2013-10-13');
 
 -- ----------------------------
 -- Table structure for `books`
@@ -72,9 +73,9 @@ DROP TABLE IF EXISTS `books`;
 CREATE TABLE `books` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(45) NOT NULL COMMENT 'Tên cuốn sách',
-  `number_of_pages` int(11) NOT NULL COMMENT 'Tổng số trang',
+  `number_of_pages` int(11) DEFAULT NULL COMMENT 'Tổng số trang',
   `publisher` varchar(45) NOT NULL COMMENT 'Nhà xuất bản',
-  `year_of_publish` date NOT NULL COMMENT 'Năm xuất bản',
+  `year_of_publish` date DEFAULT NULL COMMENT 'Năm xuất bản',
   `total` int(11) DEFAULT NULL,
   `price` varchar(20) DEFAULT NULL COMMENT 'Giá sách',
   `created` date DEFAULT NULL COMMENT 'Ngày tạo biên mục cho cuốn sách',
@@ -82,45 +83,25 @@ CREATE TABLE `books` (
   `user_created` varchar(45) DEFAULT NULL COMMENT 'Người biên mục',
   `location` varchar(45) DEFAULT NULL COMMENT 'Vị trí cuốn sách',
   `description` mediumtext COMMENT 'Mô tả nội dung cơ bản của cuốn sách',
-  `used_as` tinyint(4) NOT NULL COMMENT '0 - chỉ đọc tại chỗ\n1- Có thể mượn về',
-  `book_language_id` int(11) NOT NULL COMMENT 'Ngôn ngữ của tài liệu',
-  `book_type_id` int(11) NOT NULL COMMENT 'Loại tài liệu (sách,tài liệu,giáo trình,truyện,tiểu thuyết,sách tham khảo)',
-  `book_category_id` int(11) NOT NULL COMMENT 'The loai sach: tu nhien, Xa hoi, Tin hoc',
+  `used_as` tinyint(4) DEFAULT NULL COMMENT '0 - chỉ đọc tại chỗ\n1- Có thể mượn về',
+  `language` varchar(11) DEFAULT NULL COMMENT 'Ngôn ngữ của tài liệu',
+  `book_type_id` int(11) DEFAULT NULL COMMENT 'Loại tài liệu (sách,tài liệu,giáo trình,truyện,tiểu thuyết,sách tham khảo)',
+  `book_category_id` int(11) DEFAULT NULL COMMENT 'The loai sach: tu nhien, Xa hoi, Tin hoc',
   `teacher_only` tinyint(4) DEFAULT NULL,
-  `authors` varchar(255) DEFAULT NULL,
+  `authors` varchar(255) NOT NULL,
+  `borrow_type` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_lib_BookStores_lib_BookLanguages1_idx` (`book_language_id`),
+  KEY `fk_lib_BookStores_lib_BookLanguages1_idx` (`language`),
   KEY `fk_lib_BookStores_lib_BookType1_idx` (`book_type_id`),
   KEY `fk_lib_BookStores_lib_BookCategories1_idx` (`book_category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12351 DEFAULT CHARSET=utf8 COMMENT='Lưu thông tin của một tập các cuốn sách cùng tên';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Lưu thông tin của một tập các cuốn sách cùng tên';
 
 -- ----------------------------
 -- Records of books
 -- ----------------------------
-INSERT INTO books VALUES ('125', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null, 'Nguyễn Hiến Lê');
-INSERT INTO books VALUES ('126', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('127', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('128', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('129', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('130', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('131', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', '18 x 6', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('132', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('133', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('134', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('135', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('136', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('137', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('138', 'Bài tập lập trình', '250', 'NXB Giáo Dục', '2005-05-17', '10', '50.000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'fskfjslfkskfls', '0', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('139', 'Phân tích thiêt kế web', '250', 'NXB Tuổi Trẽ', '2010-05-17', '5', '25.0000', '2013-05-14', '18 x 6', 'user01', 'Tham Khảo', 'fsfhkfhweudfdslkfjslfjslfsn', '0', '1', '2', '3', null, null);
-INSERT INTO books VALUES ('140', 'Làm chủ windows 2000 server', '676', 'NXB Thanh Niên', '2001-05-01', '10', '89.000', '2013-05-15', '15,5 x15,5', 'user01', 'Sách tham khảo', 'fsmfnslfshweueowns', '0', '1', '2', '3', null, null);
-INSERT INTO books VALUES ('141', 'Đêm Đầu tiên', '545', 'NXB Nhã Nam', '2011-10-04', '10', '105.000', '2013-05-16', '14 x 20,5 cm', 'user01', 'Truyện đọc', 'sffdsdsf', '0', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('142', 'Phút Đầu Tiên', '545', 'NXB Nhã Nam', '2011-10-04', '10', '105.000', '2013-05-16', '14 x 20,5 cm', 'user01', 'Truyện đọc', 'sffdsdsf', '0', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('12345', 'Lập trinh c++', '100', 'NXB Giáo Dục', '2010-05-08', '10', '25.0000', '2013-05-14', '18 x 6', 'user01', 'Giáo trình', 'hhghghgfh', '0', '2', '1', '1', null, null);
-INSERT INTO books VALUES ('12346', 'Phân tích và thiết kế hệ thống thông tin', '200', 'NXB Giáo Dục', '2005-05-17', '15', '30.000', '2013-05-29', '14 x 20,5 cm', 'user01', 'Tham Khảo', 'Trình bày các phương pháp phân tích thiết kế có cấu trúc dọc theo các giai đoạn của chu trình phát triển', '1', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('12347', 'Giáo trình cấp thoát nước bên trong công trìn', '203', 'Nxb Hà Nội', '2006-06-14', '10', '27500', '2013-06-01', '24cm', 'user01', 'Tài liệu tham khảo', 'Kiến thức cơ bản về hệ thống cấp thoát nước, nguyên lý hoạt động, cấu tạo, quy trình thiết kế và các', '0', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('12348', 'dfs', '2000', 'sdfs', '2013-06-03', '10', '150000', '2013-06-09', '14 x 20,5 cm', 'user01', 'sách tham khảo', 'dfggfg', '0', '1', '1', '1', null, null);
-INSERT INTO books VALUES ('12349', 'Giáo trình chính trị', '247', 'NXB Giáo Dục', '2005-06-13', '4', '23000', '2013-06-16', '24cm', 'user01', 'Giáo trình', 'Nêu chủ nghĩa duy vật khoa học và hoạt động thực tiễn của con người. Quan điểm, đường lối chủ trương chính sách của Đảng Cộng sản Việt Nam', '0', '1', '1', '2', null, null);
-INSERT INTO books VALUES ('12350', 'Giáo trình hệ thống mạng máy tính CCNA semest', '443', 'Lao động xã hộ', '2004-06-13', '4', '86000', '2013-06-16', '24cm', 'user01', 'Giáo trình', 'Tái bản lần thứ 1, cập nhật version 3.0.', '1', '1', '1', '1', null, null);
+INSERT INTO books VALUES ('1', 'Hồi ký Nguyễn Hiến Lê', '160', 'NXB Giáo Dục', '0000-00-00', '3', '', '2013-10-11', null, null, '1', 'Hồi ký Nguyễn Hiến Lê (Phần chưa được công bố)', null, '1', '2', '2', '1', 'Nguyễn Hiến Lê, ', '1');
+INSERT INTO books VALUES ('2', 'Bên thắng cuộc', '200', 'NXB Giáo Dục', '0000-00-00', '0', '100 vnd', '2013-10-13', null, null, '2', 'sách hay nhất', null, 'Vietnamese', '2', '10', '1', 'Huy Đức', '1');
+INSERT INTO books VALUES ('3', 'Bên thắng cuộc (phần 2)', '200', 'NXB Văn Học', '0000-00-00', '0', '', '2013-10-13', null, null, '1', '', null, 'Vietnamese', '1', '10', '1', 'Huy Đức, ', '1');
 
 -- ----------------------------
 -- Table structure for `book_authors`
@@ -229,27 +210,24 @@ INSERT INTO book_languages VALUES ('6', 'Korea', null, null, null, null);
 -- ----------------------------
 DROP TABLE IF EXISTS `book_serials`;
 CREATE TABLE `book_serials` (
-  `id` varchar(50) NOT NULL,
+  `id` int(50) NOT NULL AUTO_INCREMENT,
   `book_id` int(11) NOT NULL COMMENT 'Số thứ tự cuốn sách',
-  `created` datetime DEFAULT NULL COMMENT 'Ngày khởi đã khởi tạo',
-  `user_creater` varchar(45) DEFAULT NULL COMMENT 'Người khởi tạo',
-  `status` tinyint(1) DEFAULT NULL COMMENT 'Tình trạng cuốn sách cụ thể',
-  `modified` datetime DEFAULT NULL,
+  `created` datetime NOT NULL COMMENT 'Ngày khởi đã khởi tạo',
+  `user_creater` varchar(45) NOT NULL COMMENT 'Người khởi tạo',
+  `status` tinyint(1) NOT NULL COMMENT 'Tình trạng cuốn sách cụ thể',
+  `modified` datetime NOT NULL,
+  `barcode` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Một cuốn sách cụ thể';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='Một cuốn sách cụ thể';
 
 -- ----------------------------
 -- Records of book_serials
 -- ----------------------------
-INSERT INTO book_serials VALUES ('11111111', '125', '2013-10-05 06:37:56', null, '0', '2013-10-05 06:37:56');
-INSERT INTO book_serials VALUES ('1234', '125', '2013-10-05 06:37:20', null, '0', '2013-10-05 06:37:20');
-INSERT INTO book_serials VALUES ('12345', '125', '2013-10-05 05:50:17', null, '0', '2013-10-05 05:50:17');
-INSERT INTO book_serials VALUES ('123467', '125', '2013-10-05 05:53:17', null, '0', '2013-10-05 05:53:17');
-INSERT INTO book_serials VALUES ('12354', '125', '2013-10-05 06:19:23', null, '0', '2013-10-05 06:19:23');
-INSERT INTO book_serials VALUES ('1236', '125', '2013-10-05 05:53:10', null, '0', '2013-10-05 05:53:10');
-INSERT INTO book_serials VALUES ('333333333333333333333', '125', '2013-10-05 06:39:50', null, '0', '2013-10-05 06:39:57');
-INSERT INTO book_serials VALUES ('7689', '125', '2013-10-05 06:32:10', null, '0', '2013-10-05 06:32:10');
-INSERT INTO book_serials VALUES ('98765', '125', '2013-10-05 06:19:12', null, '0', '2013-10-05 06:19:12');
+INSERT INTO book_serials VALUES ('1', '1', '2013-10-13 00:44:07', '', '1', '2013-10-13 10:03:47', '001100');
+INSERT INTO book_serials VALUES ('2', '1', '2013-10-13 00:44:31', '', '1', '2013-10-13 00:44:31', '001101');
+INSERT INTO book_serials VALUES ('3', '1', '2013-10-13 00:44:39', '', '1', '2013-10-13 00:44:39', '001102');
+INSERT INTO book_serials VALUES ('4', '0', '2013-10-13 05:46:36', '', '0', '2013-10-13 05:46:36', '');
+INSERT INTO book_serials VALUES ('5', '0', '2013-10-13 05:47:07', '', '0', '2013-10-13 05:47:07', '');
 
 -- ----------------------------
 -- Table structure for `book_types`
@@ -309,24 +287,21 @@ INSERT INTO categories VALUES ('5', null, 'Hướng dẫn sử dụng', '', '1',
 DROP TABLE IF EXISTS `ciculations`;
 CREATE TABLE `ciculations` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'chi tiết mượn trả sách',
-  `date_borrow` date NOT NULL COMMENT 'Ngày mượn',
-  `date_return` date NOT NULL COMMENT 'Ngày trã',
-  `librarian_name` varchar(45) NOT NULL COMMENT 'Tên cán bộ thư viện thực hiện hoạt động này',
-  `add_time` tinyint(4) NOT NULL,
-  `reader_id` varchar(30) NOT NULL COMMENT 'Mã bạn đọc mượn',
-  `book_serial_id` int(11) NOT NULL COMMENT 'Quyển sách được mượn',
+  `created` date DEFAULT NULL COMMENT 'Ngày mượn',
+  `date_return` date DEFAULT NULL COMMENT 'Ngày trã',
+  `librarian_name` varchar(45) DEFAULT NULL COMMENT 'Tên cán bộ thư viện thực hiện hoạt động này',
+  `extensions` tinyint(4) DEFAULT NULL,
+  `reader` varchar(30) DEFAULT NULL COMMENT 'Mã bạn đọc mượn',
+  `book_serial_id` int(11) DEFAULT NULL COMMENT 'Quyển sách được mượn',
   PRIMARY KEY (`id`),
-  KEY `fk_lib_Ciculations_lib_Readers1_idx` (`reader_id`),
+  KEY `fk_lib_Ciculations_lib_Readers1_idx` (`reader`),
   KEY `fk_lib_Ciculations_lib_SerialBooks1_idx` (`book_serial_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='Bảng chi tiết mượn trả sách (Nếu có người mượn thì thêm vào  /* comment truncated */ /*1 record, Nếu trã sách thì xóa record đó)*/';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='Bảng chi tiết mượn trả sách (Nếu có người mượn thì thêm vào  /* comment truncated */ /*1 record, Nếu trã sách thì xóa record đó)*/';
 
 -- ----------------------------
 -- Records of ciculations
 -- ----------------------------
-INSERT INTO ciculations VALUES ('4', '2013-01-18', '2013-04-18', 'user01', '0', '331.08.0001', '17');
-INSERT INTO ciculations VALUES ('5', '2013-05-18', '2014-03-17', 'user01', '0', '331.08.0001', '12');
-INSERT INTO ciculations VALUES ('6', '2013-05-30', '2014-02-24', 'user01', '0', '331.08.0001', '20');
-INSERT INTO ciculations VALUES ('7', '2013-06-16', '2013-09-14', 'user01', '0', '331.08.0003', '30');
+INSERT INTO ciculations VALUES ('3', '2013-10-13', '0000-00-00', null, null, null, null);
 
 -- ----------------------------
 -- Table structure for `ciculation_policies`
@@ -337,19 +312,19 @@ CREATE TABLE `ciculation_policies` (
   `name` varchar(255) NOT NULL,
   `amount` varchar(255) NOT NULL,
   `unit_of` varchar(255) DEFAULT NULL,
-  `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ciculation_policies
 -- ----------------------------
-INSERT INTO ciculation_policies VALUES ('SLGH', 'Số lần gia hạn tài liệu tối đa', '1', 'lần', null, null);
-INSERT INTO ciculation_policies VALUES ('STLM', 'Số tài liệu tối đa mượn', '5', 'cuốn', null, null);
-INSERT INTO ciculation_policies VALUES ('TGGH', 'Thời gian gia hạn', '90', 'ngày', null, null);
-INSERT INTO ciculation_policies VALUES ('TGLT', 'Thời gian lưu thông', '365', 'ngày', null, null);
-INSERT INTO ciculation_policies VALUES ('TGMS', 'Thời gian mượn tài liệu', '90', 'ngày', null, null);
+INSERT INTO ciculation_policies VALUES ('PMTC', 'Phạt vi phạm không trả sách mượn tại chỗ', '7', 'ngày khóa thẻ');
+INSERT INTO ciculation_policies VALUES ('PQHM', 'Phạt vi phạm quá hạn mượn sách', '1000', 'đồng/ngày');
+INSERT INTO ciculation_policies VALUES ('SLGH', 'Số lần gia hạn tài liệu tối đa', '1', 'lần');
+INSERT INTO ciculation_policies VALUES ('STLM', 'Số tài liệu tối đa mượn', '5', 'cuốn');
+INSERT INTO ciculation_policies VALUES ('TGGH', 'Thời gian gia hạn', '90', 'ngày');
+INSERT INTO ciculation_policies VALUES ('TGLT', 'Thời gian lưu thông', '730', 'ngày');
+INSERT INTO ciculation_policies VALUES ('TGMS', 'Thời gian mượn tài liệu', '90', 'ngày');
 
 -- ----------------------------
 -- Table structure for `departments`
@@ -357,7 +332,7 @@ INSERT INTO ciculation_policies VALUES ('TGMS', 'Thời gian mượn tài liệu
 DROP TABLE IF EXISTS `departments`;
 CREATE TABLE `departments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `department_name` varchar(45) NOT NULL COMMENT 'Tên lớp',
+  `name` varchar(45) NOT NULL COMMENT 'Tên lớp',
   `description` tinytext,
   `faculty_id` int(11) NOT NULL,
   `created` datetime DEFAULT NULL,
@@ -365,7 +340,7 @@ CREATE TABLE `departments` (
   `actived` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_tbl_Class_tbl_Faculty1_idx` (`faculty_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of departments
@@ -374,6 +349,8 @@ INSERT INTO departments VALUES ('1', '08T2', '08t2', '1', '2013-09-20 23:07:44',
 INSERT INTO departments VALUES ('2', '08T1', '08T1', '1', '2013-09-20 23:08:27', '2013-09-20 23:09:47', '1');
 INSERT INTO departments VALUES ('3', '08T3', 'lớp 08T3', '1', '2013-09-20 23:21:43', '2013-09-20 23:22:59', '1');
 INSERT INTO departments VALUES ('4', '08T4', 'lớp 08T4', '1', '2013-09-20 23:23:20', '2013-09-20 23:23:20', '1');
+INSERT INTO departments VALUES ('5', '08DT1', '', '2', '2013-10-05 10:39:45', '2013-10-05 10:42:12', null);
+INSERT INTO departments VALUES ('6', '08DT2', '', '1', '2013-10-05 10:42:38', '2013-10-05 10:42:38', null);
 
 -- ----------------------------
 -- Table structure for `faculties`
@@ -381,11 +358,11 @@ INSERT INTO departments VALUES ('4', '08T4', 'lớp 08T4', '1', '2013-09-20 23:2
 DROP TABLE IF EXISTS `faculties`;
 CREATE TABLE `faculties` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `faculty_name` varchar(255) NOT NULL COMMENT 'Tên khoa',
+  `name` varchar(255) NOT NULL COMMENT 'Tên khoa',
   `description` text,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
-  `actived` int(11) DEFAULT NULL,
+  `is_active` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
@@ -583,30 +560,26 @@ INSERT INTO publishers VALUES ('5', 'NXB Đà Nẵng');
 -- ----------------------------
 DROP TABLE IF EXISTS `readers`;
 CREATE TABLE `readers` (
-  `id` varchar(50) NOT NULL,
+  `id` int(50) NOT NULL AUTO_INCREMENT,
   `created` date NOT NULL COMMENT 'Ngày tạo thẻ bạn đọc',
   `date_expiry` date NOT NULL COMMENT 'Ngày hết hạn sử dụng',
   `year_learn` varchar(45) NOT NULL COMMENT 'Khóa học',
   `total_borrow` tinyint(4) NOT NULL,
   `user_id` int(11) NOT NULL,
   `department_id` int(11) NOT NULL,
+  `is_teacher` tinyint(4) DEFAULT NULL,
+  `is_locked` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_lib_Reader_lib_User1_idx` (`user_id`),
   KEY `fk_lib_Reader_tbl_Class1_idx` (`department_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Lưu thông tin về một thẻ bạn đọc';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Lưu thông tin về một thẻ bạn đọc';
 
 -- ----------------------------
 -- Records of readers
 -- ----------------------------
-INSERT INTO readers VALUES ('331.08.0001', '2013-05-13', '2013-09-07', '2000 - 2005', '3', '3', '2');
-INSERT INTO readers VALUES ('331.08.0002', '2013-05-16', '2014-05-16', '2008 - 2013', '0', '4', '3');
-INSERT INTO readers VALUES ('331.08.0003', '2013-05-17', '2014-05-17', '2000 - 2005', '1', '5', '1');
-INSERT INTO readers VALUES ('331.08.0004', '2013-05-18', '2013-09-07', '2008 - 2013', '0', '6', '4');
-INSERT INTO readers VALUES ('331.08.0005', '2013-05-18', '2014-05-18', '2008 - 2013', '0', '7', '9');
-INSERT INTO readers VALUES ('331.09.0001', '2013-06-01', '2014-06-01', '2009 - 2014', '0', '8', '3');
-INSERT INTO readers VALUES ('331.12.0001', '2013-06-14', '2014-06-14', '2000 - 2005', '0', '9', '9');
-INSERT INTO readers VALUES ('331.12.0002', '2013-06-14', '2014-06-14', '2012 - 2017', '0', '10', '9');
-INSERT INTO readers VALUES ('331.12.0003', '2013-06-14', '2014-06-14', '2012 - 2017', '0', '13', '5');
+INSERT INTO readers VALUES ('1', '2013-10-06', '2014-06-10', '', '0', '24', '1', '1', '0');
+INSERT INTO readers VALUES ('2', '2013-10-06', '2014-10-06', '', '0', '25', '1', '1', '0');
+INSERT INTO readers VALUES ('3', '2013-10-06', '2014-10-06', '', '0', '26', '1', '1', '0');
 
 -- ----------------------------
 -- Table structure for `users`
@@ -614,7 +587,7 @@ INSERT INTO readers VALUES ('331.12.0003', '2013-06-14', '2014-06-14', '2012 - 2
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_group_id` int(11) unsigned DEFAULT NULL,
+  `user_group_id` int(11) unsigned NOT NULL,
   `username` varchar(100) CHARACTER SET latin1 NOT NULL,
   `password` varchar(255) CHARACTER SET latin1 NOT NULL,
   `salt` text CHARACTER SET latin1,
@@ -627,31 +600,27 @@ CREATE TABLE `users` (
   `modified` datetime DEFAULT NULL,
   `sex` tinyint(4) DEFAULT NULL,
   `birthday` date DEFAULT NULL,
-  `phoneNumber` int(11) DEFAULT NULL,
-  `residentAddress` varchar(255) DEFAULT NULL,
-  `nativePlace` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
-  `profilePhoto` varchar(255) DEFAULT NULL,
+  `phone_number` int(11) DEFAULT NULL,
+  `resident_address` varchar(255) DEFAULT NULL,
+  `native_place` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
   `description` tinytext,
+  `avatar` varchar(255) DEFAULT NULL,
+  `is_password_change` tinyint(4) DEFAULT NULL,
+  `is_deleted` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user` (`username`),
   KEY `mail` (`email`),
   KEY `users_FKIndex1` (`user_group_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO users VALUES ('1', '1', 'admin', '365caef7fccbdb1ee711f084be9317a7', '1e6d99570a4d37cc29b18c4a6b06e6ed', 'admin@admin.com', '', '1', '1', '', '2013-09-16 13:11:33', '2013-09-24 02:40:50', null, null, null, null, null, null, null);
-INSERT INTO users VALUES ('2', '2', 'vienlemai', '6eb88ce0c322a3e9cc0832938153fa5b', '607a7d89920dfd96624f3a97366f9dc1', 'lemaibk08@gmail.com', 'Mai Vien', '1', '1', null, '2013-09-17 06:26:43', '2013-09-17 06:26:43', null, null, null, null, null, null, null);
-INSERT INTO users VALUES ('3', '2', '331.08.0001', '3bb500954e1a9c9e5dcddb864bf5d518', 'cbabfcadae7b5f9d5ffd15641a988790', 'vienlm@ilucians.com', 'lemai', '1', '1', null, '2013-09-19 00:57:54', '2013-09-24 02:39:10', null, null, null, null, null, null, null);
-INSERT INTO users VALUES ('4', '2', '331.08.0002', '123456', 'cbabfcadae7b5f9d5ffd15641a988790', 'vienlm@ilucians.com', 'mai vien', '1', '0', null, null, '2013-09-24 02:40:29', null, null, null, null, null, null, null);
-INSERT INTO users VALUES ('5', null, '331.08.0003', '123456', null, 'vienlm@ilucians.com', null, '0', '0', null, null, '2013-09-24 02:40:27', null, null, null, null, null, null, null);
-INSERT INTO users VALUES ('6', null, '331.08.0004', '123456', null, 'vienlm@ilucians.com', null, '0', '1', null, null, '2013-09-21 04:15:29', null, null, null, null, null, null, null);
-INSERT INTO users VALUES ('7', null, '331.08.0005', '123456', null, 'vienlm@ilucians.com', null, '0', '1', null, null, '2013-09-21 04:15:31', null, null, null, null, null, null, null);
-INSERT INTO users VALUES ('8', null, '331.09.0001', '123456', null, 'vienlm@ilucians.com', null, '0', '1', null, null, '2013-09-22 06:27:02', null, null, null, null, null, null, null);
-INSERT INTO users VALUES ('9', null, '331.12.0001', '123456', null, 'vienlm@ilucians.com', null, '0', '1', null, null, '2013-09-24 02:40:38', null, null, null, null, null, null, null);
-INSERT INTO users VALUES ('10', null, '331.12.0002', '123456', null, 'vienlm@ilucians.com', null, '0', '1', null, null, '2013-09-24 02:40:39', null, null, null, null, null, null, null);
-INSERT INTO users VALUES ('11', null, '331.12.0003', '123456', null, 'vienlm@ilucians.com', null, '0', '0', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO users VALUES ('1', '1', 'admin', '365caef7fccbdb1ee711f084be9317a7', '1e6d99570a4d37cc29b18c4a6b06e6ed', 'admin@admin.com', '', '1', '1', '', '2013-09-16 13:11:33', '2013-09-24 02:40:50', null, null, null, null, null, null, null, null, null);
+INSERT INTO users VALUES ('2', '2', 'vienlemai', '6eb88ce0c322a3e9cc0832938153fa5b', '607a7d89920dfd96624f3a97366f9dc1', 'lemaibk08@gmail.com', 'Mai Vien', '1', '1', null, '2013-09-17 06:26:43', '2013-09-17 06:26:43', null, null, null, null, null, null, null, null, null);
+INSERT INTO users VALUES ('24', '4', '331.08.0001', 'dc1073c02862a607df7030d72cf5d696', 'b013d5a566191ef7ade9fae619e90af9', '', 'Le Mai Vien', '1', '0', '127.0.0.1', '2013-10-06 04:24:53', '2013-10-06 04:53:15', null, null, null, null, null, null, null, '0', null);
+INSERT INTO users VALUES ('25', '4', '331.08.0002', '5871fe7b12f541c7a0180a9d7fcfb7c5', '71abb28b61fec824316b3a84fcb85dd6', '', 'Le Mai Vien', '1', '0', '127.0.0.1', '2013-10-06 04:25:54', '2013-10-06 04:53:28', null, null, null, null, null, null, null, '0', null);
+INSERT INTO users VALUES ('26', '4', '331.08.0003', 'b12df2d63458a68ae264b3e4853251bd', '241518c693082f004831079a26e55f64', '', 'Le Mai Vien', '1', '0', '127.0.0.1', '2013-10-06 04:26:32', '2013-10-06 05:19:12', null, null, null, null, null, null, null, '0', '1');
 
 -- ----------------------------
 -- Table structure for `user_groups`
@@ -666,15 +635,16 @@ CREATE TABLE `user_groups` (
   `modified` datetime DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_groups
 -- ----------------------------
 INSERT INTO user_groups VALUES ('1', 'Admin', 'Admin', '0', '2013-09-16 13:11:33', '2013-09-16 13:11:33', null);
-INSERT INTO user_groups VALUES ('2', 'Reader', 'Reader', '1', '2013-09-16 13:11:33', '2013-09-19 01:10:32', null);
-INSERT INTO user_groups VALUES ('3', 'Guest', 'Guest', '0', null, null, null);
-INSERT INTO user_groups VALUES ('4', 'Thủ thư', 'thu_thu', '0', '2013-09-20 01:57:59', '2013-09-20 01:57:59', null);
+INSERT INTO user_groups VALUES ('2', 'Thủ thư', 'Librian', '1', null, null, null);
+INSERT INTO user_groups VALUES ('3', 'Biên mục', 'Editor', '1', '2013-10-05 22:12:51', '2013-10-05 22:12:51', null);
+INSERT INTO user_groups VALUES ('4', 'Bạn đọc', 'Reader', '1', '2013-10-05 22:13:49', '2013-10-05 22:13:49', null);
+INSERT INTO user_groups VALUES ('5', 'Khách', 'Guest', '1', '2013-10-05 22:14:32', '2013-10-05 22:14:32', null);
 
 -- ----------------------------
 -- Table structure for `user_group_permissions`

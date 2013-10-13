@@ -28,8 +28,9 @@ class Book extends AppModel {
 	 * @var array
 	 */
 	public $borrow_type = array(
-		1 => 'Chỉ đọc tại chỗ',
-		2 => 'Được phép mượn',
+		1 => 'Được phép mượn',
+		0 => 'Chỉ đọc tại chỗ',
+		
 	);
 	public $borrow_status = array(
 		1 => 'Đã sẵn sàng',
@@ -37,16 +38,9 @@ class Book extends AppModel {
 	);
 	public $teacher_only = array(
 		1 => 'Tất cả',
-		2 => 'Chỉ dành cho giáo viên',
+		0 => 'Chỉ dành cho giáo viên',
 	);
 	public $belongsTo = array(
-		'BookLanguage' => array(
-			'className' => 'BookLanguage',
-			'foreignKey' => 'book_language_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
 		'BookType' => array(
 			'className' => 'BookType',
 			'foreignKey' => 'book_type_id',

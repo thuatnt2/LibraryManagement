@@ -342,5 +342,10 @@ class UserAuthComponent extends Component {
     private function __useGuestAccount() {
         return $this->login('guest');
     }
+	
+	public function getFullName (){
+		$user = $this->getUser();
+		return $user['User']['fullname'];
+	}
 
 }

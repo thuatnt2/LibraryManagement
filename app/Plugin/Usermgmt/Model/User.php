@@ -53,8 +53,8 @@ class User extends UserMgmtAppModel {
 	var $userAuth;
 	
 	var  $reader_type = array(
-		1 => 'Sinh Viên',
-		2 => 'Giảng Viên'
+		0 => 'Sinh Viên',
+		1 => 'Giảng Viên'
 	);
 
 	/**

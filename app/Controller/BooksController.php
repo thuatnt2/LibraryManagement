@@ -44,7 +44,7 @@ class BooksController extends AppController {
 	public function view($book_id = null) {
 		$book = $this->Book->read('title, total, user_created', $book_id);
 		if ($this->request->is('post')) {
-			$this->request->data['BookSerial']['status'] = 0;
+			$this->request->data['BookSerial']['status'] = 1 ;
 			$this->request->data['BookSerial']['book_id'] = $book_id;
 			$this->loadModel('BookSerial');
 			$this->BookSerial->create();
@@ -69,9 +69,10 @@ class BooksController extends AppController {
 	public function add() {
 		$this->loadModel('Author');
 		$this->loadModel('Publisher');
+		$this->loadModel('BookLanguage');
 		$authorsList = $this->Author->find('list');
 		$publisherList = $this->Publisher->find('list');
-		$bookLanguagesList = $this->Book->BookLanguage->find('list');
+		$bookLanguagesList = $this->BookLanguage->find('list');
 
 		$publishers = array();
 		foreach ($publisherList as $k => $v) {
@@ -93,7 +94,8 @@ class BooksController extends AppController {
 				$this->request->data['Book']['authors'] = substr($this->request->data['Book']['authors'], strlen($this->request->data['Book']['authors']) - 1);
 			}
 			$this->request->data['Book']['total'] = 0;
-
+			
+			//debug($this->request->data); exit();
 			$this->Book->create();
 			if ($this->Book->save($this->request->data)) {
 				$this->saveAuthor($authors, $this->request->data['Book']['authors']);

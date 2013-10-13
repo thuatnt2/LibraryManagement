@@ -15,7 +15,7 @@
 				<div class="um_box_mid_content_mid_left">
 					<div>
 						<div class="umstyle3"><?php echo 'Tên đầu sách'; ?><font color='red'>*</font></div>
-						<div class="umstyle4" ><?php echo $this->Form->input("name", array('label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+						<div class="umstyle4" ><?php echo $this->Form->input("title", array('label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
 						<div style="clear:both"></div>
 					</div>
 					<div class="ui-widget">
@@ -74,12 +74,12 @@
 					</div>
 					<div>
 						<div class="umstyle3"><?php echo 'Hình thức sử dụng'; ?><font color='red'>*</font></div>
-						<div class="umstyle4" ><?php echo $this->Form->input("location", array('type' => 'select', 'options' => $borrow_type, 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+						<div class="umstyle4" ><?php echo $this->Form->input("borrow_type", array('type' => 'select', 'options' => $borrow_type, 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
 						<div style="clear:both"></div>
 					</div>
 					<div>
 						<div class="umstyle3"><?php echo 'Phạm vi mượn'; ?><font color='red'>*</font></div>
-						<div class="umstyle4" ><?php echo $this->Form->input("location", array('type' => 'select', 'options' => $teacher_only, 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+						<div class="umstyle4" ><?php echo $this->Form->input("teacher_only", array('type' => 'select', 'options' => $teacher_only, 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
 						<div style="clear:both"></div>
 					</div>
 
