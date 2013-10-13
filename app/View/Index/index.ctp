@@ -1,13 +1,7 @@
-
-<div id="news" class="tab-div">
-    <div class="tab-name">
-        <img class="tab-icon" src="/images/news-icon.png"></img>
-        <a  href="javascript:void(0);"><h4>Tin tức</h4></a>
-        <img class="tab-ender" src="/images/tab-background-right.jpg"></img>
-    </div>
-
-    <div class="tab-content">
-        <h4><?php echo $article['Article']['title']; ?></h4>
+<div id="news">
+    <h4 class="content-title">Tin tức</h4>
+    <div class="content">
+        <p><strong><?php echo $article['Article']['title']; ?></strong></p>
         <div>
             <?php echo $this->Text->truncate($article['Article']['content'], 800); ?>   
             <?php
@@ -15,23 +9,18 @@
                     '>> Đọc thêm', array(
                 'controller' => 'articles',
                 'action' => 'userView',
-                'id' => 5,
+                'id' => $article['Article']['id'],
                 'slug' => $this->Common->vnit_change_string(Inflector::slug($article['Article']['title']))
             ));
             ?>
         </div>   
     </div>
 </div>
-
-<div class="cl">&nbsp;</div>
-
+<div class="devider"> </div>
+<div class="clear-both"></div>
 <div class="prefer_books">
-    <div class="tab-name">
-        <img class="tab-icon" src="/images/prefer-book-icon.png"></img>
-        <a href="javascript:void(0);"><h4>Giới thiệu sách</h4></a>
-        <img class="tab-ender" src="/images/tab-background-right.jpg"></img>
-    </div>
-    <div class="tab-content">
+     <h4 class="content-title">Giới thiệu sách</h4>
+    <div class="content">
         <ul>
             <li>
                 <div class="product">

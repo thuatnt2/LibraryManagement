@@ -48,11 +48,11 @@
             <!-- Navigation -->
             <div id="navigation">
                 <ul>
-                    <li><a href="/">Trang chủ</a></li>
-                    <li><a href="/tin-tuc">Tin tức</a></li>
-                    <li><a href="/tim-kiem">Tìm kiếm</a></li>
-                    <li><a href="#">Hình ảnh</a></li>
-                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="/"><img src="/images/home-ico.png"/> &nbsp;Trang chủ</a></li> 
+                    <li><a href="/tin-tuc"><img src="/images/news-ico.png"/> &nbsp;Tin tức</a></li>
+                    <li><a href="/tim-kiem"><img src="/images/search-ico.png"/> &nbsp;Tìm kiếm</a></li>
+                    <li><a href="#"><img src="/images/photos-ico.png"/> &nbsp;Hình ảnh</a></li>
+                    <li><a href="#"><img src="/images/about-ico.png"/> &nbsp;Giới thiệu</a></li>
                 </ul>
             </div>
             <!-- End Navigation -->

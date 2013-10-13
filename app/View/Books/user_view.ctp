@@ -1,4 +1,4 @@
-<h3>
+<h3 class="title-content">
     <?php echo $book['Book']['title'] ?>
 </h3>
 <div class="book-details"> 
