@@ -9,12 +9,14 @@
 Router::connect('/dashboard', array('controller' => 'admin', 'action' => 'dashboard'));
 
 Router::connect('/', array('controller' => 'index', 'action' => 'index'));
-Router::connect('/aticles', array('controller' => 'libArticles', 'action' => 'index'));
+//Router::connect('/aticles1', array('controller' => 'libArticles', 'action' => 'index'));
 Router::connect('/index', array('controller' => 'index', 'action' => 'index'));
 //front end router
 /*
  * Routing for articles
  */
+Router::connect('/bai_viet', array('controller' => 'articles', 'action' => 'index'));
+Router::connect('/dang_bai_viet', array('controller' => 'articles', 'action' => 'add'));
 Router::connect('/tin-tuc', array('controller' => 'articles', 'action' => 'userIndex'));
 Router::connect(
         '/tin-tuc/:id-:slug', array('controller' => 'articles', 'action' => 'userView'), array('pass' => array('id', 'slug'), 'id' => '[0-9]+')
@@ -44,7 +46,7 @@ Router::connect('/tim-kiem', array('controller' => 'bookSearch', 'action' => 'us
 /**
  * Router for Ciculation
  */
-Router::connect('/bookBorrowed', array('controller' => 'ciculations', 'action' => 'bookBorrowed'));
+Router::connect('/muon_tra_tai_lieu', array('controller' => 'ciculations', 'action' => 'bookBorrowed'));
 Router::connect('/getCiculation', array('controller' => 'ciculations', 'action' => 'getCiculation'));
 Router::connect('/booksCiculation', array('controller' => 'ciculations', 'action' => 'booksCiculation'));
 Router::connect('/getBook', array('controller' => 'bookSerials', 'action' => 'getBook'));

@@ -5,37 +5,29 @@
 <!--<p id="page-intro">What would you like to do?</p>-->
 
 <ul class="shortcut-buttons-set">
-
-<!--    <li><a class="shortcut-button new-article" href="#"><span class="png_bg">
-                Write an Article
-            </span></a></li>-->
-
-    <li><a class="shortcut-button cataloging-document" href="#"><span class="png_bg">
-                Biên mục tài liệu
-            </span></a></li>
-
-    <li><a class="shortcut-button borrow-document" href="#"><span class="png_bg">
+    <li><?php echo $this->Html->link('<span class="png_bg">Biên mục tài liệu</span>',array('plugin' => null,'controller' => 'books', 'action' => 'add'),array('class' => 'shortcut-button cataloging-document','escape'=> false)) ?></li>
+<!--    <li><a class="shortcut-button borrow-document" href="/muon_tra_tai_lieu"><span class="png_bg">
                 Mượn trả tài liệu
-            </span></a></li>
-
+            </span></a></li>-->
+   <li><?php echo $this->Html->link($this->Html->tag('span','Mượn trả tài liệu',array('class' => 'png_bg')),array('plugin' => null,'controller' => 'ciculations', 'action' => 'bookBorrowed'),array('class' => 'shortcut-button borrow-document','escape'=> false)) ?></li>
     <li><a class="shortcut-button add-event" href="#"><span class="png_bg">
                 Mượn tài liệu online
             </span></a></li>
 
-    <li><a class="shortcut-button add-reader" href="#messages" rel="modal"><span class="png_bg">
+<!--    <li><a class="shortcut-button add-reader" href="#messages" rel="modal"><span class="png_bg">
                 Đăng ký bạn đọc
-            </span></a></li>
-            
+            </span></a></li>-->
+    <li><?php echo $this->Html->link('<span class="png_bg">Đăng ký bạn đọc</span>',array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'addReader'),array('class' => 'shortcut-button add-reader','escape'=> false)) ?></li>
     <li><a class="shortcut-button statistics" href="#messages" rel="modal"><span class="png_bg">
                 Thống kê    
             </span></a></li>
     <li><a class="shortcut-button manage-user" href="#messages" rel="modal"><span class="png_bg">
                 Quản lý người dùng
             </span></a></li>
-    <li><a class="shortcut-button new-article" href="#messages" rel="modal"><span class="png_bg">
+<!--    <li><a class="shortcut-button new-article" href="#messages" rel="modal"><span class="png_bg">
                 Đăng bài viết
-            </span></a></li>
-
+            </span></a></li>-->
+     <li><?php echo $this->Html->link('<span class="png_bg">Đăng bài viết</span>',array('plugin' => null,'controller' => 'articles', 'action' => 'add'),array('class' => 'shortcut-button new-article','escape'=> false)) ?></li>
 </ul>
 
 <div class="clear"></div> <!-- End .clear -->
