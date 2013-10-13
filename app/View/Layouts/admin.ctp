@@ -81,6 +81,7 @@
 		<?php
 		echo $this->Html->script(array(
 			'vendor/jquery-1.9.1.min',
+			'jquery.extensions',
 			'vendor/bootstrap.min',
 			'vendor/holder',
 			'admin_simpla.jquery.configuration',
