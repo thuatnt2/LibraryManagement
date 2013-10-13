@@ -68,7 +68,7 @@ $('.addmenu').click(function() {
 
 //});
 //for add ciculation
-$("#reader-code").on("change", (function() {
+$("#reader-code").change(function() {
 	var readerCode = $("#reader-code").val();
 	jQuery.ajax({
 		url: "getCiculation",
@@ -83,6 +83,7 @@ $("#reader-code").on("change", (function() {
 				loadBookTable();
 			}
 			else {
+				clearReader();
 				alert("Lỗi ! Không tìm thấy bạn đọc này");
 				return false;
 			}
@@ -94,7 +95,7 @@ $("#reader-code").on("change", (function() {
 		}
 	});
 
-}));
+});
 
 function loadBookTable() {
 	var readerCode = $("#reader-code").val();
@@ -138,7 +139,7 @@ $("#book-code").change(function() {
 				$("#book-reader").val(book.Ciculation.reader);
 				$("#book-serial-id").val(book.BookSerial.id);
 
-				if (book.BookSerial.status) {
+				if (book.BookSerial.status && readerCode != "") {
 					$("#btn-book-borrow").removeClass("disabled");
 				}
 				else if (book.Ciculation.reader == readerCode) {
@@ -147,12 +148,7 @@ $("#book-code").change(function() {
 				$("#book-code").val(book.BookSerial.barcode);
 				$("#book-name").val(book.Book.title);
 				$("#book-authors").val(book.Book.authors);
-				$("#book-status").val(book.Book.status);
-				$("#book-date-return").val(book.Ciculation.date_return);
 				$("#book-reader").val(book.Ciculation.reader);
-				if (book.Ciculation.reader == readerCode) {
-					$("#btn-book-return").removeClass("disabled");
-				}
 
 			} else {
 				alert("Không tìm thấy tài liệu có mã " + $("#book-code").val() + " . Vui lòng thử lại");
@@ -210,6 +206,9 @@ $("#btn-book-return").click(function() {
 			}
 		});
 	}
+	else {
+		alert("Nhập mã thẻ bạn đọc trước")
+	}
 });
 
 
@@ -222,6 +221,10 @@ function clearBook() {
 	$("#book-reader").val("");
 	$("#btn-book-return").addClass("disabled");
 	$("#btn-book-borrow").addClass("disabled");
+}
+
+function clearReader() {
+	$("#reader-code").val("");
 }
 
 //Renew Book

@@ -5,6 +5,9 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
+//admin router
+Router::connect('/dashboard', array('controller' => 'admin', 'action' => 'dashboard'));
+
 Router::connect('/', array('controller' => 'index', 'action' => 'index'));
 Router::connect('/aticles', array('controller' => 'libArticles', 'action' => 'index'));
 Router::connect('/index', array('controller' => 'index', 'action' => 'index'));

@@ -145,6 +145,7 @@ class CiculationsController extends AppController {
 			//$conditions = array('')
 			$reader = $this->Reader->find('first', array('conditions' => $conditions, 'fields' => $fields));
 			if (!empty($reader)) {
+				$this->loadModel('Usermgmt.User');
 				$this->Session->write('currentReader', $reader);
 				$reader_type = $this->User->reader_type;
 				$reader['Reader']['is_teacher'] = $reader_type[$reader['Reader']['is_teacher']];
@@ -199,8 +200,11 @@ class CiculationsController extends AppController {
 			} else if ($book_serial['Book']['borrow_type'] == 0) {
 				$result['status'] = 0;
 				$resutl['message'] = 'Sách này chỉ đọc tại chỗ';
-			} else {
-
+			}else if($reader_code !== $current_reader['User']['username']){
+				$result['status'] = 0;
+				$resutl['message'] = 'Mã bạn đọc không hợp lệ, vui lòng thử lại';
+			}
+			else {
 				$data = array();
 				$data['Ciculation']['reader'] = $reader_code;
 				$data['Ciculation']['book_serial_id'] = $book_serial['BookSerial']['id'];
