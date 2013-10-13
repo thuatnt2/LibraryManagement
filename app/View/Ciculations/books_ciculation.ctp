@@ -5,8 +5,8 @@
 			<th>Tên sách</th>
 			<th>Nhà xuất bản</th>
 			<th>Tác giả</th>
-			<th>Ngôn ngữ</th>
-			<th>Ngày tạo</th>
+			<th>Ngày mượn</th>
+			<th>Ngày hết hạn</th>
 			<th>Hành động</th>
 		</tr>
 	</thead>
@@ -21,9 +21,9 @@
 					<td><?php echo $book['BookSerial']['Book']['title'] ?></td>
 					<td><?php echo $book['BookSerial']['Book']['publisher'] ?></td>
 					<td><?php echo $book['BookSerial']['Book']['authors'] ?></td>
-					<td><?php echo $book['BookSerial']['Book']['language'] ?></td>
 					<td><?php echo $book['Ciculation']['created'] ?></td>
-					<td>hanh dong</td>
+					<td><?php echo $book['Ciculation']['date_return'] ?></td>
+					<td><a href="#" onclick="renewBook(<?php echo $book['BookSerial']['id'] ?>)">Gia hạn</a></td>
 				</tr>
 				<?php
 			}

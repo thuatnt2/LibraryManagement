@@ -84,19 +84,27 @@ $("#reader-code").on("change", (function() {
 		dataType: 'json',
 		success: function(result) {
 			console.log(result);
-			if (result.length > 0) {
+			if (result.length !== 0) {
 				var output = $('#reader-data-template').parseTemplate(result);
 				$("#reader-data").html(output);
+				loadBookTable();
 			}
 			else {
-
+				alert("Lỗi ! Không tìm thấy bạn đọc này");
+				return false;
 			}
 
 		},
 		error: function() {
-			alert("fail :(");
+			alert("Đã xảy ra lỗi hệ thống, vui lòng thử lại");
+			return false;
 		}
 	});
+
+}));
+
+function loadBookTable() {
+	var readerCode = $("#reader-code").val();
 	jQuery.ajax({
 		url: "booksCiculation",
 		type: "POST",
@@ -111,7 +119,7 @@ $("#reader-code").on("change", (function() {
 			alert("fail :(");
 		}
 	});
-}));
+}
 
 $("#book-code").change(function() {
 	var bookCode = $("#book-code").val();
@@ -123,20 +131,33 @@ $("#book-code").change(function() {
 		dataType: 'json',
 		success: function(book) {
 			console.log(book);
-			$("#book-code").val(book.BookSerial.barcode);
-			$("#book-name").val(book.Book.title);
-			$("#book-authors").val(book.Book.authors);
-			$("#book-status").val(book.Book.status);
-			$("#book-date-return").val(book.Ciculation.date_return);
-			$("#book-reader").val(book.Ciculation.reader);
-			console.log(readerCode);
-			console.log(book.Ciculation.reader);
-			if(book.Ciculation.reader == readerCode){
-				$("#btn-book-return").removeClass("disabled");
+			if (book.length !== 0) {
+				$("#book-code").val(book.BookSerial.barcode);
+				$("#book-name").val(book.Book.title);
+				$("#book-authors").val(book.Book.authors);
+				if (book.BookSerial.status == true) {
+					$("#book-status").val("Có Sẵn");
+				}
+				else {
+					$("#book-status").val("Đã được mượn");
+				}
+				$("#book-date-return").val(book.Ciculation.date_return);
+				$("#book-reader").val(book.Ciculation.reader);
+				$("#book-serial-id").val(book.BookSerial.id);
+
+				if (book.BookSerial.status) {
+					$("#btn-book-borrow").removeClass("disabled");
+				}
+				else if (book.Ciculation.reader == readerCode) {
+					$("#btn-book-return").removeClass("disabled");
+				}
 			}
-			if(book.Book.status == 0){
-				$("#btn-book-borrow").removeClass("disabled");
+			else {
+				alert("Không tìm thấy tài liệu có mã " + $("#book-code").val() + " . Vui lòng thử lại");
+				clearBook();
+				return false;
 			}
+
 
 		},
 		error: function() {
@@ -144,5 +165,86 @@ $("#book-code").change(function() {
 		}
 	});
 });
+
+//Borrow book
+
+$("#btn-book-borrow").click(function() {
+	var bookCode = $("#book-code").val();
+	var readerCode = $("#reader-code").val();
+	if (bookCode != "" && readerCode != "") {
+		jQuery.ajax({
+			url: "borrowBook",
+			type: "POST",
+			data: {"readerCode": readerCode, "bookCode": bookCode},
+			dataType: 'json',
+			success: function(result) {
+				clearBook();
+				loadBookTable();
+				alert(result.message);
+			},
+			error: function() {
+				clearBook();
+				alert("fail :(");
+			}
+		});
+	}
+});
+
+$("#btn-book-return").click(function() {
+	var bookCode = $("#book-code").val();
+	var readerCode = $("#reader-code").val();
+	if (bookCode != "" && readerCode != "") {
+		jQuery.ajax({
+			url: "returnBook",
+			type: "POST",
+			data: {"readerCode": readerCode, "bookCode": bookCode},
+			dataType: 'json',
+			success: function(result) {
+				clearBook();
+				loadBookTable();
+				alert(result.message);
+			},
+			error: function() {
+				clearBook();
+				alert("fail :(");
+			}
+		});
+	}
+});
+
+
+function clearBook() {
+	$("#book-code").val("");
+	$("#book-name").val("");
+	$("#book-authors").val("");
+	$("#book-status").val("");
+	$("#book-date-return").val("");
+	$("#book-reader").val("");
+	$("#btn-book-return").addClass("disabled");
+	$("#btn-book-borrow").addClass("disabled");
+}
+
+//Renew Book
+
+function renewBook(book_serial_id) {
+	var readerCode = $("#reader-code").val();
+	if (readerCode != "") {
+		jQuery.ajax({
+			url: "renewBook",
+			type: "POST",
+			data: {"readerCode": readerCode, "bookSerialId": book_serial_id},
+			dataType: 'json',
+			success: function(result) {
+				clearBook();
+				loadBookTable();
+				alert(result.message);
+			},
+			error: function() {
+				clearBook();
+				alert("fail :(");
+			}
+		});
+	}
+}
 
 

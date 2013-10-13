@@ -137,6 +137,7 @@
 						</div>
 					</div>
 					<div class="button-container" style="text-align: center">
+						<input type="hidden" value="" id="book-serial-id"/>
 						<a href="#" class="btn btn-primary disabled" id="btn-book-borrow">Mượn sách</a>
 						<a href="#" class="btn btn-primary disabled" id="btn-book-return">Trả sách</a>
 					</div>

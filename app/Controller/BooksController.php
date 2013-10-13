@@ -44,7 +44,7 @@ class BooksController extends AppController {
 	public function view($book_id = null) {
 		$book = $this->Book->read('title, total, user_created', $book_id);
 		if ($this->request->is('post')) {
-			$this->request->data['BookSerial']['status'] = 0;
+			$this->request->data['BookSerial']['status'] = 1 ;
 			$this->request->data['BookSerial']['book_id'] = $book_id;
 			$this->loadModel('BookSerial');
 			$this->BookSerial->create();

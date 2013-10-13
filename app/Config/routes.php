@@ -45,6 +45,9 @@ Router::connect('/bookBorrowed', array('controller' => 'ciculations', 'action' =
 Router::connect('/getCiculation', array('controller' => 'ciculations', 'action' => 'getCiculation'));
 Router::connect('/booksCiculation', array('controller' => 'ciculations', 'action' => 'booksCiculation'));
 Router::connect('/getBook', array('controller' => 'bookSerials', 'action' => 'getBook'));
+Router::connect('/borrowBook', array('controller' => 'ciculations', 'action' => 'borrowBook'));
+Router::connect('/returnBook', array('controller' => 'ciculations', 'action' => 'returnBook'));
+Router::connect('/renewBook', array('controller' => 'ciculations', 'action' => 'renewBook'));
 CakePlugin::routes();
 
 /**

@@ -165,7 +165,101 @@ class CiculationsController extends AppController {
 			$this->set('books', $books);
 		}
 	}
-	
+
+	public function borrowBook() {
+		$result = array();
+		$this->layout = null;
+		$this->autoRender = false;
+		if ($this->request->is('POST')) {
+			$reader_code = $this->request->data['readerCode'];
+			$book_code = $this->request->data['bookCode'];
+			$this->loadModel('BookSerial');
+			$book_serial = $this->BookSerial->findByBarcode($book_code, array('fields' => 'BookSerial.id'));
+			$data = array();
+			$data['Ciculation']['reader'] = $reader_code;
+			$data['Ciculation']['book_serial_id'] = $book_serial['BookSerial']['id'];
+			$data['Ciculation']['extensions'] = 0;
+			$duration_ciculation = $this->Session->read('CiculationPolicy.TGMS.amount');
+			$date_return = strtotime('+' . $duration_ciculation . ' day', strtotime(date('d-M-y')));
+			$data['Ciculation']['date_return'] = date('Y-m-d', $date_return);
+			$user = $this->UserAuth->getUser();
+			//$data['Ciculation']['librarian_name'] = $user['User']['fullname'];
+			//debug($data); exit();
+			$this->Ciculation->create();
+			if ($this->Ciculation->save($data)) {
+				$result['status'] = 1;
+				$resutl['message'] = 'Bạn đọc mượn sách thành công';
+				$this->loadModel('BookSerial');
+				$this->BookSerial->id = $book_serial['BookSerial']['id'];
+				$this->BookSerial->saveField('status', 0);
+			} else {
+				$result['status'] = 0;
+				$resutl['message'] = 'Đã có lỗi xảy ra trong quá trình mượn sách. Vui lòng thử lại';
+			}
+
+			exit(json_encode($resutl));
+		}
+	}
+
+	public function returnBook() {
+		$result = array();
+		$this->layout = null;
+		$this->autoRender = false;
+		if ($this->request->is('POST')) {
+			$reader_code = $this->request->data['readerCode'];
+			$book_code = $this->request->data['bookCode'];
+			$this->loadModel('BookSerial');
+			$book_serial = $this->BookSerial->findByBarcode($book_code, array('fields' => 'BookSerial.id'));
+			$ciculation = $this->Ciculation->findByBookSerialId($book_serial['BookSerial']['id']);
+			if (!empty($ciculation) && $ciculation['Ciculation']['reader'] == $reader_code) {
+				$this->Ciculation->id = $ciculation['Ciculation']['id'];
+				if ($this->Ciculation->delete()) {
+					$result['status'] = 1;
+					$result['message'] = 'Bạn đọc trả sách thành công';
+					$this->loadModel('BookSerial');
+					$this->BookSerial->id = $book_serial['BookSerial']['id'];
+					$this->BookSerial->saveField('status', 1);
+				} else {
+					$result['status'] = 0;
+					$result['message'] = 'Đã có lỗi xảy ra, không thể trả sách';
+				}
+			} else {
+				$result['status'] = 0;
+				$result['message'] = 'Đã có lỗi xảy ra, mã bạn đọc hoặc mã sách không hợp lệ';
+			}
+			exit(json_encode($result));
+		}
+	}
+
+	public function renewBook() {
+		$result = array();
+		$result['status'] = 0;
+		$this->layout = null;
+		$this->autoRender = false;
+		if ($this->request->is('POST')) {
+			$reader_code = $this->request->data['readerCode'];
+			$book_serial_id = $this->request->data['bookSerialId'];
+			$this->loadModel('BookSerial');
+			$book_serial = $this->BookSerial->read(null, $book_serial_id);
+			$ciculation = $this->Ciculation->findByBookSerialId($book_serial_id);
+			if (!empty($ciculation) && $ciculation['Ciculation']['reader'] == $reader_code) {
+				$max_extentions = $this->Session->read('CiculationPolicy.SLGH.amount');
+				if (!$ciculation['Ciculation']['extensions'] >= $max_extentions) {
+
+					if ($this->Ciculation->updateAll(array('Ciculation.extensions' => 'Ciculation.extensions+1'), array('Ciculation.id' => $ciculation['Ciculation']['id']))) {
+						$duration_extend = $this->Session->read('CiculationPolicy.TGMS.amount');
+						$date_return = strtotime('+' . $duration_extend . ' day', strtotime($ciculation['Ciculation']['date_return']));
+						$this->Ciculation->saveField('date_return', $date_return);
+						$result['status'] = 1;
+						$result['message'] = 'Đã gia hạn thành công';
+					}
+				} else {
+					$result['message'] = 'Số lần gia hạn tối đa là ' . $max_extentions;
+				}
+			}
+			exit(json_encode($result));
+		}
+	}
 
 //	public function getCiculation(){
 //		
@@ -195,3 +289,4 @@ class CiculationsController extends AppController {
 //		
 //	}
 }
+
