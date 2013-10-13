@@ -22,7 +22,6 @@ function close_box() {
 }
 
 $(document).ready(function() {
-<<<<<<< HEAD
     $('.addmenu').click(function() {
 
         $.fancybox({
@@ -47,11 +46,7 @@ $(document).ready(function() {
         $(this).addClass('current');
     })
 });
-=======
-
-
-
-	$('.addmenu').click(function() {
+$('.addmenu').click(function() {
 
 		$.fancybox({
 			'padding': 0,
@@ -71,7 +66,7 @@ $(document).ready(function() {
 		});
 	});
 
-});
+//});
 //for add ciculation
 $("#reader-code").on("change", (function() {
 //	clearTimeout(wto);
@@ -119,4 +114,3 @@ $("#reader-code").on("change", (function() {
 
 
 }));
->>>>>>> be35137f76ad7a0119e02c62a3c80e1bea1a1430
