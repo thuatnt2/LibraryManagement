@@ -85,9 +85,37 @@ Cache::config('default', array('engine' => 'File'));
  *
  * ));
  */
+/*
+  set Admin group id here
+ */
+if (!defined("ADMIN_GROUP_ID")) {
+	define("ADMIN_GROUP_ID", 1);
+}
+
+/*
+  set LIBRIAN group id here
+ */
+if (!defined("LIBRARIAN_GROUP_ID")) {
+	define("LIBRARIAN_GROUP_ID", 2);
+}
+
+/*
+  set Editor group id here
+ */
+if (!defined("EDITOR_GROUP_ID")) {
+	define("EDITOR_GROUP_ID", 3);
+}
+
+
+/*
+  set Reader group id here
+ */
+if (!defined("READER_GROUP_ID")) {
+	define("READER_GROUP_ID", 4);
+}
 Configure::write('Dispatcher.filters', array(
-    'AssetDispatcher',
-    'CacheDispatcher'
+	'AssetDispatcher',
+	'CacheDispatcher'
 ));
 
 /**
@@ -95,16 +123,16 @@ Configure::write('Dispatcher.filters', array(
  */
 App::uses('CakeLog', 'Log');
 CakeLog::config('debug', array(
-    'engine' => 'FileLog',
-    'types' => array('notice', 'info', 'debug'),
-    'file' => 'debug',
+	'engine' => 'FileLog',
+	'types' => array('notice', 'info', 'debug'),
+	'file' => 'debug',
 ));
 CakeLog::config('error', array(
-    'engine' => 'FileLog',
-    'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
-    'file' => 'error',
+	'engine' => 'FileLog',
+	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
+	'file' => 'error',
 ));
 
 CakePlugin::loadAll(array(
-    'Usermgmt' => array('routes' => true, 'bootstrap' => true),
+	'Usermgmt' => array('routes' => true, 'bootstrap' => true),
 ));
