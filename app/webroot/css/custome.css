@@ -145,3 +145,6 @@ h1,h2,h3,h4 {
 .book-details .book-left ul {
     margin-left: 0px;
 }
+.read-more-btn {
+    float:right;
+}

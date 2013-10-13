@@ -2,6 +2,7 @@
     <h3 class="content-title">Tin tức</h3>
     <div class="content">
         <p><strong><?php echo $article['Article']['title']; ?></strong></p>
+        <i>Ngày đăng: <?php echo $article['Article']['created'] ?></i>
         <div>
             <?php echo $this->Text->truncate($article['Article']['content'], 800); ?>   
             <?php
@@ -11,7 +12,7 @@
                 'action' => 'userView',
                 'id' => $article['Article']['id'],
                 'slug' => $this->Common->vnit_change_string(Inflector::slug($article['Article']['title']))
-            ));
+                    ), array('class' => 'read-more-btn'));
             ?>
         </div>   
     </div>

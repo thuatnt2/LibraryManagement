@@ -30,7 +30,13 @@ h4 {
 input, textarea, select { font-size: 10px; font-family: arial, sans-serif; }
 textarea { overflow: auto; }
 
-.cl { display: block; height: 30px; font-size: 0; line-height: 0; text-indent: -4000px; clear: both; }
+.cl { 
+    display: block; 
+     height: 7px; 
+     font-size: 0; 
+     line-height: 0; 
+     text-indent: -4000px;
+     clear: both; }
 .notext { font-size: 0; line-height: 0; text-indent: -4000px; }
 .left, .alignleft { float: left; display: inline; }
 .right, .alignright { float: right; display: inline; }
