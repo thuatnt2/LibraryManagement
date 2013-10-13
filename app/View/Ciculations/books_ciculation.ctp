@@ -29,7 +29,6 @@
 			}
 		}
 		else{
-			echo 'Bạn đọc chưa mượn sách';
 		}
 
 		?>

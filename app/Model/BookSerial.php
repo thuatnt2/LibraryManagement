@@ -49,6 +49,12 @@ class BookSerial extends AppModel {
 			'order' => ''
 		)
 	);
+	
+	public $hasOne = array(
+		'Ciculation' => array(
+			'className' => 'Ciculation',
+		),
+	);
 	public $validate = array(
 		'barcode' => array(
 			'mustNotEmpty' => array(

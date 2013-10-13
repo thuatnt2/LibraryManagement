@@ -22,31 +22,7 @@ function close_box() {
 }
 
 $(document).ready(function() {
-    $('.addmenu').click(function() {
-
-        $.fancybox({
-            'padding': 0,
-            'titleShow': false,
-            'autoScale': false,
-            'width': 900,
-            'height': 520,
-            'transitionIn': 'elastic',
-            'transitionOut': 'elastic',
-            'hideOnOverlayClick': false,
-            'hideOnContentClick': false,
-            'overlayShow': true,
-            'opacity': false,
-            'type': 'ajax',
-            'href': base_url + 'menus/' + $('#menu-type').val()
-                    // 'href':'http://fancyapps.com/fancybox/',
-        });
-    });
-    $('.nav-top-item').on('click', function (event) {
-        $('.current').removeClass('current');
-        $(this).addClass('current');
-    })
-});
-$('.addmenu').click(function() {
+	$('.addmenu').click(function() {
 
 		$.fancybox({
 			'padding': 0,
@@ -65,6 +41,30 @@ $('.addmenu').click(function() {
 					// 'href':'http://fancyapps.com/fancybox/',
 		});
 	});
+	$('.nav-top-item').on('click', function(event) {
+		$('.current').removeClass('current');
+		$(this).addClass('current');
+	})
+});
+$('.addmenu').click(function() {
+
+	$.fancybox({
+		'padding': 0,
+		'titleShow': false,
+		'autoScale': false,
+		'width': 900,
+		'height': 520,
+		'transitionIn': 'elastic',
+		'transitionOut': 'elastic',
+		'hideOnOverlayClick': false,
+		'hideOnContentClick': false,
+		'overlayShow': true,
+		'opacity': false,
+		'type': 'ajax',
+		'href': base_url + 'menus/' + $('#menu-type').val()
+				// 'href':'http://fancyapps.com/fancybox/',
+	});
+});
 
 //});
 //for add ciculation
@@ -88,31 +88,10 @@ $("#reader-code").on("change", (function() {
 				var output = $('#reader-data-template').parseTemplate(result);
 				$("#reader-data").html(output);
 			}
-			else{
-//                            var confirmModal =   '<div id="modelDialogDocumentEvidenceSection" style="display:none" class="">' +    
-//                                    '<div class="modal-header">' +
-//                                    '<a class="close" data-dismiss="modal" >&times;</a>' +
-////                                    '<div id="contentPopupEvidenceToSection-'+id.split('-')[1]+'" class="nonDisplayElement" > </div>'+
-////                                    '<div id="viewPopupEvidenceToSection-'+id.split('-')[1]+'" class="" >' +
-//                                    '<h3>' + 'Notice' +'</h3>' +
-//                                    '<div class="modal-body" style="padding: 10px 0px">' +
-//                                    '<p style="margin-bottom: 20px" id="contentPopupEvidence">' + 'Hello Confirm' + '</p>' +
-//                                    '</div>' +
-//                                    '<div class="modal-footer">' +
-//                                    '<a href="#" class="btn" data-dismiss="modal">' + 
-//                                    'Ok' + 
-//                                    '</a>' +
-//                                    '</div>'+
-//                                    '</div>' +
-//                                    '</div>';
-//                        }
-//                        $('body').append(confirmModal);
-//                        $('#modelDialogDocumentEvidenceSection').dialog({
-//                            modal: true
-//                        })
-                      //  confirmModal.modal('show');
-                            alert('Không tìm thấy bạn đọc này');
-                        }
+			else {
+				alert('Lỗi ! Không tìm thấy bạn đọc này');
+			}
+
 		},
 		error: function() {
 			alert("fail :(");
@@ -132,6 +111,36 @@ $("#reader-code").on("change", (function() {
 			alert("fail :(");
 		}
 	});
-
-
 }));
+
+$("#book-code").change(function() {
+	var bookCode = $("#book-code").val();
+	var readerCode = $("#reader-code").val();
+	jQuery.ajax({
+		url: "getBook",
+		type: "POST",
+		data: {"bookCode": bookCode},
+		dataType: 'json',
+		success: function(book) {
+			console.log(book);
+			$("#book-code").val(book.BookSerial.barcode);
+			$("#book-name").val(book.Book.title);
+			$("#book-authors").val(book.Book.authors);
+			$("#book-status").val(book.Book.status);
+			$("#book-date-return").val(book.Ciculation.date_return);
+			$("#book-reader").val(book.Ciculation.reader);
+			if(book.Ciculation.reader == readerCode){
+				$("#btn-book-return").removeClass("disabled");
+			}
+			if(book.Book.status == 0){
+				$("#btn-book-borrow").removeClass("disabled");
+			}
+
+		},
+		error: function() {
+			alert("fail :(");
+		}
+	});
+});
+
+

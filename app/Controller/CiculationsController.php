@@ -165,6 +165,7 @@ class CiculationsController extends AppController {
 			$this->set('books', $books);
 		}
 	}
+	
 
 //	public function getCiculation(){
 //		
