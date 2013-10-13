@@ -1,5 +1,5 @@
 <?php 
-
+	$user = $this->Session->read('UserAuth');
 	if($user['User']['user_group_id'] == ADMIN_GROUP_ID){
 		echo $this->element('admin/dashboard/admin');
 	}
