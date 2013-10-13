@@ -7,14 +7,14 @@
     </div>
     <div class="book-right"> 
         <ul>
-            <li>Tác giả: <?php echo empty($book['Book']['authors']) == false ? $book['Book']['authors'] : 'Không rõ' ?></li>
-            <li>Ngôn ngữ: <?php echo $book['BookLanguage']['name'] ?></li>
-            <li>Nhà xuất bản: <?php echo $book['Book']['publisher'] ?></li>
-            <li>Tổng số trang: <?php echo $book['Book']['number_of_pages'] ?></li>
-            <li>Ngày phát hành: <?php echo $book['Book']['year_of_publish'] ?></li>
-            <li>Khổ: <?php echo $book['Book']['paper_size'] ?></li>
-            <li>
-                Danh mục:      <?php
+            <li><strong>Tác giả: </strong><?php echo empty($book['Book']['authors']) == false ? $book['Book']['authors'] : 'Không rõ' ?></li>
+            <li><strong>Ngôn ngữ:</strong> <?php echo $book['BookLanguage']['name'] ?></li>
+            <li><strong>Nhà xuất bản: </strong><?php echo $book['Book']['publisher'] ?></li>
+            <li><strong>Tổng số trang: </strong><?php echo $book['Book']['number_of_pages'] ?></li>
+            <li><strong>Ngày phát hành: </strong><?php echo $book['Book']['year_of_publish'] ?></li>
+            <li><strong>Khổ:</strong> <?php echo $book['Book']['paper_size'] ?></li>
+            <li><strong>Danh mục:</strong>
+                      <?php
                 echo $this->Html->link(
                         $book['BookCategory']['name'], array(
                     'controller' => 'bookCategories',
@@ -23,7 +23,7 @@
                     'slug' => $this->Common->vnit_change_string(Inflector::slug($book['BookCategory']['name']))
                 ));
                 ?>
-            <li>Thể loại: <?php echo $book['BookType']['name'] ?></li>
+            <li><strong>Thể loại:</strong> <?php echo $book['BookType']['name'] ?></li>
         </ul>
     </div>
     
@@ -31,5 +31,8 @@
 </div>
 <div class="actions">
     <button class="btn btn-small btn-success"> Đăng ký mượn sách này</button>
+</div>
+<div class="other-books">
+    <h4>Tài liệu cùng danh mục</h4>
 </div>
 

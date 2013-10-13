@@ -51,9 +51,8 @@
                     <li><a href="/">Trang chủ</a></li>
                     <li><a href="/tin-tuc">Tin tức</a></li>
                     <li><a href="/tim-kiem">Tìm kiếm</a></li>
-                    <li><a href="#">Hoạt động</a></li>
+                    <li><a href="#">Hình ảnh</a></li>
                     <li><a href="#">Giới thiệu</a></li>
-                    <li><a href="#">Contacts</a></li>
                 </ul>
             </div>
             <!-- End Navigation -->
@@ -67,7 +66,6 @@
         </div>
         <!-- End Header -->
         <div id="main" class="shell">
-            <div class="devider"></div> 
             <!--sidbar-->
             <?php echo $this->element('frontend/sidebar') ?>
             <div id="content">
