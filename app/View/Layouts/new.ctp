@@ -24,7 +24,7 @@
             <div id="login-details" style="height: 0px;">
 
                 <?php if ($this->UserAuth->isLogged()): ?>
-                    <p>Chào mừng, <a href="#" id="user"><?php echo $this->Session->read('UserAuth.User.username'); ?></a></p>
+                    <p><strong>Chào mừng</strong>, <a href="#" id="user"><?php echo $this->Session->read('UserAuth.User.username'); ?></a></p>
                     &nbsp|&nbsp
                     <a  href="<?php echo $this->Html->url('/logout') ?>">(Logout)</a>
                 <?php else: ?>

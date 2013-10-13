@@ -2,7 +2,7 @@
 <!--<h2>Welcome-->
  <?php // echo $this->Session->read('UserAuth.User.username'); ?>
 <!--</h2>-->
-<!--<p id="page-intro">What would you like to do?</p>-->
+<!--<p id="page-intro">SWhaSt would you like to do?</p>-->
 
 <ul class="shortcut-buttons-set">
     <li><?php echo $this->Html->link('<span class="png_bg">Biên mục tài liệu</span>',array('plugin' => null,'controller' => 'books', 'action' => 'add'),array('class' => 'shortcut-button cataloging-document','escape'=> false)) ?></li>
@@ -10,9 +10,6 @@
                 Mượn trả tài liệu
             </span></a></li>-->
    <li><?php echo $this->Html->link($this->Html->tag('span','Mượn trả tài liệu',array('class' => 'png_bg')),array('plugin' => null,'controller' => 'ciculations', 'action' => 'bookBorrowed'),array('class' => 'shortcut-button borrow-document','escape'=> false)) ?></li>
-    <li><a class="shortcut-button add-event" href="#"><span class="png_bg">
-                Mượn tài liệu online
-            </span></a></li>
 
 <!--    <li><a class="shortcut-button add-reader" href="#messages" rel="modal"><span class="png_bg">
                 Đăng ký bạn đọc
