@@ -49,7 +49,7 @@ class UsersController extends UserMgmtAppController {
 	 */
 	public function index() {
 		$this->User->unbindModel(array('hasMany' => array('LoginToken')));
-		$users = $this->User->find('all', array('conditions' => array('user.user_group_id != 2'), 'order' => 'User.id desc'));
+		$users = $this->User->find('all', array('conditions' => array('user.user_group_id != 4'), 'order' => 'User.id desc'));
 		$this->set('users', $users);
 	}
 
@@ -149,7 +149,7 @@ class UsersController extends UserMgmtAppController {
 					}
 					$OriginAfterLogin = $this->Session->read('Usermgmt.OriginAfterLogin');
 					$this->Session->delete('Usermgmt.OriginAfterLogin');
-					if ($user['UserGroup']['id'] == 2) {
+					if ($user['UserGroup']['id'] == 4) {
 						$redirect = '/';
 					} else {
 						$redirect = LOGIN_REDIRECT_URL;
@@ -256,7 +256,7 @@ class UsersController extends UserMgmtAppController {
 				$user['User']['password'] = $this->UserAuth->makePassword($this->request->data['User']['password'], $salt);
 				$this->User->save($user, false);
 				$this->LoginToken->deleteAll(array('LoginToken.user_id' => $userId), false);
-				$this->Session->setFlash(__('Password changed successfully'));
+				$this->Session->setFlash('Đổi mật khẩu thành công', 'flash_success');
 				$this->redirect('/dashboard');
 			}
 		}
