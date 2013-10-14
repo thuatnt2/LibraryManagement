@@ -254,7 +254,12 @@ function renewBook(book_serial_id) {
 			success: function(result) {
 				clearBook();
 				loadBookTable();
-				alert(result.message);
+				if (result.status == 0) {
+					showModal("Lỗi gia hạn sách", result.message, true);
+				}
+				else {
+					showModal("Thông báo", result.message, false);
+				}
 			},
 			error: function() {
 				clearBook();
@@ -264,7 +269,6 @@ function renewBook(book_serial_id) {
 		});
 	}
 }
-
 function showModal(title, content, error) {
 	$("#title-of-modal").text(title);
 	$("#content-of-modal").text(content);
