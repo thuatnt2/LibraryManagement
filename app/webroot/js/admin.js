@@ -275,6 +275,9 @@ function showModal(title, content, error) {
 	if (error === true) {
 		$(".modal-title").css('color', 'red');
 	}
+	else{
+		$(".modal-title").css('color', 'green');
+	}
 	$("#my-modal").modal('show');
 
 }

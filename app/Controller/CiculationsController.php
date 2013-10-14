@@ -187,23 +187,40 @@ class CiculationsController extends AppController {
 		$this->layout = null;
 		$this->autoRender = false;
 		if ($this->request->is('POST')) {
+			//get data from request : reader_code, book_code
 			$reader_code = $this->request->data['readerCode'];
 			$book_code = $this->request->data['bookCode'];
+			//get book data from database
 			$this->loadModel('BookSerial');
 			$this->BookSerial->recursive = 2;
-			$field = array('BookSerial.id', 'Book.teacher_only', 'Book.borrow_type');
+			$field = array('BookSerial.id', 'Book.teacher_only', 'Book.borrow_type', 'Book.title');
 			$book_serial = $this->BookSerial->find('first', array('fields' => $field, 'conditions' => array('BookSerial.barcode' => $book_code)));
 			$current_reader = $this->Session->read('currentReader');
-			if ($book_serial['Book']['teacher_only'] == 0 && $current_reader['User']['is_teacher'] == 0) {
+			//get the number of books that reader borrowed
+			$total_book_borrowed = $this->Ciculation->find('count', array('conditions' => array('Ciculation.reader' => $reader_code)));
+			//get the number of books that limit for borrowing
+			$total_book_limit = $this->Session->read('CiculationPolicy.STLM.amount');
+			//check total book borrowed
+			if ($total_book_borrowed == $total_book_limit) {
+				$result['status'] = 0;
+				$resutl['message'] = 'Số tài liệu mượn tối đa là ' . $total_book_limit . ' cuốn, không thể mượn thêm';
+			}
+			//check if book is only for teacher, 
+			else if ($book_serial['Book']['teacher_only'] == 0 && $current_reader['Reader']['is_teacher'] == 0) {
 				$result['status'] = 0;
 				$resutl['message'] = 'Sách này chỉ dành cho Giảng Viên';
-			} else if ($book_serial['Book']['borrow_type'] == 0) {
+			}
+			//check if book don't allow for borrow
+			else if ($book_serial['Book']['borrow_type'] == 0) {
 				$result['status'] = 0;
 				$resutl['message'] = 'Sách này chỉ đọc tại chỗ';
-			}else if($reader_code !== $current_reader['User']['username']){
+			}
+			//check current reader
+			else if ($reader_code !== $current_reader['User']['username']) {
 				$result['status'] = 0;
 				$resutl['message'] = 'Mã bạn đọc không hợp lệ, vui lòng thử lại';
 			}
+			//this reader is availabel for borrowing a book
 			else {
 				$data = array();
 				$data['Ciculation']['reader'] = $reader_code;
@@ -213,16 +230,22 @@ class CiculationsController extends AppController {
 				$date_return = strtotime('+' . $duration_ciculation . ' day', strtotime(date('d-M-y')));
 				$data['Ciculation']['date_return'] = date('Y-m-d', $date_return);
 				$user = $this->UserAuth->getUser();
+				if ($user) {
+					$data['Ciculation']['librarian'] = $user['User']['fullname'];
+				}
 				$this->Ciculation->create();
 				if ($this->Ciculation->save($data)) {
 					$result['status'] = 1;
-					$resutl['message'] = 'Bạn đọc mượn sách thành công';
+					$resutl['message'] = 'Bạn đọc mượn thành công tài liệu ' . $book_serial['Book']['title'];
 					$this->loadModel('BookSerial');
 					$this->BookSerial->id = $book_serial['BookSerial']['id'];
 					$this->BookSerial->saveField('status', 0);
+					//save log
+					$log_content = 'Mượn tài liệu ' . $book_serial['Book']['title'];
+					$this->saveLog($log_content,$current_reader['User']['fullname'],  'borrow');
 				} else {
 					$result['status'] = 0;
-					$resutl['message'] = 'Đã có lỗi xảy ra trong quá trình mượn sách. Vui lòng thử lại';
+					$resutl['message'] = 'Đã có lỗi xảy ra trong quá trình mượn tài liệu. Vui lòng thử lại';
 				}
 			}
 
@@ -238,23 +261,26 @@ class CiculationsController extends AppController {
 			$reader_code = $this->request->data['readerCode'];
 			$book_code = $this->request->data['bookCode'];
 			$this->loadModel('BookSerial');
-			$book_serial = $this->BookSerial->findByBarcode($book_code, array('fields' => 'BookSerial.id'));
+			$book_serial = $this->BookSerial->findByBarcode($book_code, array('fields' => 'BookSerial.id', 'Book.title'));
 			$ciculation = $this->Ciculation->findByBookSerialId($book_serial['BookSerial']['id']);
 			if (!empty($ciculation) && $ciculation['Ciculation']['reader'] == $reader_code) {
 				$this->Ciculation->id = $ciculation['Ciculation']['id'];
 				if ($this->Ciculation->delete()) {
 					$result['status'] = 1;
-					$result['message'] = 'Bạn đọc trả sách thành công';
+					$result['message'] = 'Bạn đọc trả thành công tài liệu ' . $book_serial['Book']['title'];
 					$this->loadModel('BookSerial');
 					$this->BookSerial->id = $book_serial['BookSerial']['id'];
 					$this->BookSerial->saveField('status', 1);
+					//save log
+					$current_reader = $this->Session->read('currentReader');
+					$this->saveLog('Trả tài liệu ' . $book_serial['Book']['title'], $current_reader['User']['fullname'], 'return');
 				} else {
 					$result['status'] = 0;
-					$result['message'] = 'Đã có lỗi xảy ra, không thể trả sách';
+					$result['message'] = 'Đã có lỗi xảy ra, không thể trả tài liệu';
 				}
 			} else {
 				$result['status'] = 0;
-				$result['message'] = 'Đã có lỗi xảy ra, mã bạn đọc hoặc mã sách không hợp lệ';
+				$result['message'] = 'Đã có lỗi xảy ra, mã bạn đọc hoặc mã tài liệu không hợp lệ';
 			}
 			exit(json_encode($result));
 		}
@@ -280,11 +306,18 @@ class CiculationsController extends AppController {
 						$date_return = strtotime('+' . $duration_extend . ' day', strtotime($ciculation['Ciculation']['date_return']));
 						$this->Ciculation->saveField('date_return', $date_return);
 						$result['status'] = 1;
-						$result['message'] = 'Đã gia hạn thành công';
+						$result['message'] = 'Đã gia hạn thành công tài liệu ' . $book_serial['Book']['title'];
+						//save log
+						$current_reader = $this->Session->read('currentReader');
+						$this->saveLog( 'Gia hạn tài liệu ' . $book_serial['Book']['title'],$current_reader['User']['fullname'], 'renew');
 					}
 				} else {
+					$result['status'] = 0;
 					$result['message'] = 'Số lần gia hạn tối đa là ' . $max_extentions;
 				}
+			} else {
+				$result['status'] = 0;
+				$result['message'] = 'Mã thẻ bạn đọc hoặc mã tài liệu không hợp lệ';
 			}
 			exit(json_encode($result));
 		}
