@@ -682,8 +682,15 @@ body#login {
 /*******Ciculation******/
 #ciculation-img img {
     float: left;
-    width: 140px;
+    margin-left: 25px;
+    max-width:140px;
     height: 170px;
+}
+.two-column {
+    float: left;
+    margin-left: 20px;
+/*    max-width: 414px;
+    max-height: 312px*/
 }
 /*.form-control[disabled] {
      background-color: #ffffcc;
