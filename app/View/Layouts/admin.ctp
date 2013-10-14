@@ -79,6 +79,7 @@
 			'vendor/bootstrap.min',
 			'vendor/modal',
 			'vendor/holder',
+                    'jquery.cookie',
 			'admin_simpla.jquery.configuration',
 			'ckeditor/ckeditor',
 			'vendor/fancybox/jquery.fancybox',

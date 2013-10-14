@@ -5,8 +5,10 @@ $(document).ready(function(){
 		$("#main-nav li ul").hide(); //Hide all sub menus
 		$("#main-nav li a.current").parent().find("ul").slideToggle("slow"); // Slide down the current menu item's sub menu
 		
+                
 		$("#main-nav li a.nav-top-item").click( // When a top menu item is clicked...
 			function () {
+                                $.cookie('current_nav_item',$(this).attr('id'));
 				$(this).parent().siblings().find("ul").slideUp("normal"); // Slide up all sub menus except the one clicked
 				$(this).next().slideToggle("normal"); // Slide down the clicked sub menu
 				return false;
@@ -20,6 +22,7 @@ $(document).ready(function(){
 			}
 		); 
 
+                
     // Sidebar Accordion Menu Hover Effect:
 		
 		$("#main-nav li .nav-top-item").hover(
@@ -87,7 +90,10 @@ $(document).ready(function(){
 		)
 
 		
-		
+		  var current_nav_item_id = $.cookie('current_nav_item');
+                  if((typeof(current_nav_item_id) !== 'undefined') && (current_nav_item_id !== 'nav-item-dashboard')){
+                      $(document.getElementById(current_nav_item_id)).trigger('click');
+                  }
 
 });
   
