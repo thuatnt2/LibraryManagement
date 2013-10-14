@@ -116,6 +116,7 @@ class CiculationsController extends AppController {
 	public function bookBorrowed() {
 		$reader = null;
 		$books = null;
+		$title_for_layout = 'Mượn trả tài liệu';
 		if (!empty($this->request->query)) {
 			$reader_code = $this->request->query['readerCode'];
 			$this->loadModel('Usermgmt.Reader');
@@ -130,7 +131,7 @@ class CiculationsController extends AppController {
 		}
 		$this->loadModel('Usermgmt.User');
 		$reader_type = $this->User->reader_type;
-		$this->set(compact('reader', 'books', 'reader_type'));
+		$this->set(compact('reader', 'books', 'reader_type','title_for_layout'));
 	}
 
 	//display all books that user has been borrowed
@@ -292,11 +293,14 @@ class CiculationsController extends AppController {
 		$this->layout = null;
 		$this->autoRender = false;
 		if ($this->request->is('POST')) {
+			//get data from ajax request : reader_code, book_serial_id
 			$reader_code = $this->request->data['readerCode'];
 			$book_serial_id = $this->request->data['bookSerialId'];
+			//get BookSerial data from database by book_serial_id
 			$this->loadModel('BookSerial');
 			$book_serial = $this->BookSerial->read(null, $book_serial_id);
 			$ciculation = $this->Ciculation->findByBookSerialId($book_serial_id);
+			//check for reader_code
 			if (!empty($ciculation) && $ciculation['Ciculation']['reader'] == $reader_code) {
 				$max_extentions = $this->Session->read('CiculationPolicy.SLGH.amount');
 				if (!$ciculation['Ciculation']['extensions'] >= $max_extentions) {
@@ -304,7 +308,8 @@ class CiculationsController extends AppController {
 					if ($this->Ciculation->updateAll(array('Ciculation.extensions' => 'Ciculation.extensions+1'), array('Ciculation.id' => $ciculation['Ciculation']['id']))) {
 						$duration_extend = $this->Session->read('CiculationPolicy.TGMS.amount');
 						$date_return = strtotime('+' . $duration_extend . ' day', strtotime($ciculation['Ciculation']['date_return']));
-						$this->Ciculation->saveField('date_return', $date_return);
+						$this->Ciculation->id = $ciculation['Ciculation']['id'];
+						$this->Ciculation->saveField('date_return', date('Y-m-d', $date_return));
 						$result['status'] = 1;
 						$result['message'] = 'Đã gia hạn thành công tài liệu ' . $book_serial['Book']['title'];
 						//save log

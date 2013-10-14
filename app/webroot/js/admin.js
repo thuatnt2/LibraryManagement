@@ -78,8 +78,14 @@ $("#reader-code").change(function() {
 		success: function(result) {
 			console.log(result);
 			if (result.length !== 0) {
-				var output = $('#reader-data-template').parseTemplate(result);
-				$("#reader-data").html(output);
+				//var output = $('#reader-data-template').parseTemplate(result);
+				//$("#reader-data").html(output);
+				$("#reader-code").val(result.User.username);
+				$("#reader-status").val(result.Reader.status);
+				$("#reader-type").val(result.Reader.is_teacher);
+				$("#reader-fullname").val(result.User.fullname);
+				$("#reader-department").val(result.Department.name);
+				$("#reader-address").val(result.User.resident_address);
 				loadBookTable();
 			}
 			else {
@@ -91,6 +97,7 @@ $("#reader-code").change(function() {
 		},
 		error: function() {
 			showModal("Lỗi hệ thống", "Hệ thống phát sinh lỗi, xin lỗi vì sự bất tiện này !", true);
+			clearReader();
 			return false;
 		}
 	});
@@ -237,8 +244,14 @@ function clearBook() {
 	$("#btn-book-borrow").addClass("disabled");
 }
 
+
 function clearReader() {
 	$("#reader-code").val("");
+	$("#reader-status").val("");
+	$("#reader-type").val("");
+	$("#reader-fullname").val("");
+	$("#reader-department").val("");
+	$("#reader-address").val("");
 }
 
 //Renew Book
@@ -275,7 +288,7 @@ function showModal(title, content, error) {
 	if (error === true) {
 		$(".modal-title").css('color', 'red');
 	}
-	else{
+	else {
 		$(".modal-title").css('color', 'green');
 	}
 	$("#my-modal").modal('show');

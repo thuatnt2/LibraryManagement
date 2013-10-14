@@ -33,21 +33,21 @@
 							<div>
 								<div class="umstyle3" style="width: 100px">Mã bạn đọc :</div>
 								<div class="umstyle4" >
-									<input type="text" name="readerCode" id="reader-code" value="" class="form-control "/>
+									<input type="text" name="readerCode" id="reader-code" value="" placeholder="Mã bạn đọc" class="form-control "/>
 								</div>
 								<div style="clear:both"></div>
 							</div>
 							<div>
 								<div class="umstyle3" style="width: 100px">Tình trạng:</div>
 								<div class="umstyle4" >
-									<input type="text" value="" disabled="disabled" name="reader-status" class="form-control"/>
+									<input type="text" value="" disabled="disabled" name="reader-status" id="reader-status" class="form-control"/>
 								</div>
 								<div style="clear:both"></div>
 							</div>
 							<div>
 								<div class="umstyle3" style="width: 100px">Chức vụ:</div>
 								<div class="umstyle4" >
-									<input type="text"  value="" disabled="disabled" name="reader-type" class="form-control"/>
+									<input type="text"  value="" disabled="disabled" name="reader-type" id="reader-type" class="form-control"/>
 								</div>
 								<div style="clear:both"></div>
 							</div>
@@ -94,7 +94,7 @@
                         <div>
                             <div class="umstyle3" style="width: 100px"><?php echo 'Mã tài liệu:'; ?></div>
 							<div class="umstyle4" >
-								<input type="text" value="" class="form-control" id="book-code"/>
+								<input type="text" value="" placeholder="Mã tài liệu" class="form-control" id="book-code"/>
 							</div>
 							<div style="clear:both"></div>
 						</div>
@@ -138,8 +138,8 @@
 					</div>
 					<div class="button-container" style="text-align: center">
 						<input type="hidden" value="" id="book-serial-id"/>
-						<a href="#" class="btn btn-primary disabled" id="btn-book-borrow">Mượn sách</a>
-						<a href="#" class="btn btn-primary disabled" id="btn-book-return">Trả sách</a>
+						<a href="#" class="btn btn-primary disabled" id="btn-book-borrow">Mượn tài liệu</a>
+						<a href="#" class="btn btn-primary disabled" id="btn-book-return">Trả tài liệu</a>
 					</div>
                 </form>
             </div>
