@@ -30,7 +30,7 @@
 						<p style="color: red"><?php echo date('d/m/Y',  strtotime($book['Ciculation']['date_return'])) . ' (Trễ ' . $book['is_late'] . ' ngày)' ?><p>
 								<?php
 							} else {
-								echo $book['Ciculation']['date_return'];
+								echo date('d/m/Y', strtotime($book['Ciculation']['date_return']));
 							}
 
 							?>

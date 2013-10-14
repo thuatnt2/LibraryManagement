@@ -77,7 +77,7 @@
 			'vendor/jquery-1.9.1.min',
 			'jquery.extensions',
 			'vendor/bootstrap.min',
-			'vendor/modal',
+			//'vendor/modal',
 			'vendor/holder',
 			'admin_simpla.jquery.configuration',
 			'ckeditor/ckeditor',
