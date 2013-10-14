@@ -83,14 +83,14 @@ $("#reader-code").change(function() {
 				loadBookTable();
 			}
 			else {
+				showModal("Lỗi bạn đọc", "Không tìm thấy bạn đọc có mã " + readerCode + " ,vui lòng thử lại", true);
 				clearReader();
-				alert("Lỗi ! Không tìm thấy bạn đọc này");
 				return false;
 			}
 
 		},
 		error: function() {
-			alert("Đã xảy ra lỗi hệ thống, vui lòng thử lại");
+			showModal("Lỗi hệ thống", "Hệ thống phát sinh lỗi, xin lỗi vì sự bất tiện này !", true);
 			return false;
 		}
 	});
@@ -110,7 +110,8 @@ function loadBookTable() {
 
 		},
 		error: function() {
-			alert("Lỗi hệ thống, xin lỗi vì sự bất tiện này");
+			showModal("Lỗi hệ thống", "Hệ thống phát sinh lỗi, xin lỗi vì sự bất tiện này !", true);
+			return false;
 		}
 	});
 }
@@ -151,13 +152,14 @@ $("#book-code").change(function() {
 				$("#book-reader").val(book.Ciculation.reader);
 
 			} else {
-				alert("Không tìm thấy tài liệu có mã " + $("#book-code").val() + " . Vui lòng thử lại");
+				showModal("Lỗi tài liệu", "Không tìm thấy tài liệu có mã " + $("#book-code").val() + ", vui lòng thử lại", true);
 				clearBook();
 				return false;
 			}
 		},
 		error: function() {
-			alert("Lỗi hệ thống, xin lỗi vì sự bất tiện này");
+			showModal("Lỗi hệ thống", "Hệ thống phát sinh lỗi, xin lỗi vì sự bất tiện này !", true);
+			return false;
 		}
 	});
 });
@@ -174,13 +176,20 @@ $("#btn-book-borrow").click(function() {
 			data: {"readerCode": readerCode, "bookCode": bookCode},
 			dataType: 'json',
 			success: function(result) {
+				if (result.status == 0) {
+					showModal("Lỗi mượn sách", result.message, true);
+				}
+				else {
+					showModal("Thông báo", result.message, false);
+				}
 				clearBook();
 				loadBookTable();
-				alert(result.message);
+
 			},
 			error: function() {
+				showModal("Lỗi hệ thống", "Hệ thống phát sinh lỗi, xin lỗi vì sự bất tiện này !", true);
 				clearBook();
-				alert("Lỗi hệ thống, xin lỗi vì sự bất tiện này");
+				return false;
 			}
 		});
 	}
@@ -196,18 +205,23 @@ $("#btn-book-return").click(function() {
 			data: {"readerCode": readerCode, "bookCode": bookCode},
 			dataType: 'json',
 			success: function(result) {
+				if (result.status == 0) {
+					showModal("Lỗi mượn sách", result.message, true);
+				}
+				else {
+					showModal("Thông báo", result.message, false);
+				}
 				clearBook();
 				loadBookTable();
-				alert(result.message);
 			},
 			error: function() {
+				showModal("Lỗi hệ thống", "Hệ thống phát sinh lỗi, xin lỗi vì sự bất tiện này !", true);
 				clearBook();
-				alert("Lỗi hệ thống, xin lỗi vì sự bất tiện này");
 			}
 		});
 	}
 	else {
-		alert("Nhập mã thẻ bạn đọc trước")
+		showModal("Thông báo", "Vui lòng nhập mã thẻ của bạn đọc trước!", false);
 	}
 });
 
@@ -240,14 +254,33 @@ function renewBook(book_serial_id) {
 			success: function(result) {
 				clearBook();
 				loadBookTable();
-				alert(result.message);
+				if (result.status == 0) {
+					showModal("Lỗi gia hạn sách", result.message, true);
+				}
+				else {
+					showModal("Thông báo", result.message, false);
+				}
 			},
 			error: function() {
 				clearBook();
-				alert("Lỗi hệ thống, xin lỗi vì sự bất tiện này");
+				showModal("Lỗi hệ thống", "Hệ thống phát sinh lỗi, xin lỗi vì sự bất tiện này !", true);
+				return false;
 			}
 		});
 	}
 }
+function showModal(title, content, error) {
+	$("#title-of-modal").text(title);
+	$("#content-of-modal").text(content);
+	if (error === true) {
+		$(".modal-title").css('color', 'red');
+	}
+	$("#my-modal").modal('show');
+
+}
+//close the modal that is showing
+$("#x-close").click(function() {
+	$("#my-modal").modal('hide');
+});
 
 
