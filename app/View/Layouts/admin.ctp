@@ -37,7 +37,7 @@
 
             <div id="main-content"> <!-- Main Content Section with everything -->
 				<?php
-                                    echo $this->element('admin/header')
+				echo $this->element('admin/header')
 
 				?>
 
@@ -50,6 +50,23 @@
 				?>
 
             </div> <!-- End #main-content -->
+			<!--Modal content-->
+			<div class="modal fade" id="my-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" id="x-close">&times;</button>
+							<h4 class="modal-title" id="title-of-modal">Modal title</h4>
+						</div>
+						<div class="modal-body" id="content-of-modal">
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+
 
         </div>
 		<script type="text/javascript">
@@ -60,7 +77,9 @@
 			'vendor/jquery-1.9.1.min',
 			'jquery.extensions',
 			'vendor/bootstrap.min',
+			//'vendor/modal',
 			'vendor/holder',
+                    'jquery.cookie',
 			'admin_simpla.jquery.configuration',
 			'ckeditor/ckeditor',
 			'vendor/fancybox/jquery.fancybox',
