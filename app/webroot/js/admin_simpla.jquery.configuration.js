@@ -92,7 +92,7 @@ $(document).ready(function(){
 		
 		  var current_nav_item_id = $.cookie('current_nav_item');
                   if((typeof(current_nav_item_id) !== 'undefined') && (current_nav_item_id !== 'nav-item-dashboard')){
-                      $(document.getElementById(current_nav_item_id)).trigger('click');
+                      $(document.getElementById(current_nav_item_id)).trigger('click').addClass('current');
                   }
 
 });
