@@ -15,16 +15,16 @@
                 $columns = array(
                     'BookCategory.name' => 'Tên Danh mục sách',
                     'BookCategory.user_created' => 'Người tạo',
-					'BookCategory.is_active' => 'Trạng thái',
+                    'BookCategory.is_active' => 'Trạng thái',
                     'BookCategory.created' => 'Ngày tạo',
                 );
-                
+
                 $options = array(
-					'actions_column' =>true,
-					'paging' => true,
-					//'link_to_view' => 'name',
+                    'actions_column' => true,
+                    'paging' => true,
+                        //'link_to_view' => 'name',
                 );
-                
+
                 echo $this->Table->render($bookCategories, $columns, $options);
                 ?>
             </div>

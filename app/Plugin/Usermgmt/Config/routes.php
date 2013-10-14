@@ -46,7 +46,7 @@ Router::connect('/emailVerification', array('plugin' => 'usermgmt', 'controller'
 
 //Readers
 Router::connect('/readers', array('plugin' => 'usermgmt', 'controller' => 'readers', 'action' => 'index'));
-Router::connect('/addReader', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'addReader'));
+Router::connect('/dang_ky_ban_doc', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'addReader'));
 Router::connect('/deleteReader', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'deleteReader'));
 
 //faculties
