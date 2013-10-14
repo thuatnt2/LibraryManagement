@@ -22,11 +22,10 @@
         <!-- Header -->
         <div id="header" class="shell">
             <div id="login-details" style="height: 0px;">
-
                 <?php if ($this->UserAuth->isLogged()): ?>
                     <p><strong>Chào mừng</strong>, <a href="#" id="user"><?php echo $this->Session->read('UserAuth.User.username'); ?></a></p>
                     &nbsp|&nbsp
-                    <a  href="<?php echo $this->Html->url('/logout') ?>">(Logout)</a>
+                    <a  href="<?php echo $this->Html->url('/logout') ?>">(Đăng xuất)</a>
                 <?php else: ?>
 
                     <div class="loginBox">
@@ -35,7 +34,7 @@
                             <?php echo $this->Form->input('username', array('required' => 'required', 'div' => false, 'label' => false, 'placeholder' => 'Card code', 'id' => 'username', 'class' => 'textboxLogin')) ?>
                             <?php echo $this->Form->input('password', array('type' => 'password', 'div' => false, 'label' => false, 'required' => 'required', 'id' => 'password', 'class' => 'textboxLogin')) ?>
                             <span > 
-                                <input type="submit" name="submit" class="btn btn-small" value="Login" style="margin-bottom: 10px;">               
+                                <input type="submit" name="submit" class="btn btn-small" value="Đăng nhập" style="margin-bottom: 10px;">               
                             </span>
                         </div>
                         <?php echo $this->Form->end(); ?>  
@@ -68,8 +67,8 @@
         <div id="main" class="shell">
             <!--sidbar-->
             <?php echo $this->element('frontend/sidebar') ?>
-            <div id="content">
-                <?php echo $this->fetch('content'); ?>
+            <div id="content" class="page-curl shadow-bottom shadow-right" >
+                    <?php echo $this->fetch('content'); ?>
             </div>
             <div class="cl">&nbsp;</div>
             <?php
