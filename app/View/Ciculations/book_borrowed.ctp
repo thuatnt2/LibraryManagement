@@ -29,7 +29,7 @@
 						</div>
 					</div>
 					<form name="" id=""  class="" action="">
-						<div class="left" style="float: left; margin-left: 55px">
+						<div class="two-column" id="ciculations-left">
 							<div>
 								<div class="umstyle3" style="width: 100px">Mã bạn đọc :</div>
 								<div class="umstyle4" >
@@ -52,7 +52,7 @@
 								<div style="clear:both"></div>
 							</div>
 						</div>
-						<div class="right" align="right"  style="float: right">
+						<div class="two-column" id="ciculations-right" align="right">
 							<div>
 								<div class="umstyle3" style="width: 100px">Họ tên:</div>
 								<div class="umstyle4" >
@@ -83,14 +83,14 @@
         </div>
         <div style="clear:both"></div>
         <div class="um_box_mid_content">
-            <div class="um_box_mid_content_top">
+            <div class="um_box_mid_content_top" style=" margin-top: 25px;">
                 <span class="umstyle1"><?php echo "Chi tiết tài liệu" ?></span>
                 <div style="clear:both"></div>
             </div>
             <div class="umhr"></div>
             <div class="um_box_mid_content_mid" id="register">
                 <form name="" id=""  class="" action="">
-                    <div class="left" style="float: left; margin-left: 198px">
+                    <div class="two-column" style="margin-left: 198px;">
                         <div>
                             <div class="umstyle3" style="width: 100px"><?php echo 'Mã tài liệu:'; ?></div>
 							<div class="umstyle4" >
@@ -113,7 +113,7 @@
 							<div style="clear:both"></div>
 						</div>
 					</div>
-					<div class="right" align="right"  style="float: right">
+					<div class="two-column" align="right">
 						<div>
 							<div class="umstyle3" style="width: 100px"><?php echo 'Tình trạng:'; ?></div>
 							<div class="umstyle4" >
@@ -136,10 +136,12 @@
 							<div style="clear:both"></div>
 						</div>
 					</div>
-					<div class="button-container" style="text-align: center">
+                       <div style="clear:both"></div>
+					<div class="button-container" style="text-align: center;margin-top: 20px;">
 						<input type="hidden" value="" id="book-serial-id"/>
 						<a href="#" class="btn btn-primary disabled" id="btn-book-borrow">Mượn tài liệu</a>
 						<a href="#" class="btn btn-primary disabled" id="btn-book-return">Trả tài liệu</a>
+
 					</div>
                 </form>
             </div>
@@ -147,7 +149,7 @@
         <div style="clear:both"></div>
         <div id="list-book-ciculation">
 
-			<div class="um_box_mid_content">
+            <div class="um_box_mid_content" style="margin-top: 25px">
 				<div class="um_box_mid_content_top">
 					<span class="umstyle1"><?php echo "Danh sách tài liệu đang mượn" ?></span>
 					<div style="clear:both"></div>
@@ -176,54 +178,3 @@
     </div>
 </scrip>
 </div>
-
-<script id="reader-data-template" type="text/html">
-	<form name="" id=""  class="" action="">
-	<div class="left" style="float: left; margin-left: 55px">
-	<div>
-	<div class="umstyle3" style="width: 100px">Mã bạn đọc :</div>
-	<div class="umstyle4" >
-	<input type="text" name="readerCode" id="reader-code" value="<#= User.username #>" class="form-control "/>
-	</div>
-	<div style="clear:both"></div>
-	</div>
-	<div>
-	<div class="umstyle3" style="width: 100px">Tình trạng:</div>
-	<div class="umstyle4" >
-	<input type="text" value="<#= Reader.status #>" disabled="disabled" name="reader-status" class="form-control"/>
-	</div>
-	<div style="clear:both"></div>
-	</div>
-	<div>
-	<div class="umstyle3" style="width: 100px">Chức vụ:</div>
-	<div class="umstyle4" >
-	<input type="text"  value="<#= Reader.is_teacher #>" disabled="disabled" name="reader-type" class="form-control"/>
-	</div>
-	<div style="clear:both"></div>
-	</div>
-	</div>
-	<div class="right" align="right"  style="float: right">
-	<div>
-	<div class="umstyle3" style="width: 100px">Họ tên:</div>
-	<div class="umstyle4" >
-	<input type="text" value="<#= User.fullname #>" disabled="disabled" id="reader-fullname" class="form-control"/>
-	</div>
-	<div style="clear:both"></div>
-	</div>
-	<div>
-	<div class="umstyle3" style="width: 100px">Đơn vị/ Bộ phận:</div>
-	<div class="umstyle4" >
-	<input type="text" value="<#= Department.name #>" disabled="" id="reader-department" class="form-control" />
-	</div>
-	<div style="clear:both"></div>
-	</div>
-	<div>
-	<div class="umstyle3" style="width: 100px">Địa chỉ:</div>
-	<div class="umstyle4" >
-	<input type="text" value="<#= User.resident_address #>" disabled="disabled" id="reader-address" class="form-control"/>
-	</div>
-	<div style="clear:both"></div>
-	</div>
-	</div>
-	</form>
-</script>

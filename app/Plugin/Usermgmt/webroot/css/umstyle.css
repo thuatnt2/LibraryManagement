@@ -53,6 +53,8 @@
 }
 .um_box_mid_content_mid {
 	padding-top:10px;
+        width: 1066px;
+        margin: 0 auto;
 }
 .um_box_mid_content_mid_left {
 	float:left;
