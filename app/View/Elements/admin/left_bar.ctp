@@ -11,13 +11,13 @@
         <ul id="main-nav">  <!-- Accordion Menu -->
 
             <li>
-                <a href="/dashboard" class="nav-top-item no-submenu"> <!-- Add the class "no-submenu" to menu items with no sub menu -->
+                <a href="/dashboard" class="nav-top-item no-submenu" id="nav-item-dashboard"> <!-- Add the class "no-submenu" to menu items with no sub menu -->
                     Quản lý hệ thống
                 </a>       
             </li>
 
             <li> 
-                <a href="" class="nav-top-item "> <!-- Add the class "current" to current menu item -->
+                <a href="" class="nav-top-item " id="nav-item-article-mgmt"> <!-- Add the class "current" to current menu item -->
                     Quản lý bài viết
                 </a>
                 <ul>
@@ -27,7 +27,7 @@
             </li>
 
             <li>
-                <a href="#" class="nav-top-item">
+                <a href="#" class="nav-top-item" id="nav-item-reader-mgmt">
                     Quản lý bạn đọc
                 </a>
                 <ul>
@@ -37,7 +37,7 @@
             </li>
 
             <li>
-                <a href="#" class="nav-top-item">
+                <a href="#" class="nav-top-item" id="nav-item-ciculation-mgmt">
                     Quản lý lưu thông
                 </a>
                 <ul>
@@ -49,7 +49,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#" class="nav-top-item">
+                <a href="#" class="nav-top-item" id="nav-item-books-mgmt">
                     Quản lý tài liệu
                 </a>
                 <ul>
@@ -60,7 +60,7 @@
             </li>
 
             <li>
-                <a href="#" class="nav-top-item">
+                <a href="#" class="nav-top-item" id="nav-item-settings">
                     Cấu hình
                 </a>
                 <ul>
