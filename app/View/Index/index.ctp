@@ -22,6 +22,8 @@
 <div class="prefer_books">
     <h4 class="content-title">Giới thiệu sách</h4>
     <div class="content">
+
+       
         <ul>
             <?php foreach ($books as $book) { ?>
                 <li>
