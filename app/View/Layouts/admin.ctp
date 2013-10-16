@@ -15,7 +15,7 @@
 		<?php
 		echo $this->Html->css(array(
 			'admin_reset',
-			'vendor/bootstrap',
+			'vendor/bootstrap.min',
 			'vendor/bootstrap-theme.min',
 			'admin',
 			'admin_invalid',
@@ -77,7 +77,7 @@
 			'vendor/jquery-1.9.1.min',
 			'jquery.extensions',
 			'vendor/bootstrap.min',
-			//'vendor/modal',
+			'vendor/modal',
 			'vendor/holder',
 			'jquery.cookie',
 			'admin_simpla.jquery.configuration',
