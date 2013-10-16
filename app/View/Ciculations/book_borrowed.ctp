@@ -139,8 +139,8 @@
                        <div style="clear:both"></div>
 					<div class="button-container" style="text-align: center;margin-top: 20px;">
 						<input type="hidden" value="" id="book-serial-id"/>
-						<a href="#" class="btn btn-primary disabled" id="btn-book-borrow">Mượn tài liệu</a>
-						<a href="#" class="btn btn-primary disabled" id="btn-book-return">Trả tài liệu</a>
+						<a href="javascript:void(0)" class="btn btn-primary disabled" id="btn-book-borrow">Mượn tài liệu</a>
+						<a href="javascript:void(0)" class="btn btn-primary disabled" id="btn-book-return">Trả tài liệu</a>
 
 					</div>
                 </form>
@@ -176,5 +176,4 @@
 			</div>
 		</div>
     </div>
-</scrip>
 </div>

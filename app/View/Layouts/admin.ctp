@@ -71,7 +71,7 @@
         </div>
 		<script type="text/javascript">
 			var base_url = '<?php echo $this->Html->webroot('/'); ?>';
-        </script> 
+        </script>
 		<?php
 		echo $this->Html->script(array(
 			'vendor/jquery-1.9.1.min',
@@ -79,7 +79,7 @@
 			'vendor/bootstrap.min',
 			//'vendor/modal',
 			'vendor/holder',
-                    'jquery.cookie',
+			'jquery.cookie',
 			'admin_simpla.jquery.configuration',
 			'ckeditor/ckeditor',
 			'vendor/fancybox/jquery.fancybox',

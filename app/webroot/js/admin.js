@@ -114,6 +114,7 @@ function loadBookTable() {
 		success: function(books) {
 			console.log(books);
 			$("#book-ciculation").html(books);
+			$('tbody tr:even').addClass("alt-row");
 
 		},
 		error: function() {
@@ -252,8 +253,13 @@ function clearReader() {
 	$("#reader-fullname").val("");
 	$("#reader-department").val("");
 	$("#reader-address").val("");
+	clearBookTable();
 }
 
+
+function clearBookTable(){
+	$("#book-ciculation tbody").html("");
+}
 //Renew Book
 
 function renewBook(book_serial_id) {

@@ -39,12 +39,12 @@
 						<?php if ($book['extension_allow'] == true) {
 
 							?>
-							<a href="#" onclick="renewBook(<?php echo $book['BookSerial']['id'] ?>)">Gia hạn</a>
+							<a href="javascript:void(0)" onclick="renewBook(<?php echo $book['BookSerial']['id'] ?>)">Gia hạn</a>
 							<?php
 						} else {
 
 							?>
-							<p style="color: red">Hết quyền gia hạn</p>
+							<span style="color: red">Hết quyền gia hạn</span>
 							<?php
 						}
 

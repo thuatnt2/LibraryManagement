@@ -237,12 +237,12 @@ class CiculationsController extends AppController {
 				$this->Ciculation->create();
 				if ($this->Ciculation->save($data)) {
 					$result['status'] = 1;
-					$resutl['message'] = 'Bạn đọc mượn thành công tài liệu ' . $book_serial['Book']['title'];
+					$resutl['message'] = 'Bạn đọc mượn thành công tài liệu ' .'"'. $book_serial['Book']['title'].'"';
 					$this->loadModel('BookSerial');
 					$this->BookSerial->id = $book_serial['BookSerial']['id'];
 					$this->BookSerial->saveField('status', 0);
 					//save log
-					$log_content = 'Mượn tài liệu ' . $book_serial['Book']['title'];
+					$log_content = 'Mượn tài liệu ' .'"'. $book_serial['Book']['title'].'"';
 					$this->saveLog($log_content,$current_reader['User']['fullname'],  'borrow');
 				} else {
 					$result['status'] = 0;
@@ -268,13 +268,13 @@ class CiculationsController extends AppController {
 				$this->Ciculation->id = $ciculation['Ciculation']['id'];
 				if ($this->Ciculation->delete()) {
 					$result['status'] = 1;
-					$result['message'] = 'Bạn đọc trả thành công tài liệu ' . $book_serial['Book']['title'];
+					$result['message'] = 'Bạn đọc trả thành công tài liệu ' . '"'. $book_serial['Book']['title'].'"';
 					$this->loadModel('BookSerial');
 					$this->BookSerial->id = $book_serial['BookSerial']['id'];
 					$this->BookSerial->saveField('status', 1);
 					//save log
 					$current_reader = $this->Session->read('currentReader');
-					$this->saveLog('Trả tài liệu ' . $book_serial['Book']['title'], $current_reader['User']['fullname'], 'return');
+					$this->saveLog('Trả tài liệu ' .'"'. $book_serial['Book']['title']. '"', $current_reader['User']['fullname'], 'return');
 				} else {
 					$result['status'] = 0;
 					$result['message'] = 'Đã có lỗi xảy ra, không thể trả tài liệu';
@@ -311,10 +311,10 @@ class CiculationsController extends AppController {
 						$this->Ciculation->id = $ciculation['Ciculation']['id'];
 						$this->Ciculation->saveField('date_return', date('Y-m-d', $date_return));
 						$result['status'] = 1;
-						$result['message'] = 'Đã gia hạn thành công tài liệu ' . $book_serial['Book']['title'];
+						$result['message'] = 'Đã gia hạn thành công tài liệu ' .'"'. $book_serial['Book']['title']. '"'. ' thêm '. $duration_extend . ' ngày';
 						//save log
 						$current_reader = $this->Session->read('currentReader');
-						$this->saveLog( 'Gia hạn tài liệu ' . $book_serial['Book']['title'],$current_reader['User']['fullname'], 'renew');
+						$this->saveLog( 'Gia hạn tài liệu ' .'"'. $book_serial['Book']['title']. '"'. ' thêm '. $duration_extend . ' ngày' ,$current_reader['User']['fullname'], 'renew');
 					}
 				} else {
 					$result['status'] = 0;
