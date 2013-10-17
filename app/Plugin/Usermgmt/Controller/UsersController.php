@@ -101,35 +101,32 @@ class UsersController extends UserMgmtAppController {
 	 * @return void
 	 */
 	public function login() {
-		$this->layout = 'login';
+		$this->layout = 'new';
 		if ($this->request->isPost()) {
-
 			$this->User->set($this->data);
 			if ($this->User->LoginValidate()) {
 				$email = $this->data['User']['username'];
 				$password = $this->data['User']['password'];
-
 				$user = $this->User->findByUsername($email);
 				if (empty($user)) {
 					$user = $this->User->findByEmail($email);
 					if (empty($user)) {
 						$this->Session->setFlash(__('Sai tài khoản hoặc mật khẩu'));
-						$this->redirect('/');
 						return;
 					}
 					$this->redirect(array('controller' => 'index', 'action' => 'index'));
 				}
 				// check for inactived account
-				if ($user['User']['id'] != 1 and $user['User']['is_active'] == 0) {
-
-					$this->Session->setFlash(__('Sorry your account is not actived, please contact to Administrator'));
-					return;
-				}
-				// check for verified account
-				if ($user['User']['id'] != 1 and $user['User']['email_verified'] == 0) {
-					$this->Session->setFlash(__('Your registration has not been confirmed please verify your email or contact to Administrator'));
-					return;
-				}
+//				if ($user['User']['id'] != 1 and $user['User']['is_active'] == 0) {
+//
+//					$this->Session->setFlash(__('Sorry your account is not actived, please contact to Administrator'));
+//					return;
+//				}
+//				// check for verified account
+//				if ($user['User']['id'] != 1 and $user['User']['email_verified'] == 0) {
+//					$this->Session->setFlash(__('Your registration has not been confirmed please verify your email or contact to Administrator'));
+//					return;
+//				}
 				if (empty($user['User']['salt'])) {
 					$hashed = md5($password);
 				} else {
@@ -158,7 +155,7 @@ class UsersController extends UserMgmtAppController {
 					$this->redirect($redirect);
 				} else {
 					$this->Session->setFlash(__('Sai mã thẻ hoặc mật khẩu'));
-					$this->redirect('/');
+					//$this->redirect('/');
 				}
 			}
 		}
