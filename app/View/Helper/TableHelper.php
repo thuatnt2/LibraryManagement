@@ -149,7 +149,7 @@ class TableHelper extends AppHelper {
 		return $output;
 	}
 
-	private function _generatePaging() {
+	public function generatePaging() {
 		$output = "";
 		if ($this->_options['paging']) {
 			$output.= "<div class='pagination'>";
