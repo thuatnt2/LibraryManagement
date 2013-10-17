@@ -1,13 +1,18 @@
 <div id="sidebar">
     <div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
-        
-        <!-- Sidebar Profile links -->
-        <div id="profile-links">
-            Hello, <a href="#" title="Edit your profile">John Doe</a>, you have <a href="#messages" rel="modal" title="3 Messages">3 Messages</a><br />
-            <br />
-            <a href="/" >Trang chủ</a> | <a href="#" title="Sign Out">Đăng xuất</a>
-        </div>        
-
+        <div class="profile-user" style="display: block;">
+            <div class="image">
+                <?php echo $this->Html->image('users/alexey.jpg', array('class="img-polaroid"')) ?>
+            </div>
+            <ul class="control">                
+                <li><span class="icon-comment"></span> <a href="#">Thông tin cá nhân</a></li>
+                <li><span class="icon-share-alt"></span> <a href="/logout">Đăng xuất</a></li>
+            </ul>
+            <div class="info">
+                <span>Welcom back! Your last visit: 24.10.2012</span>
+            </div>        
+        </div>
+        <div style="clear:both"></div>
         <ul id="main-nav">  <!-- Accordion Menu -->
 
             <li>
@@ -54,8 +59,8 @@
                 </a>
                 <ul>
                     <li><a href="#">Danh sách tài liệu</a></li>
-                    
-                    <li><?php echo $this->Html->link('Biên mục tài liệu',array('controller' => 'books', 'action' => 'add')) ?></li>
+
+                    <li><?php echo $this->Html->link('Biên mục tài liệu', array('controller' => 'books', 'action' => 'add')) ?></li>
                 </ul>
             </li>
 
