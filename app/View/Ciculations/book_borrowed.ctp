@@ -15,67 +15,61 @@
             </div>
             <div class="umhr"></div>
             <div class="um_box_mid_content_mid" id="register">
-                <div id="ciculation-img">
-					<?php echo $this->Html->image('/images/no-image.jpg', array('alt' => 'Ảnh đại diện')) ?>
-                </div>
+
 				<div id="reader-data">
-					<div id="myModal" class="modal">
-						<div class="modal-header">
-							<button data-dismiss="modal" class="close" type="button">&times;</button>
-							<h3>Modal header</h3>
-						</div>
-						<div class="modal-body">
-							<p>Modal Example Body</p>
-						</div>
+
+					<div class="row-fluid">
+						<form name="" id=""  class="form-horizontal" action="">
+							<div class="span6">
+								<div id="ciculation-img">
+									<?php echo $this->Html->image('/images/no-image.jpg', array('alt' => 'Ảnh đại diện')) ?>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Mã bạn đọc :</label>
+									<div class="controls">
+										<input type="text" name="readerCode" id="reader-code" value="" placeholder="Mã bạn đọc" class="input-xlarge"/>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Tình trạng:</label>
+									<div class="controls">
+										<input type="text" value="" disabled="disabled" name="reader-status" id="reader-status" class="input"/>
+									</div>
+									<div style="clear:both"></div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Chức vụ:</label>
+									<div class="controls">
+										<input type="text"  value="" disabled="disabled" name="reader-type" id="reader-type" class="form-control"/>
+									</div>
+									<div style="clear:both"></div>
+								</div>
+							</div>
+							<div class="span6">
+								<div class="control-group">
+									<label class="control-label">Họ tên:</label>
+									<div class="controls">
+										<input type="text" value="" disabled="disabled" id="reader-fullname" class="form-control"/>
+									</div>
+									<div style="clear:both"></div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Đơn vị/ Bộ phận:</label>
+									<div class="controls">
+										<input type="text" value="" disabled="" id="reader-department" class="form-control" />
+									</div>
+									<div style="clear:both"></div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Địa chỉ:</label>
+									<div class="controls">
+										<input type="text" value="" disabled="disabled" id="reader-address" class="form-control"/>
+									</div>
+									<div style="clear:both"></div>
+								</div>
+							</div>
+						</form>
 					</div>
-					<form name="" id=""  class="" action="">
-						<div class="two-column" id="ciculations-left">
-							<div>
-								<div class="umstyle3" style="width: 100px">Mã bạn đọc :</div>
-								<div class="umstyle4" >
-									<input type="text" name="readerCode" id="reader-code" value="" class="form-control "/>
-								</div>
-								<div style="clear:both"></div>
-							</div>
-							<div>
-								<div class="umstyle3" style="width: 100px">Tình trạng:</div>
-								<div class="umstyle4" >
-									<input type="text" value="" disabled="disabled" name="reader-status" class="form-control"/>
-								</div>
-								<div style="clear:both"></div>
-							</div>
-							<div>
-								<div class="umstyle3" style="width: 100px">Chức vụ:</div>
-								<div class="umstyle4" >
-									<input type="text"  value="" disabled="disabled" name="reader-type" class="form-control"/>
-								</div>
-								<div style="clear:both"></div>
-							</div>
-						</div>
-						<div class="two-column" id="ciculations-right" align="right">
-							<div>
-								<div class="umstyle3" style="width: 100px">Họ tên:</div>
-								<div class="umstyle4" >
-									<input type="text" value="" disabled="disabled" id="reader-fullname" class="form-control"/>
-								</div>
-								<div style="clear:both"></div>
-							</div>
-							<div>
-								<div class="umstyle3" style="width: 100px">Đơn vị/ Bộ phận:</div>
-								<div class="umstyle4" >
-									<input type="text" value="" disabled="" id="reader-department" class="form-control" />
-								</div>
-								<div style="clear:both"></div>
-							</div>
-							<div>
-								<div class="umstyle3" style="width: 100px">Địa chỉ:</div>
-								<div class="umstyle4" >
-									<input type="text" value="" disabled="disabled" id="reader-address" class="form-control"/>
-								</div>
-								<div style="clear:both"></div>
-							</div>
-						</div>
-					</form>
 
 				</div>
 
@@ -94,7 +88,7 @@
                         <div>
                             <div class="umstyle3" style="width: 100px"><?php echo 'Mã tài liệu:'; ?></div>
 							<div class="umstyle4" >
-								<input type="text" value="" class="form-control" id="book-code"/>
+								<input type="text" value="" placeholder="Mã tài liệu" class="form-control" id="book-code"/>
 							</div>
 							<div style="clear:both"></div>
 						</div>
@@ -136,11 +130,12 @@
 							<div style="clear:both"></div>
 						</div>
 					</div>
-                       <div style="clear:both"></div>
+					<div style="clear:both"></div>
 					<div class="button-container" style="text-align: center;margin-top: 20px;">
 						<input type="hidden" value="" id="book-serial-id"/>
-						<a href="#" class="btn btn-primary disabled" id="btn-book-borrow">Mượn sách</a>
-                                                <a href="#" class="btn btn-primary disabled" id="btn-book-return" style="margin-left: 20px;">Trả sách</a>
+						<a href="javascript:void(0)" class="btn btn-primary disabled" id="btn-book-borrow">Mượn tài liệu</a>
+						<a href="javascript:void(0)" class="btn btn-primary disabled" id="btn-book-return">Trả tài liệu</a>
+
 					</div>
                 </form>
             </div>
@@ -168,63 +163,11 @@
 							</tr>
 						</thead>
 						<tbody>
-							
+
 						</tbody>
 					</table>
 				</div>
 			</div>
 		</div>
     </div>
-</scrip>
 </div>
-
-<script id="reader-data-template" type="text/html">
-	<form name="" id=""  class="" action="">
-	<div class="two-column">
-	<div>
-	<div class="umstyle3" style="width: 100px">Mã bạn đọc :</div>
-	<div class="umstyle4" >
-	<input type="text" name="readerCode" id="reader-code" value="<#= User.username #>" class="form-control "/>
-	</div>
-	<div style="clear:both"></div>
-	</div>
-	<div>
-	<div class="umstyle3" style="width: 100px">Tình trạng:</div>
-	<div class="umstyle4" >
-	<input type="text" value="<#= Reader.status #>" disabled="disabled" name="reader-status" class="form-control"/>
-	</div>
-	<div style="clear:both"></div>
-	</div>
-	<div>
-	<div class="umstyle3" style="width: 100px">Chức vụ:</div>
-	<div class="umstyle4" >
-	<input type="text"  value="<#= Reader.is_teacher #>" disabled="disabled" name="reader-type" class="form-control"/>
-	</div>
-	<div style="clear:both"></div>
-	</div>
-	</div>
-	<div class="two-column" align="right">
-	<div>
-	<div class="umstyle3" style="width: 100px">Họ tên:</div>
-	<div class="umstyle4" >
-	<input type="text" value="<#= User.fullname #>" disabled="disabled" id="reader-fullname" class="form-control"/>
-	</div>
-	<div style="clear:both"></div>
-	</div>
-	<div>
-	<div class="umstyle3" style="width: 100px">Đơn vị/ Bộ phận:</div>
-	<div class="umstyle4" >
-	<input type="text" value="<#= Department.name #>" disabled="" id="reader-department" class="form-control" />
-	</div>
-	<div style="clear:both"></div>
-	</div>
-	<div>
-	<div class="umstyle3" style="width: 100px">Địa chỉ:</div>
-	<div class="umstyle4" >
-	<input type="text" value="<#= User.resident_address #>" disabled="disabled" id="reader-address" class="form-control"/>
-	</div>
-	<div style="clear:both"></div>
-	</div>
-	</div>
-	</form>
-</script>

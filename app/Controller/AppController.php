@@ -76,5 +76,22 @@ class AppController extends Controller {
 		debug($log);
 		exit();
 	}
+	
+	public function saveLog( $content,$reader_name , $type){
+		$this->loadModel('Log');
+		$data = array();
+		$data['Log']['reader_name'] = $reader_name == '' ? $this->Session->read('currentReader') : $reader_name;
+		$user = $user = $this->UserAuth->getUser();
+		$data['Log']['librarian'] = $user['User']['fullname'];
+		$data['Log']['content'] = $content;
+		$data['Log']['type'] = $type;
+		if($this->Log->save($data)){
+			return true;
+		}
+		else{
+			return false;
+		}
+		
+	}
 
 }

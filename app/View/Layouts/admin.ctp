@@ -15,7 +15,7 @@
 		<?php
 		echo $this->Html->css(array(
 			'admin_reset',
-			'vendor/bootstrap',
+			'vendor/bootstrap.min',
 			'vendor/bootstrap-theme.min',
 			'admin',
 			'admin_invalid',
@@ -71,15 +71,15 @@
         </div>
 		<script type="text/javascript">
 			var base_url = '<?php echo $this->Html->webroot('/'); ?>';
-        </script> 
+        </script>
 		<?php
 		echo $this->Html->script(array(
 			'vendor/jquery-1.9.1.min',
 			'jquery.extensions',
 			'vendor/bootstrap.min',
-			//'vendor/modal',
+			'vendor/modal',
 			'vendor/holder',
-                    'jquery.cookie',
+			'jquery.cookie',
 			'admin_simpla.jquery.configuration',
 			'ckeditor/ckeditor',
 			'vendor/fancybox/jquery.fancybox',
