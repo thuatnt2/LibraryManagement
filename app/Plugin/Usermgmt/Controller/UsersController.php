@@ -159,6 +159,7 @@ class UsersController extends UserMgmtAppController {
 				}
 			}
 		}
+                $this->set('title_for_layout','Thư viện - Đăng nhập');
 	}
 
 	/**
@@ -231,7 +232,7 @@ class UsersController extends UserMgmtAppController {
 			}
 		} else {
 			$this->Session->setFlash(__('Sorry new registration is currently disabled, please try again later'));
-			$this->redirect('/login');
+			$this->redirect('/dang-nhap');
 		}
 	}
 
@@ -499,7 +500,7 @@ class UsersController extends UserMgmtAppController {
 		} else {
 			$this->Session->setFlash(__('Sorry something went wrong, please click on the link again'));
 		}
-		$this->redirect('/login');
+		$this->redirect('/dang-nhap');
 	}
 
 	/**
@@ -528,7 +529,7 @@ class UsersController extends UserMgmtAppController {
 				}
 				$this->User->forgotPassword($user);
 				$this->Session->setFlash(__('Please check your mail for reset your password'));
-				$this->redirect('/login');
+				$this->redirect('/dang-nhap');
 			}
 		}
 	}
@@ -559,7 +560,7 @@ class UsersController extends UserMgmtAppController {
 							$user['User']['password'] = $this->UserAuth->makePassword($user['User']['password'], $salt);
 							$this->User->save($user, false);
 							$this->Session->setFlash(__('Your password has been reset successfully'));
-							$this->redirect('/login');
+							$this->redirect('/dang-nhap');
 						} else {
 							$this->Session->setFlash(__('Something went wrong, please send password reset link again'));
 						}
@@ -603,7 +604,7 @@ class UsersController extends UserMgmtAppController {
 				} else {
 					$this->Session->setFlash(__('Your email is already verified'));
 				}
-				$this->redirect('/login');
+				$this->redirect('/dang-nhap');
 			}
 		}
 	}

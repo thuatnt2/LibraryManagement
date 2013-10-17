@@ -79,7 +79,6 @@ class UserAuthComponent extends Component {
             'bookCategories/userIndex',
             'bookCategories/userView',
             'books/userView'
-            
         );
         $access = str_replace(' ', '', ucwords(str_replace('_', ' ', $controller))) . '/' . $action;
         $allControllers = $this->ControllerList->getControllerWithMethods();
@@ -94,7 +93,7 @@ class UserAuthComponent extends Component {
                 if (!$userGroupModel->isGuestAccess($controller, $action)) {
                     $c->log('permission: actionUrl-' . $actionUrl, LOG_DEBUG);
                     $c->Session->write('permission_error_redirect', '/');
-                    $c->Session->setFlash('You need to be signed in to view this page.');
+                    $c->Session->setFlash('Bạn cần đăng nhập để tiếp tục.');
                     $cUrl = '/' . $c->params->url;
                     if (!empty($_SERVER['QUERY_STRING'])) {
                         $rUrl = $_SERVER['REQUEST_URI'];
@@ -102,7 +101,7 @@ class UserAuthComponent extends Component {
                         $cUrl = substr($rUrl, $pos, strlen($rUrl));
                     }
                     $c->Session->write('Usermgmt.OriginAfterLogin', $cUrl);
-                    $c->redirect('/login');
+                    $c->redirect('/dang-nhap');
                 }
             } else {
                 if (!$userGroupModel->isUserGroupAccess($controller, $action, $this->getGroupId())) {
@@ -342,10 +341,10 @@ class UserAuthComponent extends Component {
     private function __useGuestAccount() {
         return $this->login('guest');
     }
-	
-	public function getFullName (){
-		$user = $this->getUser();
-		return $user['User']['fullname'];
-	}
+
+    public function getFullName() {
+        $user = $this->getUser();
+        return $user['User']['fullname'];
+    }
 
 }
