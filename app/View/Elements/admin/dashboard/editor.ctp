@@ -1,1 +1,1 @@
-<h4>Trang chủ của biên mục viên</h4>
+<?php $this->extend('/Books/add') ?>

@@ -43,7 +43,7 @@
                 <?php endif; ?>    
 
             </div>
-            <div id="logo"><h1><a href="#">He</a></h1></div>
+            <a href="/"><div id="logo"></div></a>
             <!-- Navigation -->
             <div id="navigation">
                 <ul>
@@ -67,7 +67,7 @@
         <div id="main" class="shell">
             <!--sidbar-->
             <?php echo $this->element('frontend/sidebar') ?>
-            <div id="content" class="page-curl shadow-bottom shadow-right" >
+            <div id="content" class="page-curl">
                     <?php echo $this->fetch('content'); ?>
             </div>
             <div class="cl">&nbsp;</div>

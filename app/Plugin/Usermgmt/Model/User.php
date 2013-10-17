@@ -134,17 +134,17 @@ class User extends UserMgmtAppModel {
 			'password' => array(
 				'mustNotEmpty' => array(
 					'rule' => 'notEmpty',
-					'message' => 'Please enter password',
+					'message' => 'Nhập mật khẩu',
 					'on' => 'create',
 					'last' => true),
 				'mustBeLonger' => array(
 					'rule' => array('minLength', 6),
-					'message' => 'Password must be greater than 5 characters',
+					'message' => 'Mật khẩu phải có độ dài tối đa là 5 kí tự',
 					'on' => 'create',
 					'last' => true),
 				'mustMatch' => array(
 					'rule' => array('verifies'),
-					'message' => 'Both passwords must match'),
+					'message' => 'Mật khẩu không trùng nhau'),
 			//'on' => 'create'
 			),
 			'captcha' => array(
