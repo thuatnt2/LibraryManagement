@@ -34,10 +34,8 @@
         </script>
     </head>
     <body class="login">
-
         <!-- Begin login window -->
         <?php echo $this->fetch('content')?>
         <!-- End login window -->
-
     </body>
 </html>
