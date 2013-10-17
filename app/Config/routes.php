@@ -15,8 +15,8 @@ Router::connect('/index', array('controller' => 'index', 'action' => 'index'));
 /*
  * Routing for articles
  */
-Router::connect('/bai_viet', array('controller' => 'articles', 'action' => 'index'));
-Router::connect('/dang_bai_viet', array('controller' => 'articles', 'action' => 'add'));
+Router::connect('/bai-viet', array('controller' => 'articles', 'action' => 'index'));
+Router::connect('/dang-bai-viet', array('controller' => 'articles', 'action' => 'add'));
 Router::connect('/tin-tuc', array('controller' => 'articles', 'action' => 'userIndex'));
 Router::connect(
         '/tin-tuc/:id-:slug', array('controller' => 'articles', 'action' => 'userView'), array('pass' => array('id', 'slug'), 'id' => '[0-9]+')
@@ -46,14 +46,15 @@ Router::connect('/tim-kiem', array('controller' => 'bookSearch', 'action' => 'us
 /**
  * Router for Ciculation
  */
-Router::connect('/muon_tra_tai_lieu', array('controller' => 'ciculations', 'action' => 'bookBorrowed'));
+Router::connect('/muon-tra-tai-lieu', array('controller' => 'ciculations', 'action' => 'bookBorrowed'));
+Router::connect('/lich-su-luu-thong', array('controller' => 'admin', 'action' => 'logs'));
 Router::connect('/getCiculation', array('controller' => 'ciculations', 'action' => 'getCiculation'));
 Router::connect('/booksCiculation', array('controller' => 'ciculations', 'action' => 'booksCiculation'));
 Router::connect('/getBook', array('controller' => 'bookSerials', 'action' => 'getBook'));
 Router::connect('/borrowBook', array('controller' => 'ciculations', 'action' => 'borrowBook'));
 Router::connect('/returnBook', array('controller' => 'ciculations', 'action' => 'returnBook'));
 Router::connect('/renewBook', array('controller' => 'ciculations', 'action' => 'renewBook'));
-Router::connect('/bien_muc', array('controller' => 'books', 'action' => 'add'));
+Router::connect('/bien-muc', array('controller' => 'books', 'action' => 'add'));
 CakePlugin::routes();
 
 /**
