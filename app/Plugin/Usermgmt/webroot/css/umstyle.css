@@ -37,11 +37,11 @@
 	-moz-border-radius-topright: 5px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
-	background-color: #E9EAEE;
+	/*background-color: #E9EAEE;*/
 	height:10px;
 }
 .um_box_mid {
-	background-color: #E9EAEE;
+	/*background-color: #E9EAEE;*/
 	height:auto;
 }
 .um_box_mid_content {
