@@ -75,7 +75,7 @@ h1,h2,h3,h4 {
 }
 .book-short-view .book-short-view-left {
     float: left;
-    width: 20%;
+    width: 10%;
     display: inline-block;
 }
 .book-short-view .book-short-view-right {
@@ -146,8 +146,8 @@ h1,h2,h3,h4 {
 
 .page-curl {
     background: #FFFFFF;
-    background: -moz-linear-gradient(0deg, #F5F5F5 0%, #FFF 25%, #FFF 75%, #F5F5F5 100%);
-    background: -ms-linear-gradient(0deg, #F5F5F5 0%, #FFF 25%, #FFF 75%, #F5F5F5 100%);
+    /*background: -moz-linear-gradient(0deg, #F5F5F5 0%, #FFF 25%, #FFF 75%, #F5F5F5 100%);*/
+    /*background: -ms-linear-gradient(0deg, #F5F5F5 0%, #FFF 25%, #FFF 75%, #F5F5F5 100%);*/
 /*    background: -webkit-linear-gradient(0deg, #F5F5F5 0%, #FFF 25%, #FFF 75%, #F5F5F5 100%);
     background: linear-gradient(0deg, #F5F5F5 0%, #FFF 25%, #FFF 75%, #F5F5F5 100%);*/
     /*border: 1px solid #777777;*/
@@ -163,30 +163,6 @@ h1,h2,h3,h4 {
     width: 700px;
 }
 
-.page-curl:before, .page-curl:after {
-    background: none;
-    bottom: 12px;
-    -moz-box-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);
-    content: "";
-    height: 10px;
-    left: 12px;
-    position: absolute;
-    width: 40%;
-    z-index: -1;
-    -moz-transform: skew(-4deg) rotate(-4deg);
-    -webkit-transform: skew(-4deg) rotate(-4deg);
-    transform: skew(-4deg) rotate(-4deg);
-}
-
-.page-curl:after {
-    -moz-transform: skew(4deg) rotate(4deg);
-    -webkit-transform: skew(4deg) rotate(4deg);
-    transform: skew(4deg) rotate(4deg);
-    left: auto;
-    right: 12px;
-}
 
 .page-curl.shadow-left {
     background: -moz-linear-gradient(0deg, #F5F5F5 0%, #FFF 50%) !important;
@@ -200,14 +176,6 @@ h1,h2,h3,h4 {
     background: -ms-linear-gradient(0deg, #FFF 50%, #F5F5F5 100%) !important;
     background: -webkit-linear-gradient(0deg, #FFF 50%, #F5F5F5 100%) !important;
     background: linear-gradient(0deg, #FFF 50%, #F5F5F5 100%) !important;
-}
-
-.shadow-bottom:before, .shadow-bottom:after {
-    top: auto;
-    bottom: 12px;
-    -moz-box-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);
 }
 
 .shadow-left:after {
@@ -257,7 +225,6 @@ h1,h2,h3,h4 {
 }
 
 
-
 #login_wrapper input[type=checkbox]{
     margin-bottom: 3px;
     zoom: 1.5;
@@ -271,5 +238,14 @@ h1,h2,h3,h4 {
 }
 .content-header .content-header-right form input[type=text] {
     margin-bottom: 1px;
+    height: 16px;
 }
-
+#flashMessage {
+    padding: 5px;
+}
+.book-details .book-left ul li {
+    line-height: 25px;
+}
+.book-short-view .book-short-view-left img {
+    zoom: 0.6;
+}
