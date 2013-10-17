@@ -117,4 +117,8 @@ class BookTypesController extends AppController {
     public function getBookTypes(){
         return $this->BookType->find('list');
     }
+    public function userView() {
+        $this->layout = 'new';
+        
+    }
 }

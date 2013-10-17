@@ -7,7 +7,7 @@
     <span class="content-header-right">
         <form class="search-form">
             <input type ='text' placeholder="Nhập tên sách ... "/>
-            <input class="btn btn-small btn-success" type="submit" value="Tìm">
+            <button class="btn btn-small search-in-category-btn" type="submit" value="Tìm"><?php echo $this->Html->image('/images/search-ico-white.png')?></button>
         </form> 
     </span>
 
