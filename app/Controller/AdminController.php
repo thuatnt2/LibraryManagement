@@ -33,17 +33,32 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AdminController extends AppController {
+
 	var $layout = 'admin';
 
+	//public $components = array('Paginator');
+
 	function beforeFilter() {
-	
+		
 	}
 
-	public function dashboard(){
+	public function dashboard() {
 		$title_for_layout = 'Hệ thống quản lí thư viện';
 		//$user = $this->UserAuth->getUser();
 		$this->set(compact('title_for_layout'));
-		
+	}
+
+	public function logs() {
+		$title_for_layout = 'Lịch sử lưu thông';
+		$this->loadModel('Log');
+		$this->paginate = array('limit' => 5);
+		$logs = $this->Paginator->paginate('Log');
+		$this->set('logs', $logs);
+		$this->set('title_for_layout', $title_for_layout);
+		if ($this->RequestHandler->isAjax()) {
+			$this->layout = false;
+			$this->render('logs');
+		}
 	}
 
 }

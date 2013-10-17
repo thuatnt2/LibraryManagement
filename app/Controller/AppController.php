@@ -35,7 +35,7 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 
 	var $helpers = array('Form', 'Html', 'Session', 'TvFck', 'Fck', 'Js', 'Usermgmt.UserAuth', 'Table', 'Autocomplete', 'Common');
-	public $components = array('Session', 'RequestHandler', 'Usermgmt.UserAuth', 'Common');
+	public $components = array('Session', 'RequestHandler', 'Usermgmt.UserAuth', 'Common','Paginator');
 	var $layout = 'admin';
 
 	function beforeFilter() {
