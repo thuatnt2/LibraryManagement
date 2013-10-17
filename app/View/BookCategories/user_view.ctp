@@ -6,7 +6,6 @@
     </form> 
 </div>
 
-
 <div class="tab-div">
     <div class="tab-content">
         <div class="books-in-category">

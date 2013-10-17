@@ -11,6 +11,7 @@
                         <?php
                         echo $this->Html->link(
                                 $v, array(
+                            'plugin' => null,
                             'controller' => 'bookCategories',
                             'action' => 'userView',
                             'id' => $k,

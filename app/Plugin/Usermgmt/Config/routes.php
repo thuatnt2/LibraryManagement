@@ -20,7 +20,7 @@
 
 // Routes for standard actions
 
-Router::connect('/login', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'login'));
+Router::connect('/dang-nhap', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'login'));
 Router::connect('/logout', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'logout'));
 Router::connect('/forgotPassword', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'forgotPassword'));
 Router::connect('/activatePassword/*', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'activatePassword'));
