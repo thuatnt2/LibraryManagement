@@ -47,7 +47,7 @@ class AdminController extends AppController {
 		//$user = $this->UserAuth->getUser();
 		$this->set(compact('title_for_layout'));
 		if($this->UserAuth->getGroupId() == EDITOR_GROUP_ID){
-			$this->redirect('/bien-muc');
+			$this->redirect('/tai-lieu');
 		}
 	}
 

@@ -55,6 +55,7 @@ Router::connect('/borrowBook', array('controller' => 'ciculations', 'action' => 
 Router::connect('/returnBook', array('controller' => 'ciculations', 'action' => 'returnBook'));
 Router::connect('/renewBook', array('controller' => 'ciculations', 'action' => 'renewBook'));
 Router::connect('/bien-muc', array('controller' => 'books', 'action' => 'add'));
+Router::connect('/tai-lieu', array('controller' => 'books', 'action' => 'index'));
 CakePlugin::routes();
 
 /**
