@@ -585,7 +585,9 @@ form textarea {
     /*width: 100% !important;*/
     /*font-family: Arial, Helvetica, sans-serif;*/
 }
-
+.form-horizontal .control-group {
+    margin-bottom: 10px;
+}
 form select {
     padding: 4px;
     background: #fff;

@@ -86,7 +86,7 @@
         </div>
         <div style="clear:both"></div>
         <div class="um_box_mid_content">
-            <div class="um_box_mid_content_top" style=" margin-top: 25px;">
+            <div class="um_box_mid_content_top" style=" margin-top: 20px;">
                 <span class="umstyle1"><?php echo "Chi tiết tài liệu" ?></span>
                 <div style="clear:both"></div>
             </div>
@@ -153,7 +153,7 @@
                                 </div>
                             </div>
                             <div style="clear:both"></div>
-                            <div class="button-container" style="text-align: center;margin-top: 20px;">
+                            <div class="button-container" style="text-align: center;margin-top: 10px;">
                                 <input type="hidden" value="" id="book-serial-id"/>
                                 <a href="javascript:void(0)" class="btn btn-primary disabled" id="btn-book-borrow">Mượn tài liệu</a>
                                 <a href="javascript:void(0)" class="btn btn-primary disabled" id="btn-book-return">Trả tài liệu</a>
