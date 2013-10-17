@@ -46,6 +46,9 @@ class AdminController extends AppController {
 		$title_for_layout = 'Hệ thống quản lí thư viện';
 		//$user = $this->UserAuth->getUser();
 		$this->set(compact('title_for_layout'));
+		if($this->UserAuth->getGroupId() == EDITOR_GROUP_ID){
+			$this->redirect('/bien-muc');
+		}
 	}
 
 	public function logs() {
@@ -55,10 +58,6 @@ class AdminController extends AppController {
 		$logs = $this->Paginator->paginate('Log');
 		$this->set('logs', $logs);
 		$this->set('title_for_layout', $title_for_layout);
-		if ($this->RequestHandler->isAjax()) {
-			$this->layout = false;
-			$this->render('logs');
-		}
 	}
 
 }

@@ -296,21 +296,38 @@ class UsersController extends UserMgmtAppController {
 	 * @return void
 	 */
 	public function addUser() {
-		$userGroups = $this->UserGroup->getGroups();
-		$this->set('userGroups', $userGroups);
-		if ($this->request->isPost()) {
-			$this->User->set($this->data);
-			if ($this->User->RegisterValidate()) {
-				$this->request->data['User']['email_verified'] = 1;
-				$this->request->data['User']['actived'] = 1;
-				$salt = $this->UserAuth->makeSalt();
-				$this->request->data['User']['salt'] = $salt;
-				$this->request->data['User']['password'] = $this->UserAuth->makePassword($this->request->data['User']['password'], $salt);
-				$this->User->save($this->request->data, false);
-				$this->Session->setFlash(__('The user is successfully added'));
-				$this->redirect('/addUser');
+
+		$userGroups = $this->UserGroup->find('list', array('fields' => array('UserGroup.id', 'UserGroup.name')));
+		$admin_group = array(ADMIN_GROUP_ID, LIBRARIAN_GROUP_ID, EDITOR_GROUP_ID);
+		foreach ($userGroups as $k => $v) {
+			if (!in_array($k, $admin_group)) {
+				unset($userGroups[$k]);
 			}
 		}
+		$this->set('userGroups', $userGroups);
+		if ($this->request->isPost()) {
+			if ($this->UserAuth->getGroupId() == ADMIN_GROUP_ID) {
+				$this->User->set($this->data);
+				if ($this->User->RegisterValidate()) {
+					$this->request->data['User']['email_verified'] = 1;
+					$this->request->data['User']['actived'] = 1;
+					$salt = $this->UserAuth->makeSalt();
+					$this->request->data['User']['salt'] = $salt;
+					$this->request->data['User']['password'] = $this->UserAuth->makePassword($this->request->data['User']['password'], $salt);
+					$this->User->save($this->request->data, false);
+					$this->Session->setFlash('Thêm mới thành công người dùng '. $this->request->data['User']['fullname'], 'flash_success');
+					$this->redirect('/nguoi-dung');
+				} else {
+					$this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại', 'flash_error');
+				}
+			}
+			else{
+				$this->Session->setFlash('Chỉ người quản trị mới có quyền thêm mới người dùng', 'flash_error');
+			}
+		}
+
+		$title_for_layout = 'Thêm mới người dùng';
+		$this->set(compact('title_for_layout'));
 	}
 
 	/**
@@ -364,7 +381,7 @@ class UsersController extends UserMgmtAppController {
 			$this->redirect('/allUsers');
 		}
 	}
-	
+
 	/**
 	 * Used to delete the user by Admin
 	 *
@@ -504,7 +521,7 @@ class UsersController extends UserMgmtAppController {
 						return;
 					}
 				}
-				// check for inactived account
+// check for inactived account
 				if ($user['User']['id'] != 1 and $user['User']['email_verified'] == 0) {
 					$this->Session->setFlash(__('Your registration has not been confirmed yet please verify your email before reset password'));
 					return;
@@ -592,7 +609,7 @@ class UsersController extends UserMgmtAppController {
 	}
 
 	public function actived($id, $status, $page = 1) {
-		//debug($this->request);exit();
+//debug($this->request);exit();
 		$this->User->id = $id;
 		$this->User->saveField('is_active', $status);
 		if ($page == 1)
@@ -613,8 +630,8 @@ class UsersController extends UserMgmtAppController {
 				$this->request->data['User']['is_password_change'] = 0;
 				$this->request->data['User']['is_active'] = 0;
 				$this->request->data['User']['email_verified'] = 1;
-				$this->request->data['User']['user_group_id'] = READER_GROUP_ID;				
-				
+				$this->request->data['User']['user_group_id'] = READER_GROUP_ID;
+
 				if (isset($_SERVER['REMOTE_ADDR'])) {
 					$ip = $_SERVER['REMOTE_ADDR'];
 				}
@@ -625,28 +642,26 @@ class UsersController extends UserMgmtAppController {
 
 				$this->request->data['Reader']['department_id'] = $this->User->data['User']['department_id'];
 				$this->request->data['Reader']['is_teacher'] = $this->User->data['User']['is_teacher'];
-				//get duration of expiry
+//get duration of expiry
 				$duration_ciculation = $this->Session->read('CiculationPolicy.TGLT.amount');
-				$date_expiry = strtotime('+'.$duration_ciculation.' day', strtotime(date('d-M-y')));
-				$this->request->data['Reader']['date_expiry'] = date('Y-m-d', $date_expiry);			
-				
+				$date_expiry = strtotime('+' . $duration_ciculation . ' day', strtotime(date('d-M-y')));
+				$this->request->data['Reader']['date_expiry'] = date('Y-m-d', $date_expiry);
+
 				$this->User->create();
 				debug($this->request->data);
-				if($this->User->saveAssociated($this->request->data)){
+				if ($this->User->saveAssociated($this->request->data)) {
 					$this->Session->setFlash('Đăng kí thành công 1 bạn đọc', 'flash_success');
 					$this->redirect('/readers');
-				}
-				else{
+				} else {
 					$this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại', 'flash_error');
 				}
-			}
-			else{
-				
+			} else {
+
 				$this->Session->setFlash('Đã có lỗi xảy ra, vui lòng thử lại', 'flash_error');
 			}
 		}
 
-		//$users = $this->Reader->User->find('list');
+//$users = $this->Reader->User->find('list');
 		$this->loadModel('Faculty');
 		$faculties = $this->Faculty->find('list');
 		$reader_type = $this->User->reader_type;
