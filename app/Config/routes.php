@@ -29,6 +29,9 @@ Router::connect(
         '/danh-muc/:id-:slug', array('controller' => 'bookCategories', 'action' => 'userView'), array('pass' => array('id', 'slug'),'id' => '[0-9]+')
 );
 Router::connect(
+        '/the-loai/:id-:slug', array('controller' => 'bookTypes', 'action' => 'userView'), array('pass' => array('id', 'slug'),'id' => '[0-9]+')
+);
+Router::connect(
         '/tai-lieu/:id', array('controller' => 'books', 'action' => 'userView'), array('pass' => array('id'),'id' => '[0-9]+')
 );
 Router::connect('/tim-kiem', array('controller' => 'bookSearch', 'action' => 'userIndex'));
