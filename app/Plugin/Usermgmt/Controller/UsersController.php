@@ -159,6 +159,7 @@ class UsersController extends UserMgmtAppController {
 				}
 			}
 		}
+                $this->set('title_for_layout','Thư viện - Đăng nhập');
 	}
 
 	/**

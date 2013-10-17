@@ -116,11 +116,7 @@ h1,h2,h3,h4 {
     color: #477D92;
     margin: 0;
 }
-.content-header {
-    height: 25px;
-    width: 50px;
-    border: 1px solid #d8d8d8;
-}
+
 #news h4 {
     margin-top: 0;
 }
@@ -145,6 +141,7 @@ h1,h2,h3,h4 {
 .read-more-btn {
     /*float:right;*/
     margin-right: 15px;
+    float: right;
 }
 
 .page-curl {
@@ -265,3 +262,14 @@ h1,h2,h3,h4 {
     margin-bottom: 3px;
     zoom: 1.5;
 }
+.content-header .content-header-left {
+    display: inline-block;
+    float: left;
+}
+.content-header .content-header-right {
+     float: right;
+}
+.content-header .content-header-right form input[type=text] {
+    margin-bottom: 1px;
+}
+

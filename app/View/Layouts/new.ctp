@@ -43,7 +43,7 @@
                 <?php endif; ?>    
 
             </div>
-            <div id="logo"><h1><a href="#">He</a></h1></div>
+            <a href="/"><div id="logo"></div></a>
             <!-- Navigation -->
             <div id="navigation">
                 <ul>

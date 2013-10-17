@@ -1,11 +1,18 @@
-<div>
-    <h3 class="content-title"><?php echo $bookCategory['BookCategory']['name'] ?></h3>
-    <i>(Số lượng: <?php echo count($bookCategory['Book']) ?>)</i>
-    <form>
-        <input type ='text' />
-    </form> 
-</div>
+<div class ="content-header">
+    <div class="content-header-left"> 
+        <h3 class="content-title"><?php echo $bookCategory['BookCategory']['name'] ?></h3>
+        <i>(Số lượng: <?php echo count($bookCategory['Book']) ?>)</i> 
+    </div>
 
+    <span class="content-header-right">
+        <form class="search-form">
+            <input type ='text' placeholder="Nhập tên sách ... "/>
+            <input class="btn btn-small btn-success" type="submit" value="Tìm">
+        </form> 
+    </span>
+
+</div>
+<div class="clear-both"> </div>
 <div class="tab-div">
     <div class="tab-content">
         <div class="books-in-category">

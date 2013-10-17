@@ -21,8 +21,11 @@
         </tbody>
     </table>
     <div style="text-align:center"> <input type="submit" id="submit" name="submit" value="Đăng nhập" class="btn btn-small btn-success" style="margin-right:5px"/>
-    <?php echo $this->Form->input("remember", array("type" => "checkbox", 'label' => false, 'div' => false, 'id' => 'remember')) ?>
-    <strong>Ghi nhớ</strong></div>
-   
+        <?php echo $this->Form->input("remember", array("type" => "checkbox", 'label' => false, 'div' => false, 'id' => 'remember')) ?>
+        Ghi nhớ
+        <br />
+        <a href="#"> Quên mật khẩu </a>
+    </div>
+
 </form>
 </div>
