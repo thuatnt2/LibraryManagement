@@ -179,13 +179,14 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Mã sách</th>
-                                <th>Tên sách</th>
-                                <th>Nhà xuất bản</th>
-                                <th>Tác giả</th>
-                                <th>Ngôn ngữ</th>
-                                <th>Ngày tạo</th>
-                                <th>Hành động</th>
+                                <th style="width: 5%">STT</th>
+                                <th style="width: 10%">Mã tài liệu</th>
+                                <th style="width: 30%">Mô tả</th>
+                                <th style="width: 13%">Ngày mượn</th>
+                                <th style="width: 12%">Hạn trả</th>
+                                <th style="width: 10%">Gia hạn</th>
+                                <th style="width: 10%">Quá hạn</th>
+                                <th style="width: 10%">Thao tác</th>
                             </tr>
                         </thead>
                         <tbody>
