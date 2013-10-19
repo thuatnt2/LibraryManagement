@@ -25,11 +25,16 @@
     <div class="um_box_up"></div>
     <div class="um_box_mid">
         <div class="um_box_mid_content">
-            <div class="um_box_mid_content_top">
-                <span class="umstyle1">Danh sách người dùng trong hệ thống</span>
-                <span class="umstyle2" style="float:right"><?php echo $this->Html->link('Trang chủ', "/dashboard") ?></span>
-                <div style="clear:both"></div>
+              <div class="form-horizontal">
+                <div class="span5 align-left" style="margin-left: 0px">
+                    <span class="umstyle1">Danh sách người dùng trong hệ thống</span>
+                </div>
+                <div class="span2 align-right" align="right">
+                    <?php echo $this->Html->link('Thêm người dùng',array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'addUser'),array('class' => 'btn btn-primary btn-lg', 'escape' => false)) ?>
+                </div>
             </div>
+            <div style="clear:both"></div>
+          
             <div class="umhr"></div>
             <div class="um_box_mid_content_mid" id="index">
                 <table cellspacing="0" cellpadding="0" width="100%" border="0" >

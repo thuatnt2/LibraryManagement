@@ -27,7 +27,7 @@ Router::connect('/activatePassword/*', array('plugin' => 'usermgmt', 'controller
 Router::connect('/register', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'register'));
 Router::connect('/changePassword', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'changePassword'));
 Router::connect('/changeUserPassword/*', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'changeUserPassword'));
-Router::connect('/addUser', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'addUser'));
+Router::connect('/them-nguoi-dung', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'addUser'));
 Router::connect('/editUser/*', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'editUser'));
 Router::connect('/deleteUser/*', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'deleteUser'));
 Router::connect('/viewUser/*', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'viewUser'));
@@ -51,12 +51,12 @@ Router::connect('/deleteReader', array('plugin' => 'usermgmt', 'controller' => '
 
 //faculties
 Router::connect('/danh-sach-khoa', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'index'));
-Router::connect('/addFaculty', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'add'));
+Router::connect('/them-khoa', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'add'));
 Router::connect('/editFaculty/*', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'edit'));
 Router::connect('/deleteFaculty/*', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'delete'));
 //department
 Router::connect('/danh-sach-lop', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'index'));
-Router::connect('/addDepartment', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'add'));
+Router::connect('/them-lop', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'add'));
 Router::connect('/editDepartment/*', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'edit'));
 Router::connect('/deleteDepartment/*', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'delete'));
 Router::connect('/loadDepartment', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'loadDepartment'));
