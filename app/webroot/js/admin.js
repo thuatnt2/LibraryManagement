@@ -439,37 +439,7 @@ $("#btn-delete-logs").click(function() {
 	else {
 		showModal('Lỗi', 'Bạn chưa chọn mục cần xóa', true);
 	}
-    var logType = $("#log-type-select").val();
-    console.log('type change');
-    jQuery.ajax({
-        url: "loadLogs",
-        type: "POST",
-        data: {"logType": logType},
-        dataType: 'json',
-        success: function(result) {
-            $("#log-data-table").html("");
-            //var length = result.logs.length;
-            var logs = result.logs;
-            for (var i = 0; i < logs.length; i++) {
-                var tr = "";
-                tr += "<tr>";
-                //tr += '<td><input type="checkbox" value="' + result.logs[i].Log.id + '"/></td>';
-                tr += "<td" + i + "</td>";
-                tr += "<td>" + logs[i].Log.reader_name + "</td>";
-                tr += "<td>" + logs[i].Log.content + "</td>";
-                tr += "<td>" + logs[i].Log.created + "</td>";
-                tr += "</tr>";
-                $("#log-data-table").append(tr);
-            }
-            $('tbody tr:even').addClass("alt-row");
-            $("#log-offset").val(result.offset);
-        },
-        error: function() {
-            clearBook();
-            showModal("Lỗi hệ thống", "Hệ thống phát sinh lỗi, xin lỗi vì sự bất tiện này !", true);
-            return false;
-        }
-    });
+  
 });
 
 /**
