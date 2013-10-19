@@ -68,18 +68,45 @@ class AdminController extends AppController {
 			$result = array();
 			$limit = PAGING_LIMIT;
 			$type = $this->request->data['logType'];
+			$keyword = $this->request->data['logKeywork'];
+
 			$this->loadModel('Log');
-			if ($type == 'all') {
-				$logs = $this->Log->find('all', array('limit' => $limit));
+			if ($type != 'all') {
+				$conditions['AND'] = array('OR' => array('Log.reader_name LIKE ' => '%' . $keyword . '%', 'Log.reader_code LIKE' => '%' . $keyword . '%'), 'Log.type' => $type);
 			} else {
-				$conds = array('Log.type' => $type);
-				$logs = $this->Log->find('all', array('conditions' => $conds, 'limit' => $limit));
+				$conditions['OR'] = array('Log.reader_name LIKE' => '%' . $keyword . '%', 'Log.reader_code LIKE' => '%' . $keyword . '%');
 			}
+			$logs = $this->Log->find('all', array('conditions' => $conditions, 'limit' => $limit));
 			$result['offset'] = $limit;
 			$result['logs'] = $logs;
 			return json_encode($result);
 		}
 		return null;
+	}
+
+	public function deleteLogs() {
+		if ($this->request->is('POST')) {
+			$this->layout = null;
+			$this->autoRender = false;
+			$ids = $this->request->data['ids'];
+			//$ids = substr($ids, strlen($ids) - 1);
+			$ids_array = explode(',', $ids);
+			$this->loadModel('Log');
+			$success = 0;
+			foreach ($ids_array as $k) {
+				if (!empty($k)) {
+					$this->Log->id = $k;
+					if ($this->Log->delete()) {
+						$success = $success + 1;
+					}
+				}
+			}
+
+			$result = array();
+			$result['status'] = 1;
+			$result['message'] = 'Đã xóa thành công ' . $success . ' mục';
+			return json_encode($result);
+		}
 	}
 
 }

@@ -243,7 +243,7 @@ class CiculationsController extends AppController {
 					$this->BookSerial->saveField('status', 0);
 					//save log
 					$log_content = 'Mượn tài liệu ' .'"'. $book_serial['Book']['title'].'"';
-					$this->saveLog($log_content,$current_reader['User']['fullname'],  'borrow');
+					$this->saveLog($log_content,$current_reader['User']['fullname'],$current_reader['User']['username'],  'borrow');
 				} else {
 					$result['status'] = 0;
 					$resutl['message'] = 'Đã có lỗi xảy ra trong quá trình mượn tài liệu. Vui lòng thử lại';
@@ -274,7 +274,7 @@ class CiculationsController extends AppController {
 					$this->BookSerial->saveField('status', 1);
 					//save log
 					$current_reader = $this->Session->read('currentReader');
-					$this->saveLog('Trả tài liệu ' .'"'. $book_serial['Book']['title']. '"', $current_reader['User']['fullname'], 'return');
+					$this->saveLog('Trả tài liệu ' .'"'. $book_serial['Book']['title']. '"', $current_reader['User']['fullname'],$current_reader['User']['username'], 'return');
 				} else {
 					$result['status'] = 0;
 					$result['message'] = 'Đã có lỗi xảy ra, không thể trả tài liệu';
@@ -314,7 +314,7 @@ class CiculationsController extends AppController {
 						$result['message'] = 'Đã gia hạn thành công tài liệu ' .'"'. $book_serial['Book']['title']. '"'. ' thêm '. $duration_extend . ' ngày';
 						//save log
 						$current_reader = $this->Session->read('currentReader');
-						$this->saveLog( 'Gia hạn tài liệu ' .'"'. $book_serial['Book']['title']. '"'. ' thêm '. $duration_extend . ' ngày' ,$current_reader['User']['fullname'], 'renew');
+						$this->saveLog( 'Gia hạn tài liệu ' .'"'. $book_serial['Book']['title']. '"'. ' thêm '. $duration_extend . ' ngày' ,$current_reader['User']['fullname'],$current_reader['User']['username'], 'renew');
 					}
 				} else {
 					$result['status'] = 0;
