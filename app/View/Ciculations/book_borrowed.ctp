@@ -95,7 +95,9 @@
                 <div id="document-data">
                     <div class="row-fluid">
                         <form name="" id=""  class="form-horizontal" action="">
-                            <div class="span5" style="margin-left: 180px"align="right">
+                            <div class="span2" style="height: 150px">
+                            </div>
+                            <div class="span5" align="right">
                                 <div class="control-group">
                                     <label class="control-label" >Mã tài liệu:</label>
                                     <div class="controls" >
@@ -142,7 +144,7 @@
                                     <div style="clear:both"></div>
                                 </div>
                             </div>
-                            <div class="span10" align="right" style="margin-left: 180px">
+                            <div class="span10" align="right">
                                  <div class="control-group">
                                     <label class="control-label" >Mô tả:</label>
                                     <div class="controls">
@@ -177,13 +179,14 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Mã sách</th>
-                                <th>Tên sách</th>
-                                <th>Nhà xuất bản</th>
-                                <th>Tác giả</th>
-                                <th>Ngôn ngữ</th>
-                                <th>Ngày tạo</th>
-                                <th>Hành động</th>
+                                <th style="width: 5%">STT</th>
+                                <th style="width: 10%">Mã tài liệu</th>
+                                <th style="width: 30%">Mô tả</th>
+                                <th style="width: 13%">Ngày mượn</th>
+                                <th style="width: 12%">Hạn trả</th>
+                                <th style="width: 10%">Gia hạn</th>
+                                <th style="width: 10%">Quá hạn</th>
+                                <th style="width: 10%">Thao tác</th>
                             </tr>
                         </thead>
                         <tbody>

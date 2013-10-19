@@ -37,7 +37,7 @@ h1,h2,h3,h4 {
 #logo { 
     /*background: url(/images/banner.png);*/
     background: url(/images/banner2.jpg);
-    margin-top: 15px;
+    margin-top: 21px;
     margin-bottom: 15px;
 }
 
@@ -148,8 +148,8 @@ h1,h2,h3,h4 {
     background: #FFFFFF;
     /*background: -moz-linear-gradient(0deg, #F5F5F5 0%, #FFF 25%, #FFF 75%, #F5F5F5 100%);*/
     /*background: -ms-linear-gradient(0deg, #F5F5F5 0%, #FFF 25%, #FFF 75%, #F5F5F5 100%);*/
-/*    background: -webkit-linear-gradient(0deg, #F5F5F5 0%, #FFF 25%, #FFF 75%, #F5F5F5 100%);
-    background: linear-gradient(0deg, #F5F5F5 0%, #FFF 25%, #FFF 75%, #F5F5F5 100%);*/
+    /*    background: -webkit-linear-gradient(0deg, #F5F5F5 0%, #FFF 25%, #FFF 75%, #F5F5F5 100%);
+        background: linear-gradient(0deg, #F5F5F5 0%, #FFF 25%, #FFF 75%, #F5F5F5 100%);*/
     /*border: 1px solid #777777;*/
     -moz-border-radius: 6px 6px 6px 6px;
     -webkit-border-radius: 6px 6px 6px 6px;
@@ -234,7 +234,7 @@ h1,h2,h3,h4 {
     float: left;
 }
 .content-header .content-header-right {
-     float: right;
+    float: right;
 }
 .content-header .content-header-right form input[type=text] {
     margin-bottom: 1px;
@@ -248,4 +248,32 @@ h1,h2,h3,h4 {
 }
 .book-short-view .book-short-view-left img {
     zoom: 0.6;
+}
+#right-bar {
+    z-index: 980000!important;
+    cursor: pointer;
+    margin-left: -1px;
+    position: fixed;
+    top: 25%;
+    right: -18px;
+    width: 50px;
+    background:#6F6F6F;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+#right-bar:hover {
+    background:#ECEBF1;
+    width: 55px;
+    padding-left: 5px;
+}
+#right-bar a {
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration:none;
+}
+#right-bar img {
+    margin-bottom: 4px;
+}
+#right-bar img:hover {
+    /*opacity: 0.8;*/
 }
