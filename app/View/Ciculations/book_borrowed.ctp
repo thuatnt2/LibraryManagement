@@ -95,7 +95,9 @@
                 <div id="document-data">
                     <div class="row-fluid">
                         <form name="" id=""  class="form-horizontal" action="">
-                            <div class="span5" style="margin-left: 180px"align="right">
+                            <div class="span2" style="height: 150px">
+                            </div>
+                            <div class="span5" align="right">
                                 <div class="control-group">
                                     <label class="control-label" >Mã tài liệu:</label>
                                     <div class="controls" >
@@ -142,7 +144,7 @@
                                     <div style="clear:both"></div>
                                 </div>
                             </div>
-                            <div class="span10" align="right" style="margin-left: 180px">
+                            <div class="span10" align="right">
                                  <div class="control-group">
                                     <label class="control-label" >Mô tả:</label>
                                     <div class="controls">
