@@ -392,19 +392,23 @@ $("#log-type-select").on("change", function() {
  * delete book serial
  * */
 
-function deleteBookSerial(book_serial_id) {
+function deleteBookSerial(book_id, book_serial_id) {
+    var book_total = $('#book_total').text();
     if (confirm('Bạn có chăc chắn muốn xóa ?')) {
         jQuery.ajax({
             url: "/deleteBookSerial",
             type: "POST",
-            data: {"bookSerialId": book_serial_id},
+            data: {"bookSerialId": book_serial_id,"bookId": book_id},
             dataType: 'json',
             success: function(result) {
-                if (result.status == 1) {
-                    showModal('Thông báo', result.message, false);
+                if (result.status === 1) {
+                    book_total = book_total - 1;
+                    $('#book_total').html(book_total);
+                    $('#book_serial_'+book_serial_id).parent().parent().remove();
+                    showModal('Thông báo', result.messate, false);
                 }
                 else {
-                    showModal('Lỗi xóa tài liệu', result.message, true);
+                    showModal('Lỗi xóa tài liệu', result.messate, true);
                 }
             },
             error: function() {

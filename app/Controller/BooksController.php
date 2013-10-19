@@ -49,7 +49,6 @@ class BooksController extends AppController {
             $this->loadModel('BookSerial');
             $this->BookSerial->create();
             if ($this->BookSerial->save($this->request->data)) {
-                $this->Book->id = $book_id;
                 $this->Book->updateAll(array('Book.total' => 'Book.total+1'), array('Book.id' => $book_id));
                 $this->Session->setFlash('Đã thêm thành công tài liệu có mã ' . $this->request->data['BookSerial']['barcode'] . ' vào đầu sách "' . $this->Book->data['Book']['title'] . '"', 'flash_success');
                 return $this->redirect(array('action' => 'view', $book_id));

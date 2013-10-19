@@ -107,6 +107,7 @@ class BookSerialsController extends AppController {
         if ($this->request->is('POST')) {
             $result = array();
             $book_serial_id = $this->request->data['bookSerialId'];
+            $book_id = $this->request->data['bookId'];
             $this->BookSerial->id = $book_serial_id;
             if (!$this->BookSerial->exists()) {
                 $result['status'] = 0;
@@ -114,6 +115,8 @@ class BookSerialsController extends AppController {
             } else {
                 $this->BookSerial->id = $book_serial_id;
                 if ($this->BookSerial->delete()) {
+                   $this->loadModel('Book');
+                   $this->Book->updateAll(array('Book.total' => 'Book.total-1'), array('Book.id' => $book_id));
                     $result['status'] = 1;
                     $result['messate'] = 'Xóa thành công tài liệu';
                 } else {
