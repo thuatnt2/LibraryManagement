@@ -46,7 +46,7 @@ class AdminController extends AppController {
 		$title_for_layout = 'Hệ thống quản lí thư viện';
 		//$user = $this->UserAuth->getUser();
 		$this->set(compact('title_for_layout'));
-		if($this->UserAuth->getGroupId() == EDITOR_GROUP_ID){
+		if ($this->UserAuth->getGroupId() == EDITOR_GROUP_ID) {
 			$this->redirect('/tai-lieu');
 		}
 	}
@@ -54,10 +54,32 @@ class AdminController extends AppController {
 	public function logs() {
 		$title_for_layout = 'Lịch sử lưu thông';
 		$this->loadModel('Log');
-		$this->paginate = array('limit' => 5);
+		$this->paginate = array('limit' => PAGING_LIMIT);
 		$logs = $this->Paginator->paginate('Log');
 		$this->set('logs', $logs);
 		$this->set('title_for_layout', $title_for_layout);
+	}
+
+	public function loadLogs() {
+
+		if ($this->request->is('POST')) {
+			$this->layout = null;
+			$this->autoRender = false;
+			$result = array();
+			$limit = PAGING_LIMIT;
+			$type = $this->request->data['logType'];
+			$this->loadModel('Log');
+			if ($type == 'all') {
+				$logs = $this->Log->find('all', array('limit' => $limit));
+			} else {
+				$conds = array('Log.type' => $type);
+				$logs = $this->Log->find('all', array('conditions' => $conds, 'limit' => $limit));
+			}
+			$result['offset'] = $limit;
+			$result['logs'] = $logs;
+			return json_encode($result);
+		}
+		return null;
 	}
 
 }

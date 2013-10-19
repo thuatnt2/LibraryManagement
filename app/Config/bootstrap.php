@@ -113,6 +113,13 @@ if (!defined("EDITOR_GROUP_ID")) {
 if (!defined("READER_GROUP_ID")) {
 	define("READER_GROUP_ID", 4);
 }
+
+/**
+ * Set limit for paging
+ */
+if (!defined('PAGING_LIMIT')) {
+	define('PAGING_LIMIT', 30);
+}
 Configure::write('Dispatcher.filters', array(
 	'AssetDispatcher',
 	'CacheDispatcher'

@@ -70,37 +70,46 @@ $('.addmenu').click(function() {
 //for add ciculation
 $("#reader-code").change(function() {
 	var readerCode = $("#reader-code").val();
-	jQuery.ajax({
-		url: "getCiculation",
-		type: "POST",
-		data: {"readerCode": readerCode},
-		dataType: 'json',
-		success: function(result) {
-			console.log(result);
-			if (result.length !== 0) {
-				//var output = $('#reader-data-template').parseTemplate(result);
-				//$("#reader-data").html(output);
-				$("#reader-code").val(result.User.username);
-				$("#reader-status").val(result.Reader.status);
-				$("#reader-type").val(result.Reader.is_teacher);
-				$("#reader-fullname").val(result.User.fullname);
-				$("#reader-department").val(result.Department.name);
-				$("#reader-address").val(result.User.resident_address);
-				loadBookTable();
-			}
-			else {
-				showModal("Lỗi bạn đọc", "Không tìm thấy bạn đọc có mã " + readerCode + " ,vui lòng thử lại", true);
+	if (readerCode != "") {
+		jQuery.ajax({
+			url: "getCiculation",
+			type: "POST",
+			data: {"readerCode": readerCode},
+			dataType: 'json',
+			beforeSend: function() {
+				showIndicator();
+			},
+			complete: function() {
+				hideIndicator();
+			},
+			success: function(result) {
+				console.log(result);
+				if (result.length !== 0) {
+					//var output = $('#reader-data-template').parseTemplate(result);
+					//$("#reader-data").html(output);
+					$("#reader-code").val(result.User.username);
+					$("#reader-status").val(result.Reader.status);
+					$("#reader-type").val(result.Reader.is_teacher);
+					$("#reader-fullname").val(result.User.fullname);
+					$("#reader-department").val(result.Department.name);
+					$("#reader-address").val(result.User.resident_address);
+					loadBookTable();
+				}
+				else {
+					showModal("Lỗi bạn đọc", "Không tìm thấy bạn đọc có mã " + readerCode + " ,vui lòng thử lại", true);
+					clearReader();
+					return false;
+				}
+
+			},
+			error: function() {
+				showModal("Lỗi hệ thống", "Hệ thống phát sinh lỗi, xin lỗi vì sự bất tiện này !", true);
 				clearReader();
 				return false;
 			}
+		});
+	}
 
-		},
-		error: function() {
-			showModal("Lỗi hệ thống", "Hệ thống phát sinh lỗi, xin lỗi vì sự bất tiện này !", true);
-			clearReader();
-			return false;
-		}
-	});
 
 });
 
@@ -111,6 +120,12 @@ function loadBookTable() {
 		type: "POST",
 		data: {"readerCode": readerCode},
 		dataType: 'text',
+		beforeSend: function() {
+			showIndicator();
+		},
+		complete: function() {
+			hideIndicator();
+		},
 		success: function(books) {
 			console.log(books);
 			$("#book-ciculation").html(books);
@@ -127,49 +142,58 @@ function loadBookTable() {
 $("#book-code").change(function() {
 	var bookCode = $("#book-code").val();
 	var readerCode = $("#reader-code").val();
-	jQuery.ajax({
-		url: "getBook",
-		type: "POST",
-		data: {"bookCode": bookCode},
-		dataType: 'json',
-		success: function(book) {
-			console.log(book);
-			if (book.length !== 0) {
-				$("#book-code").val(book.BookSerial.barcode);
-				$("#book-name").val(book.Book.title);
-				$("#book-authors").val(book.Book.authors);
-				if (book.BookSerial.status == true) {
-					$("#book-status").val("Có Sẵn");
-				}
-				else {
-					$("#book-status").val("Đã được mượn");
-				}
-				$("#book-date-return").val(book.Ciculation.date_return);
-				$("#book-reader").val(book.Ciculation.reader);
-				$("#book-serial-id").val(book.BookSerial.id);
+	if (bookCode != "") {
+		jQuery.ajax({
+			url: "getBook",
+			type: "POST",
+			data: {"bookCode": bookCode},
+			dataType: 'json',
+			beforeSend: function() {
+				showIndicator();
+			},
+			complete: function() {
+				hideIndicator();
+			},
+			success: function(book) {
+				console.log(book);
+				if (book.length !== 0) {
+					$("#book-code").val(book.BookSerial.barcode);
+					$("#book-name").val(book.Book.title);
+					$("#book-authors").val(book.Book.authors);
+					if (book.BookSerial.status == true) {
+						$("#book-status").val("Có Sẵn");
+					}
+					else {
+						$("#book-status").val("Đã được mượn");
+					}
+					$("#book-date-return").val(book.Ciculation.date_return);
+					$("#book-reader").val(book.Ciculation.reader);
+					$("#book-serial-id").val(book.BookSerial.id);
 
-				if (book.BookSerial.status && readerCode != "") {
-					$("#btn-book-borrow").removeClass("disabled");
-				}
-				else if (book.Ciculation.reader == readerCode) {
-					$("#btn-book-return").removeClass("disabled");
-				}
-				$("#book-code").val(book.BookSerial.barcode);
-				$("#book-name").val(book.Book.title);
-				$("#book-authors").val(book.Book.authors);
-				$("#book-reader").val(book.Ciculation.reader);
+					if (book.BookSerial.status && readerCode != "") {
+						$("#btn-book-borrow").removeClass("disabled");
+					}
+					else if (book.Ciculation.reader == readerCode) {
+						$("#btn-book-return").removeClass("disabled");
+					}
+					$("#book-code").val(book.BookSerial.barcode);
+					$("#book-name").val(book.Book.title);
+					$("#book-authors").val(book.Book.authors);
+					$("#book-reader").val(book.Ciculation.reader);
 
-			} else {
-				showModal("Lỗi tài liệu", "Không tìm thấy tài liệu có mã " + $("#book-code").val() + ", vui lòng thử lại", true);
-				clearBook();
+				} else {
+					showModal("Lỗi tài liệu", "Không tìm thấy tài liệu có mã " + $("#book-code").val() + ", vui lòng thử lại", true);
+					clearBook();
+					return false;
+				}
+			},
+			error: function() {
+				showModal("Lỗi hệ thống", "Hệ thống phát sinh lỗi, xin lỗi vì sự bất tiện này !", true);
 				return false;
 			}
-		},
-		error: function() {
-			showModal("Lỗi hệ thống", "Hệ thống phát sinh lỗi, xin lỗi vì sự bất tiện này !", true);
-			return false;
-		}
-	});
+		});
+	}
+
 });
 
 //Borrow book
@@ -183,6 +207,12 @@ $("#btn-book-borrow").click(function() {
 			type: "POST",
 			data: {"readerCode": readerCode, "bookCode": bookCode},
 			dataType: 'json',
+			beforeSend: function() {
+				showIndicator();
+			},
+			complete: function() {
+				hideIndicator();
+			},
 			success: function(result) {
 				if (result.status == 0) {
 					showModal("Lỗi mượn sách", result.message, true);
@@ -212,6 +242,12 @@ $("#btn-book-return").click(function() {
 			type: "POST",
 			data: {"readerCode": readerCode, "bookCode": bookCode},
 			dataType: 'json',
+			beforeSend: function() {
+				showIndicator();
+			},
+			complete: function() {
+				hideIndicator();
+			},
 			success: function(result) {
 				if (result.status == 0) {
 					showModal("Lỗi mượn sách", result.message, true);
@@ -257,7 +293,7 @@ function clearReader() {
 }
 
 
-function clearBookTable(){
+function clearBookTable() {
 	$("#book-ciculation tbody").html("");
 }
 //Renew Book
@@ -300,9 +336,56 @@ function showModal(title, content, error) {
 	$("#my-modal").modal('show');
 
 }
+
+function showIndicator() {
+	//$("#indicator").modal('show');
+	$("#indicator").show();
+}
+function hideIndicator() {
+	//$("#indicator").modal('hide');
+	$("#indicator").hide();
+}
 //close the modal that is showing
 $("#x-close").click(function() {
 	$("#my-modal").modal('hide');
+});
+
+/**
+ * Log
+ * */
+
+$("#log-type-select").on("change", function() {
+	var logType = $("#log-type-select").val();
+        console.log('type change');
+	jQuery.ajax({
+		url: "loadLogs",
+		type: "POST",
+		data: {"logType": logType},
+		dataType: 'json',
+		success: function(result) {
+			$("#log-data-table").html("");
+			//var length = result.logs.length;
+			var logs = result.logs;
+			for (var i = 0 ; i < logs.length; i++) {
+				var tr = "";
+				tr += "<tr>";
+				//tr += '<td><input type="checkbox" value="' + result.logs[i].Log.id + '"/></td>';
+				tr += "<td" + i + "</td>";
+				tr += "<td>" + logs[i].Log.reader_name + "</td>";
+				tr += "<td>" + logs[i].Log.content + "</td>";
+				tr += "<td>" + logs[i].Log.created + "</td>";
+				tr += "</tr>";
+				$("#log-data-table").append(tr);
+			}
+			$('tbody tr:even').addClass("alt-row");
+			$("#log-offset").val(result.offset);
+		},
+		error: function() {
+			clearBook();
+			showModal("Lỗi hệ thống", "Hệ thống phát sinh lỗi, xin lỗi vì sự bất tiện này !", true);
+			return false;
+		}
+	});
 });
 
 

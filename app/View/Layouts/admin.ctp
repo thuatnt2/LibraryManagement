@@ -66,6 +66,10 @@
 					</div><!-- /.modal-content -->
 				</div><!-- /.modal-dialog -->
 			</div><!-- /.modal -->
+			
+			<div style="display: none; position: fixed; top: 35%; left: 50%;" id="indicator">
+				<img src="<?php echo $this->Html->url('/images/indicator.gif');?>"/>
+			</div>
 
 
         </div>
