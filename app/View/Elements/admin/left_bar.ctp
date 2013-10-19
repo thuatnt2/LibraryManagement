@@ -55,8 +55,8 @@
                     Quản lý lưu thông
                 </a>
                 <ul>
-                    <li><a href="#">Tài liệu đang mượn</a></li>
-                    <li><a href="#">Tài liệu mượn quá hạn</a></li>
+                    <!--<li><a href="#">Tài liệu đang mượn</a></li>-->
+                    <!--<li><a href="#">Tài liệu mượn quá hạn</a></li>-->
                     <li><a href="#">Mượn trả tài liệu</a></li>
                     <li><a href="#">Lịch sử lưu thông</a></li>
                     <li><a href="#">Tài liệu đăng ký mượn online</a></li>
@@ -87,7 +87,11 @@
                     <li><a href="#">Tài liệu mượn quá hạn</a></li>
                 </ul>
             </li>      
-
+             <li>
+                <a href="#" class="nav-top-item" id="nav-item-settings">
+                    Trợ giúp
+                </a>
+            </li> 
         </ul> <!-- End #main-nav -->
 
         <div id="messages" style="display: none"> <!-- Messages are shown when a link with these attributes are clicked: href="#messages" rel="modal"  -->
