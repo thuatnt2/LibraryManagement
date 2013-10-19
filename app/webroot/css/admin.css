@@ -910,3 +910,8 @@ div.wysiwyg iframe { border: 0; margin: 5px 0 0 0; clear: left; width: 97.5% !im
 #shortcuts-wrapper {
     overflow: hidden;
 }
+
+table#log-table{
+	border: 1px solid grey;
+	border-radius: 5px !important;
+}

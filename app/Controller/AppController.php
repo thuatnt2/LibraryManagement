@@ -77,10 +77,11 @@ class AppController extends Controller {
 		exit();
 	}
 	
-	public function saveLog( $content,$reader_name , $type){
+	public function saveLog( $content,$reader_name, $reader_code , $type){
 		$this->loadModel('Log');
 		$data = array();
-		$data['Log']['reader_name'] = $reader_name == '' ? $this->Session->read('currentReader') : $reader_name;
+		$data['Log']['reader_name'] =  $reader_name;
+		$data['Log']['reader_code'] =  $reader_code;
 		$user = $user = $this->UserAuth->getUser();
 		$data['Log']['librarian'] = $user['User']['fullname'];
 		$data['Log']['content'] = $content;

@@ -353,24 +353,40 @@ $("#x-close").click(function() {
 /**
  * Log
  * */
-
+//load when change log type
 $("#log-type-select").on("change", function() {
 	var logType = $("#log-type-select").val();
-        console.log('type change');
+	var keyword = $("#log-keyword").val();
+	keyword = $.trim(keyword);
+	loadLogTable(logType, keyword);
+
+});
+
+//load when input keyword to search
+
+$("#log-keyword").on('input', function() {
+	var logType = $("#log-type-select").val();
+	var keyword = $("#log-keyword").val();
+	keyword = $.trim(keyword);
+	loadLogTable(logType, keyword);
+});
+
+function loadLogTable(logType, logKeyword) {
 	jQuery.ajax({
 		url: "loadLogs",
 		type: "POST",
-		data: {"logType": logType},
+		data: {"logType": logType, 'logKeywork': logKeyword},
 		dataType: 'json',
 		success: function(result) {
 			$("#log-data-table").html("");
 			//var length = result.logs.length;
 			var logs = result.logs;
-			for (var i = 0 ; i < logs.length; i++) {
+			for (var i = 0; i < logs.length; i++) {
 				var tr = "";
 				tr += "<tr>";
-				//tr += '<td><input type="checkbox" value="' + result.logs[i].Log.id + '"/></td>';
-				tr += "<td" + i + "</td>";
+				tr += '<td><input type="checkbox" value="' + result.logs[i].Log.id + '"/></td>';
+				//tr += "<td" + i + "</td>";
+				tr += "<td>" + logs[i].Log.reader_code + "</td>";
 				tr += "<td>" + logs[i].Log.reader_name + "</td>";
 				tr += "<td>" + logs[i].Log.content + "</td>";
 				tr += "<td>" + logs[i].Log.created + "</td>";
@@ -386,6 +402,43 @@ $("#log-type-select").on("change", function() {
 			return false;
 		}
 	});
+}
+
+$("#log-check-all").on('click', function() {
+	var status = this.checked;
+	$('#log-table input[type=checkbox]').each(function() {
+		this.checked = status;
+	});
+});
+
+$("#btn-delete-logs").click(function() {
+	var ids = '';
+	var logType = $("#log-type-select").val();
+	var keyword = $("#log-keyword").val();
+	$('#log-data-table input[type=checkbox]').each(function() {
+		if (this.checked)
+			ids = ids + this.value + ',';
+	});	
+	if (ids != '') {
+		jQuery.ajax({
+			url: "deleteLogs",
+			type: "POST",
+			data: {'ids': ids},
+			dataType: 'json',
+			success: function(result) {
+				showModal('Thông báo', result.message,false);
+				loadLogTable(logType, keyword);
+			},
+			error: function() {
+				clearBook();
+				showModal("Lỗi hệ thống", "Hệ thống phát sinh lỗi, xin lỗi vì sự bất tiện này !", true);
+				return false;
+			}
+		});
+	}
+	else {
+		showModal('Lỗi', 'Bạn chưa chọn mục cần xóa', true);
+	}
 });
 
 
