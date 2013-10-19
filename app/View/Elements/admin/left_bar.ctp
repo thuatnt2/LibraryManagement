@@ -20,9 +20,9 @@
                     Hệ Thống
                 </a> 
                 <ul>
-                    <li><a href="#">Quản lý lớp</a></li>
-                    <li><a href="/articles" >Quản lý khoa</a></li>
-                    <li><a href="#">Quản lý người dùng</a></li>
+                     <li><?php echo $this->Html->link('Quản lý lớp',array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'index')) ?></li>
+                     <li><?php echo $this->Html->link('Quản lý khoa', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'index')) ?></li>
+                     <li><?php echo $this->Html->link('Quản lý người dùng', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'index')) ?></li>
                     <li><a href="#">Chính sách lưu thông</a></li>
                 </ul>
             </li>
@@ -32,9 +32,9 @@
                     Bài viết
                 </a>
                 <ul>
-                     <li><a class="current" href="/articles" >Danh mục bài viết</a></li>
-                    <li><a class="current" href="/articles" >Danh sách bài viết</a></li>
-                    <li><a href="#">Đăng bài viết mới</a></li> <!-- Add class "current" to sub menu items also -->
+                      <li><?php echo $this->Html->link('Danh mục bài viết', array('plugin' => null,'controller' => 'articles', 'action' => 'index')) ?></li>
+                      <li><?php echo $this->Html->link('Danh sách bài viết', array('plugin' => null,'controller' => 'articles', 'action' => 'index')) ?></li>
+                      <li><?php echo $this->Html->link('Đăng bài viết mới', array('plugin' => null,'controller' => 'articles', 'action' => 'add')) ?></li>
                 </ul>
             </li>
 
@@ -43,10 +43,10 @@
                     Quản lý bạn đọc
                 </a>
                 <ul>
-                    <li><a href="#">Danh sách bạn đọc</a></li>
-                    <li><a href="#">Đăng ký bạn đọc mới</a></li>
-                    <li><a href="#">Bạn đọc vi phạm</a></li>
-                    <li><a href="#">Bạn đọc ngừng lưu thông</a></li>
+                    <li><?php echo $this->Html->link('Danh sách bạn đọc', array('plugin' => 'usermgmt', 'controller' => 'readers', 'action' => 'index')) ?></li>
+                    <li><?php echo $this->Html->link('Đăng ký bạn đọc mới', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'addReader')) ?></li>
+                    <li><?php echo $this->Html->link('Bạn đọc vi phạm', '#') ?></li>
+                    <li><?php echo $this->Html->link('Bạn đọc ngừng lưu thông', '#') ?></li>
                 </ul>
             </li>
 
@@ -55,10 +55,8 @@
                     Quản lý lưu thông
                 </a>
                 <ul>
-                    <!--<li><a href="#">Tài liệu đang mượn</a></li>-->
-                    <!--<li><a href="#">Tài liệu mượn quá hạn</a></li>-->
-                    <li><a href="#">Mượn trả tài liệu</a></li>
-                    <li><a href="#">Lịch sử lưu thông</a></li>
+                    <li><?php echo $this->Html->link('Mượn trả tài liệu', array('plugin' => null,'controller' => 'ciculations', 'action' => 'bookBorrowed')) ?></li>
+                    <li><?php echo $this->Html->link('Lịch sử lưu thông', array('plugin' => null,'controller' => 'admin', 'action' => 'logs')) ?></li>
                     <li><a href="#">Tài liệu đăng ký mượn online</a></li>
                 </ul>
             </li>
@@ -67,9 +65,9 @@
                     Quản lý tài liệu
                 </a>
                 <ul>
-                    <li><a href="#">Danh sách tài liệu</a></li>
-
-                    <li><?php echo $this->Html->link('Biên mục tài liệu', array('controller' => 'books', 'action' => 'add')) ?></li>
+                    <!--<li><a href="#">Danh sách tài liệu</a></li>-->
+                     <li><?php echo $this->Html->link('Danh sách tài liệu', array('plugin' => null,'controller' => 'books', 'action' => 'index')) ?></li>
+                    <li><?php echo $this->Html->link('Biên mục tài liệu', array('plugin' => null,'controller' => 'books', 'action' => 'add')) ?></li>
                     <li><a href="#">Quản lý tác giả</a></li>
                     <li><a href="#">Danh mục tài liệu</a></li>
                     <li><a href="#">Thể loại tài liệu</a></li>

@@ -26,10 +26,10 @@
                         if (!empty($faculties)) {
                             foreach ($faculties as $row) {
                                 echo "<tr>";
-                                echo "<td>" . h($row['Faculty']['faculty_name']) . "</td>";
+                                echo "<td>" . h($row['Faculty']['name']) . "</td>";
                                 echo "<td>" . date('d-M-Y', strtotime($row['Faculty']['created'])) . "</td>";
                                 echo "<td>";
-                                if ($row['Faculty']['actived'] == 1) {
+                                if ($row['Faculty']['is_active'] == 1) {
                                     echo "<span class='icon'><a href='" . $this->Html->url('/usermgmt/faculties/active/' . $row['Faculty']['id'] . '/0') . "'><img src='" . SITE_URL . "usermgmt/img/approve.png' border='0'></a></span>";
                                 } else {
                                     echo "<span class='icon'><a href='" . $this->Html->url('/usermgmt/faculties/active/' . $row['Faculty']['id'] . '/1') . "'><img src='" . SITE_URL . "usermgmt/img/dis-approve.png' border='0'></a></span>";

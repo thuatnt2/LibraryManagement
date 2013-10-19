@@ -15,8 +15,8 @@ Router::connect('/index', array('controller' => 'index', 'action' => 'index'));
 /*
  * Routing for articles
  */
-Router::connect('/bai-viet', array('controller' => 'articles', 'action' => 'index'));
-Router::connect('/dang-bai-viet', array('controller' => 'articles', 'action' => 'add'));
+Router::connect('/admin/bai-viet', array('controller' => 'articles', 'action' => 'index'));
+Router::connect('/admin/dang-bai-viet', array('controller' => 'articles', 'action' => 'add'));
 Router::connect('/tin-tuc', array('controller' => 'articles', 'action' => 'userIndex'));
 Router::connect(
         '/tin-tuc/:id-:slug', array('controller' => 'articles', 'action' => 'userView'), array('pass' => array('id', 'slug'), 'id' => '[0-9]+')
@@ -54,7 +54,7 @@ Router::connect('/lich-su-luu-thong', array('controller' => 'admin', 'action' =>
 Router::connect('/booksCiculation', array('controller' => 'ciculations', 'action' => 'booksCiculation'));
 Router::connect('/bien-muc', array('controller' => 'books', 'action' => 'add'));
 Router::connect('/them-sach/*', array('controller' => 'books', 'action' => 'view'));
-Router::connect('/tai-lieu', array('controller' => 'books', 'action' => 'index'));
+Router::connect('/danh-sach-tai-lieu', array('controller' => 'books', 'action' => 'index'));
 
 /**
  * $these routers are severed for ajax load . If you change , I'll kill you. 

@@ -45,17 +45,17 @@ Router::connect('/deleteGroup/*', array('plugin' => 'usermgmt', 'controller' => 
 Router::connect('/emailVerification', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'emailVerification'));
 
 //Readers
-Router::connect('/readers', array('plugin' => 'usermgmt', 'controller' => 'readers', 'action' => 'index'));
+Router::connect('/danh-sach-ban-doc', array('plugin' => 'usermgmt', 'controller' => 'readers', 'action' => 'index'));
 Router::connect('/dang_ky_ban_doc', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'addReader'));
 Router::connect('/deleteReader', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'deleteReader'));
 
 //faculties
-Router::connect('/faculties', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'index'));
+Router::connect('/danh-sach-khoa', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'index'));
 Router::connect('/addFaculty', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'add'));
 Router::connect('/editFaculty/*', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'edit'));
 Router::connect('/deleteFaculty/*', array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'delete'));
 //department
-Router::connect('/departments', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'index'));
+Router::connect('/danh-sach-lop', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'index'));
 Router::connect('/addDepartment', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'add'));
 Router::connect('/editDepartment/*', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'edit'));
 Router::connect('/deleteDepartment/*', array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'delete'));
