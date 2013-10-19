@@ -25,7 +25,7 @@
     </div>
    
     <div class="book-right"> 
-             <?php echo $this->Html->image('/images/image02.jpg') ?>
+             <?php echo $this->Html->image('/images/image03.jpg') ?>
     </div>
     
 

@@ -21,7 +21,8 @@
     <body style="padding: 10px 0 10px 0;">
         <!-- Header -->
         <div id="header" class="shell">
-            <div id="login-details" style="height: 0px;">
+
+            <div id="login-details">
                 <?php if ($this->UserAuth->isLogged()): ?>
                     <p><strong>Chào mừng</strong>, <a href="#" id="user"><?php echo $this->Session->read('UserAuth.User.username'); ?></a></p>
                     &nbsp|&nbsp
@@ -31,8 +32,8 @@
                     <div class="loginBox">
                         <?php echo $this->Form->create('User', array('url' => array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'login'))) ?>
                         <div class="loginBox">
-                            <?php echo $this->Form->input('username', array('required' => 'required', 'div' => false, 'label' => false, 'placeholder' => 'Card code', 'id' => 'username', 'class' => 'textboxLogin')) ?>
-                            <?php echo $this->Form->input('password', array('type' => 'password', 'div' => false, 'label' => false, 'required' => 'required', 'id' => 'password', 'class' => 'textboxLogin')) ?>
+                            <?php echo $this->Form->input('username', array('required' => 'required', 'div' => false, 'label' => false, 'placeholder' => 'Tài khoản', 'id' => 'username', 'class' => 'textboxLogin')) ?>
+                            <?php echo $this->Form->input('password', array('type' => 'password', 'div' => false, 'label' => false, 'placeholder' => 'Mật khẩu', 'required' => 'required', 'id' => 'password', 'class' => 'textboxLogin')) ?>
                             <span > 
                                 <input type="submit" name="submit" class="btn btn-small" value="Đăng nhập" style="margin-bottom: 10px;">               
                             </span>
@@ -68,12 +69,20 @@
             <!--sidbar-->
             <?php echo $this->element('frontend/sidebar') ?>
             <div id="content" class="page-curl">
-                    <?php echo $this->fetch('content'); ?>
+                <?php echo $this->fetch('content'); ?>
             </div>
             <div class="cl">&nbsp;</div>
             <?php
             echo $this->element('frontend/footer')
             ?>
+        </div>
+        <div id="right-bar" style="float:left">
+            <?php if ($this->UserAuth->isLogged()): ?>
+            <span class="" title="Giỏ sách"><img src="/images/cart-ico.png"/></span>
+            <span title="Thông báo"><img src="/images/bell-ico.png"/></span>
+                <!--<a href="javascript:void(0);"><img src="/images/cart-ico.png"/>  Giỏ sách: 0 </a>-->
+                
+            <?php endif; ?>  
         </div>
     </body>
 </html>
