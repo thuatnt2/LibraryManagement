@@ -51,14 +51,19 @@ Router::connect('/tim-kiem', array('controller' => 'bookSearch', 'action' => 'us
  */
 Router::connect('/muon-tra-tai-lieu', array('controller' => 'ciculations', 'action' => 'bookBorrowed'));
 Router::connect('/lich-su-luu-thong', array('controller' => 'admin', 'action' => 'logs'));
-Router::connect('/getCiculation', array('controller' => 'ciculations', 'action' => 'getCiculation'));
 Router::connect('/booksCiculation', array('controller' => 'ciculations', 'action' => 'booksCiculation'));
+Router::connect('/bien-muc', array('controller' => 'books', 'action' => 'add'));
+Router::connect('/tai-lieu', array('controller' => 'books', 'action' => 'index'));
+
+/**
+ * $these routers are severed for ajax load . If you change , I'll kill you. 
+ */
+Router::connect('/loadLogs', array('controller' => 'admin', 'action' => 'loadLogs'));
+Router::connect('/getCiculation', array('controller' => 'ciculations', 'action' => 'getCiculation'));
 Router::connect('/getBook', array('controller' => 'bookSerials', 'action' => 'getBook'));
 Router::connect('/borrowBook', array('controller' => 'ciculations', 'action' => 'borrowBook'));
 Router::connect('/returnBook', array('controller' => 'ciculations', 'action' => 'returnBook'));
 Router::connect('/renewBook', array('controller' => 'ciculations', 'action' => 'renewBook'));
-Router::connect('/bien-muc', array('controller' => 'books', 'action' => 'add'));
-Router::connect('/tai-lieu', array('controller' => 'books', 'action' => 'index'));
 CakePlugin::routes();
 
 /**
