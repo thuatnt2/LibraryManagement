@@ -74,7 +74,7 @@
 
         </div>
 		<script type="text/javascript">
-			var base_url = '<?php echo $this->Html->webroot('/'); ?>';
+			var base_url = window.location.hostname;
         </script>
 		<?php
 		echo $this->Html->script(array(

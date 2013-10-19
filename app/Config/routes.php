@@ -53,6 +53,7 @@ Router::connect('/muon-tra-tai-lieu', array('controller' => 'ciculations', 'acti
 Router::connect('/lich-su-luu-thong', array('controller' => 'admin', 'action' => 'logs'));
 Router::connect('/booksCiculation', array('controller' => 'ciculations', 'action' => 'booksCiculation'));
 Router::connect('/bien-muc', array('controller' => 'books', 'action' => 'add'));
+Router::connect('/them-sach/*', array('controller' => 'books', 'action' => 'view'));
 Router::connect('/tai-lieu', array('controller' => 'books', 'action' => 'index'));
 
 /**
@@ -64,6 +65,7 @@ Router::connect('/getBook', array('controller' => 'bookSerials', 'action' => 'ge
 Router::connect('/borrowBook', array('controller' => 'ciculations', 'action' => 'borrowBook'));
 Router::connect('/returnBook', array('controller' => 'ciculations', 'action' => 'returnBook'));
 Router::connect('/renewBook', array('controller' => 'ciculations', 'action' => 'renewBook'));
+Router::connect('/deleteBookSerial', array('controller' => 'bookSerials', 'action' => 'delete'));
 CakePlugin::routes();
 
 /**
