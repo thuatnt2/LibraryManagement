@@ -26,16 +26,17 @@ Router::connect(
  */
 Router::connect('/danh-muc', array('controller' => 'bookCategories', 'action' => 'userIndex'));
 Router::connect(
-        '/danh-muc/:id-:slug', array('controller' => 'bookCategories', 'action' => 'userView'), array('pass' => array('id', 'slug'),'id' => '[0-9]+')
+        '/danh-muc/:id-:slug', array('controller' => 'bookCategories', 'action' => 'userView'), array('pass' => array('id', 'slug'), 'id' => '[0-9]+')
 );
 Router::connect(
-        '/the-loai/:id-:slug', array('controller' => 'bookTypes', 'action' => 'userView'), array('pass' => array('id', 'slug'),'id' => '[0-9]+')
+        '/the-loai/:id-:slug', array('controller' => 'bookTypes', 'action' => 'userView'), array('pass' => array('id', 'slug'), 'id' => '[0-9]+')
 );
 Router::connect(
-        '/tai-lieu/:id', array('controller' => 'books', 'action' => 'userView'), array('pass' => array('id'),'id' => '[0-9]+')
+        '/tai-lieu/:id', array('controller' => 'books', 'action' => 'userView'), array('pass' => array('id'), 'id' => '[0-9]+')
 );
 Router::connect('/tim-kiem', array('controller' => 'bookSearch', 'action' => 'userIndex'));
 
+Router::connect('/search-in-category', array('controller' => 'bookCategories', 'action' => 'userSearch',"[method]" => 'GET'));
 
 /**
  * ...and connect the rest of 'Pages' controller's urls.

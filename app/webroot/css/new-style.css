@@ -60,7 +60,16 @@ textarea { overflow: auto; }
 #logo span a { color: #44acd5; }
 #logo h1 a { display: block; height: 41px;  font-size: 0; line-height: 0; }
 
-#login-details { position: absolute; right: 60px; top: 16px; font-size: 12px; line-height: 16px; color: #707070; }
+#login-details { 
+    position: absolute; 
+    right: 60px; 
+    top: 16px; 
+    font-size: 12px; 
+    line-height: 16px; 
+    color: #707070;
+    border-bottom: 1px solid #E6E4E4;
+    height: 18px;
+}
 #login-details #user { color: #0182b5; text-decoration: underline; font-weight:bold; }
 #login-details #user:hover { color: #000; text-decoration: underline; }
 #login-details .sum { color: #0182b5; }
@@ -128,7 +137,7 @@ textarea { overflow: auto; }
 
 
 .prefer_books ul { list-style: none; position: relative; width: 660px; margin-left: -7px; width: 660px; }
-.prefer_books ul li { float: left; display: inline; width: 150px; height: 343px; margin: 0 15px 14px 0; }
+.prefer_books ul li { float: left; display: inline; width: 150px; height: 230px; margin: 0 15px 14px 0; }
 .prefer_books ul li a.info { display: block; padding: 7px; width: 136px; height: 329px; }
 .prefer_books ul li a.info:hover {
     /*background: url(/images/product-hover.png) no-repeat 0 0;*/ 

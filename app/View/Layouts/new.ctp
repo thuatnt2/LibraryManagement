@@ -11,7 +11,7 @@
         echo $this->Html->css(array(
             'new-style', 'custome', 'bootstrap'));
         echo $this->Html->script(array(
-            'jquery-1.9.1.min', 'vendor/bootstrap.min'
+            'jquery-1.9.1.min'
         ));
         echo $this->fetch('meta');
         echo $this->fetch('css');
@@ -24,9 +24,12 @@
 
             <div id="login-details">
                 <?php if ($this->UserAuth->isLogged()): ?>
-                    <p><strong>Chào mừng</strong>, <a href="#" id="user"><?php echo $this->Session->read('UserAuth.User.username'); ?></a></p>
+                    <p><strong>Chào mừng</strong>, 
+                        <a href="#" id="nameuserlogged"><?php echo $this->Session->read('UserAuth.User.username'); ?>
+                        </a>
+                    </p>
                     &nbsp|&nbsp
-                    <a  href="<?php echo $this->Html->url('/logout') ?>">(Đăng xuất)</a>
+                    <a href="<?php echo $this->Html->url('/logout') ?>">Đăng xuất</a>
                 <?php else: ?>
 
                     <div class="loginBox">

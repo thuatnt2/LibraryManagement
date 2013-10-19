@@ -120,6 +120,7 @@ class ArticlesController extends AppController {
     }
 
     public function userView() {
+         $this->set('title_for_layout','Thư viện - Tin tức');
         $this->layout = 'new';
         #FIXME, check record not found
         $article =  $this->Article->read(null, $this->request->params['id']);
@@ -127,6 +128,7 @@ class ArticlesController extends AppController {
     }
 
     public function userIndex() {
+        $this->set('title_for_layout','Thư viện - Tin tức');
         $this->layout = 'new';
         //Show 3 lastest articles
         $articles = $this->Article->recent(3);
