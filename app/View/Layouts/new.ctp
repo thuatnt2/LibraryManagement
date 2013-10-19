@@ -76,13 +76,26 @@
             echo $this->element('frontend/footer')
             ?>
         </div>
-        <div id="right-bar" style="float:left">
-            <?php if ($this->UserAuth->isLogged()): ?>
-            <span class="" title="Giỏ sách"><img src="/images/cart-ico.png"/></span>
-            <span title="Thông báo"><img src="/images/bell-ico.png"/></span>
-                <!--<a href="javascript:void(0);"><img src="/images/cart-ico.png"/>  Giỏ sách: 0 </a>-->
-                
-            <?php endif; ?>  
-        </div>
+        <?php if ($this->UserAuth->isLogged()): ?>
+            <div id="right-bar">
+
+                <span class="" title="Giỏ sách">&nbsp;<img src="/images/cart-ico.png"/>&nbsp;&nbsp;&nbsp;&nbsp;Giỏ sách: <span id="books-cart-counter">1</span></span>
+                <br />
+                <span title="Thông báo">&nbsp;<img src="/images/bell-ico.png"/>&nbsp;&nbsp;&nbsp;Thông báo: <span id="notice-counter">2</span></span>
+
+            </div>
+        <?php endif; ?> 
+        <script type="text/javascript">
+            $('#right-bar').hover(function() {
+                $(this).animate({
+                    right: "-18px"
+                }, 400);
+            });
+            $('#right-bar').mouseleave(function() {
+                $(this).animate({
+                    right: "-107px"
+                }, 200);
+            });
+        </script>
     </body>
 </html>

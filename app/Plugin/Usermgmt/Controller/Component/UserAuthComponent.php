@@ -80,7 +80,8 @@ class UserAuthComponent extends Component {
             'bookCategories/userView',
             'bookTypes/userView',
             'books/userView',
-            'bookSearch/userIndex'
+            'bookSearch/userIndex',
+            'bookCategories/userSearch',
         );
         $access = str_replace(' ', '', ucwords(str_replace('_', ' ', $controller))) . '/' . $action;
         $allControllers = $this->ControllerList->getControllerWithMethods();
