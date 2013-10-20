@@ -15,14 +15,13 @@
 		<?php
 		echo $this->Html->css(array(
 			'admin_reset',
-//			'vendor/bootstrap.min',
-                        'bootstrap-3',
+			'vendor/bootstrap.min',
 			'vendor/bootstrap-theme.min',
 			'admin',
 			'admin_invalid',
 			'/usermgmt/css/umstyle',
-//			'/js/vendor/fancybox/jquery.fancybox',
-//			'/js/vendor/jquery-ui/jquery.ui.all',
+			'/js/vendor/fancybox/jquery.fancybox',
+			'/js/vendor/jquery-ui/jquery.ui.all',
 			'admin_custom',
 		));
 
