@@ -47,45 +47,83 @@
                                 <div class="umstyle4" ><?php echo $book['Book']['title'] ?></div>
                                 <div style="clear:both"></div>
                             </div>
+                           <div>
+                                <div class="umstyle3"><?php echo 'Số lượng:'; ?></div>
+                                <div class="umstyle4" id="book_total" ><?php echo $book['Book']['total'] ?></div>
+                                <div style="clear:both"></div>
+                            </div>
                              <div>
                                 <div class="umstyle3"><?php echo 'Tác giả:'; ?></div>
-                                <div class="umstyle4" ><?php echo $book['Book']['title'] ?></div>
+                                <div class="umstyle4" ><?php echo $book['Book']['authors'] ?></div>
                                 <div style="clear:both"></div>
                             </div> 
                              <div>
                                 <div class="umstyle3"><?php echo 'Số trang:'; ?></div>
-                                <div class="umstyle4" ><?php echo $book['Book']['title'] ?></div>
+                                <div class="umstyle4" ><?php echo $book['Book']['number_of_pages'] ?></div>
                                 <div style="clear:both"></div>
                             </div> 
                             <div>
                                 <div class="umstyle3"><?php echo 'Nhà xuất bản:'; ?></div>
-                                <div class="umstyle4" ><?php echo $book['Book']['title'] ?></div>
+                                <div class="umstyle4" ><?php echo $book['Book']['publisher'] ?></div>
                                 <div style="clear:both"></div>
                             </div> 
                             <div>
                                 <div class="umstyle3"><?php echo 'Năm xuất bản:'; ?></div>
-                                <div class="umstyle4" ><?php echo $book['Book']['title'] ?></div>
+                                <div class="umstyle4" ><?php echo $book['Book']['year_of_publish'] ?></div>
                                 <div style="clear:both"></div>
                             </div> 
+                           <div>
+                                <div class="umstyle3"><?php echo 'Vị trí:'; ?></div>
+                                <div class="umstyle4" ><?php echo $book['Book']['location'] ?></div>
+                                <div style="clear:both"></div>
+                            </div>
+                           <div>
+                                <div class="umstyle3"><?php echo 'Mô tả:'; ?></div>
+                                <div class="umstyle4" ><?php echo $book['Book']['description'] ?></div>
+                                <div style="clear:both"></div>
+                            </div>
                         </div>
+                        
                         <div class="span6">
                             <div>
                                 <div class="umstyle3"><?php echo 'Giá:'; ?></div>
-                                <div class="umstyle4" ><?php echo $book['Book']['title'] ?></div>
+                                <div class="umstyle4" ><?php echo $book['Book']['price'] ?></div>
                                 <div style="clear:both"></div>
                             </div>
                             <div>
                                 <div class="umstyle3"><?php echo 'Kích thước:'; ?></div>
-                                <div class="umstyle4" ><?php echo $book['Book']['title'] ?></div>
+                                <div class="umstyle4" ><?php echo $book['Book']['paper_size'] ?></div>
                                 <div style="clear:both"></div>
-                            </div> <div>
-                                <div class="umstyle3"><?php echo 'Tiêu đề:'; ?></div>
-                                <div class="umstyle4" ><?php echo $book['Book']['title'] ?></div>
+                            </div> 
+                            <div>
+                                <div class="umstyle3"><?php echo 'Hình thức sử dụng:'; ?></div>
+                                <div class="umstyle4" ><?php echo $book['Book']['used_as'] ?></div>
                                 <div style="clear:both"></div>
                             </div>
                             <div>
-                                <div class="umstyle3"><?php echo 'Số lượng:'; ?></div>
-                                <div class="umstyle4" id="book_total" ><?php echo $book['Book']['total'] ?></div>
+                                <div class="umstyle3"><?php echo 'Ngôn ngữ:'; ?></div>
+                                <div class="umstyle4" ><?php echo $book['Book']['language'] ?></div>
+                                <div style="clear:both"></div>
+                            </div>
+                            <div>
+                                <div class="umstyle3"><?php echo 'Thể loại:'; ?></div>
+                                <div class="umstyle4" ><?php echo $book['BookType']['name'] ?></div>
+                                <div style="clear:both"></div>
+                            </div>
+                              <div>
+                                <div class="umstyle3"><?php echo 'Danh mục:'; ?></div>
+                                <div class="umstyle4" ><?php echo $book['BookCategory']['name'] ?></div>
+                                <div style="clear:both"></div>
+                            </div>
+                         
+                             <div>
+                                <div class="umstyle3"><?php echo 'Ngày biên mục:'; ?></div>
+                                <div class="umstyle4" ><?php echo $book['Book']['created'] ?></div>
+                                <div style="clear:both"></div>
+                            </div>
+                            <div>
+                                <div class="umstyle3"><?php echo 'Người biên mục:'; ?></div>
+                                <div class="umstyle4" ><?php echo $book['Book']['user_created'] ?></div>
                                 <div style="clear:both"></div>
                             </div>
                         </div>

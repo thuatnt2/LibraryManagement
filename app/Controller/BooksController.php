@@ -42,7 +42,7 @@ class BooksController extends AppController {
      * @return void
      */
     public function view($book_id = null) {
-        $book = $this->Book->read('title, total, user_created', $book_id);
+        $book = $this->Book->find('first',array('conditions' => array('Book.id' => $book_id)));
         if ($this->request->is('post')) {
             $this->request->data['BookSerial']['status'] = 1;
             $this->request->data['BookSerial']['book_id'] = $book_id;
@@ -56,6 +56,7 @@ class BooksController extends AppController {
                 $this->Session->setFlash('Đã xảy ra lỗi, vui lòng thử lại', 'flash_error');
             }
         }
+        $this->log($book, 'debug');
         $sub_title = 'Thêm sách';
         $this->set(compact('book', 'sub_title'));
     }

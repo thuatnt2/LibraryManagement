@@ -5,11 +5,15 @@
     <div class="um_box_up"></div>
     <div class="um_box_mid">
         <div class="um_box_mid_content">
-            <div class="um_box_mid_content_top">
-                <span class="umstyle1"><?php echo __('All Groups'); ?></span>
-                <span class="umstyle2" style="float:right"><?php echo $this->Html->link(__("Home", true), "/") ?></span>
-                <div style="clear:both"></div>
+            <div class="form-horizontal">
+                <div class="span5 align-left" style="margin-left: 0px">
+                    <span class="umstyle1"><?php echo __('Danh sách khoa'); ?></span>
+                </div>
+                <div class="span2 align-right" align="right">
+                    <?php echo $this->Html->link('Thêm khoa',array('plugin' => 'usermgmt', 'controller' => 'faculties', 'action' => 'add'),array('class' => 'btn btn-primary btn-lg', 'escape' => false)) ?>
+                </div>
             </div>
+            <div style="clear:both"></div>
             <div class="umhr"></div>
             <div class="um_box_mid_content_mid" id="index">
                 <table cellspacing="0" cellpadding="0" width="100%" border="0" >
@@ -26,10 +30,10 @@
                         if (!empty($faculties)) {
                             foreach ($faculties as $row) {
                                 echo "<tr>";
-                                echo "<td>" . h($row['Faculty']['faculty_name']) . "</td>";
+                                echo "<td>" . h($row['Faculty']['name']) . "</td>";
                                 echo "<td>" . date('d-M-Y', strtotime($row['Faculty']['created'])) . "</td>";
                                 echo "<td>";
-                                if ($row['Faculty']['actived'] == 1) {
+                                if ($row['Faculty']['is_active'] == 1) {
                                     echo "<span class='icon'><a href='" . $this->Html->url('/usermgmt/faculties/active/' . $row['Faculty']['id'] . '/0') . "'><img src='" . SITE_URL . "usermgmt/img/approve.png' border='0'></a></span>";
                                 } else {
                                     echo "<span class='icon'><a href='" . $this->Html->url('/usermgmt/faculties/active/' . $row['Faculty']['id'] . '/1') . "'><img src='" . SITE_URL . "usermgmt/img/dis-approve.png' border='0'></a></span>";

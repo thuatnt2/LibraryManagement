@@ -5,8 +5,10 @@
     </div>
 
     <span class="content-header-right">
+
         <form class="search-in-category-form">
-            <input type ="hidden" name="category-id" value="<?php echo $bookCategory['BookCategory']['id'] ?>" />
+            <img id="book-searching-loading-indicator" src="/images/circle-loading.gif" style="display:none;"/>
+            <input type ="hidden" name="category_id" value="<?php echo $bookCategory['BookCategory']['id'] ?>" />
             <input type ='text' placeholder="Nhập tên sách ... " name="keyword" class="keyword"/>
             <button class="btn btn-small search-in-category-btn" type="submit" value="Tìm"><?php echo $this->Html->image('/images/search-ico-white.png') ?></button>
         </form> 
@@ -16,48 +18,43 @@
 <div class="clear-both"> </div>
 <div class="tab-div">
     <div class="tab-content">
-        <div class="books-in-category">
-            <div class="books-list ">
-                <?php foreach ($bookCategory['Book'] as $book): ?> 
-                    <div class="book-short-view">
-                        <div class="book-short-view-left">
-                            <a href="/tai-lieu/<?php echo $book['id'] ?>" class="info">
-                                <span class="holder">
-                                    <img src="/images/image06.jpg" alt="">
-                                </span>
-                            </a>
-                        </div>
-                        <div class="book-short-view-right">
-                            <a href="/tai-lieu/<?php echo $book['id'] ?>" class="info"><h4><?php echo $book['title'] ?></h4></a>
-                            <label> <strong>Tác giả:</strong> <?php echo $book['authors'] ?></label>
-                            <label> <strong>Nhà xuất bản:</strong> <?php echo $book['publisher'] ?></label>
-                            <span class="description"></span>
-                        </div>
-                    </div>
-                    <div class="clear-both"> </div>
-                <?php endforeach; ?>
-            </div>
+        <div id="books-in-category">
+            <?php echo $this->element('/bookcategories/books_in_category', array('books' => $bookCategory['Book'])) ?>
         </div>
     </div>
 
 </div>
 
 <script type="text/javascript">
-    $('.search-in-category-form').on('submit', function() {
-        var key = $(this).children('.keyword').val().trim();
-        // Check keyword is not blank
-        if (key.length !== 0) {
-            $.ajax({
-                url: '/search-in-category',
-                type: 'GET',
-                data: $(this).serialize(),
-                success: function(response) {
-                    console.log('success');
-                }
+    $(function() {
+        var oldListHtml = $('#books-in-category').html();
+        function changeBooksList(html) {
+            $('#books-in-category').fadeOut(300, function() {
+                $(this).html(html).fadeIn(300);
+                // Clear search result
+                $('#clear-searching-result-btn').on('click', function() {
+                    $('#books-in-category').fadeOut(300, function() {
+                        $(this).html(oldListHtml).fadeIn(300);
+                    });
+                });
             });
         }
-        return false;
+        $('.search-in-category-form').on('submit', function() {
+            var key = $(this).children('.keyword').val().trim();
+            // Check keyword is not blank
+            if (key.length !== 0) {
+                $('#book-searching-loading-indicator').show();
+                $.ajax({
+                    url: '/search-in-category',
+                    type: 'GET',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $('#book-searching-loading-indicator').hide();
+                        changeBooksList(response);
+                    }
+                });
+            }
+            return false;
+        });
     });
-
-
 </script> 

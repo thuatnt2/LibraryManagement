@@ -45,7 +45,7 @@
 				<?php echo $this->fetch('content'); ?>
 
 				<?php
-				echo $this->element('admin/footer');
+//				echo $this->element('admin/footer');
 
 				?>
 

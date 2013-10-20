@@ -60,8 +60,8 @@ class BookTypesController extends AppController {
             }
         }
 
-        $title_for_layout = 'Thêm thể loại sách';
-        $sub_title = 'Thêm thể loại sách';
+        $title_for_layout = 'Thêm thể tài liệu';
+        $sub_title = 'Thêm thể tài liệu';
         $this->set(compact('title_for_layout', 'sub_title'));
     }
 
