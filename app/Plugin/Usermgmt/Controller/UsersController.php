@@ -663,10 +663,11 @@ class UsersController extends UserMgmtAppController {
 		}
 
 //$users = $this->Reader->User->find('list');
+		$title_for_layout = 'Đăng kí mới bạn đọc';
 		$this->loadModel('Faculty');
 		$faculties = $this->Faculty->find('list');
 		$reader_type = $this->User->reader_type;
-		$this->set(compact('users', 'reader_type', 'faculties'));
+		$this->set(compact('users', 'reader_type', 'faculties','title_for_layout'));
 	}
 
 }
