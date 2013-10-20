@@ -76,13 +76,15 @@
             echo $this->element('frontend/footer')
             ?>
         </div>
-        <div id="right-bar">
-            <?php if ($this->UserAuth->isLogged()): ?>
+        <?php if ($this->UserAuth->isLogged()): ?>
+            <div id="right-bar">
+
                 <span class="" title="Giỏ sách">&nbsp;<img src="/images/cart-ico.png"/>&nbsp;&nbsp;&nbsp;&nbsp;Giỏ sách: <span id="books-cart-counter">1</span></span>
                 <br />
                 <span title="Thông báo">&nbsp;<img src="/images/bell-ico.png"/>&nbsp;&nbsp;&nbsp;Thông báo: <span id="notice-counter">2</span></span>
-            <?php endif; ?>  
-        </div>
+
+            </div>
+        <?php endif; ?> 
         <script type="text/javascript">
             $('#right-bar').hover(function() {
                 $(this).animate({
