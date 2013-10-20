@@ -58,22 +58,22 @@
 <div class="prefer_books">
     <h4 class="content-title">Giới thiệu sách</h4>
     <div class="content">
-
-
         <ul>
+            <!--FIXME, this's only sample data-->
+            <?php $i = 0; ?>
             <?php foreach ($books as $book) { ?>
                 <li>
                     <div class="product">
                         <a href="/tai-lieu/<?php echo $book['Book']['id'] ?>" class="info">
                             <span class="holder">
-                                <?php echo $this->Html->image('/images/image-best04.jpg') ?>
+                                <?php echo $this->Html->image('/images/book'. $i.'.jpg') ?>
                                 <span class="book-name"><?php echo $book['Book']['title'] ?></span>
                                 <span class="author"><strong><?php echo $book['Book']['authors'] ?></strong></span>
                             </span>
                         </a>
                     </div>
                 </li>
-            <?php } ?>
+            <?php $i++ ;} ?>
         </ul>
     </div>
 </div>
