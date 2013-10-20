@@ -62,8 +62,8 @@ class BookLanguagesController extends AppController {
             }
         }
         
-        $title_for_layout = 'Thêm ngôn ngữ sách';
-        $sub_title = 'Thêm ngôn ngữ sách';
+        $title_for_layout = 'Thêm ngôn tài liệu';
+        $sub_title = 'Thêm ngôn ngữ tài liệu';
         $this->set(compact('title_for_layout', 'sub_title'));
     }
 

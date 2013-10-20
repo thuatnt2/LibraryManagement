@@ -57,7 +57,7 @@
                 <ul>
                     <li><?php echo $this->Html->link('Mượn trả tài liệu', array('plugin' => null,'controller' => 'ciculations', 'action' => 'bookBorrowed')) ?></li>
                     <li><?php echo $this->Html->link('Lịch sử lưu thông', array('plugin' => null,'controller' => 'admin', 'action' => 'logs')) ?></li>
-                    <li><a href="#">Tài liệu đăng ký mượn online</a></li>
+                    <li><a href="#">Tài liệu đăng ký mượn</a></li>
                 </ul>
             </li>
             <li>
@@ -65,13 +65,12 @@
                     Quản lý tài liệu
                 </a>
                 <ul>
-                    <!--<li><a href="#">Danh sách tài liệu</a></li>-->
                      <li><?php echo $this->Html->link('Danh sách tài liệu', array('plugin' => null,'controller' => 'books', 'action' => 'index')) ?></li>
-                    <li><?php echo $this->Html->link('Biên mục tài liệu', array('plugin' => null,'controller' => 'books', 'action' => 'add')) ?></li>
-                    <li><a href="#">Quản lý tác giả</a></li>
-                    <li><a href="#">Danh mục tài liệu</a></li>
-                    <li><a href="#">Thể loại tài liệu</a></li>
-                    <li><a href="#">Ngôn ngữ</a></li>
+                     <li><?php echo $this->Html->link('Biên mục tài liệu', array('plugin' => null,'controller' => 'books', 'action' => 'add')) ?></li>
+                     <li><?php echo $this->Html->link('Quản lý tác giả', array('plugin' => null,'controller' => 'authors', 'action' => 'index')) ?></li>
+                     <li><?php echo $this->Html->link('Danh mục tài liệu', array('plugin' => null,'controller' => 'bookCategories', 'action' => 'index')) ?></li>
+                     <li><?php echo $this->Html->link('Thể loại tài liệu', array('plugin' => null,'controller' => 'bookTypes', 'action' => 'index')) ?></li>
+                    <li><?php echo $this->Html->link('Ngôn ngữ tài liệu', array('plugin' => null,'controller' => 'bookLanguages', 'action' => 'index')) ?></li>
                 </ul>
             </li>
 

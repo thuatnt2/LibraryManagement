@@ -14,7 +14,7 @@
                 <div class="um_box_mid_content_mid_left">
                     <?php echo $this->Form->create('BookType'); ?>
                     <div>
-                        <div class="umstyle3"><?php echo 'Tên thể loại sách'; ?><font color='red'>*</font></div>
+                        <div class="umstyle3"><?php echo 'Tên thể loại tài liệu'; ?><font color='red'>*</font></div>
                         <div class="umstyle4" ><?php echo $this->Form->input("name", array('label' => false, 'div' => false, 'class' => "form-control")) ?></div>
                         <div style="clear:both"></div>
                     </div>

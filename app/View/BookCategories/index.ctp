@@ -4,10 +4,15 @@
     <div class="um_box_up"></div>
     <div class="um_box_mid">
         <div class="um_box_mid_content">
-            <div class="um_box_mid_content_top">
-                <span class="umstyle1"><?php echo 'Danh mục bài viết'; ?></span>
-                <div style="clear:both"></div>
+             <div class="form-horizontal">
+                <div class="span5 align-left" style="margin-left: 0px">
+                    <span class="umstyle1">Danh mục tài liệu</span>
+                </div>
+                <div class="span3 align-right" align="right">
+                    <?php echo $this->Html->link('Thêm danh mục TL',array('plugin' => null, 'controller' => 'bookCategories', 'action' => 'add'),array('class' => 'btn btn-primary btn-lg', 'escape' => false)) ?>
+                </div>
             </div>
+            <div style="clear:both"></div>
             <div class="umhr"></div>
             <div class="um_box_mid_content_mid" id="index">
 

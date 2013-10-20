@@ -24,6 +24,11 @@ Router::connect(
 /*
  * Routing for book categories
  */
+Router::connect('/danh-muc-tai-lieu', array('controller' => 'bookCategories', 'action' => 'index'));
+Router::connect('/the-loai-tai-lieu', array('controller' => 'bookTypes', 'action' => 'index'));
+Router::connect('/ngon-ngu-tai-lieu', array('controller' => 'bookLanguages', 'action' => 'index'));
+Router::connect('/tac-gia', array('controller' => 'authors', 'action' => 'index'));
+Router::connect('/them-tac-gia', array('controller' => 'authors', 'action' => 'add'));
 Router::connect('/danh-muc', array('controller' => 'bookCategories', 'action' => 'userIndex'));
 Router::connect(
         '/danh-muc/:id-:slug', array('controller' => 'bookCategories', 'action' => 'userView'), array('pass' => array('id', 'slug'), 'id' => '[0-9]+')
