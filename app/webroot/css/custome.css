@@ -254,18 +254,20 @@ h1,h2,h3,h4 {
     cursor: pointer;
     margin-left: -1px;
     position: fixed;
-    top: 25%;
-    right: -18px;
-    width: 50px;
-    background:#6F6F6F;
+    top: 35%;
+    right: -107px;
+    width: 140px;
+    background:#ECEBF1;
+    border: 1px solid #8B6269;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
 }
-#right-bar:hover {
+/*#right-bar:hover {
     background:#ECEBF1;
-    width: 55px;
-    padding-left: 5px;
-}
+right: -18px;
+}*/
 #right-bar a {
     font-size: 12px;
     font-weight: bold;
@@ -277,3 +279,6 @@ h1,h2,h3,h4 {
 #right-bar img:hover {
     /*opacity: 0.8;*/
 }
+/*#right-bar #books-cart-counter,#right-bar #notice-counter {
+    display: none;
+}*/

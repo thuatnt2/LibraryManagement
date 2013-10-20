@@ -32,7 +32,8 @@
 </div>
  <div class="clear-both"> </div>
 <div class="actions">
-    <button class="btn btn-small btn-success"> Đăng ký mượn sách này</button>
+    <button class="btn btn-small btn-success">Mượn sách này</button>
+    <button class="btn btn-small btn-warning">Thêm vào giỏ</button>
 </div>
 <div class="other-books prefer_books">
     <h4>Tài liệu cùng danh mục</h4>
