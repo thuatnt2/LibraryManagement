@@ -8,9 +8,9 @@
                 <li><span class="icon-comment"></span> <a href="#">Thông tin cá nhân</a></li>
                 <li><span class="icon-share-alt"></span> <a href="<?php echo $this->Html->url('/logout')?>">Đăng xuất</a></li>
             </ul>
-            <div class="info">
+<!--            <div class="info">
                 <span>Welcom back! Your last visit: 24.10.2012</span>
-            </div>        
+            </div>        -->
         </div>
         <div style="clear:both"></div>
         <ul id="main-nav">  <!-- Accordion Menu -->

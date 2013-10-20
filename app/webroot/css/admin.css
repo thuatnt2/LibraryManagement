@@ -11,7 +11,7 @@ body {
     color: #555;
     background: #f0f0f0 url('../images/bg-body.gif') top left repeat-y;
     font-size: 12px;
-    /*background-size: 218px;*/
+    background-size: 195px;
 }
 
 #body-wrapper {
@@ -113,7 +113,8 @@ a.remove-link:hover {
     position: relative;
     padding: 5px;
     margin-bottom: 15px;
-    width: 210px;
+    /*width: 210px;*/
+    width: 176px;
     -moz-box-shadow: inset 0 0 5px #CCC;
     -webkit-box-shadow: inset 0 0 5px #CCC;
     box-shadow: inset 0 0 5px #CCC;
@@ -124,7 +125,7 @@ a.remove-link:hover {
 #sidebar #sidebar-wrapper .profile-user .control {
     display: block;
     float: left;
-    width: 142px;
+    /*width: 142px;*/
     list-style: none;
     margin: 0px;
 }
@@ -155,7 +156,7 @@ a.remove-link:hover {
 }
 #sidebar {
     background: url('../images/bg-sidebar.gif') top left no-repeat;
-    width: 230px;
+    width: 195px;
     height: 100%;
     position: absolute;
     left: 0;
@@ -194,9 +195,9 @@ a.remove-link:hover {
 /************ Sidebar Accordion Menu ************/
 
 #sidebar #main-nav {
-    width: 206px;
+    width: 186px;
     padding: 0;
-    margin: 0 0 0 15px;
+    margin: 0 0 0 0px;
     font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -208,6 +209,7 @@ a.remove-link:hover {
 
 #sidebar #main-nav li a.nav-top-item {
     background: transparent url('../images/bg-menu-item-green.gif') right center no-repeat; /* Background image for default color scheme - green */
+    /*background-size: 185px 35px;*/
     padding: 10px 15px;
     color: #fff;
     font-size: 14px;
@@ -282,7 +284,7 @@ a.remove-link:hover {
 /************ Layout ************/
 
 #main-content {
-    margin: 0 0px 0 238px;
+    margin: 0 0px 0 195px;
     padding: 0px 0 0 0;
 }
 
