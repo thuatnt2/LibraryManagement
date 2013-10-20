@@ -7,7 +7,10 @@ body {
     background: #3b3b3b url(/images/body.png);
 }
 
-a { color: #0252aa; text-decoration: none; cursor: pointer; }
+a { 
+    color: #0252aa;
+    text-decoration: none; 
+    cursor: pointer; }
 a:hover { text-decoration: underline; }
 a img { border: 0; }
 

@@ -201,8 +201,14 @@ class CiculationsController extends AppController {
 			$total_book_borrowed = $this->Ciculation->find('count', array('conditions' => array('Ciculation.reader' => $reader_code)));
 			//get the number of books that limit for borrowing
 			$total_book_limit = $this->Session->read('CiculationPolicy.STLM.amount');
+			
+			//check if user is not actived
+			if($current_reader['User']['is_actived'] == 1){
+				$result['status'] = 0;
+				$result['message'] = 'Thẻ này đã bị khóa, không thể mượn sách';
+			}
 			//check total book borrowed
-			if ($total_book_borrowed == $total_book_limit) {
+			else if ($total_book_borrowed == $total_book_limit) {
 				$result['status'] = 0;
 				$resutl['message'] = 'Số tài liệu mượn tối đa là ' . $total_book_limit . ' cuốn, không thể mượn thêm';
 			}

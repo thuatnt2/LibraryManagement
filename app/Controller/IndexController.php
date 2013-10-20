@@ -20,12 +20,15 @@ class IndexController extends AppController {
     var $uses = array('Article', 'BookCategory', 'Book');
 
     public function index() {
-        $article = $this->Article->read(null, 5);
-        $this->set('title_for_layout','Thư viện - Trang chủ');
+        $options = array(
+            'recursive' => -1,
+            'limit' => 5,
+            'order' => array('Article.created desc')
+        );
+        $articles = $this->Article->find('all', $options);
+        $this->set('title_for_layout', 'Thư viện - Trang chủ');
         $books = $this->Book->find('all', array('limit' => 5));
-        $this->set(compact('article', 'books'));
+        $this->set(compact('articles', 'books'));
     }
-
 }
-
 ?>

@@ -15,8 +15,8 @@ Router::connect('/index', array('controller' => 'index', 'action' => 'index'));
 /*
  * Routing for articles
  */
-Router::connect('/admin/bai-viet', array('controller' => 'articles', 'action' => 'index'));
-Router::connect('/admin/dang-bai-viet', array('controller' => 'articles', 'action' => 'add'));
+Router::connect('/bai-viet', array('controller' => 'articles', 'action' => 'index'));
+Router::connect('/dang-bai-viet', array('controller' => 'articles', 'action' => 'add'));
 Router::connect('/tin-tuc', array('controller' => 'articles', 'action' => 'userIndex'));
 Router::connect(
         '/tin-tuc/:id-:slug', array('controller' => 'articles', 'action' => 'userView'), array('pass' => array('id', 'slug'), 'id' => '[0-9]+')
@@ -31,13 +31,13 @@ Router::connect('/tac-gia', array('controller' => 'authors', 'action' => 'index'
 Router::connect('/them-tac-gia', array('controller' => 'authors', 'action' => 'add'));
 Router::connect('/danh-muc', array('controller' => 'bookCategories', 'action' => 'userIndex'));
 Router::connect(
-        '/danh-muc/:id-:slug', array('controller' => 'bookCategories', 'action' => 'userView'), array('pass' => array('id', 'slug'), 'id' => '[0-9]+')
+        '/danh-muc/:id-:slug', array('controller' => 'bookCategories', 'action' => 'userView'), array('pass' => array('id', 'slug'),'id' => '[0-9]+')
 );
 Router::connect(
-        '/the-loai/:id-:slug', array('controller' => 'bookTypes', 'action' => 'userView'), array('pass' => array('id', 'slug'), 'id' => '[0-9]+')
+        '/the-loai/:id-:slug', array('controller' => 'bookTypes', 'action' => 'userView'), array('pass' => array('id', 'slug'),'id' => '[0-9]+')
 );
 Router::connect(
-        '/tai-lieu/:id', array('controller' => 'books', 'action' => 'userView'), array('pass' => array('id'), 'id' => '[0-9]+')
+        '/tai-lieu/:id', array('controller' => 'books', 'action' => 'userView'), array('pass' => array('id'),'id' => '[0-9]+')
 );
 Router::connect('/tim-kiem', array('controller' => 'bookSearch', 'action' => 'userIndex'));
 
@@ -60,7 +60,7 @@ Router::connect('/lich-su-luu-thong', array('controller' => 'admin', 'action' =>
 Router::connect('/booksCiculation', array('controller' => 'ciculations', 'action' => 'booksCiculation'));
 Router::connect('/bien-muc', array('controller' => 'books', 'action' => 'add'));
 Router::connect('/them-sach/*', array('controller' => 'books', 'action' => 'view'));
-Router::connect('/danh-sach-tai-lieu', array('controller' => 'books', 'action' => 'index'));
+Router::connect('/tai-lieu', array('controller' => 'books', 'action' => 'index'));
 
 /**
  * $these routers are severed for ajax load . If you change , I'll kill you. 

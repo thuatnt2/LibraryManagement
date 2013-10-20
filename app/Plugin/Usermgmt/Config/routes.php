@@ -45,8 +45,13 @@ Router::connect('/deleteGroup/*', array('plugin' => 'usermgmt', 'controller' => 
 Router::connect('/emailVerification', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'emailVerification'));
 
 //Readers
+
+Router::connect('/readers', array('plugin' => 'usermgmt', 'controller' => 'readers', 'action' => 'index'));
+Router::connect('/dang-ky-ban-doc', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'addReader'));
+
 Router::connect('/danh-sach-ban-doc', array('plugin' => 'usermgmt', 'controller' => 'readers', 'action' => 'index'));
 Router::connect('/dang_ky_ban_doc', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'addReader'));
+
 Router::connect('/deleteReader', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'deleteReader'));
 
 //faculties

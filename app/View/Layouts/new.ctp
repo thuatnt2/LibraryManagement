@@ -82,10 +82,15 @@
         <?php if ($this->UserAuth->isLogged()): ?>
             <div id="right-bar">
 
-                <span class="" title="Giỏ sách">&nbsp;<img src="/images/cart-ico.png"/>&nbsp;&nbsp;&nbsp;&nbsp;Giỏ sách: <span id="books-cart-counter">1</span></span>
+                <span class="" title="Giỏ sách">
+                    &nbsp;<img src="/images/cart-ico.png"/>&nbsp;&nbsp;&nbsp;&nbsp;Giỏ sách: 
+                    <span id="books-cart-counter">1</span>
+                </span>
                 <br />
-                <span title="Thông báo">&nbsp;<img src="/images/bell-ico.png"/>&nbsp;&nbsp;&nbsp;Thông báo: <span id="notice-counter">2</span></span>
-
+                <span title="Thông báo">&nbsp;
+                    <img src="/images/bell-ico.png"/>&nbsp;&nbsp;&nbsp;Thông báo: 
+                    <span id="notice-counter">2</span>
+                </span>
             </div>
         <?php endif; ?> 
         <script type="text/javascript">
