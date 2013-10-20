@@ -439,56 +439,30 @@ $("#btn-delete-logs").click(function() {
 	else {
 		showModal('Lỗi', 'Bạn chưa chọn mục cần xóa', true);
 	}
-    var logType = $("#log-type-select").val();
-    console.log('type change');
-    jQuery.ajax({
-        url: "loadLogs",
-        type: "POST",
-        data: {"logType": logType},
-        dataType: 'json',
-        success: function(result) {
-            $("#log-data-table").html("");
-            //var length = result.logs.length;
-            var logs = result.logs;
-            for (var i = 0; i < logs.length; i++) {
-                var tr = "";
-                tr += "<tr>";
-                //tr += '<td><input type="checkbox" value="' + result.logs[i].Log.id + '"/></td>';
-                tr += "<td" + i + "</td>";
-                tr += "<td>" + logs[i].Log.reader_name + "</td>";
-                tr += "<td>" + logs[i].Log.content + "</td>";
-                tr += "<td>" + logs[i].Log.created + "</td>";
-                tr += "</tr>";
-                $("#log-data-table").append(tr);
-            }
-            $('tbody tr:even').addClass("alt-row");
-            $("#log-offset").val(result.offset);
-        },
-        error: function() {
-            clearBook();
-            showModal("Lỗi hệ thống", "Hệ thống phát sinh lỗi, xin lỗi vì sự bất tiện này !", true);
-            return false;
-        }
-    });
+  
 });
 
 /**
  * delete book serial
  * */
 
-function deleteBookSerial(book_serial_id) {
+function deleteBookSerial(book_id, book_serial_id) {
+    var book_total = $('#book_total').text();
     if (confirm('Bạn có chăc chắn muốn xóa ?')) {
         jQuery.ajax({
             url: "/deleteBookSerial",
             type: "POST",
-            data: {"bookSerialId": book_serial_id},
+            data: {"bookSerialId": book_serial_id,"bookId": book_id},
             dataType: 'json',
             success: function(result) {
-                if (result.status == 1) {
-                    showModal('Thông báo', result.message, false);
+                if (result.status === 1) {
+                    book_total = book_total - 1;
+                    $('#book_total').html(book_total);
+                    $('#book_serial_'+book_serial_id).parent().parent().remove();
+                    showModal('Thông báo', result.messate, false);
                 }
                 else {
-                    showModal('Lỗi xóa tài liệu', result.message, true);
+                    showModal('Lỗi xóa tài liệu', result.messate, true);
                 }
             },
             error: function() {
