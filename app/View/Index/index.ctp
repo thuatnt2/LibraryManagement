@@ -1,13 +1,36 @@
+<script type="text/javascript" src="/js/jquery.bxslider.min.js"></script>
+<link rel="stylesheet" href="/css/jquery.bxslider.css" type="text/css" />
+<div id="slide-show">
+    <h4 class="content-title">Hình ảnh hoạt động</h4>
+    <ul id="bxslider">
+        <li><img src="/images/slide/00.jpg" title="The long and winding road" /></li>
+        <li><img src="/images/slide/01.jpg" title="The long and winding road" /></li>
+        <li><img src="/images/slide/02.jpg" title="The long and winding road" /></li>
+        <li><img src="/images/slide/03.jpg" title="Happy trees" /></li>
+        <li><img src="/images/slide/04.jpg" title="Happy trees" /></li>
+    </ul>
+</div>
+<div class="devider"> </div>
+<script type="text/javascript">
+    $('#bxslider').bxSlider({
+        auto: true,
+        mode: 'fade',
+        maxSlides: 1,
+        minSlides: 1,
+//        captions: true,
+    });
+</script> 
+
 <div id="news">
-    <h3 class="content-title">Tin tức</h3>
+    <h4 class="content-title">Tin tức</h4>
     <div class="content">
         <p><strong><?php echo $article['Article']['title']; ?></strong></p>
-        <i>Ngày đăng: <?php echo $article['Article']['created'] ?></i>
+        <i class="article-date-created">Ngày đăng: <?php echo $article['Article']['created'] ?></i>
         <div>
             <?php echo $this->Text->truncate($article['Article']['content'], 800); ?>   
             <?php
             echo $this->Html->link(
-                    '>> Chi tiết', array(
+                    'Chi tiết >>', array(
                 'controller' => 'articles',
                 'action' => 'userView',
                 'id' => $article['Article']['id'],
@@ -23,7 +46,7 @@
     <h4 class="content-title">Giới thiệu sách</h4>
     <div class="content">
 
-       
+
         <ul>
             <?php foreach ($books as $book) { ?>
                 <li>

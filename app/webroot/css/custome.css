@@ -283,3 +283,12 @@ h1,h2,h3,h4 {
     float: right;
 
 }
+.article-date-created {
+    color: #7A7A7A;
+}
+.bx-viewport,.bx-wrapper {
+    width: 800px !important;
+}
+.bx-viewport ul {
+    margin: 0 !important;
+}
