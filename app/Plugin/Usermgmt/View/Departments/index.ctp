@@ -4,16 +4,21 @@
     <div class="um_box_up"></div>
     <div class="um_box_mid">
         <div class="um_box_mid_content">
-            <div class="um_box_mid_content_top">
-                <span class="umstyle1"><?php echo __('All Department'); ?></span>
-                <div style="clear:both"></div>
+            <div class="form-horizontal">
+                <div class="span5 align-left" style="margin-left: 0px">
+                    <span class="umstyle1"><?php echo __('Danh sách lớp'); ?></span>
+                </div>
+                <div class="span2 align-right" align="right">
+                    <?php echo $this->Html->link('Thêm lớp',array('plugin' => 'usermgmt', 'controller' => 'departments', 'action' => 'add'),array('class' => 'btn btn-primary btn-lg', 'escape' => false)) ?>
+                </div>
+                <div class="span3 align-right" align="right">
+                    <?php echo $this->Form->create('Department',array('method'=>'POST'))?>
+                    <?php echo $this->Form->input('faculty_id',array('div'=>false,'label'=>false,  'class'=>'form-control','empty'=>'Tất cả')); ?>
+                    <?php echo $this->Form->end();?>
+                </div>
+                
             </div>
-            <div class="filter" style="max-width: 300px;">
-                <?php echo $this->Form->create('Department',array('method'=>'POST'))?>
-                <?php echo $this->Form->input('faculty_id',array('div'=>false,'label'=>false,  'class'=>'form-control','empty'=>'Tất cả')); ?>
-                <?php echo $this->Form->end();?>
-
-            </div>
+            <div style="clear:both"></div>
             <div class="umhr"></div>
             <div class="um_box_mid_content_mid" id="index">
                 <table cellspacing="0" cellpadding="0" width="100%" border="0" >
