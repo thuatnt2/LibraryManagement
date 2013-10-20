@@ -7,7 +7,7 @@
             <?php echo $this->Text->truncate($article['Article']['content'], 800); ?>   
             <?php
             echo $this->Html->link(
-                    '>> Đọc thêm', array(
+                    '>> Chi tiết', array(
                 'controller' => 'articles',
                 'action' => 'userView',
                 'id' => $article['Article']['id'],

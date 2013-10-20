@@ -5,7 +5,7 @@
     <?php } else { ?>
         <i class="searching-have-result">Tìm thấy <?php echo count($books) ?> kết quả. </i>
     <?php } ?>
-        <button id="clear-searching-result-btn" class="btn btn-small">&hookleftarrow; Quay lại</button>
+        <button id="clear-searching-result-btn" class="btn btn-small btn-xs">&hookleftarrow; Quay lại</button>
 </div>
 <div class="clear-both"> </div>
 <?php echo $this->element('/bookcategories/books_in_category', array('books' => $books)) ?>

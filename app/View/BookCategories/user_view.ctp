@@ -42,8 +42,8 @@
         $('.search-in-category-form').on('submit', function() {
             var key = $(this).children('.keyword').val().trim();
             // Check keyword is not blank
-            $('#book-searching-loading-indicator').show();
             if (key.length !== 0) {
+                $('#book-searching-loading-indicator').show();
                 $.ajax({
                     url: '/search-in-category',
                     type: 'GET',

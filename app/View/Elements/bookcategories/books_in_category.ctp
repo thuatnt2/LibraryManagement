@@ -9,8 +9,9 @@
         </div>
         <div class="book-short-view-right">
             <a href="/tai-lieu/<?php echo $book['id'] ?>" class="info"><h4><?php echo $book['title'] ?></h4></a>
-            <label> <strong>Tác giả:</strong> <?php echo $book['authors'] ?></label>
-            <label> <strong>Nhà xuất bản:</strong> <?php echo $book['publisher'] ?></label>
+            <strong>Tác giả: </strong> <?php echo $book['authors'] ?> <br />
+            <strong>Nhà xuất bản: </strong><?php echo $book['publisher'] ?><br />
+            <strong>Ngôn ngữ: </strong><?php echo $book['language'] ?>
             <span class="description"></span>
         </div>
     </div>
