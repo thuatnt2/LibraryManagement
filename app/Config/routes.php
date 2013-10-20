@@ -60,6 +60,7 @@ Router::connect('/tai-lieu', array('controller' => 'books', 'action' => 'index')
  * $these routers are severed for ajax load . If you change , I'll kill you. 
  */
 Router::connect('/loadLogs', array('controller' => 'admin', 'action' => 'loadLogs'));
+Router::connect('/deleteLogs', array('controller' => 'admin', 'action' => 'deleteLogs'));
 Router::connect('/getCiculation', array('controller' => 'ciculations', 'action' => 'getCiculation'));
 Router::connect('/getBook', array('controller' => 'bookSerials', 'action' => 'getBook'));
 Router::connect('/borrowBook', array('controller' => 'ciculations', 'action' => 'borrowBook'));

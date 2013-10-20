@@ -11,23 +11,33 @@
             <div class="umhr"></div>
             <div class="um_box_mid_content_mid" id="logs-list">
 				<div class="row">
-					<div class="span6" >
-						<div id="example_length" class="dataTables_length right">
+					<div class="span2">
+						<button class="btn" id="btn-delete-logs"><img src="<?php echo $this->Html->url('/images/delete.png')?>"/>Xóa tất cả</button>
+					</div>
+					<div class="span4">
+						<div id="example_length" class="dataTables_length">
 							<label>
 								<select name="log_type" size="1" id="log-type-select">
 									<option value="all" selected="selected">Tất cả</option>
-									<option value="borrow">Mượn tài liệu</option>
+									<option value="borrow">Muợn tài liệu</option>
 									<option value="return">Trả tài liệu</option>
 									<option value="renew">Gia hạn</option>
-								</select> 
+								</select>
 							</label>
 						</div>
 					</div>
+					<div class="span6">
+						<div class="dataTables_filter" id="example_filter">
+							<input type="text" id="log-keyword" class="input-xxlarge" placeholder="Nhập tên bạn đọc hoặc mã bạn đọc để tìm kiếm">
+						</div>
+					</div>
 				</div>
-				<table>
+
+				<table id="log-table">
 					<thead>
 						<tr>
 							<th><input type="checkbox" id="log-check-all" title="Chọn tất cả"/></th>
+							<th>Mã bạn đọc</th>
 							<th>Tên bạn đọc</th>
 							<th>Thao tác</th>
 							<th>Thời gian</th>
@@ -37,6 +47,9 @@
 						<?php foreach ($logs as $log): ?>
 							<tr>
 								<td><input type="checkbox" value="<?php echo $log['Log']['id'] ?>"/></td>
+								<td>
+									<?php echo $log['Log']['reader_code'] ?>
+								</td>
 								<td>
 									<?php echo $log['Log']['reader_name'] ?>
 								</td>
