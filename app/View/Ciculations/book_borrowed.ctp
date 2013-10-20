@@ -72,7 +72,7 @@
                                 <div class="control-group">
                                     <label class="control-label">Địa chỉ:</label>
                                     <div class="controls">
-                                        <input type="text" value="" disabled="disabled" id="reader-address" class="input-xxlarge" style="width: 663px"/>
+                                        <input type="text" value="" disabled="disabled" id="reader-address" class="input-xxlarge" style="width: 99%"/>
                                     </div>
                                     <div style="clear:both"></div>
                                 </div>
@@ -149,7 +149,7 @@
                                     <label class="control-label" >Mô tả:</label>
                                     <div class="controls">
                                         <!--<input type="text" value=""  id="book-name" class="input-large" disabled="disabled"/>-->
-                                        <textarea class="input-xxlarge" id="textarea" rows="4" disabled="disabled" style="width: 663px"></textarea>
+                                        <textarea class="input-xxlarge" id="textarea" rows="4" disabled="disabled" style="width: 99%"></textarea>
                                     </div>
                                     <div style="clear:both"></div>
                                 </div>
