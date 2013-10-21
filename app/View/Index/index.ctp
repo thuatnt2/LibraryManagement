@@ -26,7 +26,8 @@
     <div class="content">
         <strong><?php echo $this->LinkGenerator->link_for_article($articles[0]); ?></strong>
         <br />
-        - <i class="article-date-created">Ngày đăng: <?php echo $articles[0]['Article']['created'] ?></i> -
+         <?php $date = new DateTime($articles[0]['Article']['created']); ?>
+        - <i class="article-date-created">Ngày đăng: <?php echo $date->format('d/m/Y') ?></i> -
         <div class="article-short-content">
             <?php echo $this->Text->truncate($articles[0]['Article']['content'], 800); ?>   
             <br />
@@ -40,10 +41,15 @@
                 <ul>
                     <?php for ($i = 1; $i < count($articles); $i++): ?>
                         <li> 
-                            (<i class="article-date-created"><?php echo $articles[$i]['Article']['created'] ?></i>)
                             <?php
-                            echo $this->LinkGenerator->link_for_article($articles[$i],null,'other-articles-link');
+                            echo $this->LinkGenerator->link_for_article($articles[$i], null, 'other-articles-link');
                             ?>
+                            (<i class="article-date-created">
+                                <?php $date = new DateTime($articles[$i]['Article']['created']); ?>
+                                <?php
+                                echo $date->format('d/m/Y')
+                                ?>
+                            </i>)
                         </li>
                     <?php endfor; ?>
                 </ul>
@@ -66,14 +72,16 @@
                     <div class="product">
                         <a href="/tai-lieu/<?php echo $book['Book']['id'] ?>" class="info">
                             <span class="holder">
-                                <?php echo $this->Html->image('/images/book'. $i.'.jpg') ?>
+                                <?php echo $this->Html->image('/images/book' . $i . '.jpg') ?>
                                 <span class="book-name"><?php echo $book['Book']['title'] ?></span>
                                 <span class="author"><strong><?php echo $book['Book']['authors'] ?></strong></span>
                             </span>
                         </a>
                     </div>
                 </li>
-            <?php $i++ ;} ?>
+                <?php $i++;
+            }
+            ?>
         </ul>
     </div>
 </div>
