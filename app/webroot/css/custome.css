@@ -292,4 +292,16 @@ h1,h2,h3,h4 {
 }
 .article-short-content {
     margin-top: 10px;
+    padding: 0 10px 0 10px;
+}
+.other-articles {
+    border-top: 1px #D8D8D8 dotted;
+}
+
+.other-articles .other-articles-list {
+    
+}
+.other-articles-list {
+    padding-top: 5px;
+    font-size: 0.85em;
 }

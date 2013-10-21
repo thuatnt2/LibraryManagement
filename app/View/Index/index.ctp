@@ -24,20 +24,35 @@
 <div id="news">
     <h4 class="content-title">Tin tức</h4>
     <div class="content">
-        <strong><?php echo $this->LinkGenerator->link_for_article($article); ?></strong>
+        <strong><?php echo $this->LinkGenerator->link_for_article($articles[0]); ?></strong>
         <br />
-        - <i class="article-date-created">Ngày đăng: <?php echo $article['Article']['created'] ?></i> -
+        - <i class="article-date-created">Ngày đăng: <?php echo $articles[0]['Article']['created'] ?></i> -
         <div class="article-short-content">
-            <?php echo $this->Text->truncate($article['Article']['content'], 800); ?>   
+            <?php echo $this->Text->truncate($articles[0]['Article']['content'], 800); ?>   
             <br />
             <?php
-            echo $this->LinkGenerator->link_for_article($article, "<i> Chi tiết >> </i>", 'read-more-btn');
+//            echo $this->LinkGenerator->link_for_article($articles[0], "<i> Chi tiết >> </i>", 'read-more-btn');
             ?>
+        </div>
+        <div class="clear-both"></div>
+        <div class="other-articles">
+            <div class="other-articles-list"> 
+                <ul>
+                    <?php for ($i = 1; $i < count($articles); $i++): ?>
+                        <li> 
+                            (<i class="article-date-created"><?php echo $articles[$i]['Article']['created'] ?></i>)
+                            <?php
+                            echo $this->LinkGenerator->link_for_article($articles[$i],null,'other-articles-link');
+                            ?>
+                        </li>
+                    <?php endfor; ?>
+                </ul>
+            </div>
 
-        </div>   
+        </div>
     </div>
 </div>
-<div class="clear-both"></div>
+
 <div class="devider"> </div>
 <div class="clear-both"></div>
 <div class="prefer_books">

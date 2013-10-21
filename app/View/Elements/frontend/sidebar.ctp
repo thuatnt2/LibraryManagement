@@ -50,16 +50,16 @@
         <li>
             <h4>Thống kê</h4>
             <ul>
-                <li><a href="#">Lorem ipsum dolor</a></li>
-                <li><a href="#">Morbi eget</a></li>
-                <li><a href="#">Nulla egestas</a></li>
+                <li><a href="#">Tổng số: 12720</a></li>
+                <li><a href="#">Truy cập: 1234</a></li>
+                <li><a href="#">Online: 2</a></li>
             </ul>
         </li>
         <li>
             <h4>Liên kết</h4>
             <ul>
-                <li><a href="#">Lorem ipsum dolor</a></li>
-                <li><a href="#">Morbi eget</a></li>
+                <li><a href="#">Thư viện 1</a></li>
+                <li><a href="#">Trường TTCS</a></li>
             </ul>
         </li>
     </ul>
