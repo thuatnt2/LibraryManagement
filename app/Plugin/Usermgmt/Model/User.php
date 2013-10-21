@@ -56,7 +56,10 @@ class User extends UserMgmtAppModel {
 		0 => 'Sinh Viên',
 		1 => 'Giảng Viên'
 	);
-
+        var  $sex = array(
+		1 => 'Nam',
+		0 => 'Nữ'
+	);
 	/**
 	 * model validation array
 	 *

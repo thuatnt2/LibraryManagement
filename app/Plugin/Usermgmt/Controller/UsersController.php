@@ -667,7 +667,8 @@ class UsersController extends UserMgmtAppController {
 		$this->loadModel('Faculty');
 		$faculties = $this->Faculty->find('list');
 		$reader_type = $this->User->reader_type;
-		$this->set(compact('users', 'reader_type', 'faculties','title_for_layout'));
+                $sex = $this->User->sex;
+		$this->set(compact('users', 'reader_type','sex', 'faculties','title_for_layout'));
 	}
 
 }

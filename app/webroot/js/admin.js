@@ -22,6 +22,12 @@ function close_box() {
 }
 
 $(document).ready(function() {
+        $('#input-avatar').click(function (){
+           $('#UserAvata').trigger('click') ;
+        });
+        $('#UserAvata').change(function () {
+              $('#input-avatar').val($(this).val());
+        });
 	$('.addmenu').click(function() {
 
 		$.fancybox({
@@ -510,4 +516,5 @@ function loadDepartment(faculty_id) {
 		}
 	});
 }
+
 
