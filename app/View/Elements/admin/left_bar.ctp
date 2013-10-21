@@ -5,9 +5,9 @@
                 <?php echo $this->Html->image('users/alexey.jpg', array('class="img-polaroid"')) ?>
             </div>
             <ul class="control">                
-                <!--<li><span class="icon-comment"></span> <a href="">Thông tin cá nhân</a></li>-->
+                <li><?php echo $this->Html->link('<span class="icon-comment"></span>Trang chủ', array('plugin' => null,'controller' => 'index', 'action' => 'index'), array('escape' => false)) ?></li>
                 <li><?php echo $this->Html->link('<span class="icon-comment"></span>Thông tin cá nhân', array('plugin' => 'usermgmt','controller' => 'users', 'action' => 'myprofile'), array('escape' => false)) ?></li>
-                <li><span class="icon-share-alt"></span> <a href="<?php echo $this->Html->url('/logout')?>">Đăng xuất</a></li>
+                  <li><?php echo $this->Html->link('<span class="icon-comment"></span>Đăng xuất', array('plugin' => 'usermgmt','controller' => 'users', 'action' => 'logout'), array('escape' => false)) ?></li>
             </ul>
 <!--            <div class="info">
                 <span>Welcom back! Your last visit: 24.10.2012</span>
