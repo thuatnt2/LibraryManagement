@@ -14,7 +14,7 @@
                 <div class="row-fluid">
                     <?php echo $this->Form->create('Book', array('class' => 'form-horizontal')); ?>
                     <?php echo $this->Form->input('id', array('hidden' => true)) ?>
-                    <div class="span5"  align="right">
+                    <div class="span6"  align="right" style="margin-left: 0px">
                         <div class="control-group">
                             <label class="control-label" >Tên tài liệu:<font color='red'>*</font></label>
                             <div class="controls" ><?php echo $this->Form->input("title", array('label' => false, 'div' => false, 'class' => 'form-control span12')) ?></div>
@@ -58,7 +58,7 @@
                         </div>
 
                     </div>
-                    <div class="span5"  align="right">
+                    <div class="span6"  align="right">
                         <div  class="control-group">
                               <label class="control-label" >Kích thước:<font color='red'>*</font></label>
                             <div class="controls" ><?php echo $this->Form->input("page_size", array('type' => 'text', 'label' => false, 'div' => false, 'class' => 'form-control span12')) ?></div>
