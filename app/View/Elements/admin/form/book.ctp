@@ -17,43 +17,43 @@
                     <div class="span5"  align="right">
                         <div class="control-group">
                             <label class="control-label" >Tên tài liệu:<font color='red'>*</font></label>
-                            <div class="controls" ><?php echo $this->Form->input("title", array('label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+                            <div class="controls" ><?php echo $this->Form->input("title", array('label' => false, 'div' => false, 'class' => 'form-control span12')) ?></div>
                             <div style="clear:both"></div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" >Tác giả:</label>
-                            <div class="controls" ><?php echo $this->Form->input("authors", array('type' => 'text', 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+                            <div class="controls" ><?php echo $this->Form->input("authors", array('type' => 'text', 'label' => false, 'div' => false, 'class' => 'form-control span12')) ?></div>
                             <div style="clear:both"></div>
                         </div>
 
                         <div class="control-group">
                             <label class="control-label" >Thể loại:<font color='red'>*</font></label>
-                            <div class="controls" ><?php echo $this->Form->input("book_type_id", array('label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+                            <div class="controls" ><?php echo $this->Form->input("book_type_id", array('label' => false, 'div' => false, 'class' => 'form-control span12')) ?></div>
                             <div style="clear:both"></div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" >Danh mục:<font color='red'>*</font></label>
-                            <div class="controls" ><?php echo $this->Form->input("book_category_id", array('label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+                            <div class="controls" ><?php echo $this->Form->input("book_category_id", array('label' => false, 'div' => false, 'class' => 'form-control span12')) ?></div>
                             <div style="clear:both"></div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">Nhà xuất bản:<font color='red'>*</font></label>
-                            <div class="controls" ><?php echo $this->Form->input("publisher", array('type' => 'text', 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+                            <div class="controls" ><?php echo $this->Form->input("publisher", array('type' => 'text', 'label' => false, 'div' => false, 'class' => 'form-control span12')) ?></div>
                             <div style="clear:both"></div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" >Ngôn ngữ:<font color='red'>*</font></label>
-                            <div class="controls" ><?php echo $this->Form->input("language", array('type' => 'text', 'id' => 'BookLanguage', 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+                            <div class="controls" ><?php echo $this->Form->input("language", array('type' => 'text', 'id' => 'BookLanguage', 'label' => false, 'div' => false, 'class' => 'form-control span12')) ?></div>
                             <div style="clear:both"></div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" >Năm xuất bản:<font color='red'>*</font></label>
-                            <div class="controls" ><?php echo $this->Form->input("year_of_publish", array('type' => 'text', 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+                            <div class="controls" ><?php echo $this->Form->input("year_of_publish", array('type' => 'text', 'label' => false, 'div' => false, 'class' => 'form-control span12')) ?></div>
                             <div style="clear:both"></div>
                         </div>
                         <div  class="control-group">
                             <label class="control-label" >Số trang:<font color='red'>*</font></label>
-                            <div class="controls" ><?php echo $this->Form->input("number_of_pages", array('type' => 'number', 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+                            <div class="controls" ><?php echo $this->Form->input("number_of_pages", array('type' => 'number', 'label' => false, 'div' => false, 'class' => 'form-control span12')) ?></div>
                             <div style="clear:both"></div>
                         </div>
 
@@ -61,32 +61,32 @@
                     <div class="span5"  align="right">
                         <div  class="control-group">
                               <label class="control-label" >Kích thước:<font color='red'>*</font></label>
-                            <div class="controls" ><?php echo $this->Form->input("page_size", array('type' => 'text', 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+                            <div class="controls" ><?php echo $this->Form->input("page_size", array('type' => 'text', 'label' => false, 'div' => false, 'class' => 'form-control span12')) ?></div>
                             <div style="clear:both"></div>
                         </div>
                         <div  class="control-group">
                               <label class="control-label" >Giá:<font color='red'>*</font></label>
-                            <div class="controls" ><?php echo $this->Form->input("price", array('type' => 'number', 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+                            <div class="controls" ><?php echo $this->Form->input("price", array('type' => 'number', 'label' => false, 'div' => false, 'class' => 'form-control span12')) ?></div>
                             <div style="clear:both"></div>
                         </div>
                         <div  class="control-group">
                               <label class="control-label" >Vị trí:<font color='red'>*</font></label>
-                            <div class="controls" ><?php echo $this->Form->input("location", array('type' => 'number', 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+                            <div class="controls" ><?php echo $this->Form->input("location", array('type' => 'number', 'label' => false, 'div' => false, 'class' => 'form-control span12')) ?></div>
                             <div style="clear:both"></div>
                         </div>
                         <div  class="control-group">
                               <label class="control-label" >Hình thức sử dụng:<font color='red'>*</font></label>
-                            <div class="controls" ><?php echo $this->Form->input("borrow_type", array('type' => 'select', 'options' => $borrow_type, 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+                            <div class="controls" ><?php echo $this->Form->input("borrow_type", array('type' => 'select', 'options' => $borrow_type, 'label' => false, 'div' => false, 'class' => 'form-control span12')) ?></div>
                             <div style="clear:both"></div>
                         </div>
                         <div  class="control-group">
                             <label class="control-label" >Phạm vi mượn:<font color='red'>*</font></label>
-                            <div class="controls" ><?php echo $this->Form->input("teacher_only", array('type' => 'select', 'options' => $teacher_only, 'label' => false, 'div' => false, 'class' => 'form-control')) ?></div>
+                            <div class="controls" ><?php echo $this->Form->input("teacher_only", array('type' => 'select', 'options' => $teacher_only, 'label' => false, 'div' => false, 'class' => 'form-control span12')) ?></div>
                             <div style="clear:both"></div>
                         </div>
                         <div  class="control-group">
                               <label class="control-label" >Mô tả:</label>
-                            <div class="controls" ><?php echo $this->Form->input("description", array('type' => 'textarea', 'label' => false, 'div' => false, 'class' => "form-control")) ?></div>
+                            <div class="controls" ><?php echo $this->Form->input("description", array('type' => 'textarea', 'label' => false, 'div' => false, 'class' => "form-control span12")) ?></div>
                             <div style="clear:both"></div>
                         </div>
                         <!--<div>-->
