@@ -5,7 +5,8 @@
                 <?php echo $this->Html->image('users/alexey.jpg', array('class="img-polaroid"')) ?>
             </div>
             <ul class="control">                
-                <li><span class="icon-comment"></span> <a href="#">Thông tin cá nhân</a></li>
+                <!--<li><span class="icon-comment"></span> <a href="">Thông tin cá nhân</a></li>-->
+                <li><?php echo $this->Html->link('<span class="icon-comment"></span>Thông tin cá nhân', array('plugin' => 'usermgmt','controller' => 'users', 'action' => 'myprofile'), array('escape' => false)) ?></li>
                 <li><span class="icon-share-alt"></span> <a href="<?php echo $this->Html->url('/logout')?>">Đăng xuất</a></li>
             </ul>
 <!--            <div class="info">

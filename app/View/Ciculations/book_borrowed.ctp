@@ -26,20 +26,20 @@
                                 <div class="control-group">
                                     <label class="control-label" >Mã bạn đọc :</label>
                                     <div class="controls">
-                                        <input type="text" name="readerCode" id="reader-code" value="" placeholder="Mã bạn đọc" class="input-large"/>
+                                        <input type="text" name="readerCode" id="reader-code" value="" placeholder="Mã bạn đọc" class="input-large span12"/>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Tình trạng:</label>
                                     <div class="controls">
-                                        <input type="text" value="" disabled="disabled" name="reader-status" id="reader-status" class="input-large"/>
+                                        <input type="text" value="" disabled="disabled" name="reader-status" id="reader-status" class="input-large span12"/>
                                     </div>
                                     <div style="clear:both"></div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" >Chức vụ:</label>
                                     <div class="controls">
-                                        <input type="text"  value="" disabled="disabled" name="reader-type" id="reader-type" class="input-large"/>
+                                        <input type="text"  value="" disabled="disabled" name="reader-type" id="reader-type" class="input-large span12"/>
                                     </div>
                                     <div style="clear:both"></div>
                                 </div>
@@ -48,21 +48,21 @@
                                 <div class="control-group">
                                     <label class="control-label">Họ tên:</label>
                                     <div class="controls">
-                                        <input type="text" value="" disabled="disabled" id="reader-fullname" class="input-large"/>
+                                        <input type="text" value="" disabled="disabled" id="reader-fullname" class="input-large span12"/>
                                     </div>
                                     <div style="clear:both"></div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Đơn vị/ Bộ phận:</label>
                                     <div class="controls">
-                                        <input type="text" value="" disabled="" id="reader-department" class="input-large" />
+                                        <input type="text" value="" disabled="" id="reader-department" class="input-large span12" />
                                     </div>
                                     <div style="clear:both"></div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Tài khoản:</label>
                                     <div class="controls">
-                                        <input type="text" value="" disabled="disabled" id="" class="input-large"/>
+                                        <input type="text" value="" disabled="disabled" id="" class="input-large span12"/>
                                     </div>
                                     <div style="clear:both"></div>
                                 </div>
@@ -72,7 +72,7 @@
                                 <div class="control-group">
                                     <label class="control-label">Địa chỉ:</label>
                                     <div class="controls">
-                                        <input type="text" value="" disabled="disabled" id="reader-address" class="input-xxlarge" style="width: 94%"/>
+                                        <input type="text" value="" disabled="disabled" id="reader-address" class="input-xxlarge span12"/>
                                     </div>
                                     <div style="clear:both"></div>
                                 </div>
@@ -101,7 +101,7 @@
                                 <div class="control-group">
                                     <label class="control-label" >Mã tài liệu:</label>
                                     <div class="controls" >
-                                        <input type="text" value="" placeholder="Mã tài liệu" id="book-code" class="input-large"/>
+                                        <input type="text" value="" placeholder="Mã tài liệu" id="book-code" class="input-large span12"/>
                                     </div>
                                     <div style="clear:both"></div>
                                 </div>
@@ -109,14 +109,14 @@
                                 <div class="control-group">
                                     <label class="control-label" >Vị trí:</label>
                                     <div class="controls" >
-                                        <input type="text" value="" class="input-large" id="book-authors" disabled="disabled"/>
+                                        <input type="text" value="" class="input-large span12" id="book-authors" disabled="disabled"/>
                                     </div>
                                     <div style="clear:both"></div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" >Loại tài liệu:</label>
                                     <div class="controls" >
-                                        <input type="text" value="" class="input-large" id="book-authors" disabled="disabled"/>
+                                        <input type="text" value="" class="input-large span12" id="book-authors" disabled="disabled"/>
                                     </div>
                                     <div style="clear:both"></div>
                                 </div>
@@ -125,21 +125,21 @@
                                 <div class="control-group">
                                     <label class="control-label" >Tình trạng:</label>
                                     <div class="controls" >
-                                        <input type="text" value="" class="input-large" id="book-status" disabled="disabled"/>
+                                        <input type="text" value="" class="input-large span12" id="book-status" disabled="disabled"/>
                                     </div>
                                     <div style="clear:both"></div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" >Hạn trả:</label>
                                     <div class="controls" >
-                                        <input type="text" value="" class="input-large" id="book-date-return" disabled="disabled"/>
+                                        <input type="text" value="" class="input-large span12" id="book-date-return" disabled="disabled"/>
                                     </div>
                                     <div style="clear:both"></div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" >Người mượn:</label>
                                     <div class="controls" >
-                                        <input type="text" value="" class="input-large" id="book-reader" disabled="disabled" />
+                                        <input type="text" value="" class="input-large span12" id="book-reader" disabled="disabled" />
                                     </div>
                                     <div style="clear:both"></div>
                                 </div>
@@ -149,7 +149,7 @@
                                     <label class="control-label" >Mô tả:</label>
                                     <div class="controls">
                                         <!--<input type="text" value=""  id="book-name" class="input-large" disabled="disabled"/>-->
-                                        <textarea class="input-xxlarge" id="textarea" rows="4" disabled="disabled" style="width: 94%"></textarea>
+                                        <textarea class="input-xxlarge span12" id="textarea" rows="4" disabled="disabled"></textarea>
                                     </div>
                                     <div style="clear:both"></div>
                                 </div>
