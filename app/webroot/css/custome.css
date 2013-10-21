@@ -26,10 +26,8 @@
 h1,h2,h3,h4 {
     font-family: Verdana !important;
 }
-.read-more-link {
-    float: right;
-    margin-right: 15px;
-} .prefer_books .title {
+ 
+.prefer_books .title {
     color: #0182b5;
     /*border-bottom: solid 4px #eaeaea;*/
     padding: 0 0 8px 1px;
@@ -43,7 +41,7 @@ h1,h2,h3,h4 {
 
 .devider {
     border-top: 1px solid #D8D8D8;
-    padding: 10px 0 10px 0;
+    margin: 10px 0 10px 0;
 }
 .article {
     border-bottom: 2px solid #C9C9C9;
@@ -139,8 +137,7 @@ h1,h2,h3,h4 {
     margin-left: 0px;
 }
 .read-more-btn {
-    /*float:right;*/
-    margin-right: 15px;
+    margin-right: 50px;
     float: right;
 }
 
@@ -285,10 +282,14 @@ h1,h2,h3,h4 {
 }
 .article-date-created {
     color: #7A7A7A;
+    font-size: 0.9em;
 }
 .bx-viewport,.bx-wrapper {
     width: 800px !important;
 }
 .bx-viewport ul {
     margin: 0 !important;
+}
+.article-short-content {
+    margin-top: 10px;
 }

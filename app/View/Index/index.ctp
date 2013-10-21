@@ -24,22 +24,20 @@
 <div id="news">
     <h4 class="content-title">Tin tức</h4>
     <div class="content">
-        <p><strong><?php echo $article['Article']['title']; ?></strong></p>
-        <i class="article-date-created">Ngày đăng: <?php echo $article['Article']['created'] ?></i>
-        <div>
+        <strong><?php echo $this->LinkGenerator->link_for_article($article); ?></strong>
+        <br />
+        - <i class="article-date-created">Ngày đăng: <?php echo $article['Article']['created'] ?></i> -
+        <div class="article-short-content">
             <?php echo $this->Text->truncate($article['Article']['content'], 800); ?>   
+            <br />
             <?php
-            echo $this->Html->link(
-                    'Chi tiết >>', array(
-                'controller' => 'articles',
-                'action' => 'userView',
-                'id' => $article['Article']['id'],
-                'slug' => $this->Common->vnit_change_string(Inflector::slug($article['Article']['title']))
-                    ), array('class' => 'read-more-btn'));
+            echo $this->LinkGenerator->link_for_article($article, "<i> Chi tiết >> </i>", 'read-more-btn');
             ?>
+
         </div>   
     </div>
 </div>
+<div class="clear-both"></div>
 <div class="devider"> </div>
 <div class="clear-both"></div>
 <div class="prefer_books">

@@ -1,9 +1,7 @@
 <div class="article">
     <div class="article-title">
         <h4><?php echo $article['Article']['title'] ?></h4>
-        <div class="article-date-created">
-            <i><?php echo $article['Article']['created'] ?></i>
-        </div>
+        - <i class="article-date-created">Ngày đăng: <?php echo $article['Article']['created'] ?></i> -
     </div>
     <div class="article-content">
         <p>
