@@ -8,7 +8,11 @@
             </a>
         </div>
         <div class="book-short-view-right">
-            <a href="/tai-lieu/<?php echo $book['id'] ?>" class="info"><h4><?php echo $book['title'] ?></h4></a>
+            <?php if (isset($keyword)) { ?>
+                <a href="/tai-lieu/<?php echo $book['id'] ?>" class="inforr"><h4><?php echo $this->Text->highlight($book['title'], $keyword, array('format' => '<span class="high-light">\1</span>')) ?></h4></a>
+            <?php } else { ?>
+                 <a href="/tai-lieu/<?php echo $book['id'] ?>" class="info"><h4><?php echo $book['title'] ?></h4></a>
+            <?php } ?>
             <strong>Tác giả: </strong> <?php echo $book['authors'] ?> <br />
             <strong>Nhà xuất bản: </strong><?php echo $book['publisher'] ?><br />
             <strong>Ngôn ngữ: </strong><?php echo $book['language'] ?>
