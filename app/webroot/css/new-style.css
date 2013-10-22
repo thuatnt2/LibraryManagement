@@ -46,7 +46,7 @@ textarea { overflow: auto; }
 
 .shell { 
     background-color: #fff;
-    width: 1056px; 
+    max-width: 1056px; 
     margin: 0 auto;
     /*background: url(/images/shell.png) repeat-y 0 0;*/
     padding: 0 35px 0 35px; 
@@ -113,7 +113,11 @@ textarea { overflow: auto; }
 #slider .read-more-btn { display: block; width: 110px; height: 48px; line-height: 48px; background: url(/images/slider-btn.png); padding: 0 10px 0 59px; color: #fff; font-size: 18px; font-family: 'Georgia', Arial, serif; font-style: italic; font-weight: bold; margin-left: 3px; }
 #slider .read-more-btn:hover { color: #0f173a; text-decoration: none; }
 
-#main { padding-top: 10px; padding-bottom: 15px; z-index: 1; }
+#main { 
+    padding-top: 10px; padding-bottom: 15px; z-index: 1; 
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
 
 #sidebar { float: left; display: inline;  }
 #sidebar h4 { 
