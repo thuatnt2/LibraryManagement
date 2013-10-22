@@ -156,6 +156,7 @@ class BookCategoriesController extends AppController {
             array_push($books, $value['Book']);
         }
         $this->set('books', $books);
+        $this->set('keyword', $keyword);
         $this->log($books, 'debug');
     }
 
