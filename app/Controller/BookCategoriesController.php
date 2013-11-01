@@ -128,15 +128,27 @@ class BookCategoriesController extends AppController {
     }
 
     public function userView() {
-//        $this->BookCategory->recursive = 0;
-//        $this->set('bookCategories', $this->Paginator->paginate());
+        $this->log($this->request->params, 'debug');
         $this->layout = 'new';
         $bookCategory = $this->BookCategory->find('first', array('conditions' => array(
                 'BookCategory.id' => $this->request->params['id'])));
         $title_for_layout = 'Danh mục ' . $bookCategory['BookCategory']['name'];
+        $this->loadModel('Book');
+        $this->paginate = array(
+                'conditions' => array(
+                    'Book.book_category_id' => $bookCategory['BookCategory']['id']
+                ),
+                'recursive' => -1,
+                'limit' => 2
+           
+        );
+
+        $books = $this->Paginator->paginate('Book');
+//        $this->log($books, 'debug');
+
+        $this->set('books', $books);
         $this->set('title_for_layout', $title_for_layout);
         $this->set('bookCategory', $bookCategory);
-        $this->log($bookCategory['Book'], 'debug');
     }
 
     public function userSearch() {

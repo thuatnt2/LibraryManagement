@@ -21,6 +21,13 @@
         <div id="books-in-category">
             <?php echo $this->element('/bookcategories/books_in_category', array('books' => $bookCategory['Book'])) ?>
         </div>
+        <div class="paginator">
+            <?php echo  $this->Paginator->first('Đầu')?>
+            <?php echo  $this->Paginator->prev('Trước')?>
+            <?php echo $this->Paginator->numbers(array('separator' => false, 'class' => 'paginatee'));?>
+            <?php  echo $this->Paginator->next('Tiếp')?>
+           
+        </div> 
     </div>
 
 </div>
